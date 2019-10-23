@@ -1,6 +1,6 @@
 ﻿Module PlanarDeck
     Public deckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving
-    Private DeckCounter As Integer = 0
+    Public DeckCounter As Integer = 0
     Public CardLookup(86) As Integer
     Public CardStack(86, 5) As Integer '' DeckPos,XPos,YPos,Flag,Counter,State
     Public DrawBuffer As Integer
@@ -212,16 +212,16 @@
             End If
         Next
 
-        If NPopulateCheck = True Then
+        If NPopulateCheck = True And DeckCounter > 0 Then
             If PlayCard(DrawCard, 3, 0, 0, 1) = True Then PopulateBoard = True
         End If
-        If SPopulateCheck = True Then
+        If SPopulateCheck = True And DeckCounter > 0 Then
             If PlayCard(DrawCard, 3, 0, 0, -1) = True Then PopulateBoard = True
         End If
-        If EPopulateCheck = True Then
+        If EPopulateCheck = True And DeckCounter > 0 Then
             If PlayCard(DrawCard, 3, 0, 1, 0) = True Then PopulateBoard = True
         End If
-        If WPopulateCheck = True Then
+        If WPopulateCheck = True And DeckCounter > 0 Then
             If PlayCard(DrawCard, 3, 0, -1, 0) = True Then PopulateBoard = True
         End If
     End Function

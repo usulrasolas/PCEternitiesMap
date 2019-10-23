@@ -923,9 +923,9 @@
             Dim NWHellride As Boolean = True
             Dim SWHellride As Boolean = True
 
-            For workcounter = 1 To 86 Step 1
-                If CardStack(workcounter, 5) = 3 Then
-                    If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 0 Then
+            For workcounter = 1 To 86 Step 1 'for every card
+                If CardStack(workcounter, 5) = 3 Then 'that is active
+                    If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 0 Then 'if it occupies valid movement coodinates show and enable it.
                         CardArray(12).Visible = True
                         CardArray(12).Enabled = True
                         If CardStack(workcounter, 4) <> 0 Then DispArray(12).Visible = True
@@ -941,7 +941,7 @@
                         CardArray(19).Visible = True
                         CardArray(19).Enabled = True
                         If CardStack(workcounter, 4) <> 0 Then DispArray(19).Visible = True
-                    ElseIf CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = -1 Then
+                    ElseIf CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = -1 Then 'if there's already a card in diagonal, don't allow hellriding
                         SEHellride = False
                     ElseIf CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = -1 Then
                         SWHellride = False
@@ -950,9 +950,15 @@
                     ElseIf CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 1 Then
                         NWHellride = False
                     End If
+                    If DeckCounter < 1 Then 'disable hellride if no cards to draw
+                        SEHellride = False
+                        SWHellride = False
+                        NEHellride = False
+                        NWHellride = False
+                    End If
                 End If
             Next
-            If SWHellride = True Then
+            If SWHellride = True Then 'make visible and enable hellride slots
                 CardArray(18).Visible = True
                 CardArray(18).Enabled = True
             End If

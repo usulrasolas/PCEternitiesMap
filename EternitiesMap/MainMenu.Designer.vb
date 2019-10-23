@@ -91,7 +91,7 @@ Partial Class MainMenu
         Me.CHKInfinite.Name = "CHKInfinite"
         Me.CHKInfinite.Size = New System.Drawing.Size(754, 17)
         Me.CHKInfinite.TabIndex = 5
-        Me.CHKInfinite.Text = "Infinite Plane Mode (Planes never get removed from board)"
+        Me.CHKInfinite.Text = "Finite Mode (Planes never get removed from board)"
         Me.CHKInfinite.UseVisualStyleBackColor = True
         '
         'gbOptions
