@@ -2,6 +2,7 @@
     Private CardArray(25) As PictureBox
     Private DispArray(25) As Label
     Private CurrentPlane As Integer
+    Private DisplayMode As Integer '0board,1zoom,2display,3moving
     Private Sub GameBoard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CardArray(1) = PictureBox1
         DispArray(1) = Label1
@@ -58,13 +59,36 @@
         newgame()
     End Sub
 
+    Public Function PickDisplay(trigPlane As Integer, slot1 As Integer, slot2 As Integer, slot3 As Integer, slot4 As Integer, slot5 As Integer)
+
+    End Function
+
     Public Function newgame() As Boolean
         ReadyDeck()
         PlayCard(DrawCard, 3, 0, 0, 0)
+        PCardSelect1.SendToBack()
+        PCardSelect2.SendToBack()
+        PCardSelect3.SendToBack()
+        PCardSelect4.SendToBack()
+        PCardSelect5.SendToBack()
+        PCardSelect6.SendToBack()
+        PCardSelect1.Enabled = False
+        PCardSelect2.Enabled = False
+        PCardSelect3.Enabled = False
+        PCardSelect4.Enabled = False
+        PCardSelect5.Enabled = False
+        PCardSelect6.Enabled = False
+        PCardSelect1.Visible = False
+        PCardSelect2.Visible = False
+        PCardSelect3.Visible = False
+        PCardSelect4.Visible = False
+        PCardSelect5.Visible = False
+        PCardSelect6.Visible = False
         PBZoom.Enabled = True
         PBZoom.Visible = True
         PBZoom.BringToFront()
         PBZoom.Image = CardImage(DrawBuffer)
+        DisplayMode = 1
         PopulateBoard()
         UpdateArrays()
     End Function
@@ -519,6 +543,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -539,6 +564,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -555,6 +581,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -570,6 +597,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -591,6 +619,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -607,6 +636,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -628,6 +658,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -644,6 +675,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -659,6 +691,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -674,6 +707,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -694,6 +728,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -709,6 +744,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -729,6 +765,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -744,6 +781,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -759,6 +797,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -774,6 +813,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -795,6 +835,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -815,6 +856,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -836,6 +878,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -851,6 +894,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -866,6 +910,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -881,6 +926,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -897,6 +943,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -909,6 +956,7 @@
 
         If deckState = 1 Then 'ready
             deckState = 2
+            DisplayMode = 3
             NCounter.Enabled = False
             Dim workcounter As Integer
             For workcounter = 1 To 25 Step 1
@@ -976,6 +1024,7 @@
             End If
         ElseIf deckState = 2 Then
             deckState = 1
+            DisplayMode = 0
             NCounter.Enabled = True
             For workcounter = 1 To 25 Step 1
                 CardArray(workcounter).Enabled = True
@@ -990,12 +1039,14 @@
             PBZoom.BringToFront()
             PBZoom.Visible = True
             PBZoom.Enabled = True
+            DisplayMode = 1
         End If
     End Sub
 
     Private Sub PBZoom_Click(sender As Object, e As EventArgs) Handles PBZoom.Click
         PBZoom.Enabled = False
         PBZoom.Visible = False
+        DisplayMode = 0
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -1007,6 +1058,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next
@@ -1022,6 +1074,7 @@
                         PBZoom.BringToFront()
                         PBZoom.Visible = True
                         PBZoom.Enabled = True
+                        DisplayMode = 1
                     End If
                 End If
             Next

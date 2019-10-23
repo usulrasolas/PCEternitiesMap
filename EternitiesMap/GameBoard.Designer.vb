@@ -78,6 +78,12 @@ Partial Class GameBoard
         Me.PictureBox25 = New System.Windows.Forms.PictureBox()
         Me.PBZoom = New System.Windows.Forms.PictureBox()
         Me.NCounter = New System.Windows.Forms.NumericUpDown()
+        Me.PCardSelect1 = New System.Windows.Forms.PictureBox()
+        Me.PCardSelect2 = New System.Windows.Forms.PictureBox()
+        Me.PCardSelect3 = New System.Windows.Forms.PictureBox()
+        Me.PCardSelect4 = New System.Windows.Forms.PictureBox()
+        Me.PCardSelect5 = New System.Windows.Forms.PictureBox()
+        Me.PCardSelect6 = New System.Windows.Forms.PictureBox()
         CType(Me.PBChaos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBWalk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -108,6 +114,12 @@ Partial Class GameBoard
         CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBZoom, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NCounter, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PCardSelect1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PCardSelect2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PCardSelect3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PCardSelect4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PCardSelect5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PCardSelect6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PBChaos
@@ -773,6 +785,84 @@ Partial Class GameBoard
         Me.NCounter.TabIndex = 54
         Me.NCounter.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
+        'PCardSelect1
+        '
+        Me.PCardSelect1.BackColor = System.Drawing.Color.Transparent
+        Me.PCardSelect1.BackgroundImage = CType(resources.GetObject("PCardSelect1.BackgroundImage"), System.Drawing.Image)
+        Me.PCardSelect1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PCardSelect1.Image = CType(resources.GetObject("PCardSelect1.Image"), System.Drawing.Image)
+        Me.PCardSelect1.Location = New System.Drawing.Point(35, 185)
+        Me.PCardSelect1.Name = "PCardSelect1"
+        Me.PCardSelect1.Size = New System.Drawing.Size(575, 420)
+        Me.PCardSelect1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PCardSelect1.TabIndex = 55
+        Me.PCardSelect1.TabStop = False
+        '
+        'PCardSelect2
+        '
+        Me.PCardSelect2.BackColor = System.Drawing.Color.Transparent
+        Me.PCardSelect2.BackgroundImage = CType(resources.GetObject("PCardSelect2.BackgroundImage"), System.Drawing.Image)
+        Me.PCardSelect2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PCardSelect2.Image = CType(resources.GetObject("PCardSelect2.Image"), System.Drawing.Image)
+        Me.PCardSelect2.Location = New System.Drawing.Point(634, 12)
+        Me.PCardSelect2.Name = "PCardSelect2"
+        Me.PCardSelect2.Size = New System.Drawing.Size(630, 460)
+        Me.PCardSelect2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PCardSelect2.TabIndex = 56
+        Me.PCardSelect2.TabStop = False
+        '
+        'PCardSelect3
+        '
+        Me.PCardSelect3.BackColor = System.Drawing.Color.Transparent
+        Me.PCardSelect3.BackgroundImage = CType(resources.GetObject("PCardSelect3.BackgroundImage"), System.Drawing.Image)
+        Me.PCardSelect3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PCardSelect3.Image = CType(resources.GetObject("PCardSelect3.Image"), System.Drawing.Image)
+        Me.PCardSelect3.Location = New System.Drawing.Point(1288, 185)
+        Me.PCardSelect3.Name = "PCardSelect3"
+        Me.PCardSelect3.Size = New System.Drawing.Size(575, 420)
+        Me.PCardSelect3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PCardSelect3.TabIndex = 57
+        Me.PCardSelect3.TabStop = False
+        '
+        'PCardSelect4
+        '
+        Me.PCardSelect4.BackColor = System.Drawing.Color.Transparent
+        Me.PCardSelect4.BackgroundImage = CType(resources.GetObject("PCardSelect4.BackgroundImage"), System.Drawing.Image)
+        Me.PCardSelect4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PCardSelect4.Image = CType(resources.GetObject("PCardSelect4.Image"), System.Drawing.Image)
+        Me.PCardSelect4.Location = New System.Drawing.Point(62, 629)
+        Me.PCardSelect4.Name = "PCardSelect4"
+        Me.PCardSelect4.Size = New System.Drawing.Size(575, 420)
+        Me.PCardSelect4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PCardSelect4.TabIndex = 58
+        Me.PCardSelect4.TabStop = False
+        '
+        'PCardSelect5
+        '
+        Me.PCardSelect5.BackColor = System.Drawing.Color.Transparent
+        Me.PCardSelect5.BackgroundImage = CType(resources.GetObject("PCardSelect5.BackgroundImage"), System.Drawing.Image)
+        Me.PCardSelect5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PCardSelect5.Image = CType(resources.GetObject("PCardSelect5.Image"), System.Drawing.Image)
+        Me.PCardSelect5.Location = New System.Drawing.Point(666, 629)
+        Me.PCardSelect5.Name = "PCardSelect5"
+        Me.PCardSelect5.Size = New System.Drawing.Size(575, 420)
+        Me.PCardSelect5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PCardSelect5.TabIndex = 59
+        Me.PCardSelect5.TabStop = False
+        '
+        'PCardSelect6
+        '
+        Me.PCardSelect6.BackColor = System.Drawing.Color.Transparent
+        Me.PCardSelect6.BackgroundImage = CType(resources.GetObject("PCardSelect6.BackgroundImage"), System.Drawing.Image)
+        Me.PCardSelect6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PCardSelect6.Image = CType(resources.GetObject("PCardSelect6.Image"), System.Drawing.Image)
+        Me.PCardSelect6.Location = New System.Drawing.Point(1261, 629)
+        Me.PCardSelect6.Name = "PCardSelect6"
+        Me.PCardSelect6.Size = New System.Drawing.Size(575, 420)
+        Me.PCardSelect6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PCardSelect6.TabIndex = 60
+        Me.PCardSelect6.TabStop = False
+        '
         'GameBoard
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -780,6 +870,12 @@ Partial Class GameBoard
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(1920, 1080)
+        Me.Controls.Add(Me.PCardSelect6)
+        Me.Controls.Add(Me.PCardSelect5)
+        Me.Controls.Add(Me.PCardSelect4)
+        Me.Controls.Add(Me.PCardSelect3)
+        Me.Controls.Add(Me.PCardSelect2)
+        Me.Controls.Add(Me.PCardSelect1)
         Me.Controls.Add(Me.NCounter)
         Me.Controls.Add(Me.Label25)
         Me.Controls.Add(Me.PictureBox25)
@@ -873,6 +969,12 @@ Partial Class GameBoard
         CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBZoom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NCounter, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PCardSelect1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PCardSelect2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PCardSelect3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PCardSelect4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PCardSelect5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PCardSelect6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -933,4 +1035,10 @@ Partial Class GameBoard
     Friend WithEvents PictureBox25 As PictureBox
     Friend WithEvents PBZoom As PictureBox
     Friend WithEvents NCounter As NumericUpDown
+    Friend WithEvents PCardSelect1 As PictureBox
+    Friend WithEvents PCardSelect2 As PictureBox
+    Friend WithEvents PCardSelect3 As PictureBox
+    Friend WithEvents PCardSelect4 As PictureBox
+    Friend WithEvents PCardSelect5 As PictureBox
+    Friend WithEvents PCardSelect6 As PictureBox
 End Class
