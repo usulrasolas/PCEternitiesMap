@@ -979,7 +979,12 @@
     End Sub
 
     Private Sub PBChaos_Click(sender As Object, e As EventArgs) Handles PBChaos.Click
-
+        If CardStack(CurrentPlane, 3) > -1 Then
+            PBZoom.Image = CardImage(CurrentPlane)
+            PBZoom.BringToFront()
+            PBZoom.Visible = True
+            PBZoom.Enabled = True
+        End If
     End Sub
 
     Private Sub PBZoom_Click(sender As Object, e As EventArgs) Handles PBZoom.Click
