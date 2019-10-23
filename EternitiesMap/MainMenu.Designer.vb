@@ -26,6 +26,8 @@ Partial Class MainMenu
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BNewGame = New System.Windows.Forms.Button()
         Me.BExit = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -60,11 +62,31 @@ Partial Class MainMenu
         Me.BExit.Text = "Exit Game"
         Me.BExit.UseVisualStyleBackColor = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(3, 539)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(410, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Magic: The Gathering, MTG, and Planechase are Copyright Wizard of The Coast LLC"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(443, 539)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(329, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "This software and its code are distributed and licensed GNU GPL v3"
+        '
         'MainMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BExit)
         Me.Controls.Add(Me.BNewGame)
         Me.Controls.Add(Me.Label1)
@@ -81,4 +103,6 @@ Partial Class MainMenu
     Friend WithEvents Label1 As Label
     Friend WithEvents BNewGame As Button
     Friend WithEvents BExit As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class
