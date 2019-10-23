@@ -1,0 +1,5 @@
+
+*.cache
+.vs/EternitiesMap/v16/.suo
+.vs/EternitiesMap/v16/Server/sqlite3/db.lock
+.vs/EternitiesMap/v16/Server/sqlite3/storage.ide
