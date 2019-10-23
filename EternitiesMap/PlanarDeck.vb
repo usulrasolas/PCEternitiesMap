@@ -4,6 +4,7 @@
     Public CardLookup(86) As Integer
     Public CardStack(86, 5) As Integer '' DeckPos,XPos,YPos,Flag,Counter,State
     Public DrawBuffer As Integer
+    Public InfinitePlane As Boolean = False
 
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
@@ -164,24 +165,28 @@
     End Function
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
-        For workcounter = 1 To 86 Step 1
-            Dim distancecounter As Integer
-            distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
-            If distancecounter > 3 And CardStack(workcounter, 5) = 3 Then
-                ReturnCard(workcounter)
+        If InfinitePlane = False Then
 
-            End If
-        Next
-        Return True
-        For workcounter = 1 To 86 Step 1
-            Dim distancecounter As Integer
-            distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
-            If distancecounter > 3 And CardStack(workcounter, 5) = 3 Then
-                Return False
-            End If
+            For workcounter = 1 To 86 Step 1
+                Dim distancecounter As Integer
+                distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
+                If distancecounter > 3 And CardStack(workcounter, 5) = 3 Then
+                    ReturnCard(workcounter)
 
-        Next
-        Shuffle()
+                End If
+            Next
+            Return True
+            For workcounter = 1 To 86 Step 1
+                Dim distancecounter As Integer
+                distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
+                If distancecounter > 3 And CardStack(workcounter, 5) = 3 Then
+                    Return False
+                End If
+
+            Next
+
+            Shuffle()
+        End If
     End Function
     Public Function PopulateBoard() As Boolean
         Dim workcounter As Integer

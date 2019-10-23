@@ -28,6 +28,9 @@ Partial Class MainMenu
         Me.BExit = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.CHKInfinite = New System.Windows.Forms.CheckBox()
+        Me.gbOptions = New System.Windows.Forms.GroupBox()
+        Me.gbOptions.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -80,11 +83,34 @@ Partial Class MainMenu
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "This software and its code are distributed and licensed GNU GPL v3"
         '
+        'CHKInfinite
+        '
+        Me.CHKInfinite.AutoSize = True
+        Me.CHKInfinite.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CHKInfinite.Location = New System.Drawing.Point(3, 16)
+        Me.CHKInfinite.Name = "CHKInfinite"
+        Me.CHKInfinite.Size = New System.Drawing.Size(754, 17)
+        Me.CHKInfinite.TabIndex = 5
+        Me.CHKInfinite.Text = "Infinite Plane Mode (Planes never get removed from board)"
+        Me.CHKInfinite.UseVisualStyleBackColor = True
+        '
+        'gbOptions
+        '
+        Me.gbOptions.Controls.Add(Me.CHKInfinite)
+        Me.gbOptions.ForeColor = System.Drawing.Color.LightGray
+        Me.gbOptions.Location = New System.Drawing.Point(12, 51)
+        Me.gbOptions.Name = "gbOptions"
+        Me.gbOptions.Size = New System.Drawing.Size(760, 444)
+        Me.gbOptions.TabIndex = 6
+        Me.gbOptions.TabStop = False
+        Me.gbOptions.Text = "Settings/Options"
+        '
         'MainMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.gbOptions)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BExit)
@@ -95,6 +121,8 @@ Partial Class MainMenu
         Me.MaximizeBox = False
         Me.Name = "MainMenu"
         Me.Text = "MainMenu"
+        Me.gbOptions.ResumeLayout(False)
+        Me.gbOptions.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -105,4 +133,6 @@ Partial Class MainMenu
     Friend WithEvents BExit As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents CHKInfinite As CheckBox
+    Friend WithEvents gbOptions As GroupBox
 End Class
