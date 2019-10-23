@@ -37,5 +37,3 @@ We can't guarantee all requests will be possible or a high priority but we want 
 * Documentation is critical so recieve extra kudos from us!
 
 Thanks for your interest! ❤️ ❤️ ❤️
-
-Rails Team
