@@ -1018,7 +1018,17 @@
         End If
     End Sub
     Private Sub PBChaos_Click(sender As Object, e As EventArgs) Handles PBChaos.Click
-        If CardStack(CurrentPlane, 3) = 1 Then
+        If CardStack(CurrentPlane, 3) = 0 Then
+            PBZoom.Image = CardImage(CurrentPlane)
+            PBZoom.BringToFront()
+            PBZoom.Visible = True
+            PBZoom.Enabled = True
+            DisplayMode = 1
+        ElseIf CardStack(CurrentPlane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
+            MsgBox("Please draw " & CardStack(CurrentPlane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
+        ElseIf CardStack(CurrentPlane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
+
+        ElseIf CardStack(CurrentPlane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
 
         ElseIf CardStack(CurrentPlane, 3) > -1 Then
             PBZoom.Image = CardImage(CurrentPlane)

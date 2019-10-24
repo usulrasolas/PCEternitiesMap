@@ -20,8 +20,8 @@
             CardStack(4, 3) = 5 ''Aeropolis Flag for 10 Counters Walks Away
             CardStack(40, 3) = 7 ''Mount Keralia Damage on Exit Reminder/Reset
             CardStack(43, 3) = 6 ''Naar Isle Counter Reset on Exit
-            CardStack(53, 3) = 9 ''Pools of Becoming Triple Draw on Exit
-            CardStack(65, 3) = 11 ''Stairs to Infinity Scry Planar Deck
+            CardStack(53, 3) = 9 ''Pools of Becoming Triple Draw Chaos
+            CardStack(65, 3) = 11 ''Stairs to Infinity Scry Planar Deck Chaos
             ''Temporary Disable Phenoms Via Flag and State
             CardStack(9, 3) = -1
             CardStack(26, 3) = -1

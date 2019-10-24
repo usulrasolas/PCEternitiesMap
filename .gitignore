@@ -155,3 +155,5 @@ EternitiesMap/bin/Debug/app.publish/EternitiesMap.exe
 EternitiesMap/obj/Debug/EternitiesMap.application
 EternitiesMap/obj/Debug/EternitiesMap.exe.manifest
 EternitiesMap/obj/Debug/EternitiesMap.TrustInfo.xml
+EternitiesMap/bin/Debug/EternitiesMap.exe.lastcodeanalysissucceeded
+EternitiesMap/bin/Debug/EternitiesMap.exe.CodeAnalysisLog.xml
