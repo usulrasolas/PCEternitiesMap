@@ -58,11 +58,33 @@
         UpdateArrays()
         newgame()
     End Sub
-
     Public Function PickDisplay(trigPlane As Integer, slot1 As Integer, slot2 As Integer, slot3 As Integer, slot4 As Integer, slot5 As Integer)
-
+        PCardSelect1.BringToFront()
+        PCardSelect2.BringToFront()
+        PCardSelect3.BringToFront()
+        PCardSelect4.BringToFront()
+        PCardSelect5.BringToFront()
+        PCardSelect6.BringToFront()
+        PCardSelect1.Enabled = True
+        PCardSelect2.Enabled = True
+        PCardSelect3.Enabled = True
+        PCardSelect4.Enabled = True
+        PCardSelect5.Enabled = True
+        PCardSelect6.Enabled = True
+        PCardSelect1.Visible = True
+        PCardSelect2.Visible = True
+        PCardSelect3.Visible = True
+        PCardSelect4.Visible = True
+        PCardSelect5.Visible = True
+        PCardSelect6.Visible = True
+        DisplayMode = 2
+        deckState = 3
+        PCardSelect1.Image = CardImage(slot4)
+        PCardSelect1.Image = CardImage(slot4)
+        PCardSelect1.Image = CardImage(slot4)
+        PCardSelect1.Image = CardImage(slot4)
+        PCardSelect1.Image = CardImage(slot4)
     End Function
-
     Public Function newgame() As Boolean
         ReadyDeck()
         PlayCard(DrawCard, 3, 0, 0, 0)
@@ -92,7 +114,6 @@
         PopulateBoard()
         UpdateArrays()
     End Function
-
     Function UpdateArrays() As Boolean
         Dim workcounter As Integer
         Dim DisplayBuffer(25) As Integer
@@ -106,7 +127,6 @@
             DispArray(workcounter).ForeColor = Color.Gray
             DispArray(workcounter).Invalidate()
         Next
-
         For workcounter = 1 To 86 Step 1
             If CardStack(workcounter, 5) = 3 Then
                 If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 3 Then
@@ -337,15 +357,10 @@
                     If CardStack(workcounter, 4) < 0 Then DispArray(25).BackColor = Color.Red
                     If CardStack(workcounter, 4) <> 0 Then DispArray(25).Text = CardStack(workcounter, 4)
                 End If
-
             End If
         Next
         Me.Invalidate()
-
-
     End Function
-
-
     Public Function CardImage(CardNumber As Integer) As Image
         If CardNumber = 1 Then
             Return My.Resources.c1
@@ -520,10 +535,7 @@
         ElseIf CardNumber = 86 Then
             Return My.Resources.c86
         End If
-
     End Function
-
-
     Private Sub PBMenu_Click(sender As Object, e As EventArgs) Handles PBMenu.Click
         If MsgBox("Are you sure you want return to the main menu?" & vbCrLf & "Game in progress will be lost!", MsgBoxStyle.YesNo, "Return to Menu?") = MsgBoxResult.Yes Then
             Dim oForm As Form
@@ -533,7 +545,6 @@
             Close()
         End If
     End Sub
-
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -549,7 +560,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         If deckState = 2 Then
             TranslateBoard(0, -1)
@@ -569,9 +579,7 @@
                 End If
             Next
         End If
-
     End Sub
-
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -603,7 +611,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         If deckState = 2 Then
             PlayCard(DrawCard, 3, 0, -1, 1)
@@ -624,9 +631,7 @@
                 End If
             Next
         End If
-
     End Sub
-
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -642,7 +647,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
         If deckState = 2 Then
             PlayCard(DrawCard, 3, 0, 1, 1)
@@ -663,9 +667,7 @@
                 End If
             Next
         End If
-
     End Sub
-
     Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -681,7 +683,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -697,7 +698,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox15_Click(sender As Object, e As EventArgs) Handles PictureBox15.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -713,7 +713,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
         If deckState = 2 Then
             TranslateBoard(-1, 0)
@@ -734,7 +733,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -750,7 +748,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
         If deckState = 2 Then
             TranslateBoard(1, 0)
@@ -771,7 +768,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -787,7 +783,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -803,7 +798,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox17_Click(sender As Object, e As EventArgs) Handles PictureBox17.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -819,7 +813,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
         If deckState = 2 Then
             PlayCard(DrawCard, 3, 0, -1, -1)
@@ -841,7 +834,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
         If deckState = 2 Then
             TranslateBoard(0, 1)
@@ -862,7 +854,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
         If deckState = 2 Then
             PlayCard(DrawCard, 3, 0, 1, -1)
@@ -884,7 +875,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox21_Click(sender As Object, e As EventArgs) Handles PictureBox21.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -900,7 +890,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox24_Click(sender As Object, e As EventArgs) Handles PictureBox24.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -916,7 +905,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox23_Click(sender As Object, e As EventArgs) Handles PictureBox23.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -931,9 +919,7 @@
                 End If
             Next
         End If
-
     End Sub
-
     Private Sub PictureBox22_Click(sender As Object, e As EventArgs) Handles PictureBox22.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -948,12 +934,9 @@
                 End If
             Next
         End If
-
     End Sub
-
     Private Sub PBWalk_Click(sender As Object, e As EventArgs) Handles PBWalk.Click
         UpdateArrays()
-
         If deckState = 1 Then 'ready
             deckState = 2
             DisplayMode = 3
@@ -970,7 +953,6 @@
             Dim SEHellride As Boolean = True
             Dim NWHellride As Boolean = True
             Dim SWHellride As Boolean = True
-
             For workcounter = 1 To 86 Step 1 'for every card
                 If CardStack(workcounter, 5) = 3 Then 'that is active
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 0 Then 'if it occupies valid movement coodinates show and enable it.
@@ -1032,7 +1014,6 @@
             Next
         End If
     End Sub
-
     Private Sub PBChaos_Click(sender As Object, e As EventArgs) Handles PBChaos.Click
         If CardStack(CurrentPlane, 3) > -1 Then
             PBZoom.Image = CardImage(CurrentPlane)
@@ -1042,13 +1023,11 @@
             DisplayMode = 1
         End If
     End Sub
-
     Private Sub PBZoom_Click(sender As Object, e As EventArgs) Handles PBZoom.Click
         PBZoom.Enabled = False
         PBZoom.Visible = False
         DisplayMode = 0
     End Sub
-
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -1064,7 +1043,6 @@
             Next
         End If
     End Sub
-
     Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles PictureBox25.Click
         If deckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -1080,7 +1058,6 @@
             Next
         End If
     End Sub
-
     Private Sub NCounter_ValueChanged(sender As Object, e As EventArgs) Handles NCounter.ValueChanged
         If deckState = 1 Then
             CardStack(CurrentPlane, 4) = NCounter.Value
