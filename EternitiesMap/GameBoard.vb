@@ -87,7 +87,7 @@
     End Function
     Public Function newgame() As Boolean
         ReadyDeck()
-        PlayCard(DrawCard, 3, 0, 0, 0)
+        PlayCard(DrawCard, 3, 0, 0)
         PCardSelect1.SendToBack()
         PCardSelect2.SendToBack()
         PCardSelect3.SendToBack()
@@ -535,6 +535,8 @@
             Return My.Resources.c85
         ElseIf CardNumber = 86 Then
             Return My.Resources.c86
+        Else
+            Return My.Resources.c0
         End If
     End Function
     Private Sub PBMenu_Click(sender As Object, e As EventArgs) Handles PBMenu.Click
@@ -614,7 +616,7 @@
     End Sub
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         If deckState = 2 Then
-            PlayCard(DrawCard, 3, 0, -1, 1)
+            PlayCard(DrawCard, 3, -1, 1)
             TranslateBoard(1, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox6, Nothing)
@@ -650,7 +652,7 @@
     End Sub
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
         If deckState = 2 Then
-            PlayCard(DrawCard, 3, 0, 1, 1)
+            PlayCard(DrawCard, 3, 1, 1)
             TranslateBoard(-1, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox8, Nothing)
@@ -816,7 +818,7 @@
     End Sub
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
         If deckState = 2 Then
-            PlayCard(DrawCard, 3, 0, -1, -1)
+            PlayCard(DrawCard, 3, -1, -1)
             TranslateBoard(1, 1)
             UpdateArrays()
             PBWalk_Click(PictureBox18, Nothing)
@@ -857,7 +859,7 @@
     End Sub
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
         If deckState = 2 Then
-            PlayCard(DrawCard, 3, 0, 1, -1)
+            PlayCard(DrawCard, 3, 1, -1)
             TranslateBoard(-1, 1)
             UpdateArrays()
             PBWalk_Click(PictureBox20, Nothing)

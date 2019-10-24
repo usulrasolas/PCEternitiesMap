@@ -105,7 +105,7 @@
             Return DrawBuffer
         End If
     End Function
-    Public Function PlayCard(CardNumber As Integer, ToState As Integer, DeckPos As Integer, XPos As Integer, YPos As Integer) As Boolean
+    Public Function PlayCard(CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
         If deckState = 1 Or 2 Then
             If ToState = 1 And CardStack(CardNumber, 5) = 2 Then 'to deck
                 Dim workcounter As Integer
@@ -208,18 +208,17 @@
                     End If
                 End If
             Next
-
             If NPopulateCheck = True And DeckCounter > 0 Then
-                If PlayCard(DrawCard, 3, 0, 0, 1) = True Then PopulateBoard = True
+                If PlayCard(DrawCard, 3, 0, 1) = True Then PopulateBoard = True
             End If
             If SPopulateCheck = True And DeckCounter > 0 Then
-                If PlayCard(DrawCard, 3, 0, 0, -1) = True Then PopulateBoard = True
+                If PlayCard(DrawCard, 3, 0, -1) = True Then PopulateBoard = True
             End If
             If EPopulateCheck = True And DeckCounter > 0 Then
-                If PlayCard(DrawCard, 3, 0, 1, 0) = True Then PopulateBoard = True
+                If PlayCard(DrawCard, 3, 1, 0) = True Then PopulateBoard = True
             End If
             If WPopulateCheck = True And DeckCounter > 0 Then
-                If PlayCard(DrawCard, 3, 0, -1, 0) = True Then PopulateBoard = True
+                If PlayCard(DrawCard, 3, -1, 0) = True Then PopulateBoard = True
             End If
         End If
     End Function
