@@ -191,7 +191,7 @@
         Dim EPopulateCheck As Boolean = True
         Dim WPopulateCheck As Boolean = True
         PopulateBoard = False
-        If deckState = 2 Then
+        If deckState = 2 Or 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 1 Then

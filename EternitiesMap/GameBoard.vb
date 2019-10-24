@@ -111,6 +111,7 @@
         PBZoom.BringToFront()
         PBZoom.Image = CardImage(DrawBuffer)
         DisplayMode = 1
+        deckState = 1
         PopulateBoard()
         UpdateArrays()
     End Function
@@ -361,7 +362,7 @@
         Next
         Me.Invalidate()
     End Function
-    Public Function CardImage(CardNumber As Integer) As Image
+    Public Shared Function CardImage(CardNumber As Integer) As Image
         If CardNumber = 1 Then
             Return My.Resources.c1
         ElseIf CardNumber = 2 Then

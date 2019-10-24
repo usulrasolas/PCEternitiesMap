@@ -149,3 +149,9 @@ packages/Microsoft.NetFramework.Analyzers.2.9.3/rulesets/SecurityRulesEnabled.ru
 packages/Microsoft.NetFramework.Analyzers.2.9.3/ThirdPartyNotices.rtf
 packages/Microsoft.NetFramework.Analyzers.2.9.3/tools/install.ps1
 packages/Microsoft.NetFramework.Analyzers.2.9.3/tools/uninstall.ps1
+EternitiesMap/bin/Debug/EternitiesMap.exe.manifest
+EternitiesMap/bin/Debug/EternitiesMap.application
+EternitiesMap/bin/Debug/app.publish/EternitiesMap.exe
+EternitiesMap/obj/Debug/EternitiesMap.application
+EternitiesMap/obj/Debug/EternitiesMap.exe.manifest
+EternitiesMap/obj/Debug/EternitiesMap.TrustInfo.xml
