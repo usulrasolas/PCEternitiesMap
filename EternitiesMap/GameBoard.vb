@@ -56,7 +56,7 @@
         DispArray(25) = Label25
         NCounter.Value = 0
         UpdateArrays()
-        newgame()
+        NewGame()
     End Sub
     Public Function PickDisplay(trigPlane As Integer, slot1 As Integer, slot2 As Integer, slot3 As Integer, slot4 As Integer, slot5 As Integer)
         PCardSelect1.BringToFront()
@@ -85,7 +85,7 @@
         PCardSelect1.Image = CardImage(slot4)
         PCardSelect1.Image = CardImage(slot4)
     End Function
-    Public Function newgame() As Boolean
+    Public Function NewGame() As Boolean
         ReadyDeck()
         PlayCard(DrawCard, 3, 0, 0)
         PCardSelect1.SendToBack()
@@ -1018,7 +1018,9 @@
         End If
     End Sub
     Private Sub PBChaos_Click(sender As Object, e As EventArgs) Handles PBChaos.Click
-        If CardStack(CurrentPlane, 3) > -1 Then
+        If CardStack(CurrentPlane, 3) = 1 Then
+
+        ElseIf CardStack(CurrentPlane, 3) > -1 Then
             PBZoom.Image = CardImage(CurrentPlane)
             PBZoom.BringToFront()
             PBZoom.Visible = True

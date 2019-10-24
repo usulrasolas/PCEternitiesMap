@@ -91,6 +91,7 @@
                 CardLookup(ShuffleTracker(WorkCounter, 1)) = ShuffleTracker(WorkCounter, 0)
             Next
             Return True
+        Else Return False
         End If
     End Function
     Public Function DrawCard() As Integer
@@ -103,9 +104,11 @@
             CardLookup(DeckCounter) = 0
             DeckCounter -= 1
             Return DrawBuffer
+        Else Return -1
         End If
     End Function
-    Public Function PlayCard(CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
+    Public Function PlayCard(
+            CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
         If deckState = 1 Or 2 Then
             If ToState = 1 And CardStack(CardNumber, 5) = 2 Then 'to deck
                 Dim workcounter As Integer
@@ -130,6 +133,7 @@
             Else
                 Return False
             End If
+        Else Return False
         End If
     End Function
     Public Function ReturnCard(CardNumber As Integer)
@@ -161,6 +165,8 @@
             PopulateBoard()
             CullBoard()
             Return True
+        Else
+            Return False
         End If
     End Function
     Public Function CullBoard() As Boolean
@@ -173,15 +179,17 @@
                     ReturnCard(workcounter)
                 End If
             Next
-            Return True
             For workcounter = 1 To 86 Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
                 If distancecounter > 3 And CardStack(workcounter, 5) = 3 Then
                     Return False
                 End If
+                Shuffle()
+                Return True
             Next
-            Shuffle()
+        Else
+            Return False
         End If
     End Function
     Public Function PopulateBoard() As Boolean
