@@ -13,17 +13,17 @@ So far features include:
 * 4x4 diagonal grid to see all adjacent discovered planes
 * choosing new planes
 * Putting counters on planes (Aretopolis, Kilnspire District, etc.)
+* Finite Persistant Map Mode
+* Partial chaos handling
 
 Features needed still:
 
-* chaos triggers (Bolas's Meditation Realm, Stairs to Infinity, etc)
+* chaos triggers that involve extra card display
 * Phenomenon support
-* Persistant Map
-* Game Mode Settings.
+* more settings menu
 
 For gamemode settings, this is what we have planned out:
 
 * percentage chance for helljump phenomenon (0% to disable)(Default: 50%)
 * percentage chance for normal movement phenomenon (0% to disable)(Default: 0%)
-* persistant map (planes dont reset as they drop off the visible board)
 * disable/enable normal planeschase.
