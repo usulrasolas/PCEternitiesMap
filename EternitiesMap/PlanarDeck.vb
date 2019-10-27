@@ -71,7 +71,7 @@
         Dim ShufflePosCounter As Integer = DeckCounter
         Dim WorkCounter As Integer
         Randomize()
-        If deckState = 1 Then
+        If deckState = 1 Or 2 Then
             For WorkCounter = 1 To DeckCounter Step 1
 500:
                 Dim ShuffleRandomVal As Integer = Rnd() * DeckCounter
@@ -137,20 +137,19 @@
         End If
     End Function
     Public Function ReturnCard(CardNumber As Integer)
-        If CardStack(CardNumber, 5) = 3 Then
+        If CardStack(CardNumber, 5) = 3 Then 'if card being returned is on board then
             Dim workcounter As Integer
-            For workcounter = DeckCounter To 1 Step -1
-                Dim currentcard As Integer = CardLookup(workcounter)
-                CardStack(CardLookup(workcounter), 0) += 1
-                CardLookup(workcounter + 1) = currentcard
+            For workcounter = DeckCounter To 1 Step -1 'for every card in deck counting down
+                Dim currentcard As Integer = CardLookup(workcounter) 'current card is card in deckcounter position
+                CardStack(currentcard, 0) += 1 'increase currentcard, deckpostion + 1
+                CardLookup(workcounter + 1) = currentcard 'reverse lookup of new postion and current card
             Next
             CardStack(CardNumber, 0) = 1
             CardStack(CardNumber, 5) = 1
             CardStack(CardNumber, 1) = 0
             CardStack(CardNumber, 2) = 0
+            CardLookup(1) = CardNumber
             DeckCounter += 1
-            Return True
-        Else Return False
         End If
     End Function
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
@@ -171,7 +170,7 @@
     End Function
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
-        If InfinitePlane = False And deckState = 2 Then
+        If InfinitePlane = False And deckState = 1 Or 2 Then
             For workcounter = 1 To 86 Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
