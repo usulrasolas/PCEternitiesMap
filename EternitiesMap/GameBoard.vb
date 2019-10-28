@@ -784,19 +784,17 @@
         End If
     End Sub
     Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
-        If DeckState = 1 Then
-            For workcounter = 1 To 86 Step 1
-                If CardStack(workcounter, 5) = 3 Then
-                    If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 0 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
-                    End If
+        For workcounter = 1 To 86 Step 1
+            If CardStack(workcounter, 5) = 3 Then
+                If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 0 Then
+                    PBZoom.Image = CardImage(workcounter)
+                    PBZoom.BringToFront()
+                    PBZoom.Visible = True
+                    PBZoom.Enabled = True
+                    DisplayMode = 1
                 End If
-            Next
-        End If
+            End If
+        Next
     End Sub
     Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
         If DeckState = 2 Then
@@ -1142,6 +1140,7 @@
         If (CardStack(CurrentPlane, 3) = 5 And CardStack(CurrentPlane, 4) > 9) Then
             MsgBox("10 or More Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, "10+ on Aretopolis")
             PBWalk_Click(NCounter, Nothing)
+            PictureBox13_Click(NCounter, Nothing)
         End If
     End Sub
 
