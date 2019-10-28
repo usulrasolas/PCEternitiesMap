@@ -136,7 +136,8 @@
         Else Return False
         End If
     End Function
-    Public Function ReturnCard(CardNumber As Integer)
+    Public Function ReturnCard(CardNumber As Integer) As Boolean
+        ReturnCard = False
         If CardStack(CardNumber, 5) = 3 Then 'if card being returned is on board then
             Dim workcounter As Integer
             For workcounter = DeckCounter To 1 Step -1 'for every card in deck counting down
@@ -150,6 +151,7 @@
             CardStack(CardNumber, 2) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
+            ReturnCard = True
         End If
     End Function
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
@@ -170,7 +172,8 @@
     End Function
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
-        If InfinitePlane = False And deckState = 1 Or 2 Then
+        CullBoard = False
+        If (InfinitePlane = False And deckState = 1) Or 2 Then
             For workcounter = 1 To 86 Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
@@ -185,10 +188,10 @@
                     Return False
                 End If
                 Shuffle()
-                Return True
+                CullBoard = True
             Next
         Else
-            Return False
+            CullBoard = False
         End If
     End Function
     Public Function PopulateBoard() As Boolean
