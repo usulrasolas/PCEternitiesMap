@@ -149,6 +149,7 @@
             CardStack(CardNumber, 5) = 1
             CardStack(CardNumber, 1) = 0
             CardStack(CardNumber, 2) = 0
+            CardStack(CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
             ReturnCard = True

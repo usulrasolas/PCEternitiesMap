@@ -362,6 +362,16 @@
         Next
         Me.Invalidate()
     End Function
+    Function MoveEventCheck()
+        If CardStack(CurrentPlane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
+            If CardStack(CurrentPlane, 4) > 9 Then CardStack(CurrentPlane, 4) = 0
+        ElseIf CardStack(CurrentPlane, 3) = 6 Then ''Naar Isle Counter Reset on Exit
+            ''CardStack(CurrentPlane, 4) = 0
+        ElseIf (CardStack(CurrentPlane, 3) = 7 And CardStack(CurrentPlane, 4) > 0) Then ''Mount Keralia Damage on Exit Reminder/Reset
+            MsgBox("Mount Keralia Deals " & CardStack(CurrentPlane, 4) & "Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
+            CardStack(CurrentPlane, 4) = 0
+        End If
+    End Function
     Public Shared Function CardImage(CardNumber As Integer) As Image
         If CardNumber = 1 Then
             Return My.Resources.c1
@@ -565,6 +575,7 @@
     End Sub
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         If deckState = 2 Then
+            MoveEventCheck()
             TranslateBoard(0, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox7, Nothing)
@@ -617,6 +628,7 @@
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         If deckState = 2 Then
             PlayCard(DrawCard, 3, -1, 1)
+            MoveEventCheck()
             TranslateBoard(1, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox6, Nothing)
@@ -653,6 +665,7 @@
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
         If deckState = 2 Then
             PlayCard(DrawCard, 3, 1, 1)
+            MoveEventCheck()
             TranslateBoard(-1, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox8, Nothing)
@@ -718,6 +731,7 @@
     End Sub
     Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
         If deckState = 2 Then
+            MoveEventCheck()
             TranslateBoard(-1, 0)
             UpdateArrays()
             PBWalk_Click(PictureBox14, Nothing)
@@ -753,6 +767,7 @@
     End Sub
     Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
         If deckState = 2 Then
+            MoveEventCheck()
             TranslateBoard(1, 0)
             UpdateArrays()
             PBWalk_Click(PictureBox12, Nothing)
@@ -819,6 +834,7 @@
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
         If deckState = 2 Then
             PlayCard(DrawCard, 3, -1, -1)
+            MoveEventCheck()
             TranslateBoard(1, 1)
             UpdateArrays()
             PBWalk_Click(PictureBox18, Nothing)
@@ -839,6 +855,7 @@
     End Sub
     Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
         If deckState = 2 Then
+            MoveEventCheck()
             TranslateBoard(0, 1)
             UpdateArrays()
             PBWalk_Click(PictureBox19, Nothing)
@@ -859,6 +876,7 @@
     End Sub
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
         If deckState = 2 Then
+            MoveEventCheck()
             PlayCard(DrawCard, 3, 1, -1)
             TranslateBoard(-1, 1)
             UpdateArrays()
@@ -1087,6 +1105,10 @@
             If CardStack(CurrentPlane, 4) < 0 Then DispArray(13).ForeColor = Color.LightGray
             If CardStack(CurrentPlane, 4) < 0 Then DispArray(13).BackColor = Color.Red
             If CardStack(CurrentPlane, 4) <> 0 Then DispArray(13).Text = CardStack(CurrentPlane, 4)
+        End If
+        If (CardStack(CurrentPlane, 3) = 5 And CardStack(CurrentPlane, 4) > 9) Then
+            MsgBox("More Than 10 Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, "10+ on Aretopolis")
+            PBWalk_Click(NCounter, Nothing)
         End If
     End Sub
 End Class
