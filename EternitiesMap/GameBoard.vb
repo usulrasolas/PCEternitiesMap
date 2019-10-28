@@ -1,7 +1,7 @@
 ﻿Public Class GameBoard
     Private CardArray(25) As PictureBox
     Private DispArray(25) As Label
-    Private CurrentPlane As Integer
+    Public Shared CurrentPlane As Integer
     Private DisplayMode As Integer '0board,1zoom,2display,3moving
     Private Sub GameBoard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CardArray(1) = PictureBox1

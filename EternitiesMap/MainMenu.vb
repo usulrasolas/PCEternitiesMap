@@ -19,5 +19,10 @@
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CHKInfinite.Checked = InfinitePlane
         ChkNaarReset.Checked = NaarReset
+        ChkPreTransReset.Checked = PretranslateReset
+    End Sub
+
+    Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
+        PretranslateReset = ChkPreTransReset.Checked
     End Sub
 End Class

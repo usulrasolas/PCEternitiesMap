@@ -31,6 +31,7 @@ Partial Class MainMenu
         Me.CHKInfinite = New System.Windows.Forms.CheckBox()
         Me.gbOptions = New System.Windows.Forms.GroupBox()
         Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
+        Me.ChkPreTransReset = New System.Windows.Forms.CheckBox()
         Me.gbOptions.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -97,6 +98,7 @@ Partial Class MainMenu
         '
         'gbOptions
         '
+        Me.gbOptions.Controls.Add(Me.ChkPreTransReset)
         Me.gbOptions.Controls.Add(Me.ChkNaarReset)
         Me.gbOptions.Controls.Add(Me.CHKInfinite)
         Me.gbOptions.ForeColor = System.Drawing.Color.LightGray
@@ -117,6 +119,17 @@ Partial Class MainMenu
         Me.ChkNaarReset.TabIndex = 6
         Me.ChkNaarReset.Text = "Reset Naar Island When Planeswalk Away"
         Me.ChkNaarReset.UseVisualStyleBackColor = True
+        '
+        'ChkPreTransReset
+        '
+        Me.ChkPreTransReset.AutoSize = True
+        Me.ChkPreTransReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPreTransReset.Location = New System.Drawing.Point(3, 50)
+        Me.ChkPreTransReset.Name = "ChkPreTransReset"
+        Me.ChkPreTransReset.Size = New System.Drawing.Size(754, 17)
+        Me.ChkPreTransReset.TabIndex = 7
+        Me.ChkPreTransReset.Text = "Reset All Counters When Walking Away"
+        Me.ChkPreTransReset.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -149,4 +162,5 @@ Partial Class MainMenu
     Friend WithEvents CHKInfinite As CheckBox
     Friend WithEvents gbOptions As GroupBox
     Friend WithEvents ChkNaarReset As CheckBox
+    Friend WithEvents ChkPreTransReset As CheckBox
 End Class

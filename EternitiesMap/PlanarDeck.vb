@@ -6,6 +6,7 @@
     Public DrawBuffer As Integer
     Public InfinitePlane As Boolean = False
     Public NaarReset As Boolean = False
+    Public PretranslateReset As Boolean = False
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
@@ -182,6 +183,7 @@
     End Function
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
+        If PretranslateReset = True Then CardStack(GameBoard.CurrentPlane, 4) = 0
         If DeckState = 2 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
