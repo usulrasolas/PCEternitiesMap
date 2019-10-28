@@ -68,10 +68,11 @@
             ReturnCard(PoBDraw1)
             ReturnCard(PoBDraw2)
             ReturnCard(PoBDraw3)
+            MsgBox("All 3 Revealed Chaos Effects Resolve." & vbCrLf & "Player who rolled chaos chooses resolve order." & vbCrLf & "Click Pools of Becoming to Return to Play when All Resolved", MsgBoxStyle.Information, "Pools of Becoming")
         ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
             DeckState = 3
             PickDisplay(CurrentPlane, Nothing, Nothing, Nothing, CardLookup(DeckCounter), Nothing)
-            MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck")
+            MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
         Else
         End If
     End Function
