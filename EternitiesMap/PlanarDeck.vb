@@ -5,6 +5,7 @@
     Public CardStack(86, 5) As Integer '' DeckPos,XPos,YPos,Flag,Counter,State
     Public DrawBuffer As Integer
     Public InfinitePlane As Boolean = False
+    Public NaarReset As Boolean = False
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer

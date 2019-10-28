@@ -397,8 +397,8 @@
     Function MoveEventCheck()
         If CardStack(CurrentPlane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
             If CardStack(CurrentPlane, 4) > 9 Then CardStack(CurrentPlane, 4) = 0
-        ElseIf CardStack(CurrentPlane, 3) = 6 Then ''Naar Isle Counter Reset on Exit
-            ''CardStack(CurrentPlane, 4) = 0
+        ElseIf CardStack(CurrentPlane, 3) = 6 Then ''Naar Isle Counter Reset on Exit if reset is true
+            If NaarReset = True Then CardStack(CurrentPlane, 4) = 0
         ElseIf (CardStack(CurrentPlane, 3) = 7 And CardStack(CurrentPlane, 4) > 0) Then ''Mount Keralia Damage on Exit Reminder/Reset
             MsgBox("Mount Keralia Deals " & CardStack(CurrentPlane, 4) & " Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
             CardStack(CurrentPlane, 4) = 0

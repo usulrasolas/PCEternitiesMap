@@ -30,6 +30,7 @@ Partial Class MainMenu
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CHKInfinite = New System.Windows.Forms.CheckBox()
         Me.gbOptions = New System.Windows.Forms.GroupBox()
+        Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
         Me.gbOptions.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -96,6 +97,7 @@ Partial Class MainMenu
         '
         'gbOptions
         '
+        Me.gbOptions.Controls.Add(Me.ChkNaarReset)
         Me.gbOptions.Controls.Add(Me.CHKInfinite)
         Me.gbOptions.ForeColor = System.Drawing.Color.LightGray
         Me.gbOptions.Location = New System.Drawing.Point(12, 51)
@@ -104,6 +106,17 @@ Partial Class MainMenu
         Me.gbOptions.TabIndex = 6
         Me.gbOptions.TabStop = False
         Me.gbOptions.Text = "Settings/Options"
+        '
+        'ChkNaarReset
+        '
+        Me.ChkNaarReset.AutoSize = True
+        Me.ChkNaarReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkNaarReset.Location = New System.Drawing.Point(3, 33)
+        Me.ChkNaarReset.Name = "ChkNaarReset"
+        Me.ChkNaarReset.Size = New System.Drawing.Size(754, 17)
+        Me.ChkNaarReset.TabIndex = 6
+        Me.ChkNaarReset.Text = "Reset Naar Island When Planeswalk Away"
+        Me.ChkNaarReset.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -135,4 +148,5 @@ Partial Class MainMenu
     Friend WithEvents Label3 As Label
     Friend WithEvents CHKInfinite As CheckBox
     Friend WithEvents gbOptions As GroupBox
+    Friend WithEvents ChkNaarReset As CheckBox
 End Class
