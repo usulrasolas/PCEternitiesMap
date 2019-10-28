@@ -1140,7 +1140,7 @@
             If CardStack(CurrentPlane, 4) <> 0 Then DispArray(13).Text = CardStack(CurrentPlane, 4)
         End If
         If (CardStack(CurrentPlane, 3) = 5 And CardStack(CurrentPlane, 4) > 9) Then
-            MsgBox("More Than 10 Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, "10+ on Aretopolis")
+            MsgBox("10 or More Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, "10+ on Aretopolis")
             PBWalk_Click(NCounter, Nothing)
         End If
     End Sub
