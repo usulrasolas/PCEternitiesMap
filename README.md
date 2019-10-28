@@ -14,11 +14,10 @@ So far features include:
 * choosing new planes
 * Putting counters on planes (Aretopolis, Kilnspire District, etc.)
 * Finite Persistant Map Mode
-* Partial chaos handling
+* card event handling
+* chaos triggers that involve extra card display
 
 Features needed still:
-
-* chaos triggers that involve extra card display
 * Phenomenon support
 * more settings menu
 
