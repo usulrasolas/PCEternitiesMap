@@ -174,7 +174,7 @@
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
         CullBoard = False
-        If (InfinitePlane = False And deckState = 1) Or 2 Then
+        If InfinitePlane = False And deckState = 2 Then
             For workcounter = 1 To 86 Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
