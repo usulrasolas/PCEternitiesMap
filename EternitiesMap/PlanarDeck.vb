@@ -1,5 +1,5 @@
 ﻿Module PlanarDeck
-    Public deckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
+    Public DeckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public DeckCounter As Integer = 0
     Public CardLookup(86) As Integer
     Public CardStack(86, 5) As Integer '' DeckPos,XPos,YPos,Flag,Counter,State
@@ -8,7 +8,7 @@
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
-        If deckState = 0 Then
+        If DeckState = 0 Then
             For WorkCounter = 0 To 86 Step 1
                 CardStack(WorkCounter, 5) = 0 'Set All State To Inactive -1Disabled 0Inactive 1InDeck 2InHand 3OnBoard
                 CardStack(WorkCounter, 4) = 0 'Counters
@@ -47,7 +47,7 @@
                     CardStack(WorkCounter, 5) = 1
                 End If
             Next
-            deckState = 1
+            DeckState = 1
             Shuffle()
             Return True
         End If
@@ -64,14 +64,14 @@
             CardLookup(WorkCounter) = 0
         Next
         DeckCounter = 0
-        deckState = 0
+        DeckState = 0
     End Function
     Public Function Shuffle()
         Dim ShuffleTracker(86, 1) As Integer
         Dim ShufflePosCounter As Integer = DeckCounter
         Dim WorkCounter As Integer
         Randomize()
-        If deckState = 1 Or 2 Then
+        If DeckState = 1 Or 2 Then
             For WorkCounter = 1 To DeckCounter Step 1
 500:
                 Dim ShuffleRandomVal As Integer = Rnd() * DeckCounter
@@ -95,7 +95,16 @@
         End If
     End Function
     Public Function DrawCard() As Integer
-        If deckState = 1 Or 2 Then
+        If DeckState = 1 Or 2 Then
+            DrawBuffer = CardLookup(DeckCounter)
+            CardStack(CardLookup(DeckCounter), 5) = 2
+            CardStack(CardLookup(DeckCounter), 0) = 0
+            CardStack(CardLookup(DeckCounter), 1) = 0
+            CardStack(CardLookup(DeckCounter), 2) = 0
+            CardLookup(DeckCounter) = 0
+            DeckCounter -= 1
+            Return DrawBuffer
+        ElseIf DeckState = 3 Then ''event draw, this is currently same but seperated to allow me to breakcode
             DrawBuffer = CardLookup(DeckCounter)
             CardStack(CardLookup(DeckCounter), 5) = 2
             CardStack(CardLookup(DeckCounter), 0) = 0
@@ -109,7 +118,7 @@
     End Function
     Public Function PlayCard(
             CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
-        If deckState = 1 Or 2 Then
+        If DeckState = 1 Or 2 Then
             If ToState = 1 And CardStack(CardNumber, 5) = 2 Then 'to deck
                 Dim workcounter As Integer
                 For workcounter = DeckCounter To 1 Step -1
@@ -153,11 +162,26 @@
             CardLookup(1) = CardNumber
             DeckCounter += 1
             ReturnCard = True
+        ElseIf CardStack(CardNumber, 5) = 2 Then ''return card from hand copy for cardbreaking
+            Dim workcounter As Integer
+            For workcounter = DeckCounter To 1 Step -1 'for every card in deck counting down
+                Dim currentcard As Integer = CardLookup(workcounter) 'current card is card in deckcounter position
+                CardStack(currentcard, 0) += 1 'increase currentcard, deckpostion + 1
+                CardLookup(workcounter + 1) = currentcard 'reverse lookup of new postion and current card
+            Next
+            CardStack(CardNumber, 0) = 1
+            CardStack(CardNumber, 5) = 1
+            CardStack(CardNumber, 1) = 0
+            CardStack(CardNumber, 2) = 0
+            CardStack(CardNumber, 4) = 0
+            CardLookup(1) = CardNumber
+            DeckCounter += 1
+            ReturnCard = True
         End If
     End Function
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
-        If deckState = 2 Then
+        If DeckState = 2 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     CardStack(workcounter, 1) += XChange
@@ -174,7 +198,7 @@
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
         CullBoard = False
-        If InfinitePlane = False And deckState = 2 Then
+        If InfinitePlane = False And DeckState = 2 Then
             For workcounter = 1 To 86 Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
@@ -202,7 +226,7 @@
         Dim EPopulateCheck As Boolean = True
         Dim WPopulateCheck As Boolean = True
         PopulateBoard = False
-        If deckState = 2 Or 1 Then
+        If DeckState = 2 Or 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 1 Then

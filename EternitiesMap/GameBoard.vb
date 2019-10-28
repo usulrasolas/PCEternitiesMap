@@ -58,7 +58,32 @@
         UpdateArrays()
         NewGame()
     End Sub
+    Function GameEvent(EventType As Integer)
+        If EventType = 9 Then ''Pools of Becoming Triple Draw
+            DeckState = 3
+            Dim PoBDraw1 As Integer = DrawCard()
+            Dim PoBDraw2 As Integer = DrawCard()
+            Dim PoBDraw3 As Integer = DrawCard()
+            PickDisplay(CurrentPlane, Nothing, Nothing, PoBDraw1, PoBDraw2, PoBDraw3)
+            ReturnCard(PoBDraw1)
+            ReturnCard(PoBDraw2)
+            ReturnCard(PoBDraw3)
+        ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
+            DeckState = 3
+            PickDisplay(CurrentPlane, Nothing, Nothing, Nothing, CardLookup(DeckCounter), Nothing)
+            MsgBox("Click on Drawn Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Drawn Card on Bottom of Planar Deck")
+        Else
+        End If
+    End Function
     Public Function PickDisplay(trigPlane As Integer, slot1 As Integer, slot2 As Integer, slot3 As Integer, slot4 As Integer, slot5 As Integer)
+        PBZoom.Enabled = False
+        PBZoom.Visible = False
+        PBZoom.SendToBack()
+        PBZoom.Image = Nothing
+        Dim workcounter As Integer
+        For workcounter = 1 To 25 Step 1
+            CardArray(workcounter).Enabled = False
+        Next
         PCardSelect1.BringToFront()
         PCardSelect2.BringToFront()
         PCardSelect3.BringToFront()
@@ -71,23 +96,34 @@
         PCardSelect4.Enabled = True
         PCardSelect5.Enabled = True
         PCardSelect6.Enabled = True
-        PCardSelect1.Visible = True
+        PCardSelect1.Visible = False 'disabled until pick 5 for phenoms needed
         PCardSelect2.Visible = True
-        PCardSelect3.Visible = True
+        PCardSelect3.Visible = False 'disabled until pick 5 for phenoms needed
         PCardSelect4.Visible = True
         PCardSelect5.Visible = True
         PCardSelect6.Visible = True
         DisplayMode = 2
-        deckState = 3
-        PCardSelect1.Image = CardImage(slot4)
-        PCardSelect1.Image = CardImage(slot4)
-        PCardSelect1.Image = CardImage(slot4)
-        PCardSelect1.Image = CardImage(slot4)
-        PCardSelect1.Image = CardImage(slot4)
+        PCardSelect1.Image = CardImage(slot1)
+        PCardSelect2.Image = CardImage(trigPlane)
+        PCardSelect3.Image = CardImage(slot2)
+        PCardSelect4.Image = CardImage(slot3)
+        PCardSelect5.Image = CardImage(slot4)
+        PCardSelect6.Image = CardImage(slot5)
     End Function
     Public Function NewGame() As Boolean
         ReadyDeck()
         PlayCard(DrawCard, 3, 0, 0)
+        PBZoom.Enabled = True
+        PBZoom.Visible = True
+        PBZoom.BringToFront()
+        PBZoom.Image = CardImage(DrawBuffer)
+        DisplayMode = 1
+        DeckState = 1
+        HidePickDisplay()
+        PopulateBoard()
+        UpdateArrays()
+    End Function
+    Function HidePickDisplay()
         PCardSelect1.SendToBack()
         PCardSelect2.SendToBack()
         PCardSelect3.SendToBack()
@@ -106,14 +142,9 @@
         PCardSelect4.Visible = False
         PCardSelect5.Visible = False
         PCardSelect6.Visible = False
-        PBZoom.Enabled = True
-        PBZoom.Visible = True
-        PBZoom.BringToFront()
-        PBZoom.Image = CardImage(DrawBuffer)
-        DisplayMode = 1
-        deckState = 1
-        PopulateBoard()
-        UpdateArrays()
+        For workcounter = 1 To 25 Step 1
+            CardArray(workcounter).Enabled = True
+        Next
     End Function
     Function UpdateArrays() As Boolean
         Dim workcounter As Integer
@@ -121,6 +152,7 @@
         For workcounter = 1 To 25 Step 1
             DisplayBuffer(workcounter) = 0
             CardArray(workcounter).Image = Nothing
+            CardArray(workcounter).Enabled = True
             CardArray(workcounter).Invalidate()
             DispArray(workcounter).Visible = False
             DispArray(workcounter).BackColor = Color.Transparent
@@ -559,7 +591,7 @@
         End If
     End Sub
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 2 Then
@@ -574,13 +606,13 @@
         End If
     End Sub
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             MoveEventCheck()
             TranslateBoard(0, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox7, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 1 Then
@@ -595,7 +627,7 @@
         End If
     End Sub
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = 2 Then
@@ -611,7 +643,7 @@
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -2 And CardStack(workcounter, 2) = 1 Then
@@ -626,14 +658,14 @@
         End If
     End Sub
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             PlayCard(DrawCard, 3, -1, 1)
             MoveEventCheck()
             TranslateBoard(1, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox6, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 1 Then
@@ -648,7 +680,7 @@
         End If
     End Sub
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 2 Then
@@ -663,14 +695,14 @@
         End If
     End Sub
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             PlayCard(DrawCard, 3, 1, 1)
             MoveEventCheck()
             TranslateBoard(-1, -1)
             UpdateArrays()
             PBWalk_Click(PictureBox8, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = 1 Then
@@ -685,7 +717,7 @@
         End If
     End Sub
     Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 2 And CardStack(workcounter, 2) = 1 Then
@@ -700,7 +732,7 @@
         End If
     End Sub
     Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 3 And CardStack(workcounter, 2) = 0 Then
@@ -715,7 +747,7 @@
         End If
     End Sub
     Private Sub PictureBox15_Click(sender As Object, e As EventArgs) Handles PictureBox15.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 2 And CardStack(workcounter, 2) = 0 Then
@@ -730,13 +762,13 @@
         End If
     End Sub
     Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             MoveEventCheck()
             TranslateBoard(-1, 0)
             UpdateArrays()
             PBWalk_Click(PictureBox14, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = 0 Then
@@ -751,7 +783,7 @@
         End If
     End Sub
     Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 0 Then
@@ -766,13 +798,13 @@
         End If
     End Sub
     Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             MoveEventCheck()
             TranslateBoard(1, 0)
             UpdateArrays()
             PBWalk_Click(PictureBox12, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 0 Then
@@ -787,7 +819,7 @@
         End If
     End Sub
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -2 And CardStack(workcounter, 2) = 0 Then
@@ -802,7 +834,7 @@
         End If
     End Sub
     Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -3 And CardStack(workcounter, 2) = 0 Then
@@ -817,7 +849,7 @@
         End If
     End Sub
     Private Sub PictureBox17_Click(sender As Object, e As EventArgs) Handles PictureBox17.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -2 And CardStack(workcounter, 2) = -1 Then
@@ -832,14 +864,14 @@
         End If
     End Sub
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             PlayCard(DrawCard, 3, -1, -1)
             MoveEventCheck()
             TranslateBoard(1, 1)
             UpdateArrays()
             PBWalk_Click(PictureBox18, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = -1 Then
@@ -854,13 +886,13 @@
         End If
     End Sub
     Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             MoveEventCheck()
             TranslateBoard(0, 1)
             UpdateArrays()
             PBWalk_Click(PictureBox19, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = -1 Then
@@ -875,14 +907,14 @@
         End If
     End Sub
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
-        If deckState = 2 Then
+        If DeckState = 2 Then
             MoveEventCheck()
             PlayCard(DrawCard, 3, 1, -1)
             TranslateBoard(-1, 1)
             UpdateArrays()
             PBWalk_Click(PictureBox20, Nothing)
             PictureBox13_Click(Nothing, Nothing)
-        ElseIf deckState = 1 Then
+        ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = -1 Then
@@ -897,7 +929,7 @@
         End If
     End Sub
     Private Sub PictureBox21_Click(sender As Object, e As EventArgs) Handles PictureBox21.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 2 And CardStack(workcounter, 2) = -1 Then
@@ -912,7 +944,7 @@
         End If
     End Sub
     Private Sub PictureBox24_Click(sender As Object, e As EventArgs) Handles PictureBox24.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = -2 Then
@@ -927,7 +959,7 @@
         End If
     End Sub
     Private Sub PictureBox23_Click(sender As Object, e As EventArgs) Handles PictureBox23.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = -2 Then
@@ -942,7 +974,7 @@
         End If
     End Sub
     Private Sub PictureBox22_Click(sender As Object, e As EventArgs) Handles PictureBox22.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = -2 Then
@@ -958,8 +990,8 @@
     End Sub
     Private Sub PBWalk_Click(sender As Object, e As EventArgs) Handles PBWalk.Click
         UpdateArrays()
-        If deckState = 1 Then 'ready
-            deckState = 2
+        If DeckState = 1 Then 'ready
+            DeckState = 2
             DisplayMode = 3
             NCounter.Enabled = False
             Dim workcounter As Integer
@@ -1025,8 +1057,8 @@
                 CardArray(8).Visible = True
                 CardArray(8).Enabled = True
             End If
-        ElseIf deckState = 2 Then
-            deckState = 1
+        ElseIf DeckState = 2 Then
+            DeckState = 1
             DisplayMode = 0
             NCounter.Enabled = True
             For workcounter = 1 To 25 Step 1
@@ -1045,9 +1077,9 @@
         ElseIf CardStack(CurrentPlane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
             MsgBox("Please draw " & CardStack(CurrentPlane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
         ElseIf CardStack(CurrentPlane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
-
+            GameEvent(9)
         ElseIf CardStack(CurrentPlane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
-
+            GameEvent(11)
         ElseIf CardStack(CurrentPlane, 3) > -1 Then
             PBZoom.Image = CardImage(CurrentPlane)
             PBZoom.BringToFront()
@@ -1062,7 +1094,7 @@
         DisplayMode = 0
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 3 Then
@@ -1077,7 +1109,7 @@
         End If
     End Sub
     Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles PictureBox25.Click
-        If deckState = 1 Then
+        If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = -3 Then
@@ -1092,7 +1124,7 @@
         End If
     End Sub
     Private Sub NCounter_ValueChanged(sender As Object, e As EventArgs) Handles NCounter.ValueChanged
-        If deckState = 1 Then
+        If DeckState = 1 Then
             CardStack(CurrentPlane, 4) = NCounter.Value
             DispArray(13).Visible = False
             DispArray(13).BackColor = Color.Transparent
@@ -1109,6 +1141,34 @@
         If (CardStack(CurrentPlane, 3) = 5 And CardStack(CurrentPlane, 4) > 9) Then
             MsgBox("More Than 10 Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, "10+ on Aretopolis")
             PBWalk_Click(NCounter, Nothing)
+        End If
+    End Sub
+
+    Private Sub PCardSelect2_Click(sender As Object, e As EventArgs) Handles PCardSelect2.Click
+        If DeckState = 3 Then
+            If CurrentPlane = 53 Then 'triple draw just needs to stay until clicked
+                If MsgBox("Are you done applying all 3 chaos effects?", MsgBoxStyle.YesNo, "Pools of Becoming Exit") = vbYes Then
+                    HidePickDisplay()
+                    DeckState = 1
+                End If
+            ElseIf CurrentPlane = 65 Then
+                If MsgBox("Are you sure you want to put the drawn on the bottom?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
+                    HidePickDisplay()
+                    ReturnCard(DrawCard)
+                    DeckState = 1
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
+        If DeckState = 3 Then
+            If CurrentPlane = 65 Then
+                If MsgBox("Are you sure you want to leave the drawn on the top?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
+                    HidePickDisplay()
+                    DeckState = 1
+                End If
+            End If
         End If
     End Sub
 End Class
