@@ -71,7 +71,7 @@
         ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
             DeckState = 3
             PickDisplay(CurrentPlane, Nothing, Nothing, Nothing, CardLookup(DeckCounter), Nothing)
-            MsgBox("Click on Drawn Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Drawn Card on Bottom of Planar Deck")
+            MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck")
         Else
         End If
     End Function
@@ -400,7 +400,7 @@
         ElseIf CardStack(CurrentPlane, 3) = 6 Then ''Naar Isle Counter Reset on Exit
             ''CardStack(CurrentPlane, 4) = 0
         ElseIf (CardStack(CurrentPlane, 3) = 7 And CardStack(CurrentPlane, 4) > 0) Then ''Mount Keralia Damage on Exit Reminder/Reset
-            MsgBox("Mount Keralia Deals " & CardStack(CurrentPlane, 4) & "Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
+            MsgBox("Mount Keralia Deals " & CardStack(CurrentPlane, 4) & " Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
             CardStack(CurrentPlane, 4) = 0
         End If
     End Function
@@ -1152,7 +1152,7 @@
                     DeckState = 1
                 End If
             ElseIf CurrentPlane = 65 Then
-                If MsgBox("Are you sure you want to put the drawn on the bottom?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
+                If MsgBox("Are you sure you want to put the revealed card on the bottom?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
                     HidePickDisplay()
                     ReturnCard(DrawCard)
                     DeckState = 1
@@ -1164,7 +1164,7 @@
     Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
         If DeckState = 3 Then
             If CurrentPlane = 65 Then
-                If MsgBox("Are you sure you want to leave the drawn on the top?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
+                If MsgBox("Are you sure you want to leave the revealed card on the top?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
                     HidePickDisplay()
                     DeckState = 1
                 End If
