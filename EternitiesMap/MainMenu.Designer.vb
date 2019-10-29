@@ -34,7 +34,11 @@ Partial Class MainMenu
         Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
         Me.ChkResetReturn = New System.Windows.Forms.CheckBox()
         Me.ChkDistanceReset = New System.Windows.Forms.CheckBox()
+        Me.ChkAertReset = New System.Windows.Forms.CheckBox()
+        Me.NumAretMax = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.gbOptions.SuspendLayout()
+        CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -100,6 +104,9 @@ Partial Class MainMenu
         '
         'gbOptions
         '
+        Me.gbOptions.Controls.Add(Me.Label4)
+        Me.gbOptions.Controls.Add(Me.NumAretMax)
+        Me.gbOptions.Controls.Add(Me.ChkAertReset)
         Me.gbOptions.Controls.Add(Me.ChkDistanceReset)
         Me.gbOptions.Controls.Add(Me.ChkResetReturn)
         Me.gbOptions.Controls.Add(Me.ChkPreTransReset)
@@ -157,6 +164,35 @@ Partial Class MainMenu
         Me.ChkDistanceReset.Text = "Reset Counters when Card Moves More than 3 Spaces Away"
         Me.ChkDistanceReset.UseVisualStyleBackColor = True
         '
+        'ChkAertReset
+        '
+        Me.ChkAertReset.AutoSize = True
+        Me.ChkAertReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAertReset.Location = New System.Drawing.Point(3, 101)
+        Me.ChkAertReset.Name = "ChkAertReset"
+        Me.ChkAertReset.Size = New System.Drawing.Size(754, 17)
+        Me.ChkAertReset.TabIndex = 10
+        Me.ChkAertReset.Text = "Aretopolis Resets Counters When Walking Away with Max or More Counter"
+        Me.ChkAertReset.UseVisualStyleBackColor = True
+        '
+        'NumAretMax
+        '
+        Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Left
+        Me.NumAretMax.Location = New System.Drawing.Point(3, 118)
+        Me.NumAretMax.Name = "NumAretMax"
+        Me.NumAretMax.Size = New System.Drawing.Size(50, 20)
+        Me.NumAretMax.TabIndex = 11
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label4.Location = New System.Drawing.Point(53, 118)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(286, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Maximum Counters of Aretopolis (This or more triggers walk)"
+        '
         'MainMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -175,6 +211,7 @@ Partial Class MainMenu
         Me.Text = "MainMenu"
         Me.gbOptions.ResumeLayout(False)
         Me.gbOptions.PerformLayout()
+        CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -191,4 +228,7 @@ Partial Class MainMenu
     Friend WithEvents ChkPreTransReset As CheckBox
     Friend WithEvents ChkResetReturn As CheckBox
     Friend WithEvents ChkDistanceReset As CheckBox
+    Friend WithEvents ChkAertReset As CheckBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents NumAretMax As NumericUpDown
 End Class

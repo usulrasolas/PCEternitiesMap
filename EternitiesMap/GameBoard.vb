@@ -397,7 +397,7 @@
     End Function
     Function MoveEventCheck()
         If CardStack(CurrentPlane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
-            If CardStack(CurrentPlane, 4) > 9 Then CardStack(CurrentPlane, 4) = 0
+            If CardStack(CurrentPlane, 4) >= AretCounter And AretResetMove = True Then CardStack(CurrentPlane, 4) = 0
         ElseIf CardStack(CurrentPlane, 3) = 6 Then ''Naar Isle Counter Reset on Exit if reset is true
             If NaarReset = True Then CardStack(CurrentPlane, 4) = 0
         ElseIf (CardStack(CurrentPlane, 3) = 7 And CardStack(CurrentPlane, 4) > 0) Then ''Mount Keralia Damage on Exit Reminder/Reset
@@ -1138,7 +1138,7 @@
             If CardStack(CurrentPlane, 4) <> 0 Then DispArray(13).Text = CardStack(CurrentPlane, 4)
         End If
         If (CardStack(CurrentPlane, 3) = 5 And CardStack(CurrentPlane, 4) > 9) Then
-            MsgBox("10 or More Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, "10+ on Aretopolis")
+            MsgBox(AretCounter & " or More Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, AretCounter & "+ on Aretopolis")
             PBWalk_Click(NCounter, Nothing)
             PictureBox13_Click(NCounter, Nothing)
         End If

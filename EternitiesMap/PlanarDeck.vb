@@ -9,6 +9,8 @@
     Public PretranslateReset As Boolean = False
     Public ResetOnReturn As Boolean = True
     Public DistanceReset As Boolean = False
+    Public AretCounter As Integer = 10
+    Public AretResetMove As Boolean = True
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer

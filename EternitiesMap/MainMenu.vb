@@ -20,6 +20,8 @@
         ChkPreTransReset.Checked = PretranslateReset
         ChkResetReturn.Checked = ResetOnReturn
         ChkDistanceReset.Checked = DistanceReset
+        ChkAertReset.Checked = AretResetMove
+        NumAretMax.Value = AretCounter
     End Sub
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
         PretranslateReset = ChkPreTransReset.Checked
@@ -29,5 +31,11 @@
     End Sub
     Private Sub ChkDistanceReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkDistanceReset.CheckedChanged
         DistanceReset = ChkDistanceReset.Checked
+    End Sub
+    Private Sub ChkAertReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAertReset.CheckedChanged
+        AretResetMove = ChkAertReset.Checked
+    End Sub
+    Private Sub NumAretMax_ValueChanged(sender As Object, e As EventArgs) Handles NumAretMax.ValueChanged
+        AretCounter = NumAretMax.Value
     End Sub
 End Class
