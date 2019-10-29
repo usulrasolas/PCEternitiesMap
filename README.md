@@ -16,13 +16,14 @@ So far features include:
 * Finite Persistant Map Mode
 * card event handling
 * chaos triggers that involve extra card display
+* a bunch of options to customize gameplay
 
 Features needed still:
 * Phenomenon support
-* more settings menu
+* more settings menu (as they come)
 
 For gamemode settings, this is what we have planned out:
 
 * percentage chance for helljump phenomenon (0% to disable)(Default: 50%)
 * percentage chance for normal movement phenomenon (0% to disable)(Default: 0%)
-* disable/enable normal planeschase.
+* disable/enable normal planeschase. (after 1.0)
