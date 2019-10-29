@@ -10,7 +10,7 @@ This is a FREE open-source program, no in-app purchases, no ads, no internet con
 So far features include:
 
 * New game/refresh table
-* 4x4 diagonal grid to see all adjacent discovered planes
+* 3 Distance diagonal grid to see all adjacent discovered planes
 * choosing new planes
 * Putting counters on planes (Aretopolis, Kilnspire District, etc.)
 * Finite Persistant Map Mode
