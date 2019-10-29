@@ -84,6 +84,7 @@ Partial Class GameBoard
         Me.PCardSelect4 = New System.Windows.Forms.PictureBox()
         Me.PCardSelect5 = New System.Windows.Forms.PictureBox()
         Me.PCardSelect6 = New System.Windows.Forms.PictureBox()
+        Me.LBLZoom = New System.Windows.Forms.Label()
         CType(Me.PBChaos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBWalk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -863,6 +864,17 @@ Partial Class GameBoard
         Me.PCardSelect6.TabIndex = 60
         Me.PCardSelect6.TabStop = False
         '
+        'LBLZoom
+        '
+        Me.LBLZoom.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LBLZoom.AutoSize = True
+        Me.LBLZoom.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLZoom.Location = New System.Drawing.Point(1338, 209)
+        Me.LBLZoom.Name = "LBLZoom"
+        Me.LBLZoom.Size = New System.Drawing.Size(46, 31)
+        Me.LBLZoom.TabIndex = 61
+        Me.LBLZoom.Text = "99"
+        '
         'GameBoard
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -870,6 +882,8 @@ Partial Class GameBoard
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(1920, 1080)
+        Me.Controls.Add(Me.LBLZoom)
+        Me.Controls.Add(Me.PBZoom)
         Me.Controls.Add(Me.PCardSelect6)
         Me.Controls.Add(Me.PCardSelect5)
         Me.Controls.Add(Me.PCardSelect4)
@@ -930,7 +944,6 @@ Partial Class GameBoard
         Me.Controls.Add(Me.PBMenu)
         Me.Controls.Add(Me.PBWalk)
         Me.Controls.Add(Me.PBChaos)
-        Me.Controls.Add(Me.PBZoom)
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.Color.Coral
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -1041,4 +1054,5 @@ Partial Class GameBoard
     Friend WithEvents PCardSelect4 As PictureBox
     Friend WithEvents PCardSelect5 As PictureBox
     Friend WithEvents PCardSelect6 As PictureBox
+    Friend WithEvents LBLZoom As Label
 End Class

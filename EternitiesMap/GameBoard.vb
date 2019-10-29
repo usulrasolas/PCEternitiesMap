@@ -2,7 +2,6 @@
     Private CardArray(25) As PictureBox
     Private DispArray(25) As Label
     Public Shared CurrentPlane As Integer
-    Private DisplayMode As Integer '0board,1zoom,2display,3moving
     Private Sub GameBoard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CardArray(1) = PictureBox1
         DispArray(1) = Label1
@@ -54,10 +53,29 @@
         DispArray(24) = Label24
         CardArray(25) = PictureBox25
         DispArray(25) = Label25
+        PBZoom.SendToBack()
+        LBLZoom.SendToBack()
+        PBZoom.Visible = False
+        LBLZoom.Visible = False
+        PBZoom.Enabled = False
         NCounter.Value = 0
         UpdateArrays()
         NewGame()
     End Sub
+    Function DisplayZoom(CardNumber As Integer)
+        PBZoom.Image = CardImage(CardNumber)
+        PBZoom.BringToFront()
+        PBZoom.Visible = True
+        PBZoom.Enabled = True
+        If CardStack(CardNumber, 4) <> 0 Then LBLZoom.Visible = True
+        If CardStack(CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
+        If CardStack(CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
+        If CardStack(CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
+        If CardStack(CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
+        If CardStack(CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
+        If CardStack(CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(CardNumber, 4)
+        NCounter.Enabled = False
+    End Function
     Function GameEvent(EventType As Integer)
         If EventType = 9 Then ''Pools of Becoming Triple Draw
             DeckState = 3
@@ -103,7 +121,6 @@
         PCardSelect4.Visible = True
         PCardSelect5.Visible = True
         PCardSelect6.Visible = True
-        DisplayMode = 2
         PCardSelect1.Image = CardImage(slot1)
         PCardSelect2.Image = CardImage(trigPlane)
         PCardSelect3.Image = CardImage(slot2)
@@ -118,7 +135,6 @@
         PBZoom.Visible = True
         PBZoom.BringToFront()
         PBZoom.Image = CardImage(DrawBuffer)
-        DisplayMode = 1
         DeckState = 1
         HidePickDisplay()
         PopulateBoard()
@@ -596,11 +612,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 2 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -617,11 +629,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -632,11 +640,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = 2 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -648,11 +652,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -2 And CardStack(workcounter, 2) = 1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -670,11 +670,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -685,11 +681,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 2 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -707,11 +699,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = 1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -722,11 +710,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 2 And CardStack(workcounter, 2) = 1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -737,11 +721,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 3 And CardStack(workcounter, 2) = 0 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -752,11 +732,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 2 And CardStack(workcounter, 2) = 0 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -773,11 +749,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = 0 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -787,11 +759,7 @@
         For workcounter = 1 To 86 Step 1
             If CardStack(workcounter, 5) = 3 Then
                 If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 0 Then
-                    PBZoom.Image = CardImage(workcounter)
-                    PBZoom.BringToFront()
-                    PBZoom.Visible = True
-                    PBZoom.Enabled = True
-                    DisplayMode = 1
+                    DisplayZoom(workcounter)
                 End If
             End If
         Next
@@ -807,11 +775,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = 0 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -822,11 +786,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -2 And CardStack(workcounter, 2) = 0 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -837,11 +797,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -3 And CardStack(workcounter, 2) = 0 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -852,11 +808,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -2 And CardStack(workcounter, 2) = -1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -874,11 +826,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = -1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -895,11 +843,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = -1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -917,11 +861,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = -1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -932,11 +872,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 2 And CardStack(workcounter, 2) = -1 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -947,11 +883,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 1 And CardStack(workcounter, 2) = -2 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -962,11 +894,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = -2 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -977,11 +905,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = -1 And CardStack(workcounter, 2) = -2 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -991,7 +915,6 @@
         UpdateArrays()
         If DeckState = 1 Then 'ready
             DeckState = 2
-            DisplayMode = 3
             NCounter.Enabled = False
             Dim workcounter As Integer
             For workcounter = 1 To 25 Step 1
@@ -1058,7 +981,6 @@
             End If
         ElseIf DeckState = 2 Then
             DeckState = 1
-            DisplayMode = 0
             NCounter.Enabled = True
             For workcounter = 1 To 25 Step 1
                 CardArray(workcounter).Enabled = True
@@ -1068,11 +990,7 @@
     End Sub
     Private Sub PBChaos_Click(sender As Object, e As EventArgs) Handles PBChaos.Click
         If CardStack(CurrentPlane, 3) = 0 Then
-            PBZoom.Image = CardImage(CurrentPlane)
-            PBZoom.BringToFront()
-            PBZoom.Visible = True
-            PBZoom.Enabled = True
-            DisplayMode = 1
+            DisplayZoom(CurrentPlane)
         ElseIf CardStack(CurrentPlane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
             MsgBox("Please draw " & CardStack(CurrentPlane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
         ElseIf CardStack(CurrentPlane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
@@ -1080,28 +998,23 @@
         ElseIf CardStack(CurrentPlane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
             GameEvent(11)
         ElseIf CardStack(CurrentPlane, 3) > -1 Then
-            PBZoom.Image = CardImage(CurrentPlane)
-            PBZoom.BringToFront()
-            PBZoom.Visible = True
-            PBZoom.Enabled = True
-            DisplayMode = 1
+            DisplayZoom(CurrentPlane)
         End If
     End Sub
     Private Sub PBZoom_Click(sender As Object, e As EventArgs) Handles PBZoom.Click
         PBZoom.Enabled = False
         PBZoom.Visible = False
-        DisplayMode = 0
+        PBZoom.SendToBack()
+        LBLZoom.Visible = False
+        LBLZoom.SendToBack()
+        NCounter.Enabled = True
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = 3 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
@@ -1112,11 +1025,7 @@
             For workcounter = 1 To 86 Step 1
                 If CardStack(workcounter, 5) = 3 Then
                     If CardStack(workcounter, 1) = 0 And CardStack(workcounter, 2) = -3 Then
-                        PBZoom.Image = CardImage(workcounter)
-                        PBZoom.BringToFront()
-                        PBZoom.Visible = True
-                        PBZoom.Enabled = True
-                        DisplayMode = 1
+                        DisplayZoom(workcounter)
                     End If
                 End If
             Next
