@@ -30,8 +30,10 @@ Partial Class MainMenu
         Me.Label3 = New System.Windows.Forms.Label()
         Me.CHKInfinite = New System.Windows.Forms.CheckBox()
         Me.gbOptions = New System.Windows.Forms.GroupBox()
-        Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
         Me.ChkPreTransReset = New System.Windows.Forms.CheckBox()
+        Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
+        Me.ChkResetReturn = New System.Windows.Forms.CheckBox()
+        Me.ChkDistanceReset = New System.Windows.Forms.CheckBox()
         Me.gbOptions.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -98,6 +100,8 @@ Partial Class MainMenu
         '
         'gbOptions
         '
+        Me.gbOptions.Controls.Add(Me.ChkDistanceReset)
+        Me.gbOptions.Controls.Add(Me.ChkResetReturn)
         Me.gbOptions.Controls.Add(Me.ChkPreTransReset)
         Me.gbOptions.Controls.Add(Me.ChkNaarReset)
         Me.gbOptions.Controls.Add(Me.CHKInfinite)
@@ -108,6 +112,17 @@ Partial Class MainMenu
         Me.gbOptions.TabIndex = 6
         Me.gbOptions.TabStop = False
         Me.gbOptions.Text = "Settings/Options"
+        '
+        'ChkPreTransReset
+        '
+        Me.ChkPreTransReset.AutoSize = True
+        Me.ChkPreTransReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPreTransReset.Location = New System.Drawing.Point(3, 50)
+        Me.ChkPreTransReset.Name = "ChkPreTransReset"
+        Me.ChkPreTransReset.Size = New System.Drawing.Size(754, 17)
+        Me.ChkPreTransReset.TabIndex = 7
+        Me.ChkPreTransReset.Text = "Reset All Counters When Walking Away"
+        Me.ChkPreTransReset.UseVisualStyleBackColor = True
         '
         'ChkNaarReset
         '
@@ -120,16 +135,27 @@ Partial Class MainMenu
         Me.ChkNaarReset.Text = "Reset Naar Island When Planeswalk Away"
         Me.ChkNaarReset.UseVisualStyleBackColor = True
         '
-        'ChkPreTransReset
+        'ChkResetReturn
         '
-        Me.ChkPreTransReset.AutoSize = True
-        Me.ChkPreTransReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkPreTransReset.Location = New System.Drawing.Point(3, 50)
-        Me.ChkPreTransReset.Name = "ChkPreTransReset"
-        Me.ChkPreTransReset.Size = New System.Drawing.Size(754, 17)
-        Me.ChkPreTransReset.TabIndex = 7
-        Me.ChkPreTransReset.Text = "Reset All Counters When Walking Away"
-        Me.ChkPreTransReset.UseVisualStyleBackColor = True
+        Me.ChkResetReturn.AutoSize = True
+        Me.ChkResetReturn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkResetReturn.Location = New System.Drawing.Point(3, 67)
+        Me.ChkResetReturn.Name = "ChkResetReturn"
+        Me.ChkResetReturn.Size = New System.Drawing.Size(754, 17)
+        Me.ChkResetReturn.TabIndex = 8
+        Me.ChkResetReturn.Text = "Reset Counters when Card Returns to Deck"
+        Me.ChkResetReturn.UseVisualStyleBackColor = True
+        '
+        'ChkDistanceReset
+        '
+        Me.ChkDistanceReset.AutoSize = True
+        Me.ChkDistanceReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkDistanceReset.Location = New System.Drawing.Point(3, 84)
+        Me.ChkDistanceReset.Name = "ChkDistanceReset"
+        Me.ChkDistanceReset.Size = New System.Drawing.Size(754, 17)
+        Me.ChkDistanceReset.TabIndex = 9
+        Me.ChkDistanceReset.Text = "Reset Counters when Card Moves More than 3 Spaces Away"
+        Me.ChkDistanceReset.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -163,4 +189,6 @@ Partial Class MainMenu
     Friend WithEvents gbOptions As GroupBox
     Friend WithEvents ChkNaarReset As CheckBox
     Friend WithEvents ChkPreTransReset As CheckBox
+    Friend WithEvents ChkResetReturn As CheckBox
+    Friend WithEvents ChkDistanceReset As CheckBox
 End Class

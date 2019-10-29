@@ -7,6 +7,8 @@
     Public InfinitePlane As Boolean = False
     Public NaarReset As Boolean = False
     Public PretranslateReset As Boolean = False
+    Public ResetOnReturn As Boolean = True
+    Public DistanceReset As Boolean = False
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
@@ -160,7 +162,7 @@
             CardStack(CardNumber, 5) = 1
             CardStack(CardNumber, 1) = 0
             CardStack(CardNumber, 2) = 0
-            CardStack(CardNumber, 4) = 0
+            If ResetOnReturn = True Then CardStack(CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
             ReturnCard = True
@@ -175,7 +177,7 @@
             CardStack(CardNumber, 5) = 1
             CardStack(CardNumber, 1) = 0
             CardStack(CardNumber, 2) = 0
-            CardStack(CardNumber, 4) = 0
+            If ResetOnReturn = True Then CardStack(CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
             ReturnCard = True
@@ -192,6 +194,15 @@
                 End If
             Next
             PopulateBoard()
+            If DistanceReset = True Then
+                For workcounter = 1 To 86 Step 1
+                    Dim distancecounter As Integer
+                    distancecounter = Math.Abs(CardStack(workcounter, 1)) + Math.Abs(CardStack(workcounter, 2))
+                    If distancecounter > 3 And CardStack(workcounter, 5) = 3 Then
+                        CardStack(workcounter, 4) = 0
+                    End If
+                Next
+            End If
             CullBoard()
             Return True
         Else
