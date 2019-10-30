@@ -209,8 +209,9 @@
         Dim CardyPos As Integer = CardStack(0, cardnumber, 2)
         Dim DeckCheck As Integer = 0
         Dim XyCheck As Integer = 0
+        CheckPosition = False
         For workcounter = 1 To 86 Step 1
-            If CardStack(0, workcounter, 0) = CardDeckPos And CardDeckPos > 0 Then
+            If CardDeckPos > 0 Then
                 DeckCheck += 1
             ElseIf CardDeckPos = 0 Then
                 If CardStack(0, workcounter, 1) = CardxPos And CardStack(0, workcounter, 2) = CardyPos Then
@@ -221,8 +222,6 @@
                 CheckPosition = True
             ElseIf DeckCheck = 1 And XyCheck = 0 Then
                 CheckPosition = True
-            Else
-                CheckPosition = False
             End If
         Next
         Return CheckPosition
@@ -263,7 +262,7 @@
     End Function
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
-        If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0
+        If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0 ''need to be refactored after phenoms
         If DeckState = 2 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -281,6 +280,15 @@
                     End If
                 Next
             End If
+            For workcounter = 1 To 86 Step 1
+                If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 0 Then
+                    If CheckPosition(workcounter) = True Then ''set currentplane if single
+                        CurrentPlane = workcounter
+                    ElseIf CheckPosition(workcounter) = False Then
+                        ''insert logic here
+                    End If
+                End If
+            Next
             CullBoard()
             Return True
         Else

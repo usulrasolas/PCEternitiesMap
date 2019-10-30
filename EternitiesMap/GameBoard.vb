@@ -245,14 +245,19 @@
         Me.Invalidate()
     End Function
     Function UpdateArrayElement(DispNumber As Integer, Cardnumber As Integer)
-        CardArray(DispNumber).Image = CardImage(Cardnumber)
-        If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Enabled = True
-        If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Visible = True
-        If CardStack(0, Cardnumber, 4) > 0 Then DispArray(DispNumber).BackColor = Color.DarkBlue
-        If CardStack(0, Cardnumber, 4) > 0 Then DispArray(DispNumber).ForeColor = Color.LightYellow
-        If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).ForeColor = Color.White
-        If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).BackColor = Color.Black
-        If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Text = CardStack(0, Cardnumber, 4)
+        If CheckPosition(Cardnumber) = True Then
+            CardArray(DispNumber).Image = CardImage(Cardnumber)
+            If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Enabled = True
+            If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Visible = True
+            If CardStack(0, Cardnumber, 4) > 0 Then DispArray(DispNumber).BackColor = Color.DarkBlue
+            If CardStack(0, Cardnumber, 4) > 0 Then DispArray(DispNumber).ForeColor = Color.LightYellow
+            If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).ForeColor = Color.White
+            If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).BackColor = Color.Black
+            If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Text = CardStack(0, Cardnumber, 4)
+        ElseIf CheckPosition(Cardnumber) = True Then
+            ''insert logic for multiple display
+        End If
+
     End Function
     Function MoveEventCheck()
         If CardStack(0, CurrentPlane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
