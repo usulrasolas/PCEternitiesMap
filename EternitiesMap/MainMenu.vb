@@ -8,10 +8,10 @@
         oForm.Show()
         Close()
     End Sub
-    Private Sub CHKInfinite_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub CHKInfinite_CheckedChanged(sender As Object, e As EventArgs) Handles CHKInfinite.CheckedChanged
         InfinitePlane = CHKInfinite.Checked
     End Sub
-    Private Sub ChkNaarReset_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ChkNaarReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkNaarReset.CheckedChanged
         NaarReset = ChkNaarReset.Checked
     End Sub
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -25,19 +25,19 @@
         ChkPhenomSupport.Checked = PhenomSupport
         ChkPhenomDealIn.Checked = PhenomDealIn
     End Sub
-    Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
         PretranslateReset = ChkPreTransReset.Checked
     End Sub
-    Private Sub ChkResetReturn_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ChkResetReturn_CheckedChanged(sender As Object, e As EventArgs) Handles ChkResetReturn.CheckedChanged
         ResetOnReturn = ChkResetReturn.Checked
     End Sub
-    Private Sub ChkDistanceReset_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ChkDistanceReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkDistanceReset.CheckedChanged
         DistanceReset = ChkDistanceReset.Checked
     End Sub
-    Private Sub ChkAertReset_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ChkAertReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAertReset.CheckedChanged
         AretResetMove = ChkAertReset.Checked
     End Sub
-    Private Sub NumAretMax_ValueChanged(sender As Object, e As EventArgs)
+    Private Sub NumAretMax_ValueChanged(sender As Object, e As EventArgs) Handles NumAretMax.ValueChanged
         AretCounter = NumAretMax.Value
     End Sub
 
@@ -46,13 +46,5 @@
     End Sub
     Private Sub ChkPhenomDealIn_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPhenomDealIn.CheckedChanged
         PhenomDealIn = ChkPhenomDealIn.Checked
-    End Sub
-
-    Private Sub NumAretMax_ValueChanged_1(sender As Object, e As EventArgs) Handles NumAretMax.ValueChanged
-
-    End Sub
-
-    Private Sub ChkAertReset_CheckedChanged_1(sender As Object, e As EventArgs) Handles ChkAertReset.CheckedChanged
-
     End Sub
 End Class

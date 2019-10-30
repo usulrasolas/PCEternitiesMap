@@ -31,26 +31,26 @@ Partial Class MainMenu
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.ChkPhenomDealIn = New System.Windows.Forms.CheckBox()
-        Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.ChkPreTransReset = New System.Windows.Forms.CheckBox()
-        Me.ChkResetReturn = New System.Windows.Forms.CheckBox()
-        Me.ChkDistanceReset = New System.Windows.Forms.CheckBox()
-        Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
-        Me.ChkAertReset = New System.Windows.Forms.CheckBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.NumAretMax = New System.Windows.Forms.NumericUpDown()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabSettingMenu = New System.Windows.Forms.TabControl()
+        Me.TabPageModes = New System.Windows.Forms.TabPage()
         Me.CHKInfinite = New System.Windows.Forms.CheckBox()
+        Me.TabPageSettings = New System.Windows.Forms.TabPage()
+        Me.NumAretMax = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ChkAertReset = New System.Windows.Forms.CheckBox()
+        Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
+        Me.ChkDistanceReset = New System.Windows.Forms.CheckBox()
+        Me.ChkResetReturn = New System.Windows.Forms.CheckBox()
+        Me.ChkPreTransReset = New System.Windows.Forms.CheckBox()
+        Me.TabPagePhenom = New System.Windows.Forms.TabPage()
+        Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
+        Me.ChkPhenomDealIn = New System.Windows.Forms.CheckBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
+        Me.TabSettingMenu.SuspendLayout()
+        Me.TabPageModes.SuspendLayout()
+        Me.TabPageSettings.SuspendLayout()
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage1.SuspendLayout()
+        Me.TabPagePhenom.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -121,75 +121,140 @@ Partial Class MainMenu
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "All Rights to Cards, Art, and Assets Reserved by Original Owners"
         '
-        'TabControl1
+        'TabSettingMenu
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(6, 51)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.ShowToolTips = True
-        Me.TabControl1.Size = New System.Drawing.Size(775, 445)
-        Me.TabControl1.TabIndex = 15
+        Me.TabSettingMenu.Controls.Add(Me.TabPageModes)
+        Me.TabSettingMenu.Controls.Add(Me.TabPageSettings)
+        Me.TabSettingMenu.Controls.Add(Me.TabPagePhenom)
+        Me.TabSettingMenu.Location = New System.Drawing.Point(6, 51)
+        Me.TabSettingMenu.Name = "TabSettingMenu"
+        Me.TabSettingMenu.SelectedIndex = 0
+        Me.TabSettingMenu.ShowToolTips = True
+        Me.TabSettingMenu.Size = New System.Drawing.Size(775, 445)
+        Me.TabSettingMenu.TabIndex = 15
         '
-        'TabPage3
+        'TabPageModes
         '
-        Me.TabPage3.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
-        Me.TabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage3.Controls.Add(Me.ChkPhenomSupport)
-        Me.TabPage3.Controls.Add(Me.ChkPhenomDealIn)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(767, 419)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Phenomemon"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.TabPageModes.BackColor = System.Drawing.Color.Black
+        Me.TabPageModes.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
+        Me.TabPageModes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageModes.Controls.Add(Me.CHKInfinite)
+        Me.TabPageModes.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageModes.Name = "TabPageModes"
+        Me.TabPageModes.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPageModes.Size = New System.Drawing.Size(767, 419)
+        Me.TabPageModes.TabIndex = 0
+        Me.TabPageModes.Text = "Game Modes"
         '
-        'ChkPhenomDealIn
+        'CHKInfinite
         '
-        Me.ChkPhenomDealIn.AutoSize = True
-        Me.ChkPhenomDealIn.BackColor = System.Drawing.Color.Black
-        Me.ChkPhenomDealIn.ForeColor = System.Drawing.Color.White
-        Me.ChkPhenomDealIn.Location = New System.Drawing.Point(0, 23)
-        Me.ChkPhenomDealIn.Name = "ChkPhenomDealIn"
-        Me.ChkPhenomDealIn.Size = New System.Drawing.Size(199, 17)
-        Me.ChkPhenomDealIn.TabIndex = 14
-        Me.ChkPhenomDealIn.Text = "Deal in Phenomenon to Planar Deck"
-        Me.ChkPhenomDealIn.UseVisualStyleBackColor = False
+        Me.CHKInfinite.AutoSize = True
+        Me.CHKInfinite.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CHKInfinite.ForeColor = System.Drawing.Color.Transparent
+        Me.CHKInfinite.Location = New System.Drawing.Point(3, 3)
+        Me.CHKInfinite.Name = "CHKInfinite"
+        Me.CHKInfinite.Size = New System.Drawing.Size(761, 17)
+        Me.CHKInfinite.TabIndex = 6
+        Me.CHKInfinite.Text = "Finite Mode"
+        Me.ToolTip1.SetToolTip(Me.CHKInfinite, resources.GetString("CHKInfinite.ToolTip"))
+        Me.CHKInfinite.UseVisualStyleBackColor = True
         '
-        'ChkPhenomSupport
+        'TabPageSettings
         '
-        Me.ChkPhenomSupport.AutoSize = True
-        Me.ChkPhenomSupport.BackColor = System.Drawing.Color.Black
-        Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White
-        Me.ChkPhenomSupport.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.ChkPhenomSupport.Location = New System.Drawing.Point(0, 0)
-        Me.ChkPhenomSupport.Name = "ChkPhenomSupport"
-        Me.ChkPhenomSupport.Size = New System.Drawing.Size(165, 17)
-        Me.ChkPhenomSupport.TabIndex = 13
-        Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
-        Me.ChkPhenomSupport.UseVisualStyleBackColor = False
+        Me.TabPageSettings.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
+        Me.TabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageSettings.Controls.Add(Me.NumAretMax)
+        Me.TabPageSettings.Controls.Add(Me.Label4)
+        Me.TabPageSettings.Controls.Add(Me.ChkAertReset)
+        Me.TabPageSettings.Controls.Add(Me.ChkNaarReset)
+        Me.TabPageSettings.Controls.Add(Me.ChkDistanceReset)
+        Me.TabPageSettings.Controls.Add(Me.ChkResetReturn)
+        Me.TabPageSettings.Controls.Add(Me.ChkPreTransReset)
+        Me.TabPageSettings.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageSettings.Name = "TabPageSettings"
+        Me.TabPageSettings.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPageSettings.Size = New System.Drawing.Size(767, 419)
+        Me.TabPageSettings.TabIndex = 1
+        Me.TabPageSettings.Text = "Settings"
+        Me.TabPageSettings.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'NumAretMax
         '
-        Me.TabPage2.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
-        Me.TabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage2.Controls.Add(Me.NumAretMax)
-        Me.TabPage2.Controls.Add(Me.Label4)
-        Me.TabPage2.Controls.Add(Me.ChkAertReset)
-        Me.TabPage2.Controls.Add(Me.ChkNaarReset)
-        Me.TabPage2.Controls.Add(Me.ChkDistanceReset)
-        Me.TabPage2.Controls.Add(Me.ChkResetReturn)
-        Me.TabPage2.Controls.Add(Me.ChkPreTransReset)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(767, 419)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Settings"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Left
+        Me.NumAretMax.ForeColor = System.Drawing.Color.Black
+        Me.NumAretMax.Location = New System.Drawing.Point(3, 88)
+        Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumAretMax.Name = "NumAretMax"
+        Me.NumAretMax.Size = New System.Drawing.Size(50, 20)
+        Me.NumAretMax.TabIndex = 13
+        Me.NumAretMax.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Black
+        Me.Label4.ForeColor = System.Drawing.Color.Transparent
+        Me.Label4.Location = New System.Drawing.Point(59, 90)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(192, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Maximum  Scroll Counters on Aretopolis"
+        '
+        'ChkAertReset
+        '
+        Me.ChkAertReset.AutoSize = True
+        Me.ChkAertReset.BackColor = System.Drawing.Color.Black
+        Me.ChkAertReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAertReset.ForeColor = System.Drawing.Color.Transparent
+        Me.ChkAertReset.Location = New System.Drawing.Point(3, 71)
+        Me.ChkAertReset.Name = "ChkAertReset"
+        Me.ChkAertReset.Size = New System.Drawing.Size(761, 17)
+        Me.ChkAertReset.TabIndex = 12
+        Me.ChkAertReset.Text = "Does Aretopolis reset when its ability triggers?"
+        Me.ToolTip1.SetToolTip(Me.ChkAertReset, resources.GetString("ChkAertReset.ToolTip"))
+        Me.ChkAertReset.UseVisualStyleBackColor = False
+        '
+        'ChkNaarReset
+        '
+        Me.ChkNaarReset.AutoSize = True
+        Me.ChkNaarReset.BackColor = System.Drawing.Color.Black
+        Me.ChkNaarReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkNaarReset.ForeColor = System.Drawing.Color.Transparent
+        Me.ChkNaarReset.Location = New System.Drawing.Point(3, 54)
+        Me.ChkNaarReset.Name = "ChkNaarReset"
+        Me.ChkNaarReset.Size = New System.Drawing.Size(761, 17)
+        Me.ChkNaarReset.TabIndex = 11
+        Me.ChkNaarReset.Text = "Does ONLY Naar Isle reset when Planeswalking away?"
+        Me.ToolTip1.SetToolTip(Me.ChkNaarReset, resources.GetString("ChkNaarReset.ToolTip"))
+        Me.ChkNaarReset.UseVisualStyleBackColor = False
+        '
+        'ChkDistanceReset
+        '
+        Me.ChkDistanceReset.AutoSize = True
+        Me.ChkDistanceReset.BackColor = System.Drawing.Color.Black
+        Me.ChkDistanceReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkDistanceReset.ForeColor = System.Drawing.Color.Transparent
+        Me.ChkDistanceReset.Location = New System.Drawing.Point(3, 37)
+        Me.ChkDistanceReset.Name = "ChkDistanceReset"
+        Me.ChkDistanceReset.Size = New System.Drawing.Size(761, 17)
+        Me.ChkDistanceReset.TabIndex = 10
+        Me.ChkDistanceReset.Text = "Do Counters reset when no longer visable?"
+        Me.ToolTip1.SetToolTip(Me.ChkDistanceReset, resources.GetString("ChkDistanceReset.ToolTip"))
+        Me.ChkDistanceReset.UseVisualStyleBackColor = False
+        '
+        'ChkResetReturn
+        '
+        Me.ChkResetReturn.AutoSize = True
+        Me.ChkResetReturn.BackColor = System.Drawing.Color.Black
+        Me.ChkResetReturn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkResetReturn.ForeColor = System.Drawing.Color.Transparent
+        Me.ChkResetReturn.Location = New System.Drawing.Point(3, 20)
+        Me.ChkResetReturn.Name = "ChkResetReturn"
+        Me.ChkResetReturn.Size = New System.Drawing.Size(761, 17)
+        Me.ChkResetReturn.TabIndex = 9
+        Me.ChkResetReturn.Text = "Do Counters reset when they are returned to the deck?"
+        Me.ToolTip1.SetToolTip(Me.ChkResetReturn, resources.GetString("ChkResetReturn.ToolTip"))
+        Me.ChkResetReturn.UseVisualStyleBackColor = False
         '
         'ChkPreTransReset
         '
@@ -206,109 +271,44 @@ Partial Class MainMenu
         Me.ToolTip1.SetToolTip(Me.ChkPreTransReset, resources.GetString("ChkPreTransReset.ToolTip"))
         Me.ChkPreTransReset.UseVisualStyleBackColor = False
         '
-        'ChkResetReturn
+        'TabPagePhenom
         '
-        Me.ChkResetReturn.AutoSize = True
-        Me.ChkResetReturn.BackColor = System.Drawing.Color.Black
-        Me.ChkResetReturn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkResetReturn.ForeColor = System.Drawing.Color.Transparent
-        Me.ChkResetReturn.Location = New System.Drawing.Point(3, 20)
-        Me.ChkResetReturn.Name = "ChkResetReturn"
-        Me.ChkResetReturn.Size = New System.Drawing.Size(761, 17)
-        Me.ChkResetReturn.TabIndex = 9
-        Me.ChkResetReturn.Text = "Do Counters reset when they are returned to the deck?"
-        Me.ToolTip1.SetToolTip(Me.ChkResetReturn, resources.GetString("ChkResetReturn.ToolTip"))
-        Me.ChkResetReturn.UseVisualStyleBackColor = False
+        Me.TabPagePhenom.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
+        Me.TabPagePhenom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPagePhenom.Controls.Add(Me.ChkPhenomSupport)
+        Me.TabPagePhenom.Controls.Add(Me.ChkPhenomDealIn)
+        Me.TabPagePhenom.Location = New System.Drawing.Point(4, 22)
+        Me.TabPagePhenom.Name = "TabPagePhenom"
+        Me.TabPagePhenom.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPagePhenom.Size = New System.Drawing.Size(767, 419)
+        Me.TabPagePhenom.TabIndex = 2
+        Me.TabPagePhenom.Text = "Phenomemon"
+        Me.TabPagePhenom.UseVisualStyleBackColor = True
         '
-        'ChkDistanceReset
+        'ChkPhenomSupport
         '
-        Me.ChkDistanceReset.AutoSize = True
-        Me.ChkDistanceReset.BackColor = System.Drawing.Color.Black
-        Me.ChkDistanceReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkDistanceReset.ForeColor = System.Drawing.Color.Transparent
-        Me.ChkDistanceReset.Location = New System.Drawing.Point(3, 37)
-        Me.ChkDistanceReset.Name = "ChkDistanceReset"
-        Me.ChkDistanceReset.Size = New System.Drawing.Size(761, 17)
-        Me.ChkDistanceReset.TabIndex = 10
-        Me.ChkDistanceReset.Text = "Do Counters reset when no longer visable?"
-        Me.ToolTip1.SetToolTip(Me.ChkDistanceReset, resources.GetString("ChkDistanceReset.ToolTip"))
-        Me.ChkDistanceReset.UseVisualStyleBackColor = False
+        Me.ChkPhenomSupport.AutoSize = True
+        Me.ChkPhenomSupport.BackColor = System.Drawing.Color.Black
+        Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White
+        Me.ChkPhenomSupport.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.ChkPhenomSupport.Location = New System.Drawing.Point(0, 0)
+        Me.ChkPhenomSupport.Name = "ChkPhenomSupport"
+        Me.ChkPhenomSupport.Size = New System.Drawing.Size(165, 17)
+        Me.ChkPhenomSupport.TabIndex = 13
+        Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
+        Me.ChkPhenomSupport.UseVisualStyleBackColor = False
         '
-        'ChkNaarReset
+        'ChkPhenomDealIn
         '
-        Me.ChkNaarReset.AutoSize = True
-        Me.ChkNaarReset.BackColor = System.Drawing.Color.Black
-        Me.ChkNaarReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkNaarReset.ForeColor = System.Drawing.Color.Transparent
-        Me.ChkNaarReset.Location = New System.Drawing.Point(3, 54)
-        Me.ChkNaarReset.Name = "ChkNaarReset"
-        Me.ChkNaarReset.Size = New System.Drawing.Size(761, 17)
-        Me.ChkNaarReset.TabIndex = 11
-        Me.ChkNaarReset.Text = "Does ONLY Naar Isle reset when Planeswalking away?"
-        Me.ToolTip1.SetToolTip(Me.ChkNaarReset, resources.GetString("ChkNaarReset.ToolTip"))
-        Me.ChkNaarReset.UseVisualStyleBackColor = False
-        '
-        'ChkAertReset
-        '
-        Me.ChkAertReset.AutoSize = True
-        Me.ChkAertReset.BackColor = System.Drawing.Color.Black
-        Me.ChkAertReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkAertReset.ForeColor = System.Drawing.Color.Transparent
-        Me.ChkAertReset.Location = New System.Drawing.Point(3, 71)
-        Me.ChkAertReset.Name = "ChkAertReset"
-        Me.ChkAertReset.Size = New System.Drawing.Size(761, 17)
-        Me.ChkAertReset.TabIndex = 12
-        Me.ChkAertReset.Text = "Does Aretopolis reset when its ability triggers?"
-        Me.ToolTip1.SetToolTip(Me.ChkAertReset, resources.GetString("ChkAertReset.ToolTip"))
-        Me.ChkAertReset.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Black
-        Me.Label4.ForeColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(59, 90)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(192, 13)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Maximum  Scroll Counters on Aretopolis"
-        '
-        'NumAretMax
-        '
-        Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Left
-        Me.NumAretMax.ForeColor = System.Drawing.Color.Black
-        Me.NumAretMax.Location = New System.Drawing.Point(3, 88)
-        Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumAretMax.Name = "NumAretMax"
-        Me.NumAretMax.Size = New System.Drawing.Size(50, 20)
-        Me.NumAretMax.TabIndex = 13
-        Me.NumAretMax.Value = New Decimal(New Integer() {10, 0, 0, 0})
-        '
-        'TabPage1
-        '
-        Me.TabPage1.BackColor = System.Drawing.Color.Black
-        Me.TabPage1.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
-        Me.TabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPage1.Controls.Add(Me.CHKInfinite)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(767, 419)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Game Modes"
-        '
-        'CHKInfinite
-        '
-        Me.CHKInfinite.AutoSize = True
-        Me.CHKInfinite.Dock = System.Windows.Forms.DockStyle.Top
-        Me.CHKInfinite.ForeColor = System.Drawing.Color.Transparent
-        Me.CHKInfinite.Location = New System.Drawing.Point(3, 3)
-        Me.CHKInfinite.Name = "CHKInfinite"
-        Me.CHKInfinite.Size = New System.Drawing.Size(761, 17)
-        Me.CHKInfinite.TabIndex = 6
-        Me.CHKInfinite.Text = "Finite Mode"
-        Me.ToolTip1.SetToolTip(Me.CHKInfinite, resources.GetString("CHKInfinite.ToolTip"))
-        Me.CHKInfinite.UseVisualStyleBackColor = True
+        Me.ChkPhenomDealIn.AutoSize = True
+        Me.ChkPhenomDealIn.BackColor = System.Drawing.Color.Black
+        Me.ChkPhenomDealIn.ForeColor = System.Drawing.Color.White
+        Me.ChkPhenomDealIn.Location = New System.Drawing.Point(0, 23)
+        Me.ChkPhenomDealIn.Name = "ChkPhenomDealIn"
+        Me.ChkPhenomDealIn.Size = New System.Drawing.Size(199, 17)
+        Me.ChkPhenomDealIn.TabIndex = 14
+        Me.ChkPhenomDealIn.Text = "Deal in Phenomenon to Planar Deck"
+        Me.ChkPhenomDealIn.UseVisualStyleBackColor = False
         '
         'ToolTip1
         '
@@ -326,7 +326,7 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(784, 561)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.TabSettingMenu)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
@@ -339,14 +339,14 @@ Partial Class MainMenu
         Me.MaximizeBox = False
         Me.Name = "MainMenu"
         Me.Text = "MainMenu"
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
+        Me.TabSettingMenu.ResumeLayout(False)
+        Me.TabPageModes.ResumeLayout(False)
+        Me.TabPageModes.PerformLayout()
+        Me.TabPageSettings.ResumeLayout(False)
+        Me.TabPageSettings.PerformLayout()
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.TabPagePhenom.ResumeLayout(False)
+        Me.TabPagePhenom.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -359,11 +359,11 @@ Partial Class MainMenu
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabSettingMenu As TabControl
+    Friend WithEvents TabPageModes As TabPage
     Friend WithEvents CHKInfinite As CheckBox
     Friend WithEvents ToolTip1 As ToolTip
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents TabPageSettings As TabPage
     Friend WithEvents NumAretMax As NumericUpDown
     Friend WithEvents Label4 As Label
     Friend WithEvents ChkAertReset As CheckBox
@@ -371,7 +371,7 @@ Partial Class MainMenu
     Friend WithEvents ChkDistanceReset As CheckBox
     Friend WithEvents ChkResetReturn As CheckBox
     Friend WithEvents ChkPreTransReset As CheckBox
-    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPagePhenom As TabPage
     Friend WithEvents ChkPhenomSupport As CheckBox
     Friend WithEvents ChkPhenomDealIn As CheckBox
 End Class

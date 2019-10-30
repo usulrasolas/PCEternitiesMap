@@ -140,9 +140,6 @@ equal to the number of flame counters on it.
 
 </value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="ChkDistanceReset.ToolTip" xml:space="preserve">
     <value>Check this box to force reset the counters on any card
 that is no longer visable on the board.
@@ -192,6 +189,9 @@ Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.</value>
   </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="CHKInfinite.ToolTip" xml:space="preserve">
     <value>Check this box to Play Finite Mode. Leave unchecked
 to play Standard Blind Eternities Map.
