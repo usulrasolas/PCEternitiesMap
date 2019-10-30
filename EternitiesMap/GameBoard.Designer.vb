@@ -882,6 +882,8 @@ Partial Class GameBoard
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(1920, 1080)
+        Me.Controls.Add(Me.LBLZoom)
+        Me.Controls.Add(Me.PBZoom)
         Me.Controls.Add(Me.PCardSelect6)
         Me.Controls.Add(Me.PCardSelect5)
         Me.Controls.Add(Me.PCardSelect4)
@@ -942,8 +944,6 @@ Partial Class GameBoard
         Me.Controls.Add(Me.PBMenu)
         Me.Controls.Add(Me.PBWalk)
         Me.Controls.Add(Me.PBChaos)
-        Me.Controls.Add(Me.PBZoom)
-        Me.Controls.Add(Me.LBLZoom)
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.Color.Coral
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
