@@ -63,18 +63,23 @@
         NewGame()
     End Sub
     Function DisplayZoom(CardNumber As Integer)
-        PBZoom.Image = CardImage(CardNumber)
-        PBZoom.BringToFront()
-        PBZoom.Visible = True
-        PBZoom.Enabled = True
-        If CardStack(CardNumber, 4) <> 0 Then LBLZoom.Visible = True
-        If CardStack(CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
-        If CardStack(CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
-        If CardStack(CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
-        If CardStack(CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
-        If CardStack(CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
-        If CardStack(CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(CardNumber, 4)
-        NCounter.Enabled = False
+        If CheckPosition(CardNumber) = True Then
+            PBZoom.Image = CardImage(CardNumber)
+            PBZoom.BringToFront()
+            PBZoom.Visible = True
+            PBZoom.Enabled = True
+            If CardStack(CardNumber, 4) <> 0 Then LBLZoom.Visible = True
+            If CardStack(CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
+            If CardStack(CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
+            If CardStack(CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
+            If CardStack(CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
+            If CardStack(CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
+            If CardStack(CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(CardNumber, 4)
+            NCounter.Enabled = False
+        ElseIf CheckPosition(CardNumber) = False Then
+
+        End If
+
     End Function
     Function GameEvent(EventType As Integer)
         If EventType = 9 Then ''Pools of Becoming Triple Draw
@@ -1069,7 +1074,6 @@
             End If
         End If
     End Sub
-
     Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
         If DeckState = 3 Then
             If CurrentPlane = 65 Then
