@@ -22,6 +22,8 @@
         ChkDistanceReset.Checked = DistanceReset
         ChkAertReset.Checked = AretResetMove
         NumAretMax.Value = AretCounter
+        ChkPhenomSupport.Checked = PhenomSupport
+        ChkPhenomDealIn.Checked = PhenomDealIn
     End Sub
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
         PretranslateReset = ChkPreTransReset.Checked
@@ -37,5 +39,12 @@
     End Sub
     Private Sub NumAretMax_ValueChanged(sender As Object, e As EventArgs) Handles NumAretMax.ValueChanged
         AretCounter = NumAretMax.Value
+    End Sub
+
+    Private Sub ChkPhenomSupport_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPhenomSupport.CheckedChanged
+        PhenomSupport = ChkPhenomSupport.Checked
+    End Sub
+    Private Sub ChkPhenomDealIn_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPhenomDealIn.CheckedChanged
+        PhenomDealIn = ChkPhenomDealIn.Checked
     End Sub
 End Class

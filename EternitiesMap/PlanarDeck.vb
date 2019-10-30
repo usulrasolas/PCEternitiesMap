@@ -11,6 +11,10 @@
     Public DistanceReset As Boolean = False
     Public AretCounter As Integer = 10
     Public AretResetMove As Boolean = True
+    Public PhenomSupport As Boolean = False
+    Public PhenomDealIn As Boolean = False
+    Public PhenomMoveChance As Integer = 0
+    Public PhenomHellJChance As Integer = 50
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
@@ -28,25 +32,29 @@
             CardStack(43, 3) = 6 ''Naar Isle Counter Reset on Exit
             CardStack(53, 3) = 9 ''Pools of Becoming Triple Draw Chaos
             CardStack(65, 3) = 11 ''Stairs to Infinity Scry Planar Deck Chaos
-            ''Temporary Disable Phenoms Via Flag and State
-            CardStack(9, 3) = -1
-            CardStack(26, 3) = -1
-            CardStack(39, 3) = -1
-            CardStack(42, 3) = -1
-            CardStack(52, 3) = -1
-            CardStack(57, 3) = -1
-            CardStack(64, 3) = -1
-            CardStack(80, 3) = -1
-            CardStack(9, 5) = -1
-            CardStack(26, 5) = -1
-            CardStack(39, 5) = -1
-            CardStack(42, 5) = -1
-            CardStack(52, 5) = -1
-            CardStack(57, 5) = -1
-            CardStack(64, 5) = -1
-            CardStack(80, 5) = -1
+            If PhenomSupport = False Then
+                CardStack(9, 3) = 21 ''Chaotic Aether
+                CardStack(26, 3) = 22 ''Interplanar Tunnel
+                CardStack(39, 3) = 23 ''Morphic Tide
+                CardStack(42, 3) = 24 ''Mutual Epiphany
+                CardStack(52, 3) = 25 ''Planewide Disaster
+                CardStack(57, 3) = 26 ''Reality Shaping
+                CardStack(64, 3) = 27 ''Spatial Merging
+                CardStack(80, 3) = 28 ''Time Distortion
+                If PhenomDealIn = True Then
+                    CardStack(9, 5) = 0
+                    CardStack(26, 5) = 0
+                    CardStack(39, 5) = 0
+                    CardStack(42, 5) = 0
+                    CardStack(52, 5) = 0
+                    CardStack(57, 5) = 0
+                    CardStack(64, 5) = 0
+                    CardStack(80, 5) = 0
+                End If
+            End If
+
             For WorkCounter = 1 To 86 Step 1
-                If CardStack(WorkCounter, 3) > -1 Then
+                If CardStack(WorkCounter, 3) > -1 And CardStack(WorkCounter, 5) >= 0 Then
                     CardStack(WorkCounter, 0) = DeckCounter + 1
                     DeckCounter += 1
                     CardLookup(DeckCounter) = WorkCounter
