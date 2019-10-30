@@ -81,7 +81,8 @@
         End If
         Return DisplayZoom
     End Function
-    Function GameEvent(EventType As Integer)
+    Function GameEvent(EventType As Integer) As Integer
+        GameEvent = -1
         If EventType = 9 Then ''Pools of Becoming Triple Draw
             DeckState = 3
             Dim PoBDraw1 As Integer = DrawCard()
@@ -92,10 +93,12 @@
             ReturnCard(PoBDraw2)
             ReturnCard(PoBDraw3)
             MsgBox("All 3 Revealed Chaos Effects Resolve." & vbCrLf & "Player who rolled chaos chooses resolve order." & vbCrLf & "Click Pools of Becoming to Return to Play when All Resolved", MsgBoxStyle.Information, "Pools of Becoming")
+            GameEvent = EventType
         ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
             DeckState = 3
             PickDisplay(CurrentPlane, Nothing, Nothing, Nothing, CardLookup(DeckCounter), Nothing)
             MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
+            GameEvent = EventType
         Else
         End If
         Return GameEvent
