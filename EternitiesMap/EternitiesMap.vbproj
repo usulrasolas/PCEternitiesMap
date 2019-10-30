@@ -234,6 +234,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Backgrounds\main_menu_art.jpg" />
     <Content Include="cards\c0.jpg" />
     <Content Include="cards\c1.jpg" />
     <Content Include="cards\c10.jpg" />
@@ -325,6 +326,7 @@
     <Content Include="icons\chaos.png" />
     <Content Include="icons\chase.png" />
     <Content Include="icons\walk.png" />
+    <None Include="Resources\main_menu_art.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
