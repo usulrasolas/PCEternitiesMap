@@ -15,6 +15,7 @@
     Public PhenomDealIn As Boolean = False
     Public PhenomMoveChance As Integer = 0
     Public PhenomHellJChance As Integer = 50
+    Public PhenomDeck(7) As Integer
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
@@ -23,8 +24,8 @@
                 CardStack(WorkCounter, 5) = 0 'Set All State To Inactive -1Disabled 0Inactive 1InDeck 2InHand 3OnBoard
                 CardStack(WorkCounter, 4) = 0 'Counters
                 CardStack(WorkCounter, 3) = 0 'Flags
-                CardStack(WorkCounter, 2) = 0 'ypos
-                CardStack(WorkCounter, 1) = 0 'xPos
+                CardStack(WorkCounter, 2) = vbNull 'ypos
+                CardStack(WorkCounter, 1) = vbNull 'xPos
                 CardStack(WorkCounter, 0) = 0 'DeckPos
             Next
             CardStack(4, 3) = 5 ''Aeropolis Flag for 10 Counters Walks Away
@@ -41,6 +42,7 @@
                 CardStack(57, 3) = 26 ''Reality Shaping
                 CardStack(64, 3) = 27 ''Spatial Merging
                 CardStack(80, 3) = 28 ''Time Distortion
+                PhenomDeck = {9, 26, 39, 42, 52, 57, 64, 80}
                 If PhenomDealIn = True Then
                     CardStack(9, 5) = 0
                     CardStack(26, 5) = 0
@@ -170,8 +172,8 @@
             Next
             CardStack(CardNumber, 0) = 1
             CardStack(CardNumber, 5) = 1
-            CardStack(CardNumber, 1) = 0
-            CardStack(CardNumber, 2) = 0
+            CardStack(CardNumber, 1) = vbNull
+            CardStack(CardNumber, 2) = vbNull
             If ResetOnReturn = True Then CardStack(CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
@@ -185,8 +187,8 @@
             Next
             CardStack(CardNumber, 0) = 1
             CardStack(CardNumber, 5) = 1
-            CardStack(CardNumber, 1) = 0
-            CardStack(CardNumber, 2) = 0
+            CardStack(CardNumber, 1) = vbNull
+            CardStack(CardNumber, 2) = vbNull
             If ResetOnReturn = True Then CardStack(CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
