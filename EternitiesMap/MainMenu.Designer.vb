@@ -39,8 +39,6 @@ Partial Class MainMenu
         Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
-        Me.ChkPhenomDealIn = New System.Windows.Forms.CheckBox()
         Me.gbOptions.SuspendLayout()
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,11 +47,11 @@ Partial Class MainMenu
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(28, 9)
+        Me.Label1.Location = New System.Drawing.Point(115, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(728, 39)
+        Me.Label1.Size = New System.Drawing.Size(561, 39)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "MTG Planechase Eternities Map Experimental"
+        Me.Label1.Text = "MTG Planechase Eternities Map v1"
         '
         'BNewGame
         '
@@ -99,7 +97,6 @@ Partial Class MainMenu
         '
         Me.CHKInfinite.AutoSize = True
         Me.CHKInfinite.Dock = System.Windows.Forms.DockStyle.Top
-        Me.CHKInfinite.ForeColor = System.Drawing.Color.White
         Me.CHKInfinite.Location = New System.Drawing.Point(3, 16)
         Me.CHKInfinite.Name = "CHKInfinite"
         Me.CHKInfinite.Size = New System.Drawing.Size(754, 17)
@@ -110,8 +107,6 @@ Partial Class MainMenu
         'gbOptions
         '
         Me.gbOptions.BackColor = System.Drawing.Color.Transparent
-        Me.gbOptions.Controls.Add(Me.ChkPhenomDealIn)
-        Me.gbOptions.Controls.Add(Me.ChkPhenomSupport)
         Me.gbOptions.Controls.Add(Me.Label4)
         Me.gbOptions.Controls.Add(Me.NumAretMax)
         Me.gbOptions.Controls.Add(Me.ChkAertReset)
@@ -131,8 +126,8 @@ Partial Class MainMenu
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(59, 121)
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label4.Location = New System.Drawing.Point(53, 118)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(286, 13)
         Me.Label4.TabIndex = 12
@@ -141,7 +136,6 @@ Partial Class MainMenu
         'NumAretMax
         '
         Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Left
-        Me.NumAretMax.ForeColor = System.Drawing.Color.White
         Me.NumAretMax.Location = New System.Drawing.Point(3, 118)
         Me.NumAretMax.Name = "NumAretMax"
         Me.NumAretMax.Size = New System.Drawing.Size(50, 20)
@@ -151,7 +145,6 @@ Partial Class MainMenu
         '
         Me.ChkAertReset.AutoSize = True
         Me.ChkAertReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkAertReset.ForeColor = System.Drawing.Color.White
         Me.ChkAertReset.Location = New System.Drawing.Point(3, 101)
         Me.ChkAertReset.Name = "ChkAertReset"
         Me.ChkAertReset.Size = New System.Drawing.Size(754, 17)
@@ -163,7 +156,6 @@ Partial Class MainMenu
         '
         Me.ChkDistanceReset.AutoSize = True
         Me.ChkDistanceReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkDistanceReset.ForeColor = System.Drawing.Color.White
         Me.ChkDistanceReset.Location = New System.Drawing.Point(3, 84)
         Me.ChkDistanceReset.Name = "ChkDistanceReset"
         Me.ChkDistanceReset.Size = New System.Drawing.Size(754, 17)
@@ -175,7 +167,6 @@ Partial Class MainMenu
         '
         Me.ChkResetReturn.AutoSize = True
         Me.ChkResetReturn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkResetReturn.ForeColor = System.Drawing.Color.White
         Me.ChkResetReturn.Location = New System.Drawing.Point(3, 67)
         Me.ChkResetReturn.Name = "ChkResetReturn"
         Me.ChkResetReturn.Size = New System.Drawing.Size(754, 17)
@@ -187,7 +178,6 @@ Partial Class MainMenu
         '
         Me.ChkPreTransReset.AutoSize = True
         Me.ChkPreTransReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkPreTransReset.ForeColor = System.Drawing.Color.White
         Me.ChkPreTransReset.Location = New System.Drawing.Point(3, 50)
         Me.ChkPreTransReset.Name = "ChkPreTransReset"
         Me.ChkPreTransReset.Size = New System.Drawing.Size(754, 17)
@@ -199,7 +189,6 @@ Partial Class MainMenu
         '
         Me.ChkNaarReset.AutoSize = True
         Me.ChkNaarReset.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkNaarReset.ForeColor = System.Drawing.Color.White
         Me.ChkNaarReset.Location = New System.Drawing.Point(3, 33)
         Me.ChkNaarReset.Name = "ChkNaarReset"
         Me.ChkNaarReset.Size = New System.Drawing.Size(754, 17)
@@ -224,28 +213,6 @@ Partial Class MainMenu
         Me.Label6.Size = New System.Drawing.Size(310, 13)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "All Rights to Cards, Art, and Assets Reserved by Original Owners"
-        '
-        'ChkPhenomSupport
-        '
-        Me.ChkPhenomSupport.AutoSize = True
-        Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White
-        Me.ChkPhenomSupport.Location = New System.Drawing.Point(3, 144)
-        Me.ChkPhenomSupport.Name = "ChkPhenomSupport"
-        Me.ChkPhenomSupport.Size = New System.Drawing.Size(165, 17)
-        Me.ChkPhenomSupport.TabIndex = 13
-        Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
-        Me.ChkPhenomSupport.UseVisualStyleBackColor = True
-        '
-        'ChkPhenomDealIn
-        '
-        Me.ChkPhenomDealIn.AutoSize = True
-        Me.ChkPhenomDealIn.ForeColor = System.Drawing.Color.White
-        Me.ChkPhenomDealIn.Location = New System.Drawing.Point(3, 167)
-        Me.ChkPhenomDealIn.Name = "ChkPhenomDealIn"
-        Me.ChkPhenomDealIn.Size = New System.Drawing.Size(199, 17)
-        Me.ChkPhenomDealIn.TabIndex = 14
-        Me.ChkPhenomDealIn.Text = "Deal in Phenomenon to Planar Deck"
-        Me.ChkPhenomDealIn.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -291,6 +258,4 @@ Partial Class MainMenu
     Friend WithEvents NumAretMax As NumericUpDown
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents ChkPhenomDealIn As CheckBox
-    Friend WithEvents ChkPhenomSupport As CheckBox
 End Class
