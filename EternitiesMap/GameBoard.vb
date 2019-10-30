@@ -426,30 +426,6 @@
             CardStack(CurrentPlane, 4) = 0
         End If
     End Function
-    Function CheckPosition(cardnumber As Integer) As Boolean
-        Dim CardDeckPos As Integer = CardStack(cardnumber, 0)
-        Dim CardxPos As Integer = CardStack(cardnumber, 1)
-        Dim CardyPos As Integer = CardStack(cardnumber, 2)
-        Dim DeckCheck As Integer = 0
-        Dim XyCheck As Integer = 0
-        For workcounter = 1 To 86 Step 1
-            If CardStack(workcounter, 0) = carddeckpos And carddeckpos > 0 Then
-                deckcheck += 1
-            ElseIf carddeckpos = 0 Then
-                If CardStack(workcounter, 1) = CardxPos And CardStack(workcounter, 2) = CardyPos Then
-                    XyCheck += 1
-                End If
-            End If
-            If DeckCheck = 0 And XyCheck = 1 Then
-                CheckPosition = True
-            ElseIf DeckCheck = 1 And XyCheck = 0 Then
-                CheckPosition = True
-            Else
-                CheckPosition = False
-            End If
-        Next
-        Return CheckPosition
-    End Function
     Public Shared Function CardImage(CardNumber As Integer) As Image
         If CardNumber = 1 Then
             Return My.Resources.c1
