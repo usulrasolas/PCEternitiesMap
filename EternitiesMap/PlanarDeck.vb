@@ -11,11 +11,6 @@
     Public DistanceReset As Boolean = False
     Public AretCounter As Integer = 10
     Public AretResetMove As Boolean = True
-    Public PhenomSupport As Boolean = False
-    Public PhenomDealIn As Boolean = False
-    Public PhenomMoveChance As Integer = 0
-    Public PhenomHellJChance As Integer = 50
-    Public PhenomDeck(7) As Integer
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
@@ -24,8 +19,8 @@
                 CardStack(WorkCounter, 5) = 0 'Set All State To Inactive -1Disabled 0Inactive 1InDeck 2InHand 3OnBoard
                 CardStack(WorkCounter, 4) = 0 'Counters
                 CardStack(WorkCounter, 3) = 0 'Flags
-                CardStack(WorkCounter, 2) = vbNull 'ypos
-                CardStack(WorkCounter, 1) = vbNull 'xPos
+                CardStack(WorkCounter, 2) = 0 'ypos
+                CardStack(WorkCounter, 1) = 0 'xPos
                 CardStack(WorkCounter, 0) = 0 'DeckPos
             Next
             CardStack(4, 3) = 5 ''Aeropolis Flag for 10 Counters Walks Away
@@ -33,30 +28,25 @@
             CardStack(43, 3) = 6 ''Naar Isle Counter Reset on Exit
             CardStack(53, 3) = 9 ''Pools of Becoming Triple Draw Chaos
             CardStack(65, 3) = 11 ''Stairs to Infinity Scry Planar Deck Chaos
-            If PhenomSupport = False Then
-                CardStack(9, 3) = 21 ''Chaotic Aether
-                CardStack(26, 3) = 22 ''Interplanar Tunnel
-                CardStack(39, 3) = 23 ''Morphic Tide
-                CardStack(42, 3) = 24 ''Mutual Epiphany
-                CardStack(52, 3) = 25 ''Planewide Disaster
-                CardStack(57, 3) = 26 ''Reality Shaping
-                CardStack(64, 3) = 27 ''Spatial Merging
-                CardStack(80, 3) = 28 ''Time Distortion
-                PhenomDeck = {9, 26, 39, 42, 52, 57, 64, 80}
-                If PhenomDealIn = True Then
-                    CardStack(9, 5) = 0
-                    CardStack(26, 5) = 0
-                    CardStack(39, 5) = 0
-                    CardStack(42, 5) = 0
-                    CardStack(52, 5) = 0
-                    CardStack(57, 5) = 0
-                    CardStack(64, 5) = 0
-                    CardStack(80, 5) = 0
-                End If
-            End If
-
+            ''Temporary Disable Phenoms Via Flag and State
+            CardStack(9, 3) = -1
+            CardStack(26, 3) = -1
+            CardStack(39, 3) = -1
+            CardStack(42, 3) = -1
+            CardStack(52, 3) = -1
+            CardStack(57, 3) = -1
+            CardStack(64, 3) = -1
+            CardStack(80, 3) = -1
+            CardStack(9, 5) = -1
+            CardStack(26, 5) = -1
+            CardStack(39, 5) = -1
+            CardStack(42, 5) = -1
+            CardStack(52, 5) = -1
+            CardStack(57, 5) = -1
+            CardStack(64, 5) = -1
+            CardStack(80, 5) = -1
             For WorkCounter = 1 To 86 Step 1
-                If CardStack(WorkCounter, 3) > -1 And CardStack(WorkCounter, 5) >= 0 Then
+                If CardStack(WorkCounter, 3) > -1 Then
                     CardStack(WorkCounter, 0) = DeckCounter + 1
                     DeckCounter += 1
                     CardLookup(DeckCounter) = WorkCounter
@@ -161,30 +151,6 @@
         Else Return False
         End If
     End Function
-    Public Function CheckPosition(cardnumber As Integer) As Boolean
-        Dim CardDeckPos As Integer = CardStack(cardnumber, 0)
-        Dim CardxPos As Integer = CardStack(cardnumber, 1)
-        Dim CardyPos As Integer = CardStack(cardnumber, 2)
-        Dim DeckCheck As Integer = 0
-        Dim XyCheck As Integer = 0
-        For workcounter = 1 To 86 Step 1
-            If CardStack(workcounter, 0) = CardDeckPos And CardDeckPos > 0 Then
-                DeckCheck += 1
-            ElseIf CardDeckPos = 0 Then
-                If CardStack(workcounter, 1) = CardxPos And CardStack(workcounter, 2) = CardyPos Then
-                    XyCheck += 1
-                End If
-            End If
-            If DeckCheck = 0 And XyCheck = 1 Then
-                CheckPosition = True
-            ElseIf DeckCheck = 1 And XyCheck = 0 Then
-                CheckPosition = True
-            Else
-                CheckPosition = False
-            End If
-        Next
-        Return CheckPosition
-    End Function
     Public Function ReturnCard(CardNumber As Integer) As Boolean
         ReturnCard = False
         If CardStack(CardNumber, 5) = 3 Then 'if card being returned is on board then
@@ -196,8 +162,8 @@
             Next
             CardStack(CardNumber, 0) = 1
             CardStack(CardNumber, 5) = 1
-            CardStack(CardNumber, 1) = vbNull
-            CardStack(CardNumber, 2) = vbNull
+            CardStack(CardNumber, 1) = 0
+            CardStack(CardNumber, 2) = 0
             If ResetOnReturn = True Then CardStack(CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
@@ -211,8 +177,8 @@
             Next
             CardStack(CardNumber, 0) = 1
             CardStack(CardNumber, 5) = 1
-            CardStack(CardNumber, 1) = vbNull
-            CardStack(CardNumber, 2) = vbNull
+            CardStack(CardNumber, 1) = 0
+            CardStack(CardNumber, 2) = 0
             If ResetOnReturn = True Then CardStack(CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
