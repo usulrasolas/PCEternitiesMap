@@ -273,6 +273,9 @@
     Function ResolvePhenom(phenomnumber As Integer)
         If phenomnumber = 9 Then '' Chaotic Aether
             DeckState = 1
+            PCardSelect6.BringToFront()
+            PCardSelect6.Visible = True
+            PCardSelect6.Image = CardImage(phenomnumber)
         ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
             DeckState = 1
         ElseIf phenomnumber = 39 Then ''Morphic Tide
@@ -471,6 +474,9 @@
 
     End Function
     Function MoveEventCheck()
+        PCardSelect6.SendToBack()
+        PCardSelect6.Visible = False
+        PCardSelect6.Image = Nothing
         If CardStack(0, CurrentPlane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
             If CardStack(0, CurrentPlane, 4) >= AretCounter And AretResetMove = True Then CardStack(0, CurrentPlane, 4) = 0
         ElseIf CardStack(0, CurrentPlane, 3) = 6 Then ''Naar Isle Counter Reset on Exit if reset is true

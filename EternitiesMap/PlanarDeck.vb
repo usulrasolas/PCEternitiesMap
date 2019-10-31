@@ -111,7 +111,7 @@
         If PhenomSupport = True Then
             ReDim PhenomDeck(7)
             PhenomDeckSize = 7
-            PhenomDeck = {9, 26, 39, 42, 53, 57, 64, 80}
+            PhenomDeck = {9, 9, 9, 9, 9, 9, 9, 9}
         End If
     End Function
 
