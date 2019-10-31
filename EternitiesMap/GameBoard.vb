@@ -473,9 +473,6 @@
         End If
         Return PhenomHellMoveChanceCheck
     End Function
-    Function PickRandomPhenom() As Integer
-
-    End Function
     Private Sub PBMenu_Click(sender As Object, e As EventArgs) Handles PBMenu.Click
         If MsgBox("Are you sure you want return to the main menu?" & vbCrLf & "Game in progress will be lost!", MsgBoxStyle.YesNo, "Return to Menu?") = MsgBoxResult.Yes Then
             Dim oForm As Form

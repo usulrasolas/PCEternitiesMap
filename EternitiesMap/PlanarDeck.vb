@@ -17,13 +17,13 @@
     Public PhenomDealIn As Boolean = False
     Public PhenomMoveChance As Integer = 0
     Public PhenomHellJChance As Integer = 50
-    Public PhenomDeck() As Integer ''needs rework
+    Public PhenomDeck() As Integer
     Public PhenomDeckSize As Integer
     Public CurrentPlane As Integer
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
-        PhenomDeck = {-1, -1, -1, -1, -1, -1, -1, -1} ''needs instalization system 
+        ReadyDeck = False
         If DeckState = 0 Then
             For WorkCounter = 0 To 86 Step 1
                 CardStack(0, WorkCounter, 5) = 0 'Set All State
@@ -45,53 +45,7 @@
             CardStack(0, 43, 3) = 6 ''Naar Isle Counter Reset on Exit
             CardStack(0, 53, 3) = 9 ''Pools of Becoming Triple Draw Chaos
             CardStack(0, 65, 3) = 11 ''Stairs to Infinity Scry Planar Deck Chaos
-            If PhenomSupport = True Then
-                CardStack(0, 9, 3) = 21 ''Chaotic Aether
-                CardStack(0, 26, 3) = 22 ''Interplanar Tunnel
-                CardStack(0, 39, 3) = 23 ''Morphic Tide
-                CardStack(0, 42, 3) = 24 ''Mutual Epiphany
-                CardStack(0, 52, 3) = 25 ''Planewide Disaster
-                CardStack(0, 57, 3) = 26 ''Reality Shaping
-                CardStack(0, 64, 3) = 27 ''Spatial Merging
-                CardStack(0, 80, 3) = 28 ''Time Distortion
-                PhenomDeck = {9, 26, 39, 42, 52, 57, 64, 80}
-                If PhenomDealIn = False Then
-                    CardStack(0, 9, 5) = -1
-                    CardStack(0, 26, 5) = -1
-                    CardStack(0, 39, 5) = -1
-                    CardStack(0, 42, 5) = -1
-                    CardStack(0, 52, 5) = -1
-                    CardStack(0, 57, 5) = -1
-                    CardStack(0, 64, 5) = -1
-                    CardStack(0, 80, 5) = -1
-                ElseIf PhenomDealIn = True Then ''slightly redundant
-                    CardStack(0, 9, 5) = 0
-                    CardStack(0, 26, 5) = 0
-                    CardStack(0, 39, 5) = 0
-                    CardStack(0, 42, 5) = 0
-                    CardStack(0, 52, 5) = 0
-                    CardStack(0, 57, 5) = 0
-                    CardStack(0, 64, 5) = 0
-                    CardStack(0, 80, 5) = 0
-                End If
-            ElseIf PhenomSupport = False Then
-                CardStack(0, 9, 3) = -1 ''Chaotic Aether
-                CardStack(0, 26, 3) = -1 ''Interplanar Tunnel
-                CardStack(0, 39, 3) = -1 ''Morphic Tide
-                CardStack(0, 42, 3) = -1 ''Mutual Epiphany
-                CardStack(0, 52, 3) = -1 ''Planewide Disaster
-                CardStack(0, 57, 3) = -1 ''Reality Shaping
-                CardStack(0, 64, 3) = -1 ''Spatial Merging
-                CardStack(0, 80, 3) = -1 ''Time Distortion
-                CardStack(0, 9, 5) = -1
-                CardStack(0, 26, 5) = -1
-                CardStack(0, 39, 5) = -1
-                CardStack(0, 42, 5) = -1
-                CardStack(0, 52, 5) = -1
-                CardStack(0, 57, 5) = -1
-                CardStack(0, 64, 5) = -1
-                CardStack(0, 80, 5) = -1
-            End If
+            PhenomInitalize()
             For WorkCounter = 1 To 86 Step 1
                 If CardStack(0, WorkCounter, 3) > -1 And CardStack(0, WorkCounter, 5) >= 0 Then
                     CardStack(0, WorkCounter, 0) = DeckCounter + 1
@@ -102,16 +56,68 @@
             Next
             DeckState = 1
             Shuffle()
-            Return True
+            ReadyDeck = True
         End If
-        Return False
+        Return ReadyDeck
     End Function
-    Public Function PickRndPhenom() As Integer
-        If PhenomSupport = True Then ''expand as needed for system
-            Randomize()
-            Dim Randompick As Integer = Int((7 * Rnd()) + 0)
-            PickRndPhenom = PhenomDeck(Randompick)
+
+    Function PhenomInitalize()
+        If PhenomSupport = True Then
+            CardStack(0, 9, 3) = 21 ''Chaotic Aether
+            CardStack(0, 26, 3) = 22 ''Interplanar Tunnel
+            CardStack(0, 39, 3) = 23 ''Morphic Tide
+            CardStack(0, 42, 3) = 24 ''Mutual Epiphany
+            CardStack(0, 52, 3) = 25 ''Planewide Disaster
+            CardStack(0, 57, 3) = 26 ''Reality Shaping
+            CardStack(0, 64, 3) = 27 ''Spatial Merging
+            CardStack(0, 80, 3) = 28 ''Time Distortion
+            If PhenomDealIn = False Then
+                CardStack(0, 9, 5) = -1
+                CardStack(0, 26, 5) = -1
+                CardStack(0, 39, 5) = -1
+                CardStack(0, 42, 5) = -1
+                CardStack(0, 52, 5) = -1
+                CardStack(0, 57, 5) = -1
+                CardStack(0, 64, 5) = -1
+                CardStack(0, 80, 5) = -1
+            ElseIf PhenomDealIn = True Then ''slightly redundant
+                CardStack(0, 9, 5) = 0
+                CardStack(0, 26, 5) = 0
+                CardStack(0, 39, 5) = 0
+                CardStack(0, 42, 5) = 0
+                CardStack(0, 52, 5) = 0
+                CardStack(0, 57, 5) = 0
+                CardStack(0, 64, 5) = 0
+                CardStack(0, 80, 5) = 0
+            End If
+        ElseIf PhenomSupport = False Then
+            CardStack(0, 9, 3) = -1 ''Chaotic Aether
+            CardStack(0, 26, 3) = -1 ''Interplanar Tunnel
+            CardStack(0, 39, 3) = -1 ''Morphic Tide
+            CardStack(0, 42, 3) = -1 ''Mutual Epiphany
+            CardStack(0, 52, 3) = -1 ''Planewide Disaster
+            CardStack(0, 57, 3) = -1 ''Reality Shaping
+            CardStack(0, 64, 3) = -1 ''Spatial Merging
+            CardStack(0, 80, 3) = -1 ''Time Distortion
+            CardStack(0, 9, 5) = -1
+            CardStack(0, 26, 5) = -1
+            CardStack(0, 39, 5) = -1
+            CardStack(0, 42, 5) = -1
+            CardStack(0, 52, 5) = -1
+            CardStack(0, 57, 5) = -1
+            CardStack(0, 64, 5) = -1
+            CardStack(0, 80, 5) = -1
         End If
+        If PhenomSupport = True Then
+            ReDim PhenomDeck(7)
+            PhenomDeckSize = 7
+            PhenomDeck = {9, 26, 39, 42, 53, 57, 64, 80}
+        End If
+    End Function
+
+    Function PickRandomPhenom() As Integer
+        Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
+        PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
     End Function
 
     Public Function UnreadyDeck() As Boolean
