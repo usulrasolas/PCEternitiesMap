@@ -2,6 +2,8 @@
     Private CardArray(25) As PictureBox
     Private DispArray(25) As Label
     Private EventCardInPlay As Integer
+    Private EventXloc As Integer = Nothing
+    Private EventYloc As Integer = Nothing
     Private Sub GameBoard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CardArray(1) = PictureBox1
         DispArray(1) = Label1
@@ -78,12 +80,14 @@
             NCounter.Enabled = False
             DisplayZoom = True
         ElseIf CheckPosition(CardNumber) = False Then
-            DisplayZoom = True
+            DisplayZoom = False
         End If
         Return DisplayZoom
     End Function
     Function PhenomEvent(phenomnumber As Integer, playtype As Integer, xloc As Integer, yloc As Integer)
         'playtype 0=onboard 1=random
+        EventXloc = xloc
+        EventYloc = yloc
         If phenomnumber = 9 Then '' Chaotic Aether
             EventCardInPlay = phenomnumber
             DeckState = 4
@@ -110,26 +114,13 @@
         ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
             EventCardInPlay = phenomnumber
             DeckState = 4
-            DisplayZoom(26)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
+            DrawBuffer(0) = DrawCard()
+            DrawBuffer(1) = DrawCard()
+            DrawBuffer(2) = DrawCard()
+            DrawBuffer(3) = DrawCard()
+            DrawBuffer(4) = DrawCard()
+            PickDisplay(26, DrawBuffer(0), DrawBuffer(1), DrawBuffer(2), DrawBuffer(3), DrawBuffer(4))
+            MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
         ElseIf phenomnumber = 39 Then ''Morphic Tide
             EventCardInPlay = phenomnumber
             DeckState = 4
@@ -271,38 +262,62 @@
         End If
     End Function
     Function ResolvePhenom(phenomnumber As Integer)
+        ResolvePhenom = True
         If phenomnumber = 9 Then '' Chaotic Aether
             DeckState = 1
             PCardSelect6.BringToFront()
             PCardSelect6.Visible = True
             PCardSelect6.Image = CardImage(phenomnumber)
         ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
+            PlayCard(DrawCard, 3, EventXloc, EventYloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If EventXloc = 1 Then
+                invxloc = -1
+            ElseIf EventXloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If EventYloc = 1 Then
+                invyloc = -1
+            ElseIf EventYloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
             DeckState = 1
+            PBWalk_Click(Nothing, Nothing)
+            PBWalk_Click(Nothing, Nothing)
+            UpdateArrays()
+
         ElseIf phenomnumber = 39 Then ''Morphic Tide
-            DeckState = 1
+            DeckState = 1 ''done
         ElseIf phenomnumber = 42 Then ''Mutual Epiphany
-            DeckState = 1
+            DeckState = 1 ''done
         ElseIf phenomnumber = 52 Then ''Planewide Disaster
-            DeckState = 1
+            DeckState = 1 ''done
         ElseIf phenomnumber = 57 Then ''Reality Shaping
-            DeckState = 1
+            DeckState = 1 ''done
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             DeckState = 1
         ElseIf phenomnumber = 80 Then ''Time Distortion
-            DeckState = 1
+            DeckState = 1 ''done
         End If
     End Function
     Function GameEvent(EventType As Integer) As Integer
         GameEvent = -1
         If EventType = 9 Then ''Pools of Becoming Triple Draw
             DeckState = 3
-            Dim PoBDraw1 As Integer = DrawCard()
-            Dim PoBDraw2 As Integer = DrawCard()
-            Dim PoBDraw3 As Integer = DrawCard()
-            PickDisplay(CurrentPlane, Nothing, Nothing, PoBDraw1, PoBDraw2, PoBDraw3)
-            ReturnCard(PoBDraw1)
-            ReturnCard(PoBDraw2)
-            ReturnCard(PoBDraw3)
+            DrawBuffer(0) = DrawCard()
+            DrawBuffer(1) = DrawCard()
+            DrawBuffer(2) = DrawCard()
+            PickDisplay(CurrentPlane, Nothing, Nothing, DrawBuffer(0), DrawBuffer(1), DrawBuffer(2))
+            ReturnCard(DrawBuffer(0))
+            ReturnCard(DrawBuffer(1))
+            ReturnCard(DrawBuffer(2))
             MsgBox("All 3 Revealed Chaos Effects Resolve." & vbCrLf & "Player who rolled chaos chooses resolve order." & vbCrLf & "Click Pools of Becoming to Return to Play when All Resolved", MsgBoxStyle.Information, "Pools of Becoming")
             GameEvent = EventType
         ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
@@ -335,9 +350,9 @@
         PCardSelect4.Enabled = True
         PCardSelect5.Enabled = True
         PCardSelect6.Enabled = True
-        PCardSelect1.Visible = False 'disabled until pick 5 for phenoms needed
+        PCardSelect1.Visible = True
         PCardSelect2.Visible = True
-        PCardSelect3.Visible = False 'disabled until pick 5 for phenoms needed
+        PCardSelect3.Visible = True
         PCardSelect4.Visible = True
         PCardSelect5.Visible = True
         PCardSelect6.Visible = True
@@ -347,7 +362,10 @@
         PCardSelect4.Image = CardImage(slot3)
         PCardSelect5.Image = CardImage(slot4)
         PCardSelect6.Image = CardImage(slot5)
-        Return PickDisplay
+        PBChaos.Enabled = False
+        NCounter.Enabled = False
+        PBWalk.Enabled = False
+        PickDisplay = True
     End Function
     Public Function NewGame()
         ReadyDeck()
@@ -355,7 +373,7 @@
         PBZoom.Enabled = True
         PBZoom.Visible = True
         PBZoom.BringToFront()
-        PBZoom.Image = CardImage(DrawBuffer)
+        PBZoom.Image = CardImage(DrawBuffer(0))
         DeckState = 1
         HidePickDisplay()
         PopulateBoard()
@@ -384,6 +402,9 @@
         For workcounter = 1 To 25 Step 1
             CardArray(workcounter).Enabled = True
         Next
+        PBChaos.Enabled = True
+        NCounter.Enabled = True
+        PBWalk.Enabled = True
     End Function
     Function UpdateArrays() As Boolean
         Dim workcounter As Integer
@@ -1204,6 +1225,7 @@
                     DeckState = 1
                 End If
             End If
+
         End If
     End Sub
     Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
@@ -1214,6 +1236,76 @@
                     DeckState = 1
                 End If
             End If
+        ElseIf DeckState = 4 Then
+            DeckState = 5
+            CardStack(0, DrawBuffer(3), 0) = DeckCounter + 1
+            DeckCounter += 1
+            CardLookup(DeckCounter) = DrawBuffer(3)
+            ReturnCard(DrawBuffer(1))
+            ReturnCard(DrawBuffer(2))
+            ReturnCard(DrawBuffer(0))
+            ReturnCard(DrawBuffer(4))
+            HidePickDisplay()
+            ResolvePhenom(EventCardInPlay)
+        End If
+    End Sub
+
+    Private Sub PCardSelect1_Click(sender As Object, e As EventArgs) Handles PCardSelect1.Click
+        If DeckState = 4 Then
+            DeckState = 5
+            CardStack(0, DrawBuffer(0), 0) = DeckCounter + 1
+            DeckCounter += 1
+            CardLookup(DeckCounter) = DrawBuffer(0)
+            ReturnCard(DrawBuffer(1))
+            ReturnCard(DrawBuffer(2))
+            ReturnCard(DrawBuffer(3))
+            ReturnCard(DrawBuffer(4))
+            HidePickDisplay()
+            ResolvePhenom(EventCardInPlay)
+        End If
+    End Sub
+    Private Sub PCardSelect6_Click(sender As Object, e As EventArgs) Handles PCardSelect6.Click
+        If DeckState = 4 Then
+            DeckState = 5
+            CardStack(0, DrawBuffer(4), 0) = DeckCounter + 1
+            DeckCounter += 1
+            CardLookup(DeckCounter) = DrawBuffer(4)
+            ReturnCard(DrawBuffer(1))
+            ReturnCard(DrawBuffer(2))
+            ReturnCard(DrawBuffer(0))
+            ReturnCard(DrawBuffer(3))
+            HidePickDisplay()
+            ResolvePhenom(EventCardInPlay)
+        End If
+    End Sub
+
+    Private Sub PCardSelect4_Click(sender As Object, e As EventArgs) Handles PCardSelect4.Click
+        If DeckState = 4 Then
+            DeckState = 5
+            CardStack(0, DrawBuffer(2), 0) = DeckCounter + 1
+            DeckCounter += 1
+            CardLookup(DeckCounter) = DrawBuffer(2)
+            ReturnCard(DrawBuffer(1))
+            ReturnCard(DrawBuffer(3))
+            ReturnCard(DrawBuffer(0))
+            ReturnCard(DrawBuffer(4))
+            HidePickDisplay()
+            ResolvePhenom(EventCardInPlay)
+        End If
+    End Sub
+
+    Private Sub PCardSelect3_Click(sender As Object, e As EventArgs) Handles PCardSelect3.Click
+        If DeckState = 4 Then
+            DeckState = 5
+            CardStack(0, DrawBuffer(1), 0) = DeckCounter + 1
+            DeckCounter += 1
+            CardLookup(DeckCounter) = DrawBuffer(1)
+            ReturnCard(DrawBuffer(3))
+            ReturnCard(DrawBuffer(2))
+            ReturnCard(DrawBuffer(0))
+            ReturnCard(DrawBuffer(4))
+            HidePickDisplay()
+            ResolvePhenom(EventCardInPlay)
         End If
     End Sub
 End Class

@@ -5,7 +5,7 @@
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public CardStack(1, 86, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
 #Enable Warning CA1814 ' Prefer jagged arrays over multidimensional
-    Public DrawBuffer As Integer
+    Public DrawBuffer(4) As Integer
     Public InfinitePlane As Boolean = False
     Public NaarReset As Boolean = False
     Public PretranslateReset As Boolean = False
@@ -15,7 +15,7 @@
     Public AretResetMove As Boolean = True
     Public PhenomSupport As Boolean = False
     Public PhenomDealIn As Boolean = False
-    Public PhenomMoveChance As Integer = 25
+    Public PhenomMoveChance As Integer = 0
     Public PhenomHellJChance As Integer = 50
     Public PhenomDeck() As Integer
     Public PhenomDeckSize As Integer
@@ -109,9 +109,9 @@
             CardStack(0, 80, 5) = -1
         End If
         If PhenomSupport = True Then
-            ReDim PhenomDeck(7)
-            PhenomDeckSize = 7
-            PhenomDeck = {9, 9, 9, 9, 9, 9, 9, 9}
+            ReDim PhenomDeck(8)
+            PhenomDeckSize = 8
+            PhenomDeck = {-1, 9, 26, 39, 42, 52, 57, 64, 80}
         End If
     End Function
 
@@ -168,24 +168,33 @@
         End If
     End Function
     Public Function DrawCard() As Integer
-        If DeckState = 1 Or 2 Then
-            DrawBuffer = CardLookup(DeckCounter)
+        If DeckState = 1 Or DeckState = 2 Or DeckState = 5 Then
+            DrawBuffer(0) = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
-            CardStack(0, CardLookup(DeckCounter), 1) = 0
-            CardStack(0, CardLookup(DeckCounter), 2) = 0
+            CardStack(0, CardLookup(DeckCounter), 1) = vbNull
+            CardStack(0, CardLookup(DeckCounter), 2) = vbNull
             CardLookup(DeckCounter) = 0
             DeckCounter -= 1
-            Return DrawBuffer
+            Return DrawBuffer(0)
         ElseIf DeckState = 3 Then ''event draw, this is currently same but seperated to allow me to breakcode
-            DrawBuffer = CardLookup(DeckCounter)
+            DrawBuffer(0) = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
-            CardStack(0, CardLookup(DeckCounter), 1) = 0
-            CardStack(0, CardLookup(DeckCounter), 2) = 0
+            CardStack(0, CardLookup(DeckCounter), 1) = vbNull
+            CardStack(0, CardLookup(DeckCounter), 2) = vbNull
             CardLookup(DeckCounter) = 0
             DeckCounter -= 1
-            Return DrawBuffer
+            Return DrawBuffer(0)
+        ElseIf DeckState = 4 Then ''dont update draw buffer
+            DrawCard = CardLookup(DeckCounter)
+            CardStack(0, CardLookup(DeckCounter), 5) = 2
+            CardStack(0, CardLookup(DeckCounter), 0) = 0
+            CardStack(0, CardLookup(DeckCounter), 1) = vbNull
+            CardStack(0, CardLookup(DeckCounter), 2) = vbNull
+            CardLookup(DeckCounter) = 0
+            DeckCounter -= 1
+            Return DrawCard
         Else Return -1
         End If
     End Function
@@ -278,7 +287,7 @@
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
         If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0 ''need to be refactored after phenoms
-        If DeckState = 2 Or DeckState = 4 Then
+        If DeckState = 2 Or DeckState = 4 Or DeckState = 5 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     CardStack(0, workcounter, 1) += XChange
