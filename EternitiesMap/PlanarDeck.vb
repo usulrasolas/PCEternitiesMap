@@ -105,6 +105,14 @@
         End If
         Return False
     End Function
+    Public Function PickRndPhenom() As Integer
+        If PhenomSupport = True Then ''expand as needed for system
+            Randomize()
+            Dim Randompick As Integer = Int((7 * Rnd()) + 0)
+            PickRndPhenom = PhenomDeck(Randompick)
+        End If
+    End Function
+
     Public Function UnreadyDeck() As Boolean
         For WorkCounter = 0 To 86 Step 1
             CardStack(0, WorkCounter, 5) = -1 'Set All State
