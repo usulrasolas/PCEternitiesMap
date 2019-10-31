@@ -3,7 +3,7 @@
     Public DeckCounter As Integer = 0
     Public CardLookup(86) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
-    Public CardStack(1, 86, 5) As Integer '' 0,deck,1virtual;cardnumber;DeckPos,XPos,YPos,Flag,Counter,State
+    Public CardStack(1, 86, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
 #Enable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public DrawBuffer As Integer
     Public InfinitePlane As Boolean = False
@@ -17,12 +17,13 @@
     Public PhenomDealIn As Boolean = False
     Public PhenomMoveChance As Integer = 0
     Public PhenomHellJChance As Integer = 50
-    Public PhenomDeck(7) As Integer
+    Public PhenomDeck() As Integer ''needs rework
+    Public PhenomDeckSize As Integer
     Public CurrentPlane As Integer
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
-        PhenomDeck = {-1, -1, -1, -1, -1, -1, -1, -1}
+        PhenomDeck = {-1, -1, -1, -1, -1, -1, -1, -1} ''needs instalization system 
         If DeckState = 0 Then
             For WorkCounter = 0 To 86 Step 1
                 CardStack(0, WorkCounter, 5) = 0 'Set All State
@@ -32,12 +33,12 @@
                 CardStack(0, WorkCounter, 1) = vbNull 'xPos
                 CardStack(0, WorkCounter, 0) = 0 'DeckPos
                 CardLookup(WorkCounter) = 0
-                CardStack(1, WorkCounter, 5) = -1 'Set All virtual state
-                CardStack(1, WorkCounter, 4) = -1 'Counters
-                CardStack(1, WorkCounter, 3) = -1 'Flags
-                CardStack(1, WorkCounter, 2) = vbNull 'ypos
-                CardStack(1, WorkCounter, 1) = vbNull 'xPos
-                CardStack(1, WorkCounter, 0) = -1 'DeckPos
+                CardStack(1, WorkCounter, 5) = -1 'Unpopulated
+                CardStack(1, WorkCounter, 4) = -1 'Unpopulated
+                CardStack(1, WorkCounter, 3) = -1 'PartnerCard
+                CardStack(1, WorkCounter, 2) = -1 'CounterOverride
+                CardStack(1, WorkCounter, 1) = -1 'DisplayOverride
+                CardStack(1, WorkCounter, 0) = -1 'HasMetadata
             Next
             CardStack(0, 4, 3) = 5 ''Aeropolis Flag for 10 Counters Walks Away
             CardStack(0, 0, 3) = 7 ''Mount Keralia Damage on Exit Reminder/Reset

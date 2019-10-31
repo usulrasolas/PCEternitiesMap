@@ -183,6 +183,7 @@ Partial Class MainMenu
         Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Left
         Me.NumAretMax.ForeColor = System.Drawing.Color.Black
         Me.NumAretMax.Location = New System.Drawing.Point(3, 88)
+        Me.NumAretMax.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumAretMax.Name = "NumAretMax"
         Me.NumAretMax.Size = New System.Drawing.Size(50, 20)
@@ -289,11 +290,12 @@ Partial Class MainMenu
         '
         Me.ChkPhenomSupport.AutoSize = True
         Me.ChkPhenomSupport.BackColor = System.Drawing.Color.Black
+        Me.ChkPhenomSupport.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White
         Me.ChkPhenomSupport.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.ChkPhenomSupport.Location = New System.Drawing.Point(0, 0)
+        Me.ChkPhenomSupport.Location = New System.Drawing.Point(3, 20)
         Me.ChkPhenomSupport.Name = "ChkPhenomSupport"
-        Me.ChkPhenomSupport.Size = New System.Drawing.Size(165, 17)
+        Me.ChkPhenomSupport.Size = New System.Drawing.Size(761, 17)
         Me.ChkPhenomSupport.TabIndex = 13
         Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
         Me.ChkPhenomSupport.UseVisualStyleBackColor = False
@@ -302,10 +304,11 @@ Partial Class MainMenu
         '
         Me.ChkPhenomDealIn.AutoSize = True
         Me.ChkPhenomDealIn.BackColor = System.Drawing.Color.Black
+        Me.ChkPhenomDealIn.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPhenomDealIn.ForeColor = System.Drawing.Color.White
-        Me.ChkPhenomDealIn.Location = New System.Drawing.Point(0, 23)
+        Me.ChkPhenomDealIn.Location = New System.Drawing.Point(3, 3)
         Me.ChkPhenomDealIn.Name = "ChkPhenomDealIn"
-        Me.ChkPhenomDealIn.Size = New System.Drawing.Size(199, 17)
+        Me.ChkPhenomDealIn.Size = New System.Drawing.Size(761, 17)
         Me.ChkPhenomDealIn.TabIndex = 14
         Me.ChkPhenomDealIn.Text = "Deal in Phenomenon to Planar Deck"
         Me.ChkPhenomDealIn.UseVisualStyleBackColor = False

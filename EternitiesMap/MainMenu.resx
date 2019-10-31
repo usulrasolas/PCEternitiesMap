@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="ChkAertReset.ToolTip" xml:space="preserve">
     <value>Check this box to have Aretopolis reset when its ability
 triggers. This Setting will only affect Aretopolis's ability.
@@ -126,7 +129,7 @@ it will keeping its counters (subject to other settings conditions).
 when you travel back to Aretopolis, you will put a Scroll counter on
 Aretopolis, gain life, and then you Planeswalk away again.
 
-The Max No of counters the program allows is currently 100.</value>
+The Max No of counters the program allows is currently 99.</value>
   </data>
   <data name="ChkNaarReset.ToolTip" xml:space="preserve">
     <value>Check this box to have ONLY Naar Isle 
@@ -189,9 +192,6 @@ Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.</value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="CHKInfinite.ToolTip" xml:space="preserve">
     <value>Check this box to Play Finite Mode. Leave unchecked
 to play Standard Blind Eternities Map.

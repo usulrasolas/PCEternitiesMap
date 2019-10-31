@@ -234,7 +234,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Backgrounds\main_menu_art.jpg" />
+    <Content Include="Resources\Backgrounds\main_menu_art.jpg" />
     <Content Include="Resources\CardExpansions\2019\Boss\ml0.png" />
     <Content Include="Resources\CardExpansions\2019\Boss\ml1.png" />
     <Content Include="Resources\CardExpansions\2019\Boss\ml10.png" />

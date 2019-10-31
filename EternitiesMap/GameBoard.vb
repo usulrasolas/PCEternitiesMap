@@ -81,6 +81,10 @@
         End If
         Return DisplayZoom
     End Function
+
+    Function PhenomEvent(phenomnumber As Integer, playtype As Integer, xloc As Integer, yloc As Integer)
+        ''playtype randomphenom onboard 
+    End Function
     Function GameEvent(EventType As Integer) As Integer
         GameEvent = -1
         If EventType = 9 Then ''Pools of Becoming Triple Draw
@@ -257,7 +261,7 @@
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).ForeColor = Color.White
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).BackColor = Color.Black
             If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Text = CardStack(0, Cardnumber, 4)
-        ElseIf CheckPosition(Cardnumber) = True Then
+        ElseIf CheckPosition(Cardnumber) = False Then
             ''insert logic for multiple display
         End If
 
@@ -449,6 +453,29 @@
             Return My.Resources.c0
         End If
     End Function
+    Function PhenomMoveChanceCheck() As Boolean
+        If PhenomMoveChance > 0 Then
+            PhenomMoveChanceCheck = False
+            Dim randomroll As Integer = Int((100 * Rnd()) + 1)
+            If randomroll < PhenomMoveChance Then PhenomMoveChanceCheck = True
+        Else
+                PhenomMoveChanceCheck = False
+        End If
+        Return PhenomHellMoveChanceCheck()
+    End Function
+    Function PhenomHellMoveChanceCheck() As Boolean
+        If PhenomHellJChance > 0 Then
+            PhenomHellMoveChanceCheck = False
+            Dim randomroll As Integer = Int((100 * Rnd()) + 1)
+            If randomroll < PhenomHellJChance Then PhenomHellMoveChanceCheck = True
+        Else
+            PhenomHellMoveChanceCheck = False
+        End If
+        Return PhenomHellMoveChanceCheck
+    End Function
+    Function PickRandomPhenom() As Integer
+
+    End Function
     Private Sub PBMenu_Click(sender As Object, e As EventArgs) Handles PBMenu.Click
         If MsgBox("Are you sure you want return to the main menu?" & vbCrLf & "Game in progress will be lost!", MsgBoxStyle.YesNo, "Return to Menu?") = MsgBoxResult.Yes Then
             Dim oForm As Form
@@ -620,6 +647,7 @@
             MoveEventCheck()
             TranslateBoard(1, 0)
             UpdateArrays()
+            ''phenomcheck here
             PBWalk_Click(PictureBox12, Nothing)
             PictureBox13_Click(Nothing, Nothing)
         ElseIf DeckState = 1 Then
