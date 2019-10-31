@@ -14,7 +14,6 @@
     Public AretCounter As Integer = 10
     Public AretResetMove As Boolean = True
     Public PhenomSupport As Boolean = False
-    Public PhenomDealIn As Boolean = False
     Public PhenomMoveChance As Integer = 0
     Public PhenomHellJChance As Integer = 50
     Public PhenomDeck() As Integer
@@ -62,6 +61,14 @@
     End Function
 
     Function PhenomInitalize()
+        CardStack(0, 9, 5) = -1
+        CardStack(0, 26, 5) = -1
+        CardStack(0, 39, 5) = -1
+        CardStack(0, 42, 5) = -1
+        CardStack(0, 52, 5) = -1
+        CardStack(0, 57, 5) = -1
+        CardStack(0, 64, 5) = -1
+        CardStack(0, 80, 5) = -1
         If PhenomSupport = True Then
             CardStack(0, 9, 3) = 21 ''Chaotic Aether
             CardStack(0, 26, 3) = 22 ''Interplanar Tunnel
@@ -71,25 +78,6 @@
             CardStack(0, 57, 3) = 26 ''Reality Shaping
             CardStack(0, 64, 3) = 27 ''Spatial Merging
             CardStack(0, 80, 3) = 28 ''Time Distortion
-            If PhenomDealIn = False Then
-                CardStack(0, 9, 5) = -1
-                CardStack(0, 26, 5) = -1
-                CardStack(0, 39, 5) = -1
-                CardStack(0, 42, 5) = -1
-                CardStack(0, 52, 5) = -1
-                CardStack(0, 57, 5) = -1
-                CardStack(0, 64, 5) = -1
-                CardStack(0, 80, 5) = -1
-            ElseIf PhenomDealIn = True Then ''slightly redundant
-                CardStack(0, 9, 5) = 0
-                CardStack(0, 26, 5) = 0
-                CardStack(0, 39, 5) = 0
-                CardStack(0, 42, 5) = 0
-                CardStack(0, 52, 5) = 0
-                CardStack(0, 57, 5) = 0
-                CardStack(0, 64, 5) = 0
-                CardStack(0, 80, 5) = 0
-            End If
         ElseIf PhenomSupport = False Then
             CardStack(0, 9, 3) = -1 ''Chaotic Aether
             CardStack(0, 26, 3) = -1 ''Interplanar Tunnel
@@ -99,14 +87,6 @@
             CardStack(0, 57, 3) = -1 ''Reality Shaping
             CardStack(0, 64, 3) = -1 ''Spatial Merging
             CardStack(0, 80, 3) = -1 ''Time Distortion
-            CardStack(0, 9, 5) = -1
-            CardStack(0, 26, 5) = -1
-            CardStack(0, 39, 5) = -1
-            CardStack(0, 42, 5) = -1
-            CardStack(0, 52, 5) = -1
-            CardStack(0, 57, 5) = -1
-            CardStack(0, 64, 5) = -1
-            CardStack(0, 80, 5) = -1
         End If
         If PhenomSupport = True Then
             ReDim PhenomDeck(8)
