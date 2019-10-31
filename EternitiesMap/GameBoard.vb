@@ -1,6 +1,7 @@
 ﻿Public Class GameBoard
     Private CardArray(25) As PictureBox
     Private DispArray(25) As Label
+    Private EventCardInPlay As Integer
     Private Sub GameBoard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CardArray(1) = PictureBox1
         DispArray(1) = Label1
@@ -81,9 +82,212 @@
         End If
         Return DisplayZoom
     End Function
-
     Function PhenomEvent(phenomnumber As Integer, playtype As Integer, xloc As Integer, yloc As Integer)
-        ''playtype randomphenom onboard 
+        'playtype 0=onboard 1=random
+        If phenomnumber = 9 Then '' Chaotic Aether
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(9)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(26)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        ElseIf phenomnumber = 39 Then ''Morphic Tide
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(39)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        ElseIf phenomnumber = 42 Then ''Mutual Epiphany
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(42)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        ElseIf phenomnumber = 52 Then ''Planewide Disaster
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(52)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        ElseIf phenomnumber = 57 Then ''Reality Shaping
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(57)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        ElseIf phenomnumber = 64 Then ''Spatial Merging
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(64)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        ElseIf phenomnumber = 80 Then ''Time Distortion
+            EventCardInPlay = phenomnumber
+            DeckState = 4
+            DisplayZoom(80)
+            PlayCard(DrawCard, 3, xloc, yloc)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If xloc = 1 Then
+                invxloc = -1
+            ElseIf xloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If yloc = 1 Then
+                invyloc = -1
+            ElseIf yloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
+        End If
+    End Function
+    Function ResolvePhenom(phenomnumber As Integer)
+        If phenomnumber = 9 Then '' Chaotic Aether
+            DeckState = 1
+        ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
+            DeckState = 1
+        ElseIf phenomnumber = 39 Then ''Morphic Tide
+            DeckState = 1
+        ElseIf phenomnumber = 42 Then ''Mutual Epiphany
+            DeckState = 1
+        ElseIf phenomnumber = 52 Then ''Planewide Disaster
+            DeckState = 1
+        ElseIf phenomnumber = 57 Then ''Reality Shaping
+            DeckState = 1
+        ElseIf phenomnumber = 64 Then ''Spatial Merging
+            DeckState = 1
+        ElseIf phenomnumber = 80 Then ''Time Distortion
+            DeckState = 1
+        End If
     End Function
     Function GameEvent(EventType As Integer) As Integer
         GameEvent = -1
@@ -453,25 +657,23 @@
             Return My.Resources.c0
         End If
     End Function
-    Function PhenomMoveChanceCheck() As Boolean
+    Shared Function PhenomMoveChanceCheck() As Boolean
         If PhenomMoveChance > 0 Then
             PhenomMoveChanceCheck = False
             Dim randomroll As Integer = Int((100 * Rnd()) + 1)
-            If randomroll < PhenomMoveChance Then PhenomMoveChanceCheck = True
+            If randomroll <= PhenomMoveChance Then PhenomMoveChanceCheck = True
         Else
-                PhenomMoveChanceCheck = False
+            PhenomMoveChanceCheck = False
         End If
-        Return PhenomHellMoveChanceCheck()
     End Function
-    Function PhenomHellMoveChanceCheck() As Boolean
+    Shared Function PhenomHellMoveChanceCheck() As Boolean
         If PhenomHellJChance > 0 Then
             PhenomHellMoveChanceCheck = False
             Dim randomroll As Integer = Int((100 * Rnd()) + 1)
-            If randomroll < PhenomHellJChance Then PhenomHellMoveChanceCheck = True
+            If randomroll <= PhenomHellJChance Then PhenomHellMoveChanceCheck = True
         Else
             PhenomHellMoveChanceCheck = False
         End If
-        Return PhenomHellMoveChanceCheck
     End Function
     Private Sub PBMenu_Click(sender As Object, e As EventArgs) Handles PBMenu.Click
         If MsgBox("Are you sure you want return to the main menu?" & vbCrLf & "Game in progress will be lost!", MsgBoxStyle.YesNo, "Return to Menu?") = MsgBoxResult.Yes Then
@@ -495,6 +697,14 @@
     End Sub
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         If DeckState = 2 Then
+            If PhenomMoveChanceCheck() = False Then
+                TranslateBoard(0, -1)
+                UpdateArrays()
+                PBWalk_Click(PictureBox7, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, 0, 1)
+            End If
             MoveEventCheck()
             TranslateBoard(0, -1)
             UpdateArrays()
@@ -535,12 +745,16 @@
     End Sub
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         If DeckState = 2 Then
-            PlayCard(DrawCard, 3, -1, 1)
-            MoveEventCheck()
-            TranslateBoard(1, -1)
-            UpdateArrays()
-            PBWalk_Click(PictureBox6, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
+            If PhenomHellMoveChanceCheck() = False Then
+                PlayCard(DrawCard, 3, -1, 1)
+                MoveEventCheck()
+                TranslateBoard(1, -1)
+                UpdateArrays()
+                PBWalk_Click(PictureBox6, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, -1, 1)
+            End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -549,6 +763,8 @@
                     End If
                 End If
             Next
+
+
         End If
     End Sub
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
@@ -564,12 +780,17 @@
     End Sub
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
         If DeckState = 2 Then
-            PlayCard(DrawCard, 3, 1, 1)
-            MoveEventCheck()
-            TranslateBoard(-1, -1)
-            UpdateArrays()
-            PBWalk_Click(PictureBox8, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
+            If PhenomHellMoveChanceCheck() = False Then
+                PlayCard(DrawCard, 3, 1, 1)
+                MoveEventCheck()
+                TranslateBoard(-1, -1)
+                UpdateArrays()
+                PBWalk_Click(PictureBox8, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, 1, 1)
+            End If
+
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -615,11 +836,15 @@
     End Sub
     Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
         If DeckState = 2 Then
-            MoveEventCheck()
-            TranslateBoard(-1, 0)
-            UpdateArrays()
-            PBWalk_Click(PictureBox14, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
+            If PhenomMoveChanceCheck() = False Then
+                MoveEventCheck()
+                TranslateBoard(-1, 0)
+                UpdateArrays()
+                PBWalk_Click(PictureBox14, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, 1, 0)
+            End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -641,12 +866,15 @@
     End Sub
     Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
         If DeckState = 2 Then
-            MoveEventCheck()
-            TranslateBoard(1, 0)
-            UpdateArrays()
-            ''phenomcheck here
-            PBWalk_Click(PictureBox12, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
+            If PhenomMoveChanceCheck() = False Then
+                MoveEventCheck()
+                TranslateBoard(1, 0)
+                UpdateArrays()
+                PBWalk_Click(PictureBox12, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, -1, 0)
+            End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -692,12 +920,16 @@
     End Sub
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
         If DeckState = 2 Then
-            PlayCard(DrawCard, 3, -1, -1)
-            MoveEventCheck()
-            TranslateBoard(1, 1)
-            UpdateArrays()
-            PBWalk_Click(PictureBox18, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
+            If PhenomHellMoveChanceCheck() = False Then
+                PlayCard(DrawCard, 3, -1, -1)
+                MoveEventCheck()
+                TranslateBoard(1, 1)
+                UpdateArrays()
+                PBWalk_Click(PictureBox18, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, -1, -1)
+            End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -710,11 +942,15 @@
     End Sub
     Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
         If DeckState = 2 Then
-            MoveEventCheck()
-            TranslateBoard(0, 1)
-            UpdateArrays()
-            PBWalk_Click(PictureBox19, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
+            If PhenomMoveChanceCheck() = False Then
+                MoveEventCheck()
+                TranslateBoard(0, 1)
+                UpdateArrays()
+                PBWalk_Click(PictureBox19, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, 0, -1)
+            End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -727,12 +963,16 @@
     End Sub
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
         If DeckState = 2 Then
-            MoveEventCheck()
-            PlayCard(DrawCard, 3, 1, -1)
-            TranslateBoard(-1, 1)
-            UpdateArrays()
-            PBWalk_Click(PictureBox20, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
+            If PhenomHellMoveChanceCheck() = False Then
+                MoveEventCheck()
+                PlayCard(DrawCard, 3, 1, -1)
+                TranslateBoard(-1, 1)
+                UpdateArrays()
+                PBWalk_Click(PictureBox20, Nothing)
+                PictureBox13_Click(Nothing, Nothing)
+            Else
+                PhenomEvent(PickRandomPhenom, 1, 1, -1)
+            End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
@@ -878,12 +1118,27 @@
         End If
     End Sub
     Private Sub PBZoom_Click(sender As Object, e As EventArgs) Handles PBZoom.Click
-        PBZoom.Enabled = False
-        PBZoom.Visible = False
-        PBZoom.SendToBack()
-        LBLZoom.Visible = False
-        LBLZoom.SendToBack()
-        NCounter.Enabled = True
+        If DeckState = 4 Then
+            DeckState = 5
+            PBZoom.Enabled = False
+            PBZoom.Visible = False
+            PBZoom.SendToBack()
+            LBLZoom.Visible = False
+            LBLZoom.SendToBack()
+            NCounter.Enabled = True
+            ResolvePhenom(EventCardInPlay)
+            PBWalk_Click(PBZoom, Nothing)
+            PBWalk_Click(PBZoom, Nothing)
+            UpdateArrays()
+        Else
+            PBZoom.Enabled = False
+            PBZoom.Visible = False
+            PBZoom.SendToBack()
+            LBLZoom.Visible = False
+            LBLZoom.SendToBack()
+            NCounter.Enabled = True
+        End If
+
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If DeckState = 1 Then

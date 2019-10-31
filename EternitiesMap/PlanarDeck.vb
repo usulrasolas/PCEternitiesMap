@@ -15,7 +15,7 @@
     Public AretResetMove As Boolean = True
     Public PhenomSupport As Boolean = False
     Public PhenomDealIn As Boolean = False
-    Public PhenomMoveChance As Integer = 0
+    Public PhenomMoveChance As Integer = 25
     Public PhenomHellJChance As Integer = 50
     Public PhenomDeck() As Integer
     Public PhenomDeckSize As Integer
@@ -278,7 +278,7 @@
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
         If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0 ''need to be refactored after phenoms
-        If DeckState = 2 Then
+        If DeckState = 2 Or DeckState = 4 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     CardStack(0, workcounter, 1) += XChange
