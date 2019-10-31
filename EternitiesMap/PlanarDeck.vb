@@ -99,7 +99,6 @@
         Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
         PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
     End Function
-
     Public Function UnreadyDeck() As Boolean
         For WorkCounter = 0 To 86 Step 1
             CardStack(0, WorkCounter, 5) = -1 'Set All State
