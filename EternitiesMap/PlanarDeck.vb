@@ -242,6 +242,12 @@
             CardStack(0, CardNumber, 5) = 1
             CardStack(0, CardNumber, 1) = vbNull
             CardStack(0, CardNumber, 2) = vbNull
+            CardStack(1, CardNumber, 0) = -1
+            CardStack(1, CardNumber, 1) = -1
+            CardStack(1, CardNumber, 2) = -1
+            CardStack(1, CardNumber, 3) = -1
+            CardStack(1, CardNumber, 4) = -1
+            CardStack(1, CardNumber, 5) = -1
             If ResetOnReturn = True Then CardStack(0, CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
@@ -257,6 +263,12 @@
             CardStack(0, CardNumber, 5) = 1
             CardStack(0, CardNumber, 1) = vbNull
             CardStack(0, CardNumber, 2) = vbNull
+            CardStack(1, CardNumber, 0) = -1
+            CardStack(1, CardNumber, 1) = -1
+            CardStack(1, CardNumber, 2) = -1
+            CardStack(1, CardNumber, 3) = -1
+            CardStack(1, CardNumber, 4) = -1
+            CardStack(1, CardNumber, 5) = -1
             If ResetOnReturn = True Then CardStack(0, CardNumber, 4) = 0
             CardLookup(1) = CardNumber
             DeckCounter += 1
