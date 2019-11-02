@@ -15,7 +15,7 @@
     Public AretResetMove As Boolean = True
     Public PhenomSupport As Boolean = False
     Public PhenomMoveChance As Integer = 0
-    Public PhenomHellJChance As Integer = 50
+    Public PhenomHellJChance As Integer = 25
     Public PhenomDeck() As Integer
     Public PhenomDeckSize As Integer
     Public CurrentPlane As Integer
@@ -92,7 +92,7 @@
         If PhenomSupport = True Then
             ReDim PhenomDeck(8)
             PhenomDeckSize = 8
-            PhenomDeck = {-1, 64, 64, 64, 64, 64, 64, 64, 64}
+            PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
         End If
     End Function
 

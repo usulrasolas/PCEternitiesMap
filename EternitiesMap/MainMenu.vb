@@ -23,6 +23,10 @@
         ChkAertReset.Checked = AretResetMove
         NumAretMax.Value = AretCounter
         ChkPhenomSupport.Checked = PhenomSupport
+        TBPhenomHJChance.Value = PhenomHellJChance
+        TBPhenomMoveChance.Value = PhenomMoveChance
+        LBLHJChance.Text = PhenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
+        LBLMoveChance.Text = PhenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
     End Sub
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
         PretranslateReset = ChkPreTransReset.Checked
@@ -41,5 +45,14 @@
     End Sub
     Private Sub ChkPhenomSupport_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPhenomSupport.CheckedChanged
         PhenomSupport = ChkPhenomSupport.Checked
+    End Sub
+    Private Sub TBPhenomHJChance_Scroll(sender As Object, e As EventArgs) Handles TBPhenomHJChance.Scroll
+        PhenomHellJChance = TBPhenomHJChance.Value
+        LBLHJChance.Text = PhenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
+    End Sub
+
+    Private Sub TBPhenomMoveChance_Scroll(sender As Object, e As EventArgs) Handles TBPhenomMoveChance.Scroll
+        PhenomMoveChance = TBPhenomMoveChance.Value
+        LBLMoveChance.Text = PhenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
     End Sub
 End Class

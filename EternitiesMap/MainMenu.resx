@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="CHKInfinite.ToolTip" xml:space="preserve">
+    <value>Check this box to Play Finite Mode. Leave unchecked
+to play Standard Blind Eternities Map.
+
+In the standard version of the Blind Eternities Map,
+as planes no longer become visable on the board,
+they are reshuffled back into the deck, and new planes
+are dealt out when new planes are discovered.
+
+In Finite Mode, Planes are not reshuffled back into the
+deck when they are no longer visable on the board,
+remaining on the grid to be visited again. Once the Deck
+is out of cards, Helljumping is disabled. You won't be able
+Planeswalk to unknown Planes.
+  
+Finite mode allows for unique maps of the Multiverse
+every playthrough.</value>
+  </data>
   <data name="ChkAertReset.ToolTip" xml:space="preserve">
     <value>Check this box to have Aretopolis reset when its ability
 triggers. This Setting will only affect Aretopolis's ability.
@@ -188,27 +209,6 @@ Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="CHKInfinite.ToolTip" xml:space="preserve">
-    <value>Check this box to Play Finite Mode. Leave unchecked
-to play Standard Blind Eternities Map.
-
-In the standard version of the Blind Eternities Map,
-as planes no longer become visable on the board,
-they are reshuffled back into the deck, and new planes
-are dealt out when new planes are discovered.
-
-In Finite Mode, Planes are not reshuffled back into the
-deck when they are no longer visable on the board,
-remaining on the grid to be visited again. Once the Deck
-is out of cards, Helljumping is disabled. You won't be able
-Planeswalk to unknown Planes.
-  
-Finite mode allows for unique maps of the Multiverse
-every playthrough.</value>
   </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

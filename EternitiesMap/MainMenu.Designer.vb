@@ -45,11 +45,17 @@ Partial Class MainMenu
         Me.TabPagePhenom = New System.Windows.Forms.TabPage()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
+        Me.LBLHJChance = New System.Windows.Forms.Label()
+        Me.TBPhenomMoveChance = New System.Windows.Forms.TrackBar()
+        Me.LBLMoveChance = New System.Windows.Forms.Label()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPagePhenom.SuspendLayout()
+        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -276,6 +282,10 @@ Partial Class MainMenu
         '
         Me.TabPagePhenom.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPagePhenom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPagePhenom.Controls.Add(Me.LBLMoveChance)
+        Me.TabPagePhenom.Controls.Add(Me.TBPhenomMoveChance)
+        Me.TabPagePhenom.Controls.Add(Me.LBLHJChance)
+        Me.TabPagePhenom.Controls.Add(Me.TBPhenomHJChance)
         Me.TabPagePhenom.Controls.Add(Me.ChkPhenomSupport)
         Me.TabPagePhenom.Location = New System.Drawing.Point(4, 22)
         Me.TabPagePhenom.Name = "TabPagePhenom"
@@ -309,6 +319,54 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
+        'TBPhenomHJChance
+        '
+        Me.TBPhenomHJChance.BackColor = System.Drawing.Color.Black
+        Me.TBPhenomHJChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TBPhenomHJChance.Location = New System.Drawing.Point(3, 20)
+        Me.TBPhenomHJChance.Maximum = 100
+        Me.TBPhenomHJChance.Name = "TBPhenomHJChance"
+        Me.TBPhenomHJChance.Size = New System.Drawing.Size(761, 45)
+        Me.TBPhenomHJChance.TabIndex = 14
+        Me.TBPhenomHJChance.TickFrequency = 5
+        Me.TBPhenomHJChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.ToolTip1.SetToolTip(Me.TBPhenomHJChance, "Percent Chance of A Random Phenomenon on Helljump")
+        '
+        'LBLHJChance
+        '
+        Me.LBLHJChance.AutoSize = True
+        Me.LBLHJChance.BackColor = System.Drawing.Color.Black
+        Me.LBLHJChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LBLHJChance.Location = New System.Drawing.Point(3, 65)
+        Me.LBLHJChance.Name = "LBLHJChance"
+        Me.LBLHJChance.Size = New System.Drawing.Size(309, 13)
+        Me.LBLHJChance.TabIndex = 15
+        Me.LBLHJChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
+        '
+        'TBPhenomMoveChance
+        '
+        Me.TBPhenomMoveChance.BackColor = System.Drawing.Color.Black
+        Me.TBPhenomMoveChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TBPhenomMoveChance.Location = New System.Drawing.Point(3, 78)
+        Me.TBPhenomMoveChance.Maximum = 100
+        Me.TBPhenomMoveChance.Name = "TBPhenomMoveChance"
+        Me.TBPhenomMoveChance.Size = New System.Drawing.Size(761, 45)
+        Me.TBPhenomMoveChance.TabIndex = 16
+        Me.TBPhenomMoveChance.TickFrequency = 5
+        Me.TBPhenomMoveChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.ToolTip1.SetToolTip(Me.TBPhenomMoveChance, "Percent Chance of A Random Phenomenon on Helljump")
+        '
+        'LBLMoveChance
+        '
+        Me.LBLMoveChance.AutoSize = True
+        Me.LBLMoveChance.BackColor = System.Drawing.Color.Black
+        Me.LBLMoveChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LBLMoveChance.Location = New System.Drawing.Point(3, 123)
+        Me.LBLMoveChance.Name = "LBLMoveChance"
+        Me.LBLMoveChance.Size = New System.Drawing.Size(309, 13)
+        Me.LBLMoveChance.TabIndex = 17
+        Me.LBLMoveChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
+        '
         'MainMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -336,6 +394,8 @@ Partial Class MainMenu
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPagePhenom.ResumeLayout(False)
         Me.TabPagePhenom.PerformLayout()
+        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -362,4 +422,8 @@ Partial Class MainMenu
     Friend WithEvents ChkPreTransReset As CheckBox
     Friend WithEvents TabPagePhenom As TabPage
     Friend WithEvents ChkPhenomSupport As CheckBox
+    Friend WithEvents LBLMoveChance As Label
+    Friend WithEvents TBPhenomMoveChance As TrackBar
+    Friend WithEvents LBLHJChance As Label
+    Friend WithEvents TBPhenomHJChance As TrackBar
 End Class
