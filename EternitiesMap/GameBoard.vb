@@ -1401,6 +1401,7 @@
             UpdateArrays()
         End If
     End Sub
+
     Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
         If DeckState = 3 Then
             If CurrentPlane = 65 Then
