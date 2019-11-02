@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainMenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MainMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
@@ -44,7 +44,6 @@ Partial Class MainMenu
         Me.ChkPreTransReset = New System.Windows.Forms.CheckBox()
         Me.TabPagePhenom = New System.Windows.Forms.TabPage()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
-        Me.ChkPhenomDealIn = New System.Windows.Forms.CheckBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
@@ -277,7 +276,6 @@ Partial Class MainMenu
         Me.TabPagePhenom.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPagePhenom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TabPagePhenom.Controls.Add(Me.ChkPhenomSupport)
-        Me.TabPagePhenom.Controls.Add(Me.ChkPhenomDealIn)
         Me.TabPagePhenom.Location = New System.Drawing.Point(4, 22)
         Me.TabPagePhenom.Name = "TabPagePhenom"
         Me.TabPagePhenom.Padding = New System.Windows.Forms.Padding(3)
@@ -293,25 +291,12 @@ Partial Class MainMenu
         Me.ChkPhenomSupport.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White
         Me.ChkPhenomSupport.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.ChkPhenomSupport.Location = New System.Drawing.Point(3, 20)
+        Me.ChkPhenomSupport.Location = New System.Drawing.Point(3, 3)
         Me.ChkPhenomSupport.Name = "ChkPhenomSupport"
         Me.ChkPhenomSupport.Size = New System.Drawing.Size(761, 17)
         Me.ChkPhenomSupport.TabIndex = 13
         Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
         Me.ChkPhenomSupport.UseVisualStyleBackColor = False
-        '
-        'ChkPhenomDealIn
-        '
-        Me.ChkPhenomDealIn.AutoSize = True
-        Me.ChkPhenomDealIn.BackColor = System.Drawing.Color.Black
-        Me.ChkPhenomDealIn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkPhenomDealIn.ForeColor = System.Drawing.Color.White
-        Me.ChkPhenomDealIn.Location = New System.Drawing.Point(3, 3)
-        Me.ChkPhenomDealIn.Name = "ChkPhenomDealIn"
-        Me.ChkPhenomDealIn.Size = New System.Drawing.Size(761, 17)
-        Me.ChkPhenomDealIn.TabIndex = 14
-        Me.ChkPhenomDealIn.Text = "Deal in Phenomenon to Planar Deck"
-        Me.ChkPhenomDealIn.UseVisualStyleBackColor = False
         '
         'ToolTip1
         '
@@ -376,5 +361,4 @@ Partial Class MainMenu
     Friend WithEvents ChkPreTransReset As CheckBox
     Friend WithEvents TabPagePhenom As TabPage
     Friend WithEvents ChkPhenomSupport As CheckBox
-    Friend WithEvents ChkPhenomDealIn As CheckBox
 End Class

@@ -84,8 +84,7 @@
         End If
         Return DisplayZoom
     End Function
-    Function PhenomEvent(phenomnumber As Integer, playtype As Integer, xloc As Integer, yloc As Integer)
-        'playtype 0=onboard 1=random
+    Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventXloc = xloc
         EventYloc = yloc
         If phenomnumber = 9 Then '' Chaotic Aether
@@ -730,7 +729,7 @@
                 PBWalk_Click(PictureBox7, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, 0, 1)
+                PhenomEvent(PickRandomPhenom, 0, 1)
             End If
             MoveEventCheck()
             TranslateBoard(0, -1)
@@ -780,7 +779,7 @@
                 PBWalk_Click(PictureBox6, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, -1, 1)
+                PhenomEvent(PickRandomPhenom, -1, 1)
             End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -815,7 +814,7 @@
                 PBWalk_Click(PictureBox8, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, 1, 1)
+                PhenomEvent(PickRandomPhenom, 1, 1)
             End If
 
         ElseIf DeckState = 1 Then
@@ -870,7 +869,7 @@
                 PBWalk_Click(PictureBox14, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, 1, 0)
+                PhenomEvent(PickRandomPhenom, 1, 0)
             End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -900,7 +899,7 @@
                 PBWalk_Click(PictureBox12, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, -1, 0)
+                PhenomEvent(PickRandomPhenom, -1, 0)
             End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -955,7 +954,7 @@
                 PBWalk_Click(PictureBox18, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, -1, -1)
+                PhenomEvent(PickRandomPhenom, -1, -1)
             End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -976,7 +975,7 @@
                 PBWalk_Click(PictureBox19, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, 0, -1)
+                PhenomEvent(PickRandomPhenom, 0, -1)
             End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
@@ -998,7 +997,7 @@
                 PBWalk_Click(PictureBox20, Nothing)
                 PictureBox13_Click(Nothing, Nothing)
             Else
-                PhenomEvent(PickRandomPhenom, 1, 1, -1)
+                PhenomEvent(PickRandomPhenom, 1, -1)
             End If
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
