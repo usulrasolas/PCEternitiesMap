@@ -57,6 +57,18 @@
         DispArray(25) = Label25
         PBZoom.SendToBack()
         LBLZoom.SendToBack()
+        PBDoubleZoom1.Enabled = False
+        PBDoubleZoom1.Visible = False
+        PBDoubleZoom1.SendToBack()
+        PBDoubleZoom2.Enabled = False
+        PBDoubleZoom2.Visible = False
+        PBDoubleZoom2.SendToBack()
+        nDoubleZoom1.Enabled = False
+        NDoubleZoom1.Visible = False
+        NDoubleZoom1.SendToBack()
+        NDoubleZoom2.Enabled = False
+        NDoubleZoom2.Visible = False
+        NDoubleZoom2.SendToBack()
         PBZoom.Visible = False
         LBLZoom.Visible = False
         PBZoom.Enabled = False
@@ -64,8 +76,58 @@
         UpdateArrays()
         NewGame()
     End Sub
+    Function DoubleZoom(center As Integer, slot1 As Integer, slot2 As Integer)
+        For workcounter = 1 To 25 Step 1
+            CardArray(workcounter).Enabled = False
+            CardArray(workcounter).Visible = False
+        Next
+        DoubleZoomBuffer(0) = slot1
+        DoubleZoomBuffer(1) = slot2
+        PBDoubleZoom1.Enabled = True
+        PBDoubleZoom1.Visible = True
+        PBDoubleZoom1.BringToFront()
+        PBDoubleZoom2.Enabled = True
+        PBDoubleZoom2.Visible = True
+        PBDoubleZoom2.BringToFront()
+        NDoubleZoom1.Enabled = True
+        NDoubleZoom1.Visible = True
+        NDoubleZoom1.BringToFront()
+        NDoubleZoom2.Enabled = True
+        NDoubleZoom2.Visible = True
+        NDoubleZoom2.BringToFront()
+        PCardSelect2.Enabled = True
+        PCardSelect2.Visible = True
+        PCardSelect2.BringToFront()
+        PCardSelect2.Image = CardImage(center)
+        PBDoubleZoom1.Image = CardImage(slot1)
+        PBDoubleZoom2.Image = CardImage(slot2)
+        NDoubleZoom1.Value = CardStack(0, slot1, 4)
+        NDoubleZoom2.Value = CardStack(0, slot2, 4)
+    End Function
+    Function HideDoubleZoom()
+        For workcounter = 1 To 25 Step 1
+            CardArray(workcounter).Enabled = True
+            CardArray(workcounter).Visible = True
+        Next
+        PBDoubleZoom1.Enabled = False
+        PBDoubleZoom1.Visible = False
+        PBDoubleZoom1.SendToBack()
+        PBDoubleZoom2.Enabled = False
+        PBDoubleZoom2.Visible = False
+        PBDoubleZoom2.SendToBack()
+        NDoubleZoom1.Enabled = False
+        NDoubleZoom1.Visible = False
+        NDoubleZoom1.SendToBack()
+        NDoubleZoom2.Enabled = False
+        NDoubleZoom2.Visible = False
+        NDoubleZoom2.SendToBack()
+        PCardSelect2.Enabled = False
+        PCardSelect2.Visible = False
+        PCardSelect2.SendToBack()
+        DeckState = 1
+    End Function
     Function DisplayZoom(CardNumber As Integer) As Boolean
-        If CheckPosition(CardNumber) = True Then
+        If CheckPosition(CardNumber) = True And DeckState < 9 Then
             PBZoom.Image = CardImage(CardNumber)
             PBZoom.BringToFront()
             PBZoom.Visible = True
@@ -79,7 +141,35 @@
             If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
             NCounter.Enabled = False
             DisplayZoom = True
-        ElseIf CheckPosition(Cardnumber) = False Then ''if multiple occupancy
+        ElseIf CheckPosition(CardNumber) = False And DeckState = 6 Then
+            PBZoom.Image = CardImage(CardNumber)
+            PBZoom.BringToFront()
+            PBZoom.Visible = True
+            PBZoom.Enabled = True
+            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Visible = True
+            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
+            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
+            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
+            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
+            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
+            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
+            NCounter.Enabled = False
+            DisplayZoom = True
+        ElseIf CheckPosition(CardNumber) = False And DeckState = 9 Then
+            PBZoom.Image = CardImage(CardNumber)
+            PBZoom.BringToFront()
+            PBZoom.Visible = True
+            PBZoom.Enabled = True
+            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Visible = True
+            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
+            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
+            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
+            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
+            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
+            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
+            NCounter.Enabled = False
+            DisplayZoom = True
+        ElseIf CheckPosition(CardNumber) = False Then ''if multiple occupancy
             If CardStack(1, Cardnumber, 0) >= 1 Then ''if HASMETADATA is set to any >0 value
                 Dim UpdateCard1 As Integer = Cardnumber
                 Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)
@@ -88,10 +178,15 @@
                 Dim UpdatePartner2 As Integer = CardStack(1, UpdateCard2, 3)
                 Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
                 If UpdateDisplay1 = UpdateDisplay2 And UpdateCard1 = UpdatePartner2 And UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
-                    ''call pickdisplay and set deckmode to specialcase?
+                    DoubleZoom(UpdateDisplay1, UpdateCard1, UpdatePartner1)
                     DisplayZoom = True
-                Else
+                Else ''mismatched metadata
                     DisplayZoom = False
+                    PBZoom.Image = CardImage(-1)
+                    PBZoom.BringToFront()
+                    PBZoom.Visible = True
+                    PBZoom.Enabled = True
+                    NCounter.Enabled = False
                 End If
             Else ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
@@ -239,7 +334,7 @@
             DrawBuffer(1) = DrawCard()
             Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
             If eventdistance = 2 Then
-                PickDisplay(phenomnumber, Nothing, Nothing, DrawBuffer(0), Nothing, DrawBuffer(1))
+                DoubleZoom(phenomnumber, DrawBuffer(0), DrawBuffer(1))
                 PlayCard(DrawBuffer(0), 3, xloc, yloc)
                 PlayCard(DrawBuffer(1), 3, xloc, yloc)
             ElseIf eventdistance = 1 Then
@@ -249,7 +344,7 @@
                         ExistingPlane = workcounter
                         ReturnCard(ExistingPlane)
                     End If
-                    PickDisplay(phenomnumber, Nothing, Nothing, DrawBuffer(0), Nothing, DrawBuffer(1))
+                    DoubleZoom(phenomnumber, DrawBuffer(0), DrawBuffer(1))
                     PlayCard(DrawBuffer(0), 3, xloc, yloc)
                     PlayCard(DrawBuffer(1), 3, xloc, yloc)
                 Next
@@ -391,30 +486,30 @@
         For workcounter = 1 To 25 Step 1
             CardArray(workcounter).Enabled = False
         Next
-        PCardSelect1.BringToFront()
-        PCardSelect2.BringToFront()
-        PCardSelect3.BringToFront()
-        PCardSelect4.BringToFront()
-        PCardSelect5.BringToFront()
-        PCardSelect6.BringToFront()
-        PCardSelect1.Enabled = True
-        PCardSelect2.Enabled = True
-        PCardSelect3.Enabled = True
-        PCardSelect4.Enabled = True
-        PCardSelect5.Enabled = True
-        PCardSelect6.Enabled = True
-        PCardSelect1.Visible = True
-        PCardSelect2.Visible = True
-        PCardSelect3.Visible = True
-        PCardSelect4.Visible = True
-        PCardSelect5.Visible = True
-        PCardSelect6.Visible = True
-        PCardSelect1.Image = CardImage(slot1)
-        PCardSelect2.Image = CardImage(trigPlane)
-        PCardSelect3.Image = CardImage(slot2)
-        PCardSelect4.Image = CardImage(slot3)
-        PCardSelect5.Image = CardImage(slot4)
-        PCardSelect6.Image = CardImage(slot5)
+        If slot1 > 0 Then PCardSelect1.BringToFront()
+        If trigPlane > 0 Then PCardSelect2.BringToFront()
+        If slot2 > 0 Then PCardSelect3.BringToFront()
+        If slot3 > 0 Then PCardSelect4.BringToFront()
+        If slot4 > 0 Then PCardSelect5.BringToFront()
+        If slot5 > 0 Then PCardSelect6.BringToFront()
+        If slot1 > 0 Then PCardSelect1.Enabled = True
+        If trigPlane > 0 Then PCardSelect2.Enabled = True
+        If slot2 > 0 Then PCardSelect3.Enabled = True
+        If slot3 > 0 Then PCardSelect4.Enabled = True
+        If slot4 > 0 Then PCardSelect5.Enabled = True
+        If slot5 > 0 Then PCardSelect6.Enabled = True
+        If slot1 > 0 Then PCardSelect1.Visible = True
+        If trigPlane > 0 Then PCardSelect2.Visible = True
+        If slot2 > 0 Then PCardSelect3.Visible = True
+        If slot3 > 0 Then PCardSelect4.Visible = True
+        If slot4 > 0 Then PCardSelect5.Visible = True
+        If slot5 > 0 Then PCardSelect6.Visible = True
+        If slot1 > 0 Then PCardSelect1.Image = CardImage(slot1)
+        If trigPlane > 0 Then PCardSelect2.Image = CardImage(trigPlane)
+        If slot2 > 0 Then PCardSelect3.Image = CardImage(slot2)
+        If slot3 > 0 Then PCardSelect4.Image = CardImage(slot3)
+        If slot4 > 0 Then PCardSelect5.Image = CardImage(slot4)
+        If slot5 > 0 Then PCardSelect6.Image = CardImage(slot5)
         PBChaos.Enabled = False
         NCounter.Enabled = False
         PBWalk.Enabled = False
@@ -501,6 +596,11 @@
                     UpdateArrayElement(12, workcounter)
                 ElseIf CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 0 Then
                     UpdateArrayElement(13, workcounter)
+                    If CheckPosition(workcounter) = True Then
+                        NCounter.Enabled = True
+                    ElseIf CheckPosition(workcounter) = False Then
+                        NCounter.Enabled = False
+                    End If
                     CurrentPlane = workcounter
                     NCounter.Value = CardStack(0, workcounter, 4)
                 ElseIf CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = 0 Then
@@ -1289,10 +1389,16 @@
             End If
         ElseIf DeckState = 6 Then
             If MsgBox("Spatial Merging Resolves with Both Displayed Planes. Continue?", MsgBoxStyle.YesNo, "Spatial Merging Resolves") = MsgBoxResult.Yes Then
-                HidePickDisplay()
+                HideDoubleZoom()
                 DeckState = 5
                 ResolvePhenom(EventCardInPlay)
             End If
+        ElseIf deckstate = 9 Then
+            HideDoubleZoom()
+        Else
+            HideDoubleZoom()
+            HidePickDisplay()
+            UpdateArrays()
         End If
     End Sub
     Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
@@ -1375,5 +1481,15 @@
             HidePickDisplay()
             ResolvePhenom(EventCardInPlay)
         End If
+    End Sub
+    Private Sub PBDoubleZoom1_click(sender As Object, e As EventArgs) Handles PBDoubleZoom1.Click
+    End Sub
+    Private Sub PBDoubleZoom2_Click(sender As Object, e As EventArgs) Handles PBDoubleZoom2.Click
+    End Sub
+    Private Sub NDoubleZoom1_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom1.ValueChanged
+        CardStack(0, DoubleZoomBuffer(0), 3) = NDoubleZoom1.Value
+    End Sub
+    Private Sub NDoubleZoom2_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom2.ValueChanged
+        CardStack(0, DoubleZoomBuffer(1), 3) = NDoubleZoom2.Value
     End Sub
 End Class

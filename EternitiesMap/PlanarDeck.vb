@@ -19,6 +19,7 @@
     Public PhenomDeck() As Integer
     Public PhenomDeckSize As Integer
     Public CurrentPlane As Integer
+    Public DoubleZoomBuffer(1) As Integer
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer

@@ -85,6 +85,10 @@ Partial Class GameBoard
         Me.PCardSelect5 = New System.Windows.Forms.PictureBox()
         Me.PCardSelect6 = New System.Windows.Forms.PictureBox()
         Me.LBLZoom = New System.Windows.Forms.Label()
+        Me.PBDoubleZoom2 = New System.Windows.Forms.PictureBox()
+        Me.PBDoubleZoom1 = New System.Windows.Forms.PictureBox()
+        Me.NDoubleZoom1 = New System.Windows.Forms.NumericUpDown()
+        Me.NDoubleZoom2 = New System.Windows.Forms.NumericUpDown()
         CType(Me.PBChaos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBWalk, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,6 +125,10 @@ Partial Class GameBoard
         CType(Me.PCardSelect4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PCardSelect5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PCardSelect6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBDoubleZoom2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBDoubleZoom1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NDoubleZoom1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NDoubleZoom2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PBChaos
@@ -875,6 +883,52 @@ Partial Class GameBoard
         Me.LBLZoom.TabIndex = 61
         Me.LBLZoom.Text = "99"
         '
+        'PBDoubleZoom2
+        '
+        Me.PBDoubleZoom2.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.c0
+        Me.PBDoubleZoom2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PBDoubleZoom2.ErrorImage = Global.EternitiesMap.My.Resources.Resources.SHGR
+        Me.PBDoubleZoom2.Location = New System.Drawing.Point(1029, 478)
+        Me.PBDoubleZoom2.Name = "PBDoubleZoom2"
+        Me.PBDoubleZoom2.Size = New System.Drawing.Size(834, 582)
+        Me.PBDoubleZoom2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PBDoubleZoom2.TabIndex = 62
+        Me.PBDoubleZoom2.TabStop = False
+        '
+        'PBDoubleZoom1
+        '
+        Me.PBDoubleZoom1.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.c0
+        Me.PBDoubleZoom1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PBDoubleZoom1.ErrorImage = Global.EternitiesMap.My.Resources.Resources.SHGR
+        Me.PBDoubleZoom1.Location = New System.Drawing.Point(35, 478)
+        Me.PBDoubleZoom1.Name = "PBDoubleZoom1"
+        Me.PBDoubleZoom1.Size = New System.Drawing.Size(834, 582)
+        Me.PBDoubleZoom1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PBDoubleZoom1.TabIndex = 63
+        Me.PBDoubleZoom1.TabStop = False
+        '
+        'NDoubleZoom1
+        '
+        Me.NDoubleZoom1.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NDoubleZoom1.Location = New System.Drawing.Point(808, 478)
+        Me.NDoubleZoom1.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.NDoubleZoom1.Minimum = New Decimal(New Integer() {9, 0, 0, -2147483648})
+        Me.NDoubleZoom1.Name = "NDoubleZoom1"
+        Me.NDoubleZoom1.Size = New System.Drawing.Size(61, 47)
+        Me.NDoubleZoom1.TabIndex = 64
+        Me.NDoubleZoom1.Value = New Decimal(New Integer() {99, 0, 0, 0})
+        '
+        'NDoubleZoom2
+        '
+        Me.NDoubleZoom2.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NDoubleZoom2.Location = New System.Drawing.Point(1802, 478)
+        Me.NDoubleZoom2.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.NDoubleZoom2.Minimum = New Decimal(New Integer() {9, 0, 0, -2147483648})
+        Me.NDoubleZoom2.Name = "NDoubleZoom2"
+        Me.NDoubleZoom2.Size = New System.Drawing.Size(61, 47)
+        Me.NDoubleZoom2.TabIndex = 65
+        Me.NDoubleZoom2.Value = New Decimal(New Integer() {99, 0, 0, 0})
+        '
         'GameBoard
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -882,6 +936,10 @@ Partial Class GameBoard
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(1920, 1080)
+        Me.Controls.Add(Me.NDoubleZoom2)
+        Me.Controls.Add(Me.NDoubleZoom1)
+        Me.Controls.Add(Me.PBDoubleZoom1)
+        Me.Controls.Add(Me.PCardSelect2)
         Me.Controls.Add(Me.PCardSelect6)
         Me.Controls.Add(Me.PCardSelect5)
         Me.Controls.Add(Me.PCardSelect4)
@@ -943,7 +1001,7 @@ Partial Class GameBoard
         Me.Controls.Add(Me.PBChaos)
         Me.Controls.Add(Me.PBZoom)
         Me.Controls.Add(Me.LBLZoom)
-        Me.Controls.Add(Me.PCardSelect2)
+        Me.Controls.Add(Me.PBDoubleZoom2)
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.Color.Coral
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -988,6 +1046,10 @@ Partial Class GameBoard
         CType(Me.PCardSelect4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PCardSelect5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PCardSelect6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBDoubleZoom2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBDoubleZoom1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NDoubleZoom1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NDoubleZoom2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1055,4 +1117,8 @@ Partial Class GameBoard
     Friend WithEvents PCardSelect5 As PictureBox
     Friend WithEvents PCardSelect6 As PictureBox
     Friend WithEvents LBLZoom As Label
+    Friend WithEvents PBDoubleZoom2 As PictureBox
+    Friend WithEvents PBDoubleZoom1 As PictureBox
+    Friend WithEvents NDoubleZoom1 As NumericUpDown
+    Friend WithEvents NDoubleZoom2 As NumericUpDown
 End Class
