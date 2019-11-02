@@ -79,8 +79,28 @@
             If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
             NCounter.Enabled = False
             DisplayZoom = True
-        ElseIf CheckPosition(CardNumber) = False Then
-            DisplayZoom = False
+        ElseIf CheckPosition(Cardnumber) = False Then ''if multiple occupancy
+            If CardStack(1, Cardnumber, 0) >= 1 Then ''if HASMETADATA is set to any >0 value
+                Dim UpdateCard1 As Integer = Cardnumber
+                Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)
+                Dim UpdateDisplay1 As Integer = CardStack(1, UpdateCard1, 1)
+                Dim UpdateCard2 As Integer = CardStack(1, UpdateCard1, 3)
+                Dim UpdatePartner2 As Integer = CardStack(1, UpdateCard2, 3)
+                Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
+                If UpdateDisplay1 = UpdateDisplay2 And UpdateCard1 = UpdatePartner2 And UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
+                    ''call pickdisplay and set deckmode to specialcase?
+                    DisplayZoom = True
+                Else
+                    DisplayZoom = False
+                End If
+            Else ''double occupancy without metadata
+                PBZoom.Image = CardImage(-1)
+                PBZoom.BringToFront()
+                PBZoom.Visible = True
+                PBZoom.Enabled = True
+                NCounter.Enabled = False
+                DisplayZoom = True
+            End If
         End If
         Return DisplayZoom
     End Function
@@ -214,27 +234,28 @@
             TranslateBoard(invxloc, invyloc)
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(64)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
+            DeckState = 6
+            DrawBuffer(0) = DrawCard()
+            DrawBuffer(1) = DrawCard()
+            Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then
+                PickDisplay(phenomnumber, Nothing, Nothing, DrawBuffer(0), Nothing, DrawBuffer(1))
+                PlayCard(DrawBuffer(0), 3, xloc, yloc)
+                PlayCard(DrawBuffer(1), 3, xloc, yloc)
+            ElseIf eventdistance = 1 Then
+                Dim ExistingPlane As Integer
+                For workcounter = 1 To 86 Step 1
+                    If CardStack(0, workcounter, 1) = xloc And CardStack(0, workcounter, 2) = yloc Then
+                        ExistingPlane = workcounter
+                        ReturnCard(ExistingPlane)
+                    End If
+                    PickDisplay(phenomnumber, Nothing, Nothing, DrawBuffer(0), Nothing, DrawBuffer(1))
+                    PlayCard(DrawBuffer(0), 3, xloc, yloc)
+                    PlayCard(DrawBuffer(1), 3, xloc, yloc)
+                Next
             Else
-                invxloc = 0
+                DisplayZoom(-1)
             End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
         ElseIf phenomnumber = 80 Then ''Time Distortion
             EventCardInPlay = phenomnumber
             DeckState = 4
@@ -268,7 +289,8 @@
             PCardSelect6.Visible = True
             PCardSelect6.Image = CardImage(phenomnumber)
         ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
-            PlayCard(DrawCard, 3, EventXloc, EventYloc)
+            Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -301,7 +323,39 @@
         ElseIf phenomnumber = 57 Then ''Reality Shaping
             DeckState = 1 ''done
         ElseIf phenomnumber = 64 Then ''Spatial Merging
+            Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
+            PlayCard(DrawBuffer(0), 3, EventXloc, EventYloc)
+            PlayCard(DrawBuffer(1), 3, EventXloc, EventYloc)
+            CardStack(1, DrawBuffer(0), 0) = 1
+            CardStack(1, DrawBuffer(1), 0) = 1
+            CardStack(1, DrawBuffer(0), 1) = 64
+            CardStack(1, DrawBuffer(1), 1) = 64
+            CardStack(1, DrawBuffer(1), 2) = 0
+            CardStack(1, DrawBuffer(0), 2) = 0
+            CardStack(1, DrawBuffer(1), 3) = DrawBuffer(0)
+            CardStack(1, DrawBuffer(0), 3) = DrawBuffer(1)
+            MoveEventCheck()
+            Dim invxloc As Integer
+            Dim invyloc As Integer
+            If EventXloc = 1 Then
+                invxloc = -1
+            ElseIf EventXloc = -1 Then
+                invxloc = 1
+            Else
+                invxloc = 0
+            End If
+            If EventYloc = 1 Then
+                invyloc = -1
+            ElseIf EventYloc = -1 Then
+                invyloc = 1
+            Else
+                invyloc = 0
+            End If
+            TranslateBoard(invxloc, invyloc)
             DeckState = 1
+            PBWalk_Click(Nothing, Nothing)
+            PBWalk_Click(Nothing, Nothing)
+            UpdateArrays()
         ElseIf phenomnumber = 80 Then ''Time Distortion
             DeckState = 1 ''done
         End If
@@ -1175,7 +1229,6 @@
             LBLZoom.SendToBack()
             NCounter.Enabled = True
         End If
-
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If DeckState = 1 Then
@@ -1220,7 +1273,6 @@
             PictureBox13_Click(NCounter, Nothing)
         End If
     End Sub
-
     Private Sub PCardSelect2_Click(sender As Object, e As EventArgs) Handles PCardSelect2.Click
         If DeckState = 3 Then
             If CurrentPlane = 53 Then 'triple draw just needs to stay until clicked
@@ -1235,7 +1287,12 @@
                     DeckState = 1
                 End If
             End If
-
+        ElseIf DeckState = 6 Then
+            If MsgBox("Spatial Merging Resolves with Both Displayed Planes. Continue?", MsgBoxStyle.YesNo, "Spatial Merging Resolves") = MsgBoxResult.Yes Then
+                HidePickDisplay()
+                DeckState = 5
+                ResolvePhenom(EventCardInPlay)
+            End If
         End If
     End Sub
     Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
@@ -1259,7 +1316,6 @@
             ResolvePhenom(EventCardInPlay)
         End If
     End Sub
-
     Private Sub PCardSelect1_Click(sender As Object, e As EventArgs) Handles PCardSelect1.Click
         If DeckState = 4 Then
             DeckState = 5
@@ -1286,9 +1342,10 @@
             ReturnCard(DrawBuffer(3))
             HidePickDisplay()
             ResolvePhenom(EventCardInPlay)
+        ElseIf DeckState = 6 Then
+            DisplayZoom(DrawBuffer(1))
         End If
     End Sub
-
     Private Sub PCardSelect4_Click(sender As Object, e As EventArgs) Handles PCardSelect4.Click
         If DeckState = 4 Then
             DeckState = 5
@@ -1301,9 +1358,10 @@
             ReturnCard(DrawBuffer(4))
             HidePickDisplay()
             ResolvePhenom(EventCardInPlay)
+        ElseIf DeckState = 6 Then
+            DisplayZoom(DrawBuffer(0))
         End If
     End Sub
-
     Private Sub PCardSelect3_Click(sender As Object, e As EventArgs) Handles PCardSelect3.Click
         If DeckState = 4 Then
             DeckState = 5

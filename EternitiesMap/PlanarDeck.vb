@@ -25,11 +25,11 @@
         ReadyDeck = False
         If DeckState = 0 Then
             For WorkCounter = 0 To 86 Step 1
-                CardStack(0, WorkCounter, 5) = 0 'Set All State
+                CardStack(0, WorkCounter, 5) = 0 'Set All State -1disable 0ready 1indeck 2inhand 3onboard
                 CardStack(0, WorkCounter, 4) = 0 'Counters
                 CardStack(0, WorkCounter, 3) = 0 'Flags
-                CardStack(0, WorkCounter, 2) = vbNull 'ypos
-                CardStack(0, WorkCounter, 1) = vbNull 'xPos
+                CardStack(0, WorkCounter, 2) = Nothing 'ypos
+                CardStack(0, WorkCounter, 1) = Nothing 'xPos
                 CardStack(0, WorkCounter, 0) = 0 'DeckPos
                 CardLookup(WorkCounter) = 0
                 CardStack(1, WorkCounter, 5) = -1 'Unpopulated
@@ -91,11 +91,12 @@
         If PhenomSupport = True Then
             ReDim PhenomDeck(8)
             PhenomDeckSize = 8
-            PhenomDeck = {-1, 9, 26, 39, 42, 52, 57, 64, 80}
+            PhenomDeck = {-1, 64, 64, 64, 64, 64, 64, 64, 64}
         End If
     End Function
 
     Function PickRandomPhenom() As Integer
+        Randomize()
         Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
         PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
     End Function
@@ -165,7 +166,7 @@
             CardLookup(DeckCounter) = 0
             DeckCounter -= 1
             Return DrawBuffer(0)
-        ElseIf DeckState = 4 Then ''dont update draw buffer
+        ElseIf DeckState = 4 Or DeckState = 6 Then ''dont update draw buffer
             DrawCard = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
@@ -177,34 +178,31 @@
         Else Return -1
         End If
     End Function
-    Public Function PlayCard(
-            CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
-        If DeckState = 1 Or 2 Then
-            If ToState = 1 And CardStack(0, CardNumber, 5) = 2 Then 'to deck
-                Dim workcounter As Integer
-                For workcounter = DeckCounter To 1 Step -1
-                    Dim currentcard As Integer = CardLookup(workcounter)
-                    CardStack(0, CardLookup(workcounter), 0) += 1
-                    CardLookup(workcounter + 1) = currentcard
-                Next
-                CardStack(0, CardNumber, 0) = 1
-                CardStack(0, CardNumber, 5) = 1
-                CardStack(0, CardNumber, 1) = 0
-                CardStack(0, CardNumber, 2) = 0
-                DeckCounter += 1
-                CardLookup(1) = CardNumber
-                Return True
-            ElseIf ToState = 3 And CardStack(0, CardNumber, 5) = 2 Then 'to play
-                CardStack(0, CardNumber, 1) = XPos
-                CardStack(0, CardNumber, 2) = YPos
-                CardStack(0, CardNumber, 0) = 0
-                CardStack(0, CardNumber, 5) = 3
-                Return True
-            Else
-                Return False
-            End If
-        Else Return False
+    Public Function PlayCard(CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
+        If ToState = 1 And CardStack(0, CardNumber, 5) = 2 Then 'to deck
+            Dim workcounter As Integer
+            For workcounter = DeckCounter To 1 Step -1
+                Dim currentcard As Integer = CardLookup(workcounter)
+                CardStack(0, CardLookup(workcounter), 0) += 1
+                CardLookup(workcounter + 1) = currentcard
+            Next
+            CardStack(0, CardNumber, 0) = 1
+            CardStack(0, CardNumber, 5) = 1
+            CardStack(0, CardNumber, 1) = 0
+            CardStack(0, CardNumber, 2) = 0
+            DeckCounter += 1
+            CardLookup(1) = CardNumber
+            PlayCard = True
+        ElseIf ToState = 3 And CardStack(0, CardNumber, 5) = 2 Then 'to play
+            CardStack(0, CardNumber, 1) = XPos
+            CardStack(0, CardNumber, 2) = YPos
+            CardStack(0, CardNumber, 0) = 0
+            CardStack(0, CardNumber, 5) = 3
+            PlayCard = True
+        Else
+            PlayCard = False
         End If
+        Return PlayCard
     End Function
     Public Function CheckPosition(cardnumber As Integer) As Boolean
         Dim CardDeckPos As Integer = CardStack(0, cardnumber, 0)
@@ -214,11 +212,13 @@
         Dim XyCheck As Integer = 0
         CheckPosition = False
         For workcounter = 1 To 86 Step 1
-            If CardDeckPos > 0 Then
+            If CardDeckPos = CardStack(0, workcounter, 0) And CardDeckPos > 0 Then
                 DeckCheck += 1
-            ElseIf CardDeckPos = 0 Then
+                CheckPosition = False
+            ElseIf CardDeckPos <= 0 And CardStack(0, workcounter, 5) = 3 Then
                 If CardStack(0, workcounter, 1) = CardxPos And CardStack(0, workcounter, 2) = CardyPos Then
                     XyCheck += 1
+                    CheckPosition = False
                 End If
             End If
             If DeckCheck = 0 And XyCheck = 1 Then
