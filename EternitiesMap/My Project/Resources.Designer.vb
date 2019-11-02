@@ -953,6 +953,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property main_menu_art() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("main_menu_art", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property SHGR() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SHGR", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property walk() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("walk", resourceCulture)
