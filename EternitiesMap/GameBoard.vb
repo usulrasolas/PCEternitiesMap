@@ -488,10 +488,24 @@
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).ForeColor = Color.White
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).BackColor = Color.Black
             If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Text = CardStack(0, Cardnumber, 4)
-        ElseIf CheckPosition(Cardnumber) = False Then
-            ''insert logic for multiple display
+        ElseIf CheckPosition(Cardnumber) = False Then ''if multiple occupancy
+            If CardStack(1, Cardnumber, 0) >= 1 Then ''if HASMETADATA is set to any >0 value
+                Dim UpdateCard1 As Integer = Cardnumber
+                Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)
+                Dim UpdateDisplay1 As Integer = CardStack(1, UpdateCard1, 1)
+                Dim UpdateCard2 As Integer = CardStack(1, UpdateCard1, 3)
+                Dim UpdatePartner2 As Integer = CardStack(1, UpdateCard2, 3)
+                Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
+                If UpdateDisplay1 = UpdateDisplay2 And UpdateCard1 = UpdatePartner2 And UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
+                    CardArray(DispNumber).Image = CardImage(UpdateDisplay1) ''display metadata card instead
+                Else
+                    GoTo 850
+                End If
+            Else
+850:
+                CardArray(DispNumber).Image = CardImage(-1)
+            End If
         End If
-
     End Function
     Function MoveEventCheck()
         PCardSelect6.SendToBack()
@@ -679,12 +693,14 @@
             Return My.Resources.c85
         ElseIf CardNumber = 86 Then
             Return My.Resources.c86
+        ElseIf CardNumber = -1 Then
+            Return My.Resources.SHGR
         Else
-            Return My.Resources.c0
+            Return My.Resources.SHGR
         End If
     End Function
     Shared Function PhenomMoveChanceCheck() As Boolean
-        If PhenomMoveChance > 0 Then
+        If PhenomMoveChance > 0 And PhenomSupport = True Then
             PhenomMoveChanceCheck = False
             Dim randomroll As Integer = Int((100 * Rnd()) + 1)
             If randomroll <= PhenomMoveChance Then PhenomMoveChanceCheck = True
@@ -693,7 +709,7 @@
         End If
     End Function
     Shared Function PhenomHellMoveChanceCheck() As Boolean
-        If PhenomHellJChance > 0 Then
+        If PhenomHellJChance > 0 And PhenomSupport = True Then
             PhenomHellMoveChanceCheck = False
             Dim randomroll As Integer = Int((100 * Rnd()) + 1)
             If randomroll <= PhenomHellJChance Then PhenomHellMoveChanceCheck = True
@@ -731,11 +747,6 @@
             Else
                 PhenomEvent(PickRandomPhenom, 0, 1)
             End If
-            MoveEventCheck()
-            TranslateBoard(0, -1)
-            UpdateArrays()
-            PBWalk_Click(PictureBox7, Nothing)
-            PictureBox13_Click(Nothing, Nothing)
         ElseIf DeckState = 1 Then
             For workcounter = 1 To 86 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
