@@ -179,13 +179,13 @@ Partial Class MainMenu
         '
         'NumAretMax
         '
-        Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Left
+        Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Top
         Me.NumAretMax.ForeColor = System.Drawing.Color.Black
-        Me.NumAretMax.Location = New System.Drawing.Point(3, 88)
+        Me.NumAretMax.Location = New System.Drawing.Point(195, 88)
         Me.NumAretMax.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumAretMax.Name = "NumAretMax"
-        Me.NumAretMax.Size = New System.Drawing.Size(50, 20)
+        Me.NumAretMax.Size = New System.Drawing.Size(569, 20)
         Me.NumAretMax.TabIndex = 13
         Me.NumAretMax.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -193,8 +193,9 @@ Partial Class MainMenu
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Black
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label4.ForeColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(59, 90)
+        Me.Label4.Location = New System.Drawing.Point(3, 88)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(192, 13)
         Me.Label4.TabIndex = 12
