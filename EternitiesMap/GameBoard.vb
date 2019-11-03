@@ -241,7 +241,7 @@
             DrawBuffer(3) = DrawCard()
             DrawBuffer(4) = DrawCard()
             PickDisplay(26, DrawBuffer(0), DrawBuffer(1), DrawBuffer(2), DrawBuffer(3), DrawBuffer(4))
-            MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
+            MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         ElseIf phenomnumber = 39 Then ''Morphic Tide
             EventCardInPlay = phenomnumber
             DeckState = 4
