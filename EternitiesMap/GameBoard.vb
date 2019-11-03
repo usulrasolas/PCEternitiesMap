@@ -188,6 +188,13 @@
                     PBZoom.Enabled = True
                     NCounter.Enabled = False
                 End If
+            ElseIf CheckPosition(CardNumber) = False And CardStack(0, CardNumber, 3) >= 20 Then
+                DisplayZoom = True
+                PBZoom.Image = CardImage(CardNumber)
+                PBZoom.BringToFront()
+                PBZoom.Visible = True
+                PBZoom.Enabled = True
+                NCounter.Enabled = False
             Else ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
                 PBZoom.BringToFront()
