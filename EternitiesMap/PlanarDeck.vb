@@ -224,16 +224,7 @@
             CardLookup(DeckCounter) = 0
             DeckCounter -= 1
             Return DrawBuffer(0)
-        ElseIf DeckState = 3 Then ''event draw, this is currently same but seperated to allow me to breakcode
-            DrawBuffer(0) = CardLookup(DeckCounter)
-            CardStack(0, CardLookup(DeckCounter), 5) = 2
-            CardStack(0, CardLookup(DeckCounter), 0) = 0
-            CardStack(0, CardLookup(DeckCounter), 1) = vbNull
-            CardStack(0, CardLookup(DeckCounter), 2) = vbNull
-            CardLookup(DeckCounter) = 0
-            DeckCounter -= 1
-            Return DrawBuffer(0)
-        ElseIf DeckState = 4 Or DeckState = 6 Then ''dont update draw buffer
+        ElseIf DeckState = 4 Or DeckState = 6 Or DeckState = 3 Then ''dont update draw buffer
             DrawCard = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
