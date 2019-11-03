@@ -20,15 +20,15 @@ The Slayer - Would need to clarify that you gain 7 additional life aqquire as we
 The Vanquisher - Would need to clarify you draw one card and increase hand size by one
 
 Ixalan
-Blessing of Shapers - Phenomenon
-Bloodfast - Phenomenon
-Bloodstained Massacre - Phenomenon
-Dramatic Entrance - Phenomenon
-Gates of Orazca - Phenomenon
-Gold Laden Shipwreck - Phenomenon
-Mass Mutiny - Phenomenon
-Rivers Rebuke - Phenomenon
-Savage Instinct - Phenomenon
+97Blessing of Shapers - Phenomenon (display until planeswalk away)
+98Bloodfast - Phenomenon (display until planeswalk away)
+99Bloodstained Massacre - Phenomenon
+101Dramatic Entrance - Phenomenon
+102Gates of Orazca - Phenomenon
+103Gold Laden Shipwreck - Phenomenon
+104Mass Mutiny - Phenomenon
+107Rivers Rebuke - Phenomenon
+108Savage Instinct - Phenomenon (display until planeswalk away)
 
 MorePlanes
 Aether Tide - Phenomenon

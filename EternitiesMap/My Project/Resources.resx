@@ -127,8 +127,41 @@
   <data name="c10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c100.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c101.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c102" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c102.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c103" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c103.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c104" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c104.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c105" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c105.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c106" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c106.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c107" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c107.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c108" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c108.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c109" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c109.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c110.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -408,6 +441,15 @@
   </data>
   <data name="c96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cardexpansions\fiora\c96.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c97" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c97.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c98" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c98.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c99" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\ixalan\c99.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chaos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icons\chaos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
