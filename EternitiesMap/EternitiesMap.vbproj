@@ -461,11 +461,11 @@
     <Content Include="Resources\CardExpansions\Challenge\Heros\thp3-7e-bow-of-the-hunter.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\Heros\thp3-8-the-destined.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\Heros\thp3-9-the-champion.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\Academy of Paliano.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\Dungeon Labyrinth.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\High City of Paliano.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\Thieves Quarter.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\Trest.jpg" />
+    <Content Include="Resources\CardExpansions\Fiora\c92.jpg" />
+    <Content Include="Resources\CardExpansions\Fiora\c93.jpg" />
+    <Content Include="Resources\CardExpansions\Fiora\c94.jpg" />
+    <Content Include="Resources\CardExpansions\Fiora\c95.jpg" />
+    <Content Include="Resources\CardExpansions\Fiora\c96.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\Asgard.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\Borg Unicomplex.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\Citadel.jpg" />

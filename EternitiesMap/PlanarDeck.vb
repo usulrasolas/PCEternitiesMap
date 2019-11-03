@@ -1,9 +1,9 @@
 ﻿Module PlanarDeck
     Public DeckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public DeckCounter As Integer = 0
-    Public CardLookup(91) As Integer
+    Public CardLookup(96) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
-    Public CardStack(1, 91, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
+    Public CardStack(1, 96, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
 #Enable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public DrawBuffer(4) As Integer
     Public InfinitePlane As Boolean = False
@@ -22,12 +22,13 @@
     Public DoubleZoomBuffer(1) As Integer
     Public PCAnthologies As Boolean = True
     Public ExpAmon As Boolean = True
+    Public ExpFiora As Boolean = True
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
         ReadyDeck = False
         If DeckState = 0 Then
-            For WorkCounter = 0 To 91 Step 1
+            For WorkCounter = 0 To 96 Step 1
                 CardStack(0, WorkCounter, 5) = -1 'Set All State -1disable 0ready 1indeck 2inhand 3onboard
                 CardStack(0, WorkCounter, 4) = 0 'Counters
                 CardStack(0, WorkCounter, 3) = -1 'Flags
@@ -59,8 +60,14 @@
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
+            If ExpFiora = True Then
+                For WorkCounter = 92 To 96 Step 1
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
+                Next
+            End If
             PhenomInitalize()
-            For WorkCounter = 1 To 91 Step 1
+            For WorkCounter = 1 To 96 Step 1
                 If CardStack(0, WorkCounter, 3) > -1 And CardStack(0, WorkCounter, 5) >= 0 Then
                     CardStack(0, WorkCounter, 0) = DeckCounter + 1
                     DeckCounter += 1
@@ -116,7 +123,7 @@
         PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
     End Function
     Public Function UnreadyDeck() As Boolean
-        For WorkCounter = 0 To 91 Step 1
+        For WorkCounter = 0 To 96 Step 1
             CardStack(0, WorkCounter, 5) = -1 'Set All State
             CardStack(0, WorkCounter, 4) = -1 'Counters
             CardStack(0, WorkCounter, 3) = -1 'Flags
@@ -135,7 +142,7 @@
         DeckState = 0
     End Function
     Public Function Shuffle()
-        Dim ShuffleTracker(91, 1) As Integer
+        Dim ShuffleTracker(96, 1) As Integer
         Dim ShufflePosCounter As Integer = DeckCounter
         Dim WorkCounter As Integer
         Randomize()
@@ -226,7 +233,7 @@
         Dim DeckCheck As Integer = 0
         Dim XyCheck As Integer = 0
         CheckPosition = False
-        For workcounter = 1 To 91 Step 1
+        For workcounter = 1 To 96 Step 1
             If CardDeckPos = CardStack(0, workcounter, 0) And CardDeckPos > 0 Then
                 DeckCheck += 1
                 CheckPosition = False
@@ -294,7 +301,7 @@
         Dim workcounter As Integer
         If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0 ''need to be refactored after phenoms
         If DeckState = 2 Or DeckState = 4 Or DeckState = 5 Then
-            For workcounter = 1 To 91 Step 1
+            For workcounter = 1 To 96 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     CardStack(0, workcounter, 1) += XChange
                     CardStack(0, workcounter, 2) += YChange
@@ -302,7 +309,7 @@
             Next
             PopulateBoard()
             If DistanceReset = True Then
-                For workcounter = 1 To 91 Step 1
+                For workcounter = 1 To 96 Step 1
                     Dim distancecounter As Integer
                     distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
                     If distancecounter > 3 And CardStack(0, workcounter, 5) = 3 Then
@@ -310,7 +317,7 @@
                     End If
                 Next
             End If
-            For workcounter = 1 To 91 Step 1
+            For workcounter = 1 To 96 Step 1
                 If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 0 Then
                     If CheckPosition(workcounter) = True Then ''set currentplane if single
                         CurrentPlane = workcounter
@@ -329,14 +336,14 @@
         Dim workcounter As Integer
         CullBoard = False
         If InfinitePlane = False And DeckState = 2 Then
-            For workcounter = 1 To 91 Step 1
+            For workcounter = 1 To 96 Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
                 If distancecounter > 3 And CardStack(0, workcounter, 5) = 3 Then
                     ReturnCard(workcounter)
                 End If
             Next
-            For workcounter = 1 To 91 Step 1
+            For workcounter = 1 To 96 Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
                 If distancecounter > 3 And CardStack(0, workcounter, 5) = 3 Then
@@ -357,7 +364,7 @@
         Dim WPopulateCheck As Boolean = True
         PopulateBoard = False
         If DeckState = 2 Or 1 Then
-            For workcounter = 1 To 91 Step 1
+            For workcounter = 1 To 96 Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 1 Then
                         NPopulateCheck = False
