@@ -213,7 +213,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(9)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -246,7 +247,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(39)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -269,7 +271,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(42)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -292,7 +295,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(52)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -315,7 +319,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(57)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -362,7 +367,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(80)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -426,8 +432,6 @@
             DeckState = 1 ''done
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
-            PlayCard(DrawBuffer(0), 3, EventXloc, EventYloc)
-            PlayCard(DrawBuffer(1), 3, EventXloc, EventYloc)
             CardStack(1, DrawBuffer(0), 0) = 1
             CardStack(1, DrawBuffer(1), 0) = 1
             CardStack(1, DrawBuffer(0), 1) = 64
@@ -455,6 +459,8 @@
             End If
             TranslateBoard(invxloc, invyloc)
             DeckState = 1
+            PlayCard(DrawBuffer(0), 3, 0, 0)
+            PlayCard(DrawBuffer(1), 3, 0, 0)
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
