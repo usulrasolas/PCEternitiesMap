@@ -97,9 +97,16 @@
     End Function
 
     Function PickRandomPhenom() As Integer
+555:
         Randomize()
         Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
         PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
+        If DeckCounter < 5 Then
+            If RandomPhenomRoll = 26 Then GoTo 555
+        ElseIf DeckCounter < 2 Then
+            If RandomPhenomRoll = 26 Then GoTo 555
+            If RandomPhenomRoll = 64 Then GoTo 555
+        End If
     End Function
     Public Function UnreadyDeck() As Boolean
         For WorkCounter = 0 To 86 Step 1

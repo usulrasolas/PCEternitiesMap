@@ -1308,9 +1308,17 @@
         ElseIf CardStack(0, CurrentPlane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
             MsgBox("Please draw " & CardStack(0, CurrentPlane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
         ElseIf CardStack(0, CurrentPlane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
-            GameEvent(9)
+            If DeckCounter >= 3 Then
+                GameEvent(9)
+            Else
+                MsgBox("Less Than 3 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Pools of Becoming Failure"
+            End If
         ElseIf CardStack(0, CurrentPlane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
-            GameEvent(11)
+            If DeckCounter >= 2 Then
+                GameEvent(11)
+            Else
+                MsgBox("Less than 2 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Stairs to Infinity Scry")
+            End If
         ElseIf CardStack(0, CurrentPlane, 3) > -1 Then
             DisplayZoom(CurrentPlane)
         End If
