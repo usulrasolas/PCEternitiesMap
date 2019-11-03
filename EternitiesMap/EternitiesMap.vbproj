@@ -390,11 +390,11 @@
     <Content Include="Resources\CardExpansions\2019\Tokens\Fatigue.png" />
     <Content Include="Resources\CardExpansions\2019\Tokens\Illusion.png" />
     <Content Include="Resources\CardExpansions\2019\Tokens\NicolBolasArchenemy.png" />
-    <Content Include="Resources\CardExpansions\Amon\Desert Lands.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\Forgotten District.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\Gauntlet of Naktamun.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\Luxa River.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\Obelisk Path.jpg" />
+    <Content Include="Resources\CardExpansions\Amon\c87.jpg" />
+    <Content Include="Resources\CardExpansions\Amon\c88.jpg" />
+    <Content Include="Resources\CardExpansions\Amon\c89.jpg" />
+    <Content Include="Resources\CardExpansions\Amon\c90.jpg" />
+    <Content Include="Resources\CardExpansions\Amon\c91.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\BattleTheHorde\bth1.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\BattleTheHorde\bth10.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\BattleTheHorde\bth11.jpg" />

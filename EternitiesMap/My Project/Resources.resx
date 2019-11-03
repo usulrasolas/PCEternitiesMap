@@ -376,8 +376,23 @@
   <data name="c86" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c86.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c87" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\amon\c87.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c88" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\amon\c88.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c89" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\amon\c89.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\amon\c90.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c91" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\amon\c91.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chaos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icons\chaos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
