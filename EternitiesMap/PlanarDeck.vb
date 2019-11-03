@@ -220,7 +220,7 @@
             End If
         Next
         Return CheckPosition
-    End Functionr
+    End Function
     Public Function ReturnCard(CardNumber As Integer) As Boolean
         ReturnCard = False
         If CardStack(0, CardNumber, 5) = 3 Then 'if card being returned is on board then
