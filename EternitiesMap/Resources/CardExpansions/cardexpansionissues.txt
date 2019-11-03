@@ -52,5 +52,5 @@ Portal to the Blind Eternities - Phenom
 Through the Nexus - Phenom
 Titans Landing - Phenom, effects last for rest of game
 
-Geekscape
-Holodeck - On chaos triggers
+Geekscape - done
+118Holodeck - On chaos triggers

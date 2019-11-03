@@ -48,12 +48,13 @@ Partial Class MainMenu
         Me.LBLHJChance = New System.Windows.Forms.Label()
         Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabPageCardSets = New System.Windows.Forms.TabPage()
-        Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
-        Me.ChkFiora = New System.Windows.Forms.CheckBox()
-        Me.ChkIxalan = New System.Windows.Forms.CheckBox()
         Me.ChkAmon = New System.Windows.Forms.CheckBox()
+        Me.ChkIxalan = New System.Windows.Forms.CheckBox()
+        Me.ChkFiora = New System.Windows.Forms.CheckBox()
+        Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -134,6 +135,8 @@ Partial Class MainMenu
         '
         'TabSettingMenu
         '
+        Me.TabSettingMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabSettingMenu.BackgroundImage = My.Resources.main_menu_art
         Me.TabSettingMenu.Controls.Add(Me.TabPageModes)
         Me.TabSettingMenu.Controls.Add(Me.TabPageSettings)
         Me.TabSettingMenu.Controls.Add(Me.TabPagePhenom)
@@ -148,8 +151,8 @@ Partial Class MainMenu
         'TabPageModes
         '
         Me.TabPageModes.BackColor = System.Drawing.Color.Black
-        Me.TabPageModes.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageModes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageModes.BackgroundImage = My.Resources.main_menu_art
         Me.TabPageModes.Controls.Add(Me.CHKInfinite)
         Me.TabPageModes.Location = New System.Drawing.Point(4, 22)
         Me.TabPageModes.Name = "TabPageModes"
@@ -173,8 +176,8 @@ Partial Class MainMenu
         '
         'TabPageSettings
         '
-        Me.TabPageSettings.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageSettings.BackgroundImage = My.Resources.main_menu_art
         Me.TabPageSettings.Controls.Add(Me.NumAretMax)
         Me.TabPageSettings.Controls.Add(Me.Label4)
         Me.TabPageSettings.Controls.Add(Me.ChkAertReset)
@@ -287,8 +290,8 @@ Partial Class MainMenu
         '
         'TabPagePhenom
         '
-        Me.TabPagePhenom.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPagePhenom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPagePhenom.BackgroundImage = My.Resources.main_menu_art
         Me.TabPagePhenom.Controls.Add(Me.LBLMoveChance)
         Me.TabPagePhenom.Controls.Add(Me.TBPhenomMoveChance)
         Me.TabPagePhenom.Controls.Add(Me.LBLHJChance)
@@ -364,21 +367,12 @@ Partial Class MainMenu
         Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
         Me.ChkPhenomSupport.UseVisualStyleBackColor = False
         '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 250
-        Me.ToolTip1.AutoPopDelay = 15000
-        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ToolTip1.InitialDelay = 250
-        Me.ToolTip1.IsBalloon = True
-        Me.ToolTip1.ReshowDelay = 50
-        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        '
         'TabPageCardSets
         '
         Me.TabPageCardSets.BackColor = System.Drawing.Color.Black
-        Me.TabPageCardSets.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageCardSets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageCardSets.BackgroundImage = My.Resources.main_menu_art
+        Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
         Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
         Me.TabPageCardSets.Controls.Add(Me.ChkFiora)
@@ -390,27 +384,16 @@ Partial Class MainMenu
         Me.TabPageCardSets.TabIndex = 3
         Me.TabPageCardSets.Text = "Card Sets"
         '
-        'ChkPCAnthology
+        'ChkAmon
         '
-        Me.ChkPCAnthology.AutoSize = True
-        Me.ChkPCAnthology.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkPCAnthology.Location = New System.Drawing.Point(0, 0)
-        Me.ChkPCAnthology.Name = "ChkPCAnthology"
-        Me.ChkPCAnthology.Size = New System.Drawing.Size(767, 17)
-        Me.ChkPCAnthology.TabIndex = 0
-        Me.ChkPCAnthology.Text = "Planechase Anthology (Official Set, Default On)"
-        Me.ChkPCAnthology.UseVisualStyleBackColor = True
-        '
-        'ChkFiora
-        '
-        Me.ChkFiora.AutoSize = True
-        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkFiora.Location = New System.Drawing.Point(0, 17)
-        Me.ChkFiora.Name = "ChkFiora"
-        Me.ChkFiora.Size = New System.Drawing.Size(767, 17)
-        Me.ChkFiora.TabIndex = 1
-        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
-        Me.ChkFiora.UseVisualStyleBackColor = True
+        Me.ChkAmon.AutoSize = True
+        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAmon.Location = New System.Drawing.Point(0, 51)
+        Me.ChkAmon.Name = "ChkAmon"
+        Me.ChkAmon.Size = New System.Drawing.Size(767, 17)
+        Me.ChkAmon.TabIndex = 3
+        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
+        Me.ChkAmon.UseVisualStyleBackColor = True
         '
         'ChkIxalan
         '
@@ -423,16 +406,48 @@ Partial Class MainMenu
         Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
         Me.ChkIxalan.UseVisualStyleBackColor = True
         '
-        'ChkAmon
+        'ChkFiora
         '
-        Me.ChkAmon.AutoSize = True
-        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkAmon.Location = New System.Drawing.Point(0, 51)
-        Me.ChkAmon.Name = "ChkAmon"
-        Me.ChkAmon.Size = New System.Drawing.Size(767, 17)
-        Me.ChkAmon.TabIndex = 3
-        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
-        Me.ChkAmon.UseVisualStyleBackColor = True
+        Me.ChkFiora.AutoSize = True
+        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkFiora.Location = New System.Drawing.Point(0, 17)
+        Me.ChkFiora.Name = "ChkFiora"
+        Me.ChkFiora.Size = New System.Drawing.Size(767, 17)
+        Me.ChkFiora.TabIndex = 1
+        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
+        Me.ChkFiora.UseVisualStyleBackColor = True
+        '
+        'ChkPCAnthology
+        '
+        Me.ChkPCAnthology.AutoSize = True
+        Me.ChkPCAnthology.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPCAnthology.Location = New System.Drawing.Point(0, 0)
+        Me.ChkPCAnthology.Name = "ChkPCAnthology"
+        Me.ChkPCAnthology.Size = New System.Drawing.Size(767, 17)
+        Me.ChkPCAnthology.TabIndex = 0
+        Me.ChkPCAnthology.Text = "Planechase Anthology (Official Set, Default On)"
+        Me.ChkPCAnthology.UseVisualStyleBackColor = True
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 250
+        Me.ToolTip1.AutoPopDelay = 15000
+        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ToolTip1.InitialDelay = 250
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ReshowDelay = 50
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
+        'ChkGeekscape
+        '
+        Me.ChkGeekscape.AutoSize = True
+        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
+        Me.ChkGeekscape.Name = "ChkGeekscape"
+        Me.ChkGeekscape.Size = New System.Drawing.Size(767, 17)
+        Me.ChkGeekscape.TabIndex = 4
+        Me.ChkGeekscape.Text = "Geekscape (Non MTG Multiverse Set, Default Off"
+        Me.ChkGeekscape.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -500,4 +515,5 @@ Partial Class MainMenu
     Friend WithEvents ChkAmon As CheckBox
     Friend WithEvents ChkIxalan As CheckBox
     Friend WithEvents ChkFiora As CheckBox
+    Friend WithEvents ChkGeekscape As CheckBox
 End Class

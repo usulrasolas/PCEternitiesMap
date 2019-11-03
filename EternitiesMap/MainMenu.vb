@@ -31,6 +31,7 @@
         ChkAmon.Checked = ExpAmon
         ChkIxalan.Checked = ExpIxalan
         ChkFiora.Checked = ExpFiora
+        ChkGeekscape.Checked = ExpGeek
     End Sub
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
         PretranslateReset = ChkPreTransReset.Checked
@@ -70,4 +71,8 @@
     Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAmon.CheckedChanged
         ExpAmon = ChkAmon.Checked
     End Sub
+    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
+        ExpGeek = ChkGeekscape.Checked
+    End Sub
+
 End Class

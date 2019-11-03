@@ -163,14 +163,104 @@
   <data name="c110" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cardexpansions\ixalan\c110.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c111" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c111.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c112" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c112.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c113.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c114" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c114.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c115" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c115.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c116" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c116.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c117" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c117.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c118" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c118.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c119" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c119.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c12.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c120.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c122" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c122.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c123" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c123.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c124" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c124.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c125" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c125.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c126" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c126.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c127" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c127.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c128.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c129" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c129.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c13.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c130.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c131.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c132" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c132.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c133" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c133.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c134" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c134.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c135" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c135.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c136" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c136.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c137" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c137.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c138" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c138.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c139" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c139.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c14.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\geekchase\c140.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c15.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
