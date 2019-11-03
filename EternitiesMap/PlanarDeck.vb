@@ -21,9 +21,9 @@
     Public CurrentPlane As Integer
     Public DoubleZoomBuffer(1) As Integer
     Public PCAnthologies As Boolean = True
-    Public ExpAmon As Boolean = True
-    Public ExpFiora As Boolean = True
-    Public ExpIxalan As Boolean = True
+    Public ExpAmon As Boolean = False
+    Public ExpFiora As Boolean = False
+    Public ExpIxalan As Boolean = False
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
