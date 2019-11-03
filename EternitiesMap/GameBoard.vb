@@ -89,20 +89,20 @@
         PBDoubleZoom2.Enabled = True
         PBDoubleZoom2.Visible = True
         PBDoubleZoom2.BringToFront()
-        NDoubleZoom1.Enabled = True
-        NDoubleZoom1.Visible = True
-        NDoubleZoom1.BringToFront()
-        NDoubleZoom2.Enabled = True
-        NDoubleZoom2.Visible = True
-        NDoubleZoom2.BringToFront()
+        If DeckState <> 6 Then NDoubleZoom1.Enabled = True
+        If DeckState <> 6 Then NDoubleZoom1.Visible = True
+        If DeckState <> 6 Then NDoubleZoom1.BringToFront()
+        If DeckState <> 6 Then NDoubleZoom2.Enabled = True
+        If DeckState <> 6 Then NDoubleZoom2.Visible = True
+        If DeckState <> 6 Then NDoubleZoom2.BringToFront()
         PCardSelect2.Enabled = True
         PCardSelect2.Visible = True
         PCardSelect2.BringToFront()
         PCardSelect2.Image = CardImage(center)
         PBDoubleZoom1.Image = CardImage(slot1)
         PBDoubleZoom2.Image = CardImage(slot2)
-        NDoubleZoom1.Value = CardStack(0, slot1, 4)
-        NDoubleZoom2.Value = CardStack(0, slot2, 4)
+        If DeckState <> 6 Then NDoubleZoom1.Value = CardStack(0, slot1, 4)
+        If DeckState <> 6 Then NDoubleZoom2.Value = CardStack(0, slot2, 4)
     End Function
     Function HideDoubleZoom()
         For workcounter = 1 To 25 Step 1
@@ -1488,9 +1488,9 @@
     Private Sub PBDoubleZoom2_Click(sender As Object, e As EventArgs) Handles PBDoubleZoom2.Click
     End Sub
     Private Sub NDoubleZoom1_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom1.ValueChanged
-        CardStack(0, DoubleZoomBuffer(0), 3) = NDoubleZoom1.Value
+        CardStack(0, DoubleZoomBuffer(0), 4) = NDoubleZoom1.Value
     End Sub
     Private Sub NDoubleZoom2_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom2.ValueChanged
-        CardStack(0, DoubleZoomBuffer(1), 3) = NDoubleZoom2.Value
+        CardStack(0, DoubleZoomBuffer(1), 4) = NDoubleZoom2.Value
     End Sub
 End Class
