@@ -43,19 +43,26 @@ Partial Class MainMenu
         Me.ChkResetReturn = New System.Windows.Forms.CheckBox()
         Me.ChkPreTransReset = New System.Windows.Forms.CheckBox()
         Me.TabPagePhenom = New System.Windows.Forms.TabPage()
-        Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
-        Me.LBLHJChance = New System.Windows.Forms.Label()
-        Me.TBPhenomMoveChance = New System.Windows.Forms.TrackBar()
         Me.LBLMoveChance = New System.Windows.Forms.Label()
+        Me.TBPhenomMoveChance = New System.Windows.Forms.TrackBar()
+        Me.LBLHJChance = New System.Windows.Forms.Label()
+        Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
+        Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
+        Me.TabPageCardSets = New System.Windows.Forms.TabPage()
+        Me.ChkAmon = New System.Windows.Forms.CheckBox()
+        Me.ChkIxalan = New System.Windows.Forms.CheckBox()
+        Me.ChkFiora = New System.Windows.Forms.CheckBox()
+        Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPagePhenom.SuspendLayout()
-        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPageCardSets.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -128,9 +135,12 @@ Partial Class MainMenu
         '
         'TabSettingMenu
         '
+        Me.TabSettingMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabSettingMenu.BackgroundImage = My.Resources.main_menu_art
         Me.TabSettingMenu.Controls.Add(Me.TabPageModes)
         Me.TabSettingMenu.Controls.Add(Me.TabPageSettings)
         Me.TabSettingMenu.Controls.Add(Me.TabPagePhenom)
+        Me.TabSettingMenu.Controls.Add(Me.TabPageCardSets)
         Me.TabSettingMenu.Location = New System.Drawing.Point(6, 51)
         Me.TabSettingMenu.Name = "TabSettingMenu"
         Me.TabSettingMenu.SelectedIndex = 0
@@ -141,8 +151,8 @@ Partial Class MainMenu
         'TabPageModes
         '
         Me.TabPageModes.BackColor = System.Drawing.Color.Black
-        Me.TabPageModes.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageModes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageModes.BackgroundImage = My.Resources.main_menu_art
         Me.TabPageModes.Controls.Add(Me.CHKInfinite)
         Me.TabPageModes.Location = New System.Drawing.Point(4, 22)
         Me.TabPageModes.Name = "TabPageModes"
@@ -166,8 +176,8 @@ Partial Class MainMenu
         '
         'TabPageSettings
         '
-        Me.TabPageSettings.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageSettings.BackgroundImage = My.Resources.main_menu_art
         Me.TabPageSettings.Controls.Add(Me.NumAretMax)
         Me.TabPageSettings.Controls.Add(Me.Label4)
         Me.TabPageSettings.Controls.Add(Me.ChkAertReset)
@@ -280,8 +290,8 @@ Partial Class MainMenu
         '
         'TabPagePhenom
         '
-        Me.TabPagePhenom.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPagePhenom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPagePhenom.BackgroundImage = My.Resources.main_menu_art
         Me.TabPagePhenom.Controls.Add(Me.LBLMoveChance)
         Me.TabPagePhenom.Controls.Add(Me.TBPhenomMoveChance)
         Me.TabPagePhenom.Controls.Add(Me.LBLHJChance)
@@ -294,6 +304,54 @@ Partial Class MainMenu
         Me.TabPagePhenom.TabIndex = 2
         Me.TabPagePhenom.Text = "Phenomemon"
         Me.TabPagePhenom.UseVisualStyleBackColor = True
+        '
+        'LBLMoveChance
+        '
+        Me.LBLMoveChance.AutoSize = True
+        Me.LBLMoveChance.BackColor = System.Drawing.Color.Black
+        Me.LBLMoveChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LBLMoveChance.Location = New System.Drawing.Point(3, 123)
+        Me.LBLMoveChance.Name = "LBLMoveChance"
+        Me.LBLMoveChance.Size = New System.Drawing.Size(309, 13)
+        Me.LBLMoveChance.TabIndex = 17
+        Me.LBLMoveChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
+        '
+        'TBPhenomMoveChance
+        '
+        Me.TBPhenomMoveChance.BackColor = System.Drawing.Color.Black
+        Me.TBPhenomMoveChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TBPhenomMoveChance.Location = New System.Drawing.Point(3, 78)
+        Me.TBPhenomMoveChance.Maximum = 100
+        Me.TBPhenomMoveChance.Name = "TBPhenomMoveChance"
+        Me.TBPhenomMoveChance.Size = New System.Drawing.Size(761, 45)
+        Me.TBPhenomMoveChance.TabIndex = 16
+        Me.TBPhenomMoveChance.TickFrequency = 5
+        Me.TBPhenomMoveChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.ToolTip1.SetToolTip(Me.TBPhenomMoveChance, "Percent Chance of A Random Phenomenon on Helljump")
+        '
+        'LBLHJChance
+        '
+        Me.LBLHJChance.AutoSize = True
+        Me.LBLHJChance.BackColor = System.Drawing.Color.Black
+        Me.LBLHJChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LBLHJChance.Location = New System.Drawing.Point(3, 65)
+        Me.LBLHJChance.Name = "LBLHJChance"
+        Me.LBLHJChance.Size = New System.Drawing.Size(309, 13)
+        Me.LBLHJChance.TabIndex = 15
+        Me.LBLHJChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
+        '
+        'TBPhenomHJChance
+        '
+        Me.TBPhenomHJChance.BackColor = System.Drawing.Color.Black
+        Me.TBPhenomHJChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TBPhenomHJChance.Location = New System.Drawing.Point(3, 20)
+        Me.TBPhenomHJChance.Maximum = 100
+        Me.TBPhenomHJChance.Name = "TBPhenomHJChance"
+        Me.TBPhenomHJChance.Size = New System.Drawing.Size(761, 45)
+        Me.TBPhenomHJChance.TabIndex = 14
+        Me.TBPhenomHJChance.TickFrequency = 5
+        Me.TBPhenomHJChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.ToolTip1.SetToolTip(Me.TBPhenomHJChance, "Percent Chance of A Random Phenomenon on Helljump")
         '
         'ChkPhenomSupport
         '
@@ -309,6 +367,67 @@ Partial Class MainMenu
         Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
         Me.ChkPhenomSupport.UseVisualStyleBackColor = False
         '
+        'TabPageCardSets
+        '
+        Me.TabPageCardSets.BackColor = System.Drawing.Color.Black
+        Me.TabPageCardSets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageCardSets.BackgroundImage = My.Resources.main_menu_art
+        Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
+        Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
+        Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
+        Me.TabPageCardSets.Controls.Add(Me.ChkFiora)
+        Me.TabPageCardSets.Controls.Add(Me.ChkPCAnthology)
+        Me.TabPageCardSets.ForeColor = System.Drawing.Color.White
+        Me.TabPageCardSets.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageCardSets.Name = "TabPageCardSets"
+        Me.TabPageCardSets.Size = New System.Drawing.Size(767, 419)
+        Me.TabPageCardSets.TabIndex = 3
+        Me.TabPageCardSets.Text = "Card Sets"
+        '
+        'ChkAmon
+        '
+        Me.ChkAmon.AutoSize = True
+        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAmon.Location = New System.Drawing.Point(0, 51)
+        Me.ChkAmon.Name = "ChkAmon"
+        Me.ChkAmon.Size = New System.Drawing.Size(767, 17)
+        Me.ChkAmon.TabIndex = 3
+        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
+        Me.ChkAmon.UseVisualStyleBackColor = True
+        '
+        'ChkIxalan
+        '
+        Me.ChkIxalan.AutoSize = True
+        Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkIxalan.Location = New System.Drawing.Point(0, 34)
+        Me.ChkIxalan.Name = "ChkIxalan"
+        Me.ChkIxalan.Size = New System.Drawing.Size(767, 17)
+        Me.ChkIxalan.TabIndex = 2
+        Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
+        Me.ChkIxalan.UseVisualStyleBackColor = True
+        '
+        'ChkFiora
+        '
+        Me.ChkFiora.AutoSize = True
+        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkFiora.Location = New System.Drawing.Point(0, 17)
+        Me.ChkFiora.Name = "ChkFiora"
+        Me.ChkFiora.Size = New System.Drawing.Size(767, 17)
+        Me.ChkFiora.TabIndex = 1
+        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
+        Me.ChkFiora.UseVisualStyleBackColor = True
+        '
+        'ChkPCAnthology
+        '
+        Me.ChkPCAnthology.AutoSize = True
+        Me.ChkPCAnthology.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPCAnthology.Location = New System.Drawing.Point(0, 0)
+        Me.ChkPCAnthology.Name = "ChkPCAnthology"
+        Me.ChkPCAnthology.Size = New System.Drawing.Size(767, 17)
+        Me.ChkPCAnthology.TabIndex = 0
+        Me.ChkPCAnthology.Text = "Planechase Anthology (Official Set, Default On)"
+        Me.ChkPCAnthology.UseVisualStyleBackColor = True
+        '
         'ToolTip1
         '
         Me.ToolTip1.AutomaticDelay = 250
@@ -319,53 +438,16 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'TBPhenomHJChance
+        'ChkGeekscape
         '
-        Me.TBPhenomHJChance.BackColor = System.Drawing.Color.Black
-        Me.TBPhenomHJChance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TBPhenomHJChance.Location = New System.Drawing.Point(3, 20)
-        Me.TBPhenomHJChance.Maximum = 100
-        Me.TBPhenomHJChance.Name = "TBPhenomHJChance"
-        Me.TBPhenomHJChance.Size = New System.Drawing.Size(761, 45)
-        Me.TBPhenomHJChance.TabIndex = 14
-        Me.TBPhenomHJChance.TickFrequency = 5
-        Me.TBPhenomHJChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
-        Me.ToolTip1.SetToolTip(Me.TBPhenomHJChance, "Percent Chance of A Random Phenomenon on Helljump")
-        '
-        'LBLHJChance
-        '
-        Me.LBLHJChance.AutoSize = True
-        Me.LBLHJChance.BackColor = System.Drawing.Color.Black
-        Me.LBLHJChance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.LBLHJChance.Location = New System.Drawing.Point(3, 65)
-        Me.LBLHJChance.Name = "LBLHJChance"
-        Me.LBLHJChance.Size = New System.Drawing.Size(309, 13)
-        Me.LBLHJChance.TabIndex = 15
-        Me.LBLHJChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
-        '
-        'TBPhenomMoveChance
-        '
-        Me.TBPhenomMoveChance.BackColor = System.Drawing.Color.Black
-        Me.TBPhenomMoveChance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TBPhenomMoveChance.Location = New System.Drawing.Point(3, 78)
-        Me.TBPhenomMoveChance.Maximum = 100
-        Me.TBPhenomMoveChance.Name = "TBPhenomMoveChance"
-        Me.TBPhenomMoveChance.Size = New System.Drawing.Size(761, 45)
-        Me.TBPhenomMoveChance.TabIndex = 16
-        Me.TBPhenomMoveChance.TickFrequency = 5
-        Me.TBPhenomMoveChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
-        Me.ToolTip1.SetToolTip(Me.TBPhenomMoveChance, "Percent Chance of A Random Phenomenon on Helljump")
-        '
-        'LBLMoveChance
-        '
-        Me.LBLMoveChance.AutoSize = True
-        Me.LBLMoveChance.BackColor = System.Drawing.Color.Black
-        Me.LBLMoveChance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.LBLMoveChance.Location = New System.Drawing.Point(3, 123)
-        Me.LBLMoveChance.Name = "LBLMoveChance"
-        Me.LBLMoveChance.Size = New System.Drawing.Size(309, 13)
-        Me.LBLMoveChance.TabIndex = 17
-        Me.LBLMoveChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
+        Me.ChkGeekscape.AutoSize = True
+        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
+        Me.ChkGeekscape.Name = "ChkGeekscape"
+        Me.ChkGeekscape.Size = New System.Drawing.Size(767, 17)
+        Me.ChkGeekscape.TabIndex = 4
+        Me.ChkGeekscape.Text = "Geekscape (Non MTG Multiverse Set, Default Off"
+        Me.ChkGeekscape.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -394,8 +476,10 @@ Partial Class MainMenu
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPagePhenom.ResumeLayout(False)
         Me.TabPagePhenom.PerformLayout()
-        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPageCardSets.ResumeLayout(False)
+        Me.TabPageCardSets.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -426,4 +510,10 @@ Partial Class MainMenu
     Friend WithEvents TBPhenomMoveChance As TrackBar
     Friend WithEvents LBLHJChance As Label
     Friend WithEvents TBPhenomHJChance As TrackBar
+    Friend WithEvents TabPageCardSets As TabPage
+    Friend WithEvents ChkPCAnthology As CheckBox
+    Friend WithEvents ChkAmon As CheckBox
+    Friend WithEvents ChkIxalan As CheckBox
+    Friend WithEvents ChkFiora As CheckBox
+    Friend WithEvents ChkGeekscape As CheckBox
 End Class

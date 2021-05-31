@@ -19,16 +19,16 @@ Hero Cards
 The Slayer - Would need to clarify that you gain 7 additional life aqquire as well
 The Vanquisher - Would need to clarify you draw one card and increase hand size by one
 
-Ixalan
-Blessing of Shapers - Phenomenon
-Bloodfast - Phenomenon
-Bloodstained Massacre - Phenomenon
-Dramatic Entrance - Phenomenon
-Gates of Orazca - Phenomenon
-Gold Laden Shipwreck - Phenomenon
-Mass Mutiny - Phenomenon
-Rivers Rebuke - Phenomenon
-Savage Instinct - Phenomenon
+Ixalan -done
+97Blessing of Shapers - Phenomenon (display until planeswalk away)
+98Bloodfast - Phenomenon (display until planeswalk away)
+99Bloodstained Massacre - Phenomenon
+101Dramatic Entrance - Phenomenon
+102Gates of Orazca - Phenomenon
+103Gold Laden Shipwreck - Phenomenon
+104Mass Mutiny - Phenomenon
+107Rivers Rebuke - Phenomenon
+108Savage Instinct - Phenomenon (display until planeswalk away)
 
 MorePlanes
 Aether Tide - Phenomenon
@@ -41,3 +41,16 @@ Storm of Hellions - Phenomenon
 
 Vanguard
 IN GENERAL: Starting life/handsize take in effect when this goes into effect
+ 
+2017
+Collective Assault -Phenom
+Dark Bargain -Phenom
+Infinite Possibilities -Phenom
+Planar Flooding -Phenom, part lasts for rest of game?
+Planeswalkers Duel -Pheom
+Portal to the Blind Eternities - Phenom
+Through the Nexus - Phenom
+Titans Landing - Phenom, effects last for rest of game
+
+Geekscape - done
+118Holodeck - On chaos triggers
