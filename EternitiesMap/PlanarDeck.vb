@@ -25,6 +25,7 @@
     Public ExpFiora As Boolean = False
     Public ExpIxalan As Boolean = False
     Public ExpGeek As Boolean = False
+
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
@@ -182,6 +183,7 @@
             If RandomPhenomRoll = 64 Then GoTo 555
         End If
     End Function
+
     Public Function UnreadyDeck() As Boolean
         For WorkCounter = 0 To 140 Step 1
             CardStack(0, WorkCounter, 5) = -1 'Set All State
@@ -201,6 +203,7 @@
         DeckCounter = 0
         DeckState = 0
     End Function
+
     Public Function Shuffle()
         Dim ShuffleTracker(140, 1) As Integer
         Dim ShufflePosCounter As Integer = DeckCounter
@@ -229,6 +232,7 @@
         Else Return False
         End If
     End Function
+
     Public Function DrawCard() As Integer
         If DeckState = 1 Or DeckState = 2 Or DeckState = 5 Then
             DrawBuffer(0) = CardLookup(DeckCounter)
@@ -251,6 +255,7 @@
         Else Return -1
         End If
     End Function
+
     Public Function PlayCard(CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
         If ToState = 1 And CardStack(0, CardNumber, 5) = 2 Then 'to deck
             Dim workcounter As Integer
@@ -277,6 +282,7 @@
         End If
         Return PlayCard
     End Function
+
     Public Function CheckPosition(cardnumber As Integer) As Boolean
         Dim CardDeckPos As Integer = CardStack(0, cardnumber, 0)
         Dim CardxPos As Integer = CardStack(0, cardnumber, 1)
@@ -302,6 +308,7 @@
         Next
         Return CheckPosition
     End Function
+
     Public Function ReturnCard(CardNumber As Integer) As Boolean
         ReturnCard = False
         If CardStack(0, CardNumber, 5) = 3 Then 'if card being returned is on board then
@@ -348,6 +355,7 @@
             ReturnCard = True
         End If
     End Function
+
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
         If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0 ''need to be refactored after phenoms
@@ -383,6 +391,7 @@
             Return False
         End If
     End Function
+
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
         CullBoard = False
@@ -407,6 +416,7 @@
             CullBoard = False
         End If
     End Function
+
     Public Function PopulateBoard() As Boolean
         Dim workcounter As Integer
         Dim NPopulateCheck As Boolean = True
@@ -445,4 +455,5 @@
             End If
         End If
     End Function
+
 End Module
