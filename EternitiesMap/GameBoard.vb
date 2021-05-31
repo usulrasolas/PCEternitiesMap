@@ -89,20 +89,20 @@
         PBDoubleZoom2.Enabled = True
         PBDoubleZoom2.Visible = True
         PBDoubleZoom2.BringToFront()
-        NDoubleZoom1.Enabled = True
-        NDoubleZoom1.Visible = True
-        NDoubleZoom1.BringToFront()
-        NDoubleZoom2.Enabled = True
-        NDoubleZoom2.Visible = True
-        NDoubleZoom2.BringToFront()
+        If DeckState <> 6 Then NDoubleZoom1.Enabled = True
+        If DeckState <> 6 Then NDoubleZoom1.Visible = True
+        If DeckState <> 6 Then NDoubleZoom1.BringToFront()
+        If DeckState <> 6 Then NDoubleZoom2.Enabled = True
+        If DeckState <> 6 Then NDoubleZoom2.Visible = True
+        If DeckState <> 6 Then NDoubleZoom2.BringToFront()
         PCardSelect2.Enabled = True
         PCardSelect2.Visible = True
         PCardSelect2.BringToFront()
         PCardSelect2.Image = CardImage(center)
         PBDoubleZoom1.Image = CardImage(slot1)
         PBDoubleZoom2.Image = CardImage(slot2)
-        NDoubleZoom1.Value = CardStack(0, slot1, 4)
-        NDoubleZoom2.Value = CardStack(0, slot2, 4)
+        If DeckState <> 6 Then NDoubleZoom1.Value = CardStack(0, slot1, 4)
+        If DeckState <> 6 Then NDoubleZoom2.Value = CardStack(0, slot2, 4)
     End Function
     Function HideDoubleZoom()
         For workcounter = 1 To 25 Step 1
@@ -188,6 +188,13 @@
                     PBZoom.Enabled = True
                     NCounter.Enabled = False
                 End If
+            ElseIf CheckPosition(CardNumber) = False And CardStack(0, CardNumber, 3) >= 20 Then
+                DisplayZoom = True
+                PBZoom.Image = CardImage(CardNumber)
+                PBZoom.BringToFront()
+                PBZoom.Visible = True
+                PBZoom.Enabled = True
+                NCounter.Enabled = False
             Else ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
                 PBZoom.BringToFront()
@@ -206,7 +213,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(9)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -234,12 +242,13 @@
             DrawBuffer(3) = DrawCard()
             DrawBuffer(4) = DrawCard()
             PickDisplay(26, DrawBuffer(0), DrawBuffer(1), DrawBuffer(2), DrawBuffer(3), DrawBuffer(4))
-            MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
+            MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         ElseIf phenomnumber = 39 Then ''Morphic Tide
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(39)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -262,7 +271,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(42)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -285,7 +295,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(52)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -308,7 +319,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(57)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -355,7 +367,8 @@
             EventCardInPlay = phenomnumber
             DeckState = 4
             DisplayZoom(80)
-            PlayCard(DrawCard, 3, xloc, yloc)
+            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -626,8 +639,6 @@
             DeckState = 1 ''done
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
-            PlayCard(DrawBuffer(0), 3, EventXloc, EventYloc)
-            PlayCard(DrawBuffer(1), 3, EventXloc, EventYloc)
             CardStack(1, DrawBuffer(0), 0) = 1
             CardStack(1, DrawBuffer(1), 0) = 1
             CardStack(1, DrawBuffer(0), 1) = 64
@@ -655,6 +666,8 @@
             End If
             TranslateBoard(invxloc, invyloc)
             DeckState = 1
+            PlayCard(DrawBuffer(0), 3, 0, 0)
+            PlayCard(DrawBuffer(1), 3, 0, 0)
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
@@ -1626,9 +1639,17 @@
         ElseIf CardStack(0, CurrentPlane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
             MsgBox("Please draw " & CardStack(0, CurrentPlane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
         ElseIf CardStack(0, CurrentPlane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
-            GameEvent(9)
+            If DeckCounter >= 3 Then
+                GameEvent(9)
+            Else
+                MsgBox("Less Than 3 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Pools of Becoming Failure")
+            End If
         ElseIf CardStack(0, CurrentPlane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
-            GameEvent(11)
+            If DeckCounter >= 2 Then
+                GameEvent(11)
+            Else
+                MsgBox("Less than 2 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Stairs to Infinity Scry")
+            End If
         ElseIf CardStack(0, CurrentPlane, 3) = 101 Then 'holodeck
             GameEvent(118)
         ElseIf CardStack(0, CurrentPlane, 3) > -1 Then
@@ -1815,9 +1836,9 @@
     Private Sub PBDoubleZoom2_Click(sender As Object, e As EventArgs) Handles PBDoubleZoom2.Click
     End Sub
     Private Sub NDoubleZoom1_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom1.ValueChanged
-        CardStack(0, DoubleZoomBuffer(0), 3) = NDoubleZoom1.Value
+        CardStack(0, DoubleZoomBuffer(0), 4) = NDoubleZoom1.Value
     End Sub
     Private Sub NDoubleZoom2_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom2.ValueChanged
-        CardStack(0, DoubleZoomBuffer(1), 3) = NDoubleZoom2.Value
+        CardStack(0, DoubleZoomBuffer(1), 4) = NDoubleZoom2.Value
     End Sub
 End Class
