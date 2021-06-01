@@ -2,15 +2,15 @@
 2019 Planes
 145 - Direct Order - Commander only Phenomenon
 147 - Fragile Image Cliffs - Quote "It was originally "target target creature," but with the Dominaria wording changes, we decided to make it "target target" instead.  I know that this is technically incorrect wording ("target any target" would be right), but we think it's worth it in this instance."
-149 - Glacial Prison - very special tied to boss Marit Lage
-156 - Ixalan, the Binding Isle - Does a game of explorers
+149 - Glacial Prison - (toggable) very special tied to boss Marit Lage
+156 - Ixalan, the Binding Isle - (toggable) Does a game of explorers
 164 - Past Blast - Phenomenon that deals with planar graveyard
 166, 167, 168 - Salivation Chamber, Digestion Chamber, Eradication Chamber - Triple Card, It Progresses
 170 - Skylight Tower - Commander based mechanic
 172 - Spatial Twining - double display, and functionality to have double special cards (or to exclude them)
-173 - Steamflogger Workshop - needs common functional contraption deck
-176 - Throne Room of Paliano - Monarch play feature (no coding needed)
-183 - Your God-Pharoh has Returned - (Phenomenon that spawns player run boss?
+173 - Steamflogger Workshop - (toggable) needs common functional contraption deck
+176 - Throne Room of Paliano - (toggable) Monarch play feature (no coding needed)
+183 - Your God-Pharoh has Returned - (toggable) Phenomenon that spawns player run boss?
 
 Defeat a God
 Xenagos Ascended - Players do not win when xenagos leaves the battlefield. xenagos and all cards associated must leave at same time.
