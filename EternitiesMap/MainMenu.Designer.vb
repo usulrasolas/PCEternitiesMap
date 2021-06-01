@@ -54,8 +54,8 @@ Partial Class MainMenu
         Me.ChkIxalan = New System.Windows.Forms.CheckBox()
         Me.ChkFiora = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -191,7 +191,7 @@ Partial Class MainMenu
         Me.TabPageSettings.Location = New System.Drawing.Point(4, 22)
         Me.TabPageSettings.Name = "TabPageSettings"
         Me.TabPageSettings.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageSettings.Size = New System.Drawing.Size(767, 419)
+        Me.TabPageSettings.Size = New System.Drawing.Size(774, 443)
         Me.TabPageSettings.TabIndex = 1
         Me.TabPageSettings.Text = "Settings"
         Me.TabPageSettings.UseVisualStyleBackColor = True
@@ -204,7 +204,7 @@ Partial Class MainMenu
         Me.NumAretMax.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumAretMax.Name = "NumAretMax"
-        Me.NumAretMax.Size = New System.Drawing.Size(569, 20)
+        Me.NumAretMax.Size = New System.Drawing.Size(576, 20)
         Me.NumAretMax.TabIndex = 13
         Me.NumAretMax.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -228,7 +228,7 @@ Partial Class MainMenu
         Me.ChkAertReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkAertReset.Location = New System.Drawing.Point(3, 71)
         Me.ChkAertReset.Name = "ChkAertReset"
-        Me.ChkAertReset.Size = New System.Drawing.Size(761, 17)
+        Me.ChkAertReset.Size = New System.Drawing.Size(768, 17)
         Me.ChkAertReset.TabIndex = 12
         Me.ChkAertReset.Text = "Does Aretopolis reset when its ability triggers?"
         Me.ToolTip1.SetToolTip(Me.ChkAertReset, resources.GetString("ChkAertReset.ToolTip"))
@@ -242,7 +242,7 @@ Partial Class MainMenu
         Me.ChkNaarReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkNaarReset.Location = New System.Drawing.Point(3, 54)
         Me.ChkNaarReset.Name = "ChkNaarReset"
-        Me.ChkNaarReset.Size = New System.Drawing.Size(761, 17)
+        Me.ChkNaarReset.Size = New System.Drawing.Size(768, 17)
         Me.ChkNaarReset.TabIndex = 11
         Me.ChkNaarReset.Text = "Does ONLY Naar Isle reset when Planeswalking away?"
         Me.ToolTip1.SetToolTip(Me.ChkNaarReset, resources.GetString("ChkNaarReset.ToolTip"))
@@ -256,7 +256,7 @@ Partial Class MainMenu
         Me.ChkDistanceReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkDistanceReset.Location = New System.Drawing.Point(3, 37)
         Me.ChkDistanceReset.Name = "ChkDistanceReset"
-        Me.ChkDistanceReset.Size = New System.Drawing.Size(761, 17)
+        Me.ChkDistanceReset.Size = New System.Drawing.Size(768, 17)
         Me.ChkDistanceReset.TabIndex = 10
         Me.ChkDistanceReset.Text = "Do Counters reset when no longer visable?"
         Me.ToolTip1.SetToolTip(Me.ChkDistanceReset, resources.GetString("ChkDistanceReset.ToolTip"))
@@ -270,7 +270,7 @@ Partial Class MainMenu
         Me.ChkResetReturn.ForeColor = System.Drawing.Color.Transparent
         Me.ChkResetReturn.Location = New System.Drawing.Point(3, 20)
         Me.ChkResetReturn.Name = "ChkResetReturn"
-        Me.ChkResetReturn.Size = New System.Drawing.Size(761, 17)
+        Me.ChkResetReturn.Size = New System.Drawing.Size(768, 17)
         Me.ChkResetReturn.TabIndex = 9
         Me.ChkResetReturn.Text = "Do Counters reset when they are returned to the deck?"
         Me.ToolTip1.SetToolTip(Me.ChkResetReturn, resources.GetString("ChkResetReturn.ToolTip"))
@@ -285,7 +285,7 @@ Partial Class MainMenu
         Me.ChkPreTransReset.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.ChkPreTransReset.Location = New System.Drawing.Point(3, 3)
         Me.ChkPreTransReset.Name = "ChkPreTransReset"
-        Me.ChkPreTransReset.Size = New System.Drawing.Size(761, 17)
+        Me.ChkPreTransReset.Size = New System.Drawing.Size(768, 17)
         Me.ChkPreTransReset.TabIndex = 8
         Me.ChkPreTransReset.Text = "Do Counters reset on the Active Plane when leaving?"
         Me.ToolTip1.SetToolTip(Me.ChkPreTransReset, resources.GetString("ChkPreTransReset.ToolTip"))
@@ -303,7 +303,7 @@ Partial Class MainMenu
         Me.TabPagePhenom.Location = New System.Drawing.Point(4, 22)
         Me.TabPagePhenom.Name = "TabPagePhenom"
         Me.TabPagePhenom.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPagePhenom.Size = New System.Drawing.Size(767, 419)
+        Me.TabPagePhenom.Size = New System.Drawing.Size(774, 443)
         Me.TabPagePhenom.TabIndex = 2
         Me.TabPagePhenom.Text = "Phenomemon"
         Me.TabPagePhenom.UseVisualStyleBackColor = True
@@ -326,7 +326,7 @@ Partial Class MainMenu
         Me.TBPhenomMoveChance.Location = New System.Drawing.Point(3, 78)
         Me.TBPhenomMoveChance.Maximum = 100
         Me.TBPhenomMoveChance.Name = "TBPhenomMoveChance"
-        Me.TBPhenomMoveChance.Size = New System.Drawing.Size(761, 45)
+        Me.TBPhenomMoveChance.Size = New System.Drawing.Size(768, 45)
         Me.TBPhenomMoveChance.TabIndex = 16
         Me.TBPhenomMoveChance.TickFrequency = 5
         Me.TBPhenomMoveChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -350,7 +350,7 @@ Partial Class MainMenu
         Me.TBPhenomHJChance.Location = New System.Drawing.Point(3, 20)
         Me.TBPhenomHJChance.Maximum = 100
         Me.TBPhenomHJChance.Name = "TBPhenomHJChance"
-        Me.TBPhenomHJChance.Size = New System.Drawing.Size(761, 45)
+        Me.TBPhenomHJChance.Size = New System.Drawing.Size(768, 45)
         Me.TBPhenomHJChance.TabIndex = 14
         Me.TBPhenomHJChance.TickFrequency = 5
         Me.TBPhenomHJChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -365,7 +365,7 @@ Partial Class MainMenu
         Me.ChkPhenomSupport.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.ChkPhenomSupport.Location = New System.Drawing.Point(3, 3)
         Me.ChkPhenomSupport.Name = "ChkPhenomSupport"
-        Me.ChkPhenomSupport.Size = New System.Drawing.Size(761, 17)
+        Me.ChkPhenomSupport.Size = New System.Drawing.Size(768, 17)
         Me.ChkPhenomSupport.TabIndex = 13
         Me.ChkPhenomSupport.Text = "Enable Phenomenon Support"
         Me.ChkPhenomSupport.UseVisualStyleBackColor = False
@@ -383,7 +383,7 @@ Partial Class MainMenu
         Me.TabPageCardSets.ForeColor = System.Drawing.Color.White
         Me.TabPageCardSets.Location = New System.Drawing.Point(4, 22)
         Me.TabPageCardSets.Name = "TabPageCardSets"
-        Me.TabPageCardSets.Size = New System.Drawing.Size(767, 419)
+        Me.TabPageCardSets.Size = New System.Drawing.Size(774, 443)
         Me.TabPageCardSets.TabIndex = 3
         Me.TabPageCardSets.Text = "Card Sets"
         '
@@ -393,7 +393,7 @@ Partial Class MainMenu
         Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
         Me.ChkGeekscape.Name = "ChkGeekscape"
-        Me.ChkGeekscape.Size = New System.Drawing.Size(767, 17)
+        Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
         Me.ChkGeekscape.TabIndex = 4
         Me.ChkGeekscape.Text = "Geekscape (Non MTG Multiverse Set, Default Off"
         Me.ChkGeekscape.UseVisualStyleBackColor = True
@@ -404,7 +404,7 @@ Partial Class MainMenu
         Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkAmon.Location = New System.Drawing.Point(0, 51)
         Me.ChkAmon.Name = "ChkAmon"
-        Me.ChkAmon.Size = New System.Drawing.Size(767, 17)
+        Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
         Me.ChkAmon.TabIndex = 3
         Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
         Me.ChkAmon.UseVisualStyleBackColor = True
@@ -413,9 +413,10 @@ Partial Class MainMenu
         '
         Me.ChkIxalan.AutoSize = True
         Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkIxalan.Enabled = False
         Me.ChkIxalan.Location = New System.Drawing.Point(0, 34)
         Me.ChkIxalan.Name = "ChkIxalan"
-        Me.ChkIxalan.Size = New System.Drawing.Size(767, 17)
+        Me.ChkIxalan.Size = New System.Drawing.Size(774, 17)
         Me.ChkIxalan.TabIndex = 2
         Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
         Me.ChkIxalan.UseVisualStyleBackColor = True
@@ -426,7 +427,7 @@ Partial Class MainMenu
         Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkFiora.Location = New System.Drawing.Point(0, 17)
         Me.ChkFiora.Name = "ChkFiora"
-        Me.ChkFiora.Size = New System.Drawing.Size(767, 17)
+        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
         Me.ChkFiora.TabIndex = 1
         Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
         Me.ChkFiora.UseVisualStyleBackColor = True
@@ -437,20 +438,10 @@ Partial Class MainMenu
         Me.ChkPCAnthology.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPCAnthology.Location = New System.Drawing.Point(0, 0)
         Me.ChkPCAnthology.Name = "ChkPCAnthology"
-        Me.ChkPCAnthology.Size = New System.Drawing.Size(767, 17)
+        Me.ChkPCAnthology.Size = New System.Drawing.Size(774, 17)
         Me.ChkPCAnthology.TabIndex = 0
         Me.ChkPCAnthology.Text = "Planechase Anthology (Official Set, Default On)"
         Me.ChkPCAnthology.UseVisualStyleBackColor = True
-        '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 250
-        Me.ToolTip1.AutoPopDelay = 15000
-        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ToolTip1.InitialDelay = 250
-        Me.ToolTip1.IsBalloon = True
-        Me.ToolTip1.ReshowDelay = 50
-        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
         'TabPage1
         '
@@ -465,6 +456,16 @@ Partial Class MainMenu
         Me.TabPage1.Size = New System.Drawing.Size(774, 443)
         Me.TabPage1.TabIndex = 4
         Me.TabPage1.Text = "Credits"
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 250
+        Me.ToolTip1.AutoPopDelay = 15000
+        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ToolTip1.InitialDelay = 250
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ReshowDelay = 50
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
         'MainMenu
         '
