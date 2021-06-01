@@ -169,6 +169,7 @@
             PhenomDeckSize = 9
             PhenomDeck = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
         End If
+        Return 0
     End Function
 
     Function PickRandomPhenom() As Integer
@@ -202,10 +203,13 @@
         Next
         DeckCounter = 0
         DeckState = 0
+        Return 0
     End Function
 
     Public Function Shuffle()
+#Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
         Dim ShuffleTracker(140, 1) As Integer
+#Enable Warning CA1814 ' Prefer jagged arrays over multidimensional
         Dim ShufflePosCounter As Integer = DeckCounter
         Dim WorkCounter As Integer
         Randomize()
