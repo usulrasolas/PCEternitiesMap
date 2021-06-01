@@ -664,3 +664,7 @@ packages/System.Threading.Tasks.Extensions.4.5.3/THIRD-PARTY-NOTICES.TXT
 packages/System.Threading.Tasks.Extensions.4.5.3/useSharedDesignerContext.txt
 packages/System.Threading.Tasks.Extensions.4.5.3/version.txt
 EternitiesMap/obj/Debug/EternitiesMap.vbproj.CopyComplete
+.vs/PCEternitiesMap/v16/.suo
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
