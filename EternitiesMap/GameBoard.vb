@@ -105,6 +105,7 @@
         PBDoubleZoom2.Image = CardImage(slot2)
         If DeckState <> 6 Then NDoubleZoom1.Value = CardStack(0, slot1, 4)
         If DeckState <> 6 Then NDoubleZoom2.Value = CardStack(0, slot2, 4)
+        Return 0
     End Function
 
     Function HideDoubleZoom()
@@ -128,6 +129,7 @@
         PCardSelect2.Visible = False
         PCardSelect2.SendToBack()
         DeckState = 1
+        Return 0
     End Function
 
     Function DisplayZoom(CardNumber As Integer) As Boolean
@@ -600,6 +602,7 @@
             End If
             TranslateBoard(invxloc, invyloc)
         End If
+        Return 0
     End Function
 
     Function ResolvePhenom(phenomnumber As Integer)
@@ -785,7 +788,7 @@
         HidePickDisplay()
         PopulateBoard()
         UpdateArrays()
-        Return NewGame
+        Return 0
     End Function
 
     Function HidePickDisplay()
@@ -813,6 +816,7 @@
         PBChaos.Enabled = True
         NCounter.Enabled = True
         PBWalk.Enabled = True
+        Return 0
     End Function
 
     Function UpdateArrays() As Boolean
@@ -825,7 +829,9 @@
             CardArray(workcounter).Invalidate()
             DispArray(workcounter).Visible = False
             DispArray(workcounter).BackColor = Color.Transparent
+#Disable Warning CA1303 ' Do not pass literals as localized parameters
             DispArray(workcounter).Text = " "
+#Enable Warning CA1303 ' Do not pass literals as localized parameters
             DispArray(workcounter).ForeColor = Color.Gray
             DispArray(workcounter).Invalidate()
         Next
@@ -892,6 +898,7 @@
             End If
         Next
         Me.Invalidate()
+        Return 0
     End Function
 
     Function UpdateArrayElement(DispNumber As Integer, Cardnumber As Integer)
@@ -922,6 +929,7 @@
                 CardArray(DispNumber).Image = CardImage(-1)
             End If
         End If
+        Return 0
     End Function
 
     Function MoveEventCheck()
@@ -936,6 +944,7 @@
             MsgBox("Mount Keralia Deals " & CardStack(0, CurrentPlane, 4) & " Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
             CardStack(0, CurrentPlane, 4) = 0
         End If
+        Return 0
     End Function
 
     Public Shared Function CardImage(CardNumber As Integer) As Image
@@ -1749,7 +1758,9 @@
             CardStack(0, CurrentPlane, 4) = NCounter.Value
             DispArray(13).Visible = False
             DispArray(13).BackColor = Color.Transparent
+#Disable Warning CA1303 ' Do not pass literals as localized parameters
             DispArray(13).Text = " "
+#Enable Warning CA1303 ' Do not pass literals as localized parameters
             DispArray(13).ForeColor = Color.Gray
             If CardStack(0, CurrentPlane, 4) <> 0 Then DispArray(13).Enabled = True
             If CardStack(0, CurrentPlane, 4) <> 0 Then DispArray(13).Visible = True
