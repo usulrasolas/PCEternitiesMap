@@ -49,12 +49,13 @@ Partial Class MainMenu
         Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
         Me.TabPageCardSets = New System.Windows.Forms.TabPage()
+        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.ChkAmon = New System.Windows.Forms.CheckBox()
         Me.ChkIxalan = New System.Windows.Forms.CheckBox()
         Me.ChkFiora = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -63,6 +64,7 @@ Partial Class MainMenu
         CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPageCardSets.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -79,7 +81,7 @@ Partial Class MainMenu
         '
         Me.BNewGame.BackColor = System.Drawing.Color.Silver
         Me.BNewGame.ForeColor = System.Drawing.Color.Black
-        Me.BNewGame.Location = New System.Drawing.Point(122, 502)
+        Me.BNewGame.Location = New System.Drawing.Point(122, 526)
         Me.BNewGame.Name = "BNewGame"
         Me.BNewGame.Size = New System.Drawing.Size(75, 23)
         Me.BNewGame.TabIndex = 1
@@ -90,7 +92,7 @@ Partial Class MainMenu
         '
         Me.BExit.BackColor = System.Drawing.Color.Silver
         Me.BExit.ForeColor = System.Drawing.Color.Black
-        Me.BExit.Location = New System.Drawing.Point(600, 501)
+        Me.BExit.Location = New System.Drawing.Point(601, 526)
         Me.BExit.Name = "BExit"
         Me.BExit.Size = New System.Drawing.Size(75, 23)
         Me.BExit.TabIndex = 2
@@ -100,7 +102,7 @@ Partial Class MainMenu
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(3, 539)
+        Me.Label2.Location = New System.Drawing.Point(6, 3)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(410, 13)
         Me.Label2.TabIndex = 3
@@ -109,7 +111,7 @@ Partial Class MainMenu
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(443, 539)
+        Me.Label3.Location = New System.Drawing.Point(6, 42)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(329, 13)
         Me.Label3.TabIndex = 4
@@ -118,7 +120,7 @@ Partial Class MainMenu
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(203, 507)
+        Me.Label5.Location = New System.Drawing.Point(6, 29)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(390, 13)
         Me.Label5.TabIndex = 7
@@ -127,7 +129,7 @@ Partial Class MainMenu
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(240, 520)
+        Me.Label6.Location = New System.Drawing.Point(6, 16)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(310, 13)
         Me.Label6.TabIndex = 8
@@ -135,29 +137,30 @@ Partial Class MainMenu
         '
         'TabSettingMenu
         '
+        Me.TabSettingMenu.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabSettingMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabSettingMenu.BackgroundImage = My.Resources.main_menu_art
         Me.TabSettingMenu.Controls.Add(Me.TabPageModes)
         Me.TabSettingMenu.Controls.Add(Me.TabPageSettings)
         Me.TabSettingMenu.Controls.Add(Me.TabPagePhenom)
         Me.TabSettingMenu.Controls.Add(Me.TabPageCardSets)
-        Me.TabSettingMenu.Location = New System.Drawing.Point(6, 51)
+        Me.TabSettingMenu.Controls.Add(Me.TabPage1)
+        Me.TabSettingMenu.Location = New System.Drawing.Point(1, 51)
         Me.TabSettingMenu.Name = "TabSettingMenu"
         Me.TabSettingMenu.SelectedIndex = 0
         Me.TabSettingMenu.ShowToolTips = True
-        Me.TabSettingMenu.Size = New System.Drawing.Size(775, 445)
+        Me.TabSettingMenu.Size = New System.Drawing.Size(782, 469)
         Me.TabSettingMenu.TabIndex = 15
         '
         'TabPageModes
         '
         Me.TabPageModes.BackColor = System.Drawing.Color.Black
+        Me.TabPageModes.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageModes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPageModes.BackgroundImage = My.Resources.main_menu_art
         Me.TabPageModes.Controls.Add(Me.CHKInfinite)
         Me.TabPageModes.Location = New System.Drawing.Point(4, 22)
         Me.TabPageModes.Name = "TabPageModes"
         Me.TabPageModes.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageModes.Size = New System.Drawing.Size(767, 419)
+        Me.TabPageModes.Size = New System.Drawing.Size(774, 443)
         Me.TabPageModes.TabIndex = 0
         Me.TabPageModes.Text = "Game Modes"
         '
@@ -168,7 +171,7 @@ Partial Class MainMenu
         Me.CHKInfinite.ForeColor = System.Drawing.Color.Transparent
         Me.CHKInfinite.Location = New System.Drawing.Point(3, 3)
         Me.CHKInfinite.Name = "CHKInfinite"
-        Me.CHKInfinite.Size = New System.Drawing.Size(761, 17)
+        Me.CHKInfinite.Size = New System.Drawing.Size(768, 17)
         Me.CHKInfinite.TabIndex = 6
         Me.CHKInfinite.Text = "Finite Mode"
         Me.ToolTip1.SetToolTip(Me.CHKInfinite, resources.GetString("CHKInfinite.ToolTip"))
@@ -176,8 +179,8 @@ Partial Class MainMenu
         '
         'TabPageSettings
         '
+        Me.TabPageSettings.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPageSettings.BackgroundImage = My.Resources.main_menu_art
         Me.TabPageSettings.Controls.Add(Me.NumAretMax)
         Me.TabPageSettings.Controls.Add(Me.Label4)
         Me.TabPageSettings.Controls.Add(Me.ChkAertReset)
@@ -290,8 +293,8 @@ Partial Class MainMenu
         '
         'TabPagePhenom
         '
+        Me.TabPagePhenom.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPagePhenom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPagePhenom.BackgroundImage = My.Resources.main_menu_art
         Me.TabPagePhenom.Controls.Add(Me.LBLMoveChance)
         Me.TabPagePhenom.Controls.Add(Me.TBPhenomMoveChance)
         Me.TabPagePhenom.Controls.Add(Me.LBLHJChance)
@@ -370,8 +373,8 @@ Partial Class MainMenu
         'TabPageCardSets
         '
         Me.TabPageCardSets.BackColor = System.Drawing.Color.Black
+        Me.TabPageCardSets.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageCardSets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPageCardSets.BackgroundImage = My.Resources.main_menu_art
         Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
         Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
@@ -383,6 +386,17 @@ Partial Class MainMenu
         Me.TabPageCardSets.Size = New System.Drawing.Size(767, 419)
         Me.TabPageCardSets.TabIndex = 3
         Me.TabPageCardSets.Text = "Card Sets"
+        '
+        'ChkGeekscape
+        '
+        Me.ChkGeekscape.AutoSize = True
+        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
+        Me.ChkGeekscape.Name = "ChkGeekscape"
+        Me.ChkGeekscape.Size = New System.Drawing.Size(767, 17)
+        Me.ChkGeekscape.TabIndex = 4
+        Me.ChkGeekscape.Text = "Geekscape (Non MTG Multiverse Set, Default Off"
+        Me.ChkGeekscape.UseVisualStyleBackColor = True
         '
         'ChkAmon
         '
@@ -438,16 +452,19 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'ChkGeekscape
+        'TabPage1
         '
-        Me.ChkGeekscape.AutoSize = True
-        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
-        Me.ChkGeekscape.Name = "ChkGeekscape"
-        Me.ChkGeekscape.Size = New System.Drawing.Size(767, 17)
-        Me.ChkGeekscape.TabIndex = 4
-        Me.ChkGeekscape.Text = "Geekscape (Non MTG Multiverse Set, Default Off"
-        Me.ChkGeekscape.UseVisualStyleBackColor = True
+        Me.TabPage1.BackColor = System.Drawing.Color.Black
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.Label5)
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(774, 443)
+        Me.TabPage1.TabIndex = 4
+        Me.TabPage1.Text = "Credits"
         '
         'MainMenu
         '
@@ -456,10 +473,6 @@ Partial Class MainMenu
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.Controls.Add(Me.TabSettingMenu)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BExit)
         Me.Controls.Add(Me.BNewGame)
         Me.Controls.Add(Me.Label1)
@@ -480,6 +493,8 @@ Partial Class MainMenu
         CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPageCardSets.ResumeLayout(False)
         Me.TabPageCardSets.PerformLayout()
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -516,4 +531,5 @@ Partial Class MainMenu
     Friend WithEvents ChkIxalan As CheckBox
     Friend WithEvents ChkFiora As CheckBox
     Friend WithEvents ChkGeekscape As CheckBox
+    Friend WithEvents TabPage1 As TabPage
 End Class
