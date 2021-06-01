@@ -3,7 +3,7 @@
 
 This is a program to emulate the Blind Eternities Map variant of planechase (https://magic.wizards.com/en/articles/archive/feature/eternities-map-2010-07-19-0) for Magic the Gathering. This is a fan project, 100% free and open source and monitization free. Created to be simple to use, allow players to play in a more convenient way than using a secondary or oversized table, as well as making this format more accessible to a variety of players old and new.
 
-We're dedicated to being an open-source program with no in-app purchases, ads, monitization and no internet connection required once downloaded. We only wanted to play this format on our tv without using a 2nd table and the extra time and hassle of tracking a large eternities map game. Commits/Pulls/Contributions are welcome as this is a labor of love put together with extra time and metal willpower!
+We're dedicated to being an open-source program with no in-app purchases, ads, monitization and no internet connection required once downloaded. We only wanted to play this format on our tv without using a 2nd table and the extra time and hassle of tracking a large eternities map game. Commits/Pulls/Contributions are welcome as this is a labor of love put together with extra time and mental willpower!
 
 Featured on Tolarian Academy Video about Blind Eternites Map variant! (https://www.youtube.com/watch?v=TGJaJ29Zs6o) It's an honor! Thanks for all the great praise!
 
