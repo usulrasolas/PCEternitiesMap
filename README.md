@@ -1,11 +1,9 @@
 # PCEternitiesMap
- A Planechase Eternities Map Program
+ A Planechase Eternities Map Program (Currently for Windows PC or other .NET compatible systems)
 
-This is a Windows program to emulate the Blind Eternities Map variant of planechase (https://magic.wizards.com/en/articles/archive/feature/eternities-map-2010-07-19-0)
+This is a program to emulate the Blind Eternities Map variant of planechase (https://magic.wizards.com/en/articles/archive/feature/eternities-map-2010-07-19-0) for Magic the Gathering. This is a fan project, 100% free and open source and monitization free. Created to be simple to use, allow players to play in a more convenient way than using a secondary or oversized table, as well as making this format more accessible to a variety of players old and new.
 
-This was created to be easy to use, allow players to use this in a more convenient way than using physical cards (the Map can get very big and take up a lot of room on the table), as well as making this more accessible to new players.
-
-This is a FREE open-source program, no in-app purchases, no ads, no internet connection required.
+We're dedicated to being an open-source program with no in-app purchases, ads, monitization and no internet connection required once downloaded. We only wanted to play this format on our tv without using a 2nd table and the extra time and hassle of tracking a large eternities map game. Commits/Pulls/Contributions are welcome as this is a labor of love put together with extra time and metal willpower!
 
 So far features include:
 
@@ -16,14 +14,8 @@ So far features include:
 * Finite Persistant Map Mode
 * card event handling
 * chaos triggers that involve extra card display
-*Phenomenon Support
+* Phenomenon Support
 * a bunch of options to customize gameplay
-
-Features needed still:
-* more settings menu (as they come)
-
-For gamemode settings, this is what we have planned out:
-
-* percentage chance for helljump phenomenon (0% to disable)(Default: 50%) (Implemented)
-* percentage chance for normal movement phenomenon (0% to disable)(Default: 0%) (Implemented)
+* percentage chance for helljump phenomenon (0% to disable)(Default: 50%)
+* percentage chance for normal movement phenomenon (0% to disable)(Default: 0%)
 * disable/enable normal planeschase. (after 1.0)
