@@ -37,6 +37,7 @@
         ChkIxalan.Checked = ExpIxalan
         ChkFiora.Checked = ExpFiora
         ChkGeekscape.Checked = ExpGeek
+        ChkPC2019.Checked = ExpPC2019
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -77,31 +78,27 @@
         PCAnthologies = ChkPCAnthology.Checked
     End Sub
 
-    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs) Handles ChkFiora.CheckedChanged
+    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs)
         ExpFiora = ChkFiora.Checked
     End Sub
 
-    Private Sub ChkIxalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkIxalan.CheckedChanged
+    Private Sub ChkIxalan_CheckedChanged(sender As Object, e As EventArgs)
         ExpIxalan = ChkIxalan.Checked
     End Sub
 
-    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAmon.CheckedChanged
+    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs)
         ExpAmon = ChkAmon.Checked
     End Sub
 
-    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
+    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs)
         ExpGeek = ChkGeekscape.Checked
     End Sub
 
+    Private Sub ChkPC2019_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPC2019.CheckedChanged
+        ExpPC2019 = ChkPC2019.Checked
+    End Sub
+
     Private Sub TabPageCardSets_Click(sender As Object, e As EventArgs) Handles TabPageCardSets.Click
-
-    End Sub
-
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
-    End Sub
-
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class

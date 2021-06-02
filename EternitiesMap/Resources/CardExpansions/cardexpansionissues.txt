@@ -43,14 +43,14 @@ Vanguard
 IN GENERAL: Starting life/handsize take in effect when this goes into effect
  
 2017
-Collective Assault -Phenom
-Dark Bargain -Phenom
-Infinite Possibilities -Phenom
-Planar Flooding -Phenom, part lasts for rest of game?
-Planeswalkers Duel -Pheom
-Portal to the Blind Eternities - Phenom
-Through the Nexus - Phenom
-Titans Landing - Phenom, effects last for rest of game
+190 - Collective Assault -Phenom
+191 - Dark Bargain -Phenom
+197 - Infinite Possibilities -Phenom
+208 - Planar Flooding -Phenom, part lasts for rest of game?
+209 - Planeswalkers Duel -Pheom
+211 - Portal to the Blind Eternities - Phenom
+219 - Through the Nexus - Phenom
+220 - Titans Landing - Phenom, effects last for rest of game
 
 Geekscape - done
 118Holodeck - On chaos triggers
