@@ -52,11 +52,13 @@ Partial Class MainMenu
         Me.TabPageResources = New System.Windows.Forms.TabPage()
         Me.RTBResources = New System.Windows.Forms.RichTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.ChkIxalan = New System.Windows.Forms.CheckBox()
+        Me.ChkFiora = New System.Windows.Forms.CheckBox()
         Me.ChkAmon = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.ChkFiora = New System.Windows.Forms.CheckBox()
-        Me.ChkIxalan = New System.Windows.Forms.CheckBox()
+        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -348,6 +350,8 @@ Partial Class MainMenu
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
         Me.TabPageCardSets.Controls.Add(Me.CheckBox1)
         Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
+        Me.TabPageCardSets.Controls.Add(Me.CheckBox3)
+        Me.TabPageCardSets.Controls.Add(Me.CheckBox2)
         Me.TabPageCardSets.Controls.Add(Me.ChkPC2019)
         Me.TabPageCardSets.Controls.Add(Me.ChkPCAnthology)
         Me.TabPageCardSets.ForeColor = System.Drawing.Color.White
@@ -365,7 +369,7 @@ Partial Class MainMenu
         Me.ChkPC2019.Name = "ChkPC2019"
         Me.ChkPC2019.Size = New System.Drawing.Size(774, 17)
         Me.ChkPC2019.TabIndex = 5
-        Me.ChkPC2019.Text = "Planeschase 2019 (Themed Set,Default Off)"
+        Me.ChkPC2019.Text = "Planechase 2019 (Themed Set,Default Off)"
         Me.ChkPC2019.UseVisualStyleBackColor = True
         '
         'ChkPCAnthology
@@ -434,27 +438,61 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'ChkGeekscape
+        'CheckBox2
         '
-        Me.ChkGeekscape.AutoSize = True
-        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkGeekscape.Enabled = False
-        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 34)
-        Me.ChkGeekscape.Name = "ChkGeekscape"
-        Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
-        Me.ChkGeekscape.TabIndex = 10
-        Me.ChkGeekscape.Text = "Geekchase (Non MTG Multiverse Set, Default Off)"
-        Me.ChkGeekscape.UseVisualStyleBackColor = True
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CheckBox2.Location = New System.Drawing.Point(0, 34)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(774, 17)
+        Me.CheckBox2.TabIndex = 17
+        Me.CheckBox2.Text = "Planechase 2019 Commander Cards"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CheckBox3.Location = New System.Drawing.Point(0, 51)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(774, 17)
+        Me.CheckBox3.TabIndex = 25
+        Me.CheckBox3.Text = "Planechase 2017"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'ChkIxalan
+        '
+        Me.ChkIxalan.AutoSize = True
+        Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkIxalan.Enabled = False
+        Me.ChkIxalan.Location = New System.Drawing.Point(0, 136)
+        Me.ChkIxalan.Name = "ChkIxalan"
+        Me.ChkIxalan.Size = New System.Drawing.Size(774, 17)
+        Me.ChkIxalan.TabIndex = 30
+        Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
+        Me.ChkIxalan.UseVisualStyleBackColor = True
+        '
+        'ChkFiora
+        '
+        Me.ChkFiora.AutoSize = True
+        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkFiora.Enabled = False
+        Me.ChkFiora.Location = New System.Drawing.Point(0, 119)
+        Me.ChkFiora.Name = "ChkFiora"
+        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
+        Me.ChkFiora.TabIndex = 29
+        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
+        Me.ChkFiora.UseVisualStyleBackColor = True
         '
         'ChkAmon
         '
         Me.ChkAmon.AutoSize = True
         Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkAmon.Enabled = False
-        Me.ChkAmon.Location = New System.Drawing.Point(0, 68)
+        Me.ChkAmon.Location = New System.Drawing.Point(0, 102)
         Me.ChkAmon.Name = "ChkAmon"
         Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
-        Me.ChkAmon.TabIndex = 13
+        Me.ChkAmon.TabIndex = 28
         Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
         Me.ChkAmon.UseVisualStyleBackColor = True
         '
@@ -463,36 +501,24 @@ Partial Class MainMenu
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.CheckBox1.Enabled = False
-        Me.CheckBox1.Location = New System.Drawing.Point(0, 51)
+        Me.CheckBox1.Location = New System.Drawing.Point(0, 85)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(774, 17)
-        Me.CheckBox1.TabIndex = 11
+        Me.CheckBox1.TabIndex = 27
         Me.CheckBox1.Text = "Multiverse Expansion"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'ChkFiora
+        'ChkGeekscape
         '
-        Me.ChkFiora.AutoSize = True
-        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkFiora.Enabled = False
-        Me.ChkFiora.Location = New System.Drawing.Point(0, 85)
-        Me.ChkFiora.Name = "ChkFiora"
-        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
-        Me.ChkFiora.TabIndex = 15
-        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
-        Me.ChkFiora.UseVisualStyleBackColor = True
-        '
-        'ChkIxalan
-        '
-        Me.ChkIxalan.AutoSize = True
-        Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkIxalan.Enabled = False
-        Me.ChkIxalan.Location = New System.Drawing.Point(0, 102)
-        Me.ChkIxalan.Name = "ChkIxalan"
-        Me.ChkIxalan.Size = New System.Drawing.Size(774, 17)
-        Me.ChkIxalan.TabIndex = 16
-        Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
-        Me.ChkIxalan.UseVisualStyleBackColor = True
+        Me.ChkGeekscape.AutoSize = True
+        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkGeekscape.Enabled = False
+        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
+        Me.ChkGeekscape.Name = "ChkGeekscape"
+        Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
+        Me.ChkGeekscape.TabIndex = 26
+        Me.ChkGeekscape.Text = "Geekchase (Non MTG Multiverse Set, Default Off)"
+        Me.ChkGeekscape.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -561,4 +587,6 @@ Partial Class MainMenu
     Friend WithEvents ChkAmon As CheckBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ChkGeekscape As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
 End Class
