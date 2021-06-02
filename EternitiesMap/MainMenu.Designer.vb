@@ -52,12 +52,12 @@ Partial Class MainMenu
         Me.TabPageResources = New System.Windows.Forms.TabPage()
         Me.RTBResources = New System.Windows.Forms.RichTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.ChkBxPC2019CommanderCards = New System.Windows.Forms.CheckBox()
+        Me.ChkBxPC2017 = New System.Windows.Forms.CheckBox()
         Me.ChkIxalan = New System.Windows.Forms.CheckBox()
         Me.ChkFiora = New System.Windows.Forms.CheckBox()
         Me.ChkAmon = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiverse = New System.Windows.Forms.CheckBox()
         Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
@@ -348,10 +348,10 @@ Partial Class MainMenu
         Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
         Me.TabPageCardSets.Controls.Add(Me.ChkFiora)
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
-        Me.TabPageCardSets.Controls.Add(Me.CheckBox1)
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiverse)
         Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
-        Me.TabPageCardSets.Controls.Add(Me.CheckBox3)
-        Me.TabPageCardSets.Controls.Add(Me.CheckBox2)
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxPC2017)
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxPC2019CommanderCards)
         Me.TabPageCardSets.Controls.Add(Me.ChkPC2019)
         Me.TabPageCardSets.Controls.Add(Me.ChkPCAnthology)
         Me.TabPageCardSets.ForeColor = System.Drawing.Color.White
@@ -438,27 +438,28 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'CheckBox2
+        'ChkBxPC2019CommanderCards
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.CheckBox2.Location = New System.Drawing.Point(0, 34)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(774, 17)
-        Me.CheckBox2.TabIndex = 17
-        Me.CheckBox2.Text = "Planechase 2019 Commander Cards"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.ChkBxPC2019CommanderCards.AccessibleName = "Planechase 2019 Commander Cards"
+        Me.ChkBxPC2019CommanderCards.AutoSize = True
+        Me.ChkBxPC2019CommanderCards.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxPC2019CommanderCards.Location = New System.Drawing.Point(0, 34)
+        Me.ChkBxPC2019CommanderCards.Name = "ChkBxPC2019CommanderCards"
+        Me.ChkBxPC2019CommanderCards.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxPC2019CommanderCards.TabIndex = 17
+        Me.ChkBxPC2019CommanderCards.Text = "Planechase 2019 Commander Cards"
+        Me.ChkBxPC2019CommanderCards.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'ChkBxPC2017
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.CheckBox3.Location = New System.Drawing.Point(0, 51)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(774, 17)
-        Me.CheckBox3.TabIndex = 25
-        Me.CheckBox3.Text = "Planechase 2017"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.ChkBxPC2017.AutoSize = True
+        Me.ChkBxPC2017.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxPC2017.Location = New System.Drawing.Point(0, 51)
+        Me.ChkBxPC2017.Name = "ChkBxPC2017"
+        Me.ChkBxPC2017.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxPC2017.TabIndex = 25
+        Me.ChkBxPC2017.Text = "Planechase 2017"
+        Me.ChkBxPC2017.UseVisualStyleBackColor = True
         '
         'ChkIxalan
         '
@@ -496,17 +497,17 @@ Partial Class MainMenu
         Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
         Me.ChkAmon.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'ChkBxMultiverse
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.CheckBox1.Enabled = False
-        Me.CheckBox1.Location = New System.Drawing.Point(0, 85)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(774, 17)
-        Me.CheckBox1.TabIndex = 27
-        Me.CheckBox1.Text = "Multiverse Expansion"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.ChkBxMultiverse.AutoSize = True
+        Me.ChkBxMultiverse.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverse.Enabled = False
+        Me.ChkBxMultiverse.Location = New System.Drawing.Point(0, 85)
+        Me.ChkBxMultiverse.Name = "ChkBxMultiverse"
+        Me.ChkBxMultiverse.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverse.TabIndex = 27
+        Me.ChkBxMultiverse.Text = "Multiverse Expansion"
+        Me.ChkBxMultiverse.UseVisualStyleBackColor = True
         '
         'ChkGeekscape
         '
@@ -585,8 +586,8 @@ Partial Class MainMenu
     Friend WithEvents ChkIxalan As CheckBox
     Friend WithEvents ChkFiora As CheckBox
     Friend WithEvents ChkAmon As CheckBox
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents ChkBxMultiverse As CheckBox
     Friend WithEvents ChkGeekscape As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents ChkBxPC2017 As CheckBox
+    Friend WithEvents ChkBxPC2019CommanderCards As CheckBox
 End Class
