@@ -52,8 +52,10 @@ Partial Class MainMenu
         Me.ChkFiora = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -63,6 +65,7 @@ Partial Class MainMenu
         CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPageCardSets.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -106,6 +109,7 @@ Partial Class MainMenu
         Me.TabSettingMenu.Controls.Add(Me.TabPagePhenom)
         Me.TabSettingMenu.Controls.Add(Me.TabPageCardSets)
         Me.TabSettingMenu.Controls.Add(Me.TabPage1)
+        Me.TabSettingMenu.Controls.Add(Me.TabPage2)
         Me.TabSettingMenu.Location = New System.Drawing.Point(1, 51)
         Me.TabSettingMenu.Name = "TabSettingMenu"
         Me.TabSettingMenu.SelectedIndex = 0
@@ -432,16 +436,6 @@ Partial Class MainMenu
         Me.TabPage1.TabIndex = 4
         Me.TabPage1.Text = "Credits"
         '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 250
-        Me.ToolTip1.AutoPopDelay = 15000
-        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ToolTip1.InitialDelay = 250
-        Me.ToolTip1.IsBalloon = True
-        Me.ToolTip1.ReshowDelay = 50
-        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        '
         'RichTextBox1
         '
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.WindowText
@@ -452,6 +446,37 @@ Partial Class MainMenu
         Me.RichTextBox1.Size = New System.Drawing.Size(768, 437)
         Me.RichTextBox1.TabIndex = 10
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 250
+        Me.ToolTip1.AutoPopDelay = 15000
+        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ToolTip1.InitialDelay = 250
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ReshowDelay = 50
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.RichTextBox2)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(774, 443)
+        Me.TabPage2.TabIndex = 5
+        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'RichTextBox2
+        '
+        Me.RichTextBox2.BackColor = System.Drawing.SystemColors.WindowText
+        Me.RichTextBox2.ForeColor = System.Drawing.SystemColors.Window
+        Me.RichTextBox2.Location = New System.Drawing.Point(0, 0)
+        Me.RichTextBox2.Name = "RichTextBox2"
+        Me.RichTextBox2.Size = New System.Drawing.Size(778, 440)
+        Me.RichTextBox2.TabIndex = 0
+        Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
         '
         'MainMenu
         '
@@ -481,6 +506,7 @@ Partial Class MainMenu
         Me.TabPageCardSets.ResumeLayout(False)
         Me.TabPageCardSets.PerformLayout()
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -516,4 +542,6 @@ Partial Class MainMenu
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents ChkPC2019 As CheckBox
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents RichTextBox2 As RichTextBox
 End Class
