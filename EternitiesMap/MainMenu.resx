@@ -117,22 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="RichTextBox2.Text" xml:space="preserve">
-    <value>Our Github:
-
-https://github.com/usulrasolas/PCEternitiesMap
-
-Planeschase Rules:
-
-https://mtg.fandom.com/wiki/Planechase_(format)
-
-Blind Eternites Variant Rules:
-
-https://magic.wizards.com/en/articles/archive/feature/eternities-map-2010-07-19-0
-
-
-</value>
-  </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -226,7 +210,7 @@ Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.</value>
   </data>
-  <data name="RichTextBox1.Text" xml:space="preserve">
+  <data name="RTBCredits.Text" xml:space="preserve">
     <value>Magic: The Gathering, MTG, and Planechase are Copyright Wizard of The Coast LLC
 All Rights to Cards, Art, and Assets Reserved by Original Owners
 This program is unofficial and is in no way endorsed by Wizards of The Coast LLC
@@ -251,6 +235,22 @@ Planechase 2017: http://magicseteditor.sourceforge.net/node/14469
 
 Planechase 2019 created by u/ExPointReddit
 Planechase 2019: https://www.reddit.com/r/magicTCG/comments/9127qi/after_over_a_year_of_work_we_give_you_what/?ref=share&amp;ref_source=link
+
+
+</value>
+  </data>
+  <data name="RTBResources.Text" xml:space="preserve">
+    <value>Our Github:
+
+https://github.com/usulrasolas/PCEternitiesMap
+
+Planeschase Rules:
+
+https://mtg.fandom.com/wiki/Planechase_(format)
+
+Blind Eternites Variant Rules:
+
+https://magic.wizards.com/en/articles/archive/feature/eternities-map-2010-07-19-0
 
 
 </value>

@@ -98,11 +98,4 @@
         ExpPC2019 = ChkPC2019.Checked
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
-
-    End Sub
 End Class
