@@ -45,6 +45,13 @@ Partial Class MainMenu
         Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
         Me.TabPageCardSets = New System.Windows.Forms.TabPage()
+        Me.ChkIxalan = New System.Windows.Forms.CheckBox()
+        Me.ChkFiora = New System.Windows.Forms.CheckBox()
+        Me.ChkAmon = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiverse = New System.Windows.Forms.CheckBox()
+        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
+        Me.ChkBxPC2017 = New System.Windows.Forms.CheckBox()
+        Me.ChkBxPC2019CommanderCards = New System.Windows.Forms.CheckBox()
         Me.ChkPC2019 = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.TabPageCredits = New System.Windows.Forms.TabPage()
@@ -52,13 +59,6 @@ Partial Class MainMenu
         Me.TabPageResources = New System.Windows.Forms.TabPage()
         Me.RTBResources = New System.Windows.Forms.RichTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ChkBxPC2019CommanderCards = New System.Windows.Forms.CheckBox()
-        Me.ChkBxPC2017 = New System.Windows.Forms.CheckBox()
-        Me.ChkIxalan = New System.Windows.Forms.CheckBox()
-        Me.ChkFiora = New System.Windows.Forms.CheckBox()
-        Me.ChkAmon = New System.Windows.Forms.CheckBox()
-        Me.ChkBxMultiverse = New System.Windows.Forms.CheckBox()
-        Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -361,6 +361,89 @@ Partial Class MainMenu
         Me.TabPageCardSets.TabIndex = 3
         Me.TabPageCardSets.Text = "Card Sets"
         '
+        'ChkIxalan
+        '
+        Me.ChkIxalan.AutoSize = True
+        Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkIxalan.Enabled = False
+        Me.ChkIxalan.Location = New System.Drawing.Point(0, 136)
+        Me.ChkIxalan.Name = "ChkIxalan"
+        Me.ChkIxalan.Size = New System.Drawing.Size(774, 17)
+        Me.ChkIxalan.TabIndex = 30
+        Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
+        Me.ChkIxalan.UseVisualStyleBackColor = True
+        '
+        'ChkFiora
+        '
+        Me.ChkFiora.AutoSize = True
+        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkFiora.Enabled = False
+        Me.ChkFiora.Location = New System.Drawing.Point(0, 119)
+        Me.ChkFiora.Name = "ChkFiora"
+        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
+        Me.ChkFiora.TabIndex = 29
+        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
+        Me.ChkFiora.UseVisualStyleBackColor = True
+        '
+        'ChkAmon
+        '
+        Me.ChkAmon.AutoSize = True
+        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAmon.Enabled = False
+        Me.ChkAmon.Location = New System.Drawing.Point(0, 102)
+        Me.ChkAmon.Name = "ChkAmon"
+        Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
+        Me.ChkAmon.TabIndex = 28
+        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
+        Me.ChkAmon.UseVisualStyleBackColor = True
+        '
+        'ChkBxMultiverse
+        '
+        Me.ChkBxMultiverse.AutoSize = True
+        Me.ChkBxMultiverse.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverse.Enabled = False
+        Me.ChkBxMultiverse.Location = New System.Drawing.Point(0, 85)
+        Me.ChkBxMultiverse.Name = "ChkBxMultiverse"
+        Me.ChkBxMultiverse.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverse.TabIndex = 27
+        Me.ChkBxMultiverse.Text = "Multiverse Expansion"
+        Me.ChkBxMultiverse.UseVisualStyleBackColor = True
+        '
+        'ChkGeekscape
+        '
+        Me.ChkGeekscape.AutoSize = True
+        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkGeekscape.Enabled = False
+        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
+        Me.ChkGeekscape.Name = "ChkGeekscape"
+        Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
+        Me.ChkGeekscape.TabIndex = 26
+        Me.ChkGeekscape.Text = "Geekchase (Non MTG Multiverse Set, Default Off)"
+        Me.ChkGeekscape.UseVisualStyleBackColor = True
+        '
+        'ChkBxPC2017
+        '
+        Me.ChkBxPC2017.AutoSize = True
+        Me.ChkBxPC2017.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxPC2017.Location = New System.Drawing.Point(0, 51)
+        Me.ChkBxPC2017.Name = "ChkBxPC2017"
+        Me.ChkBxPC2017.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxPC2017.TabIndex = 25
+        Me.ChkBxPC2017.Text = "Planechase 2017"
+        Me.ChkBxPC2017.UseVisualStyleBackColor = True
+        '
+        'ChkBxPC2019CommanderCards
+        '
+        Me.ChkBxPC2019CommanderCards.AccessibleName = "Planechase 2019 Commander Cards"
+        Me.ChkBxPC2019CommanderCards.AutoSize = True
+        Me.ChkBxPC2019CommanderCards.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxPC2019CommanderCards.Location = New System.Drawing.Point(0, 34)
+        Me.ChkBxPC2019CommanderCards.Name = "ChkBxPC2019CommanderCards"
+        Me.ChkBxPC2019CommanderCards.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxPC2019CommanderCards.TabIndex = 17
+        Me.ChkBxPC2019CommanderCards.Text = "Planechase 2019 Commander Cards"
+        Me.ChkBxPC2019CommanderCards.UseVisualStyleBackColor = True
+        '
         'ChkPC2019
         '
         Me.ChkPC2019.AutoSize = True
@@ -437,89 +520,6 @@ Partial Class MainMenu
         Me.ToolTip1.IsBalloon = True
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        '
-        'ChkBxPC2019CommanderCards
-        '
-        Me.ChkBxPC2019CommanderCards.AccessibleName = "Planechase 2019 Commander Cards"
-        Me.ChkBxPC2019CommanderCards.AutoSize = True
-        Me.ChkBxPC2019CommanderCards.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBxPC2019CommanderCards.Location = New System.Drawing.Point(0, 34)
-        Me.ChkBxPC2019CommanderCards.Name = "ChkBxPC2019CommanderCards"
-        Me.ChkBxPC2019CommanderCards.Size = New System.Drawing.Size(774, 17)
-        Me.ChkBxPC2019CommanderCards.TabIndex = 17
-        Me.ChkBxPC2019CommanderCards.Text = "Planechase 2019 Commander Cards"
-        Me.ChkBxPC2019CommanderCards.UseVisualStyleBackColor = True
-        '
-        'ChkBxPC2017
-        '
-        Me.ChkBxPC2017.AutoSize = True
-        Me.ChkBxPC2017.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBxPC2017.Location = New System.Drawing.Point(0, 51)
-        Me.ChkBxPC2017.Name = "ChkBxPC2017"
-        Me.ChkBxPC2017.Size = New System.Drawing.Size(774, 17)
-        Me.ChkBxPC2017.TabIndex = 25
-        Me.ChkBxPC2017.Text = "Planechase 2017"
-        Me.ChkBxPC2017.UseVisualStyleBackColor = True
-        '
-        'ChkIxalan
-        '
-        Me.ChkIxalan.AutoSize = True
-        Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkIxalan.Enabled = False
-        Me.ChkIxalan.Location = New System.Drawing.Point(0, 136)
-        Me.ChkIxalan.Name = "ChkIxalan"
-        Me.ChkIxalan.Size = New System.Drawing.Size(774, 17)
-        Me.ChkIxalan.TabIndex = 30
-        Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
-        Me.ChkIxalan.UseVisualStyleBackColor = True
-        '
-        'ChkFiora
-        '
-        Me.ChkFiora.AutoSize = True
-        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkFiora.Enabled = False
-        Me.ChkFiora.Location = New System.Drawing.Point(0, 119)
-        Me.ChkFiora.Name = "ChkFiora"
-        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
-        Me.ChkFiora.TabIndex = 29
-        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
-        Me.ChkFiora.UseVisualStyleBackColor = True
-        '
-        'ChkAmon
-        '
-        Me.ChkAmon.AutoSize = True
-        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkAmon.Enabled = False
-        Me.ChkAmon.Location = New System.Drawing.Point(0, 102)
-        Me.ChkAmon.Name = "ChkAmon"
-        Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
-        Me.ChkAmon.TabIndex = 28
-        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
-        Me.ChkAmon.UseVisualStyleBackColor = True
-        '
-        'ChkBxMultiverse
-        '
-        Me.ChkBxMultiverse.AutoSize = True
-        Me.ChkBxMultiverse.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBxMultiverse.Enabled = False
-        Me.ChkBxMultiverse.Location = New System.Drawing.Point(0, 85)
-        Me.ChkBxMultiverse.Name = "ChkBxMultiverse"
-        Me.ChkBxMultiverse.Size = New System.Drawing.Size(774, 17)
-        Me.ChkBxMultiverse.TabIndex = 27
-        Me.ChkBxMultiverse.Text = "Multiverse Expansion"
-        Me.ChkBxMultiverse.UseVisualStyleBackColor = True
-        '
-        'ChkGeekscape
-        '
-        Me.ChkGeekscape.AutoSize = True
-        Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkGeekscape.Enabled = False
-        Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
-        Me.ChkGeekscape.Name = "ChkGeekscape"
-        Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
-        Me.ChkGeekscape.TabIndex = 26
-        Me.ChkGeekscape.Text = "Geekchase (Non MTG Multiverse Set, Default Off)"
-        Me.ChkGeekscape.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
