@@ -688,6 +688,7 @@
     <Content Include="Resources\cards\SHGR.png" />
     <Content Include="Resources\icons\chaos.png" />
     <Content Include="Resources\icons\chase.png" />
+    <Content Include="Resources\icons\info.png" />
     <Content Include="Resources\icons\walk.png" />
     <None Include="Resources\main_menu_art.jpg" />
   </ItemGroup>
