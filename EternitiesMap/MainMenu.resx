@@ -210,6 +210,35 @@ Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.</value>
   </data>
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>Magic: The Gathering, MTG, and Planechase are Copyright Wizard of The Coast LLC
+All Rights to Cards, Art, and Assets Reserved by Original Owners
+This program is unofficial and is in no way endorsed by Wizards of The Coast LLC
+This software and its code are distributed and licensed GNU GPL v3
+
+
+Geekchase created by u/TGIFman
+Geekchase: https://www.reddit.com/r/magicTCG/comments/1h4yp5/geekchase_a_set_of_30_custom_planechase_cards/
+
+
+Ixalan Expansion created by Mareykan
+Ixalan Expansion: https://www.mtgsalvation.com/forums/magic-fundamentals/custom-card-creation/791117-i-made-planechase-cards-for-ixalan
+
+
+Multiverse - The Custom Planechase Expansion created by u/Magical Hacker
+Multiverse - The Custom Planechase Expansion: https://www.reddit.com/r/custommagic/comments/7sgecl/multiverse_the_custom_planechase_expansion/?utm_medium=android_app&amp;utm_source=share
+
+
+Planechase 2017 created by Wapulatus
+Planechase 2017: http://magicseteditor.sourceforge.net/node/14469
+
+
+Planechase 2019 created by u/ExPointReddit
+Planechase 2019: https://www.reddit.com/r/magicTCG/comments/9127qi/after_over_a_year_of_work_we_give_you_what/?ref=share&amp;ref_source=link
+
+
+</value>
+  </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
