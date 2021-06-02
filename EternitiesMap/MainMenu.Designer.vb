@@ -52,8 +52,8 @@ Partial Class MainMenu
         Me.ChkFiora = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.RTBCredits = New System.Windows.Forms.RichTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -424,13 +424,24 @@ Partial Class MainMenu
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.Black
-        Me.TabPage1.Controls.Add(Me.RichTextBox1)
+        Me.TabPage1.Controls.Add(Me.RTBCredits)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(774, 443)
         Me.TabPage1.TabIndex = 4
         Me.TabPage1.Text = "Credits"
+        '
+        'RTBCredits
+        '
+        Me.RTBCredits.BackColor = System.Drawing.SystemColors.WindowText
+        Me.RTBCredits.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RTBCredits.ForeColor = System.Drawing.Color.White
+        Me.RTBCredits.Location = New System.Drawing.Point(3, 3)
+        Me.RTBCredits.Name = "RTBCredits"
+        Me.RTBCredits.Size = New System.Drawing.Size(768, 437)
+        Me.RTBCredits.TabIndex = 10
+        Me.RTBCredits.Text = resources.GetString("RTBCredits.Text")
         '
         'ToolTip1
         '
@@ -441,17 +452,6 @@ Partial Class MainMenu
         Me.ToolTip1.IsBalloon = True
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.BackColor = System.Drawing.SystemColors.WindowText
-        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.White
-        Me.RichTextBox1.Location = New System.Drawing.Point(3, 3)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(768, 437)
-        Me.RichTextBox1.TabIndex = 10
-        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
         'MainMenu
         '
@@ -515,5 +515,5 @@ Partial Class MainMenu
     Friend WithEvents ChkGeekscape As CheckBox
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents ChkPC2019 As CheckBox
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents RTBCredits As RichTextBox
 End Class
