@@ -56,6 +56,7 @@ Partial Class MainMenu
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -198,13 +199,14 @@ Partial Class MainMenu
         '
         'NumAretMax
         '
-        Me.NumAretMax.Dock = System.Windows.Forms.DockStyle.Top
+        Me.NumAretMax.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NumAretMax.ForeColor = System.Drawing.Color.Black
-        Me.NumAretMax.Location = New System.Drawing.Point(195, 88)
+        Me.NumAretMax.Location = New System.Drawing.Point(201, 86)
         Me.NumAretMax.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumAretMax.Name = "NumAretMax"
-        Me.NumAretMax.Size = New System.Drawing.Size(576, 20)
+        Me.NumAretMax.Size = New System.Drawing.Size(36, 20)
         Me.NumAretMax.TabIndex = 13
         Me.NumAretMax.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
@@ -375,6 +377,7 @@ Partial Class MainMenu
         Me.TabPageCardSets.BackColor = System.Drawing.Color.Black
         Me.TabPageCardSets.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageCardSets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageCardSets.Controls.Add(Me.CheckBox1)
         Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
         Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
@@ -391,17 +394,19 @@ Partial Class MainMenu
         '
         Me.ChkGeekscape.AutoSize = True
         Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkGeekscape.Enabled = False
         Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
         Me.ChkGeekscape.Name = "ChkGeekscape"
         Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
         Me.ChkGeekscape.TabIndex = 4
-        Me.ChkGeekscape.Text = "Geekscape (Non MTG Multiverse Set, Default Off"
+        Me.ChkGeekscape.Text = "Geekscape (Non MTG Multiverse Set, Default Off)"
         Me.ChkGeekscape.UseVisualStyleBackColor = True
         '
         'ChkAmon
         '
         Me.ChkAmon.AutoSize = True
         Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAmon.Enabled = False
         Me.ChkAmon.Location = New System.Drawing.Point(0, 51)
         Me.ChkAmon.Name = "ChkAmon"
         Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
@@ -425,6 +430,7 @@ Partial Class MainMenu
         '
         Me.ChkFiora.AutoSize = True
         Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkFiora.Enabled = False
         Me.ChkFiora.Location = New System.Drawing.Point(0, 17)
         Me.ChkFiora.Name = "ChkFiora"
         Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
@@ -466,6 +472,17 @@ Partial Class MainMenu
         Me.ToolTip1.IsBalloon = True
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(0, 91)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(235, 17)
+        Me.CheckBox1.TabIndex = 5
+        Me.CheckBox1.Text = "Planeschase 2019 (Themed Set,Default Off)"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -533,4 +550,5 @@ Partial Class MainMenu
     Friend WithEvents ChkFiora As CheckBox
     Friend WithEvents ChkGeekscape As CheckBox
     Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

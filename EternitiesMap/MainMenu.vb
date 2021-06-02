@@ -93,4 +93,15 @@
         ExpGeek = ChkGeekscape.Checked
     End Sub
 
+    Private Sub TabPageCardSets_Click(sender As Object, e As EventArgs) Handles TabPageCardSets.Click
+
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
