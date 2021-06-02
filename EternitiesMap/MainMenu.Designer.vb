@@ -52,8 +52,8 @@ Partial Class MainMenu
         Me.ChkFiora = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -432,16 +432,6 @@ Partial Class MainMenu
         Me.TabPage1.TabIndex = 4
         Me.TabPage1.Text = "Credits"
         '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 250
-        Me.ToolTip1.AutoPopDelay = 15000
-        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ToolTip1.InitialDelay = 250
-        Me.ToolTip1.IsBalloon = True
-        Me.ToolTip1.ReshowDelay = 50
-        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        '
         'RichTextBox1
         '
         Me.RichTextBox1.BackColor = System.Drawing.SystemColors.WindowText
@@ -452,6 +442,16 @@ Partial Class MainMenu
         Me.RichTextBox1.Size = New System.Drawing.Size(768, 437)
         Me.RichTextBox1.TabIndex = 10
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 250
+        Me.ToolTip1.AutoPopDelay = 15000
+        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ToolTip1.InitialDelay = 250
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ReshowDelay = 50
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
         'MainMenu
         '
