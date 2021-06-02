@@ -49,6 +49,7 @@ Partial Class MainMenu
         Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
         Me.TabPageCardSets = New System.Windows.Forms.TabPage()
+        Me.ChkPC2019 = New System.Windows.Forms.CheckBox()
         Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.ChkAmon = New System.Windows.Forms.CheckBox()
         Me.ChkIxalan = New System.Windows.Forms.CheckBox()
@@ -56,7 +57,6 @@ Partial Class MainMenu
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -377,7 +377,7 @@ Partial Class MainMenu
         Me.TabPageCardSets.BackColor = System.Drawing.Color.Black
         Me.TabPageCardSets.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageCardSets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPageCardSets.Controls.Add(Me.CheckBox1)
+        Me.TabPageCardSets.Controls.Add(Me.ChkPC2019)
         Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
         Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
@@ -389,6 +389,17 @@ Partial Class MainMenu
         Me.TabPageCardSets.Size = New System.Drawing.Size(774, 443)
         Me.TabPageCardSets.TabIndex = 3
         Me.TabPageCardSets.Text = "Card Sets"
+        '
+        'ChkPC2019
+        '
+        Me.ChkPC2019.AutoSize = True
+        Me.ChkPC2019.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPC2019.Location = New System.Drawing.Point(0, 85)
+        Me.ChkPC2019.Name = "ChkPC2019"
+        Me.ChkPC2019.Size = New System.Drawing.Size(774, 17)
+        Me.ChkPC2019.TabIndex = 5
+        Me.ChkPC2019.Text = "Planeschase 2019 (Themed Set,Default Off)"
+        Me.ChkPC2019.UseVisualStyleBackColor = True
         '
         'ChkGeekscape
         '
@@ -473,17 +484,6 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(0, 91)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(235, 17)
-        Me.CheckBox1.TabIndex = 5
-        Me.CheckBox1.Text = "Planeschase 2019 (Themed Set,Default Off)"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'MainMenu
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -550,5 +550,5 @@ Partial Class MainMenu
     Friend WithEvents ChkFiora As CheckBox
     Friend WithEvents ChkGeekscape As CheckBox
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents ChkPC2019 As CheckBox
 End Class

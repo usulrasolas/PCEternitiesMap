@@ -25,6 +25,7 @@
     Public ExpFiora As Boolean = False
     Public ExpIxalan As Boolean = False
     Public ExpGeek As Boolean = False
+    Public ExpPC2019 As Boolean = False
 
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
