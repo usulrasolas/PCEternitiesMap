@@ -443,6 +443,7 @@ Partial Class MainMenu
         Me.RTBCredits.ForeColor = System.Drawing.Color.White
         Me.RTBCredits.Location = New System.Drawing.Point(3, 3)
         Me.RTBCredits.Name = "RTBCredits"
+        Me.RTBCredits.ReadOnly = True
         Me.RTBCredits.Size = New System.Drawing.Size(768, 437)
         Me.RTBCredits.TabIndex = 10
         Me.RTBCredits.Text = resources.GetString("RTBCredits.Text")
@@ -464,6 +465,7 @@ Partial Class MainMenu
         Me.RTBResources.ForeColor = System.Drawing.SystemColors.Window
         Me.RTBResources.Location = New System.Drawing.Point(0, 3)
         Me.RTBResources.Name = "RTBResources"
+        Me.RTBResources.ReadOnly = True
         Me.RTBResources.Size = New System.Drawing.Size(778, 437)
         Me.RTBResources.TabIndex = 0
         Me.RTBResources.Text = resources.GetString("RTBResources.Text")
