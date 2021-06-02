@@ -78,19 +78,19 @@
         PCAnthologies = ChkPCAnthology.Checked
     End Sub
 
-    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs) Handles ChkFiora.CheckedChanged
+    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs)
         ExpFiora = ChkFiora.Checked
     End Sub
 
-    Private Sub ChkIxalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkIxalan.CheckedChanged
+    Private Sub ChkIxalan_CheckedChanged(sender As Object, e As EventArgs)
         ExpIxalan = ChkIxalan.Checked
     End Sub
 
-    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAmon.CheckedChanged
+    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs)
         ExpAmon = ChkAmon.Checked
     End Sub
 
-    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
+    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs)
         ExpGeek = ChkGeekscape.Checked
     End Sub
 
