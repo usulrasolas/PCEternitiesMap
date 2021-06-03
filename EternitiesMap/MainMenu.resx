@@ -177,7 +177,7 @@ Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.
-</value>
+This affects all card sets.</value>
   </data>
   <data name="ChkResetReturn.ToolTip" xml:space="preserve">
     <value>Uncheck this box to skip reset of the counters on any card
@@ -195,7 +195,7 @@ Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.
-</value>
+This affects all card sets.</value>
   </data>
   <data name="ChkPreTransReset.ToolTip" xml:space="preserve">
     <value>Check this box to force reset the counters on the active plane
@@ -208,7 +208,9 @@ Kilnspire District (Charge Counters)
 Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
-but will also affect any Plane that gets a counter of any kind.</value>
+but will also affect any Plane that gets a counter of any kind.
+This affects all card sets.
+</value>
   </data>
   <data name="RTBCredits.Text" xml:space="preserve">
     <value>Magic: The Gathering, MTG, and Planechase are Copyright Wizard of The Coast LLC

@@ -45,6 +45,9 @@ Partial Class MainMenu
         Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
         Me.TabPageCardSets = New System.Windows.Forms.TabPage()
+        Me.ChkFiora = New System.Windows.Forms.CheckBox()
+        Me.ChkAmon = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiverse = New System.Windows.Forms.CheckBox()
         Me.ChkIxalan = New System.Windows.Forms.CheckBox()
         Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.ChkBxPC2017 = New System.Windows.Forms.CheckBox()
@@ -56,9 +59,13 @@ Partial Class MainMenu
         Me.TabPageResources = New System.Windows.Forms.TabPage()
         Me.RTBResources = New System.Windows.Forms.RichTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ChkFiora = New System.Windows.Forms.CheckBox()
-        Me.ChkAmon = New System.Windows.Forms.CheckBox()
-        Me.ChkBxMultiverse = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiverseIxalan = New System.Windows.Forms.CheckBox()
+        Me.ChkbxMultiverseKaladesh = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiverseTarkir = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiverseTheros = New System.Windows.Forms.CheckBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.ChkBxMultiverseExtras = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiversePhenom = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -77,9 +84,9 @@ Partial Class MainMenu
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(115, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(561, 39)
+        Me.Label1.Size = New System.Drawing.Size(525, 117)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "MTG Planechase Eternities Map v1"
+        Me.Label1.Text = "MTG Planechase: Eternities Map" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'BNewGame
         '
@@ -138,6 +145,7 @@ Partial Class MainMenu
         Me.CHKInfinite.AutoSize = True
         Me.CHKInfinite.BackColor = System.Drawing.Color.Transparent
         Me.CHKInfinite.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CHKInfinite.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CHKInfinite.ForeColor = System.Drawing.Color.Transparent
         Me.CHKInfinite.Location = New System.Drawing.Point(3, 3)
         Me.CHKInfinite.Name = "CHKInfinite"
@@ -164,6 +172,7 @@ Partial Class MainMenu
         Me.TabPageSettings.Size = New System.Drawing.Size(774, 443)
         Me.TabPageSettings.TabIndex = 1
         Me.TabPageSettings.Text = "Settings"
+        Me.TabPageSettings.ToolTipText = "This applies to all card sets."
         Me.TabPageSettings.UseVisualStyleBackColor = True
         '
         'NumAretMax
@@ -171,7 +180,7 @@ Partial Class MainMenu
         Me.NumAretMax.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.NumAretMax.ForeColor = System.Drawing.Color.Black
-        Me.NumAretMax.Location = New System.Drawing.Point(201, 86)
+        Me.NumAretMax.Location = New System.Drawing.Point(235, 86)
         Me.NumAretMax.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumAretMax.Name = "NumAretMax"
@@ -184,18 +193,20 @@ Partial Class MainMenu
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Transparent
         Me.Label4.Location = New System.Drawing.Point(3, 88)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(192, 13)
+        Me.Label4.Size = New System.Drawing.Size(226, 13)
         Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Maximum  Scroll Counters on Aretopolis"
+        Me.Label4.Text = "Maximum Scroll Counters on Aretopolis"
         '
         'ChkAertReset
         '
         Me.ChkAertReset.AutoSize = True
         Me.ChkAertReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkAertReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAertReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkAertReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkAertReset.Location = New System.Drawing.Point(3, 71)
         Me.ChkAertReset.Name = "ChkAertReset"
@@ -210,6 +221,7 @@ Partial Class MainMenu
         Me.ChkNaarReset.AutoSize = True
         Me.ChkNaarReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkNaarReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkNaarReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkNaarReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkNaarReset.Location = New System.Drawing.Point(3, 54)
         Me.ChkNaarReset.Name = "ChkNaarReset"
@@ -224,6 +236,7 @@ Partial Class MainMenu
         Me.ChkDistanceReset.AutoSize = True
         Me.ChkDistanceReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkDistanceReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkDistanceReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkDistanceReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkDistanceReset.Location = New System.Drawing.Point(3, 37)
         Me.ChkDistanceReset.Name = "ChkDistanceReset"
@@ -238,6 +251,7 @@ Partial Class MainMenu
         Me.ChkResetReturn.AutoSize = True
         Me.ChkResetReturn.BackColor = System.Drawing.Color.Transparent
         Me.ChkResetReturn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkResetReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkResetReturn.ForeColor = System.Drawing.Color.Transparent
         Me.ChkResetReturn.Location = New System.Drawing.Point(3, 20)
         Me.ChkResetReturn.Name = "ChkResetReturn"
@@ -252,6 +266,7 @@ Partial Class MainMenu
         Me.ChkPreTransReset.AutoSize = True
         Me.ChkPreTransReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkPreTransReset.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPreTransReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkPreTransReset.ForeColor = System.Drawing.Color.White
         Me.ChkPreTransReset.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.ChkPreTransReset.Location = New System.Drawing.Point(3, 3)
@@ -284,9 +299,10 @@ Partial Class MainMenu
         Me.LBLMoveChance.AutoSize = True
         Me.LBLMoveChance.BackColor = System.Drawing.Color.Transparent
         Me.LBLMoveChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LBLMoveChance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLMoveChance.Location = New System.Drawing.Point(3, 123)
         Me.LBLMoveChance.Name = "LBLMoveChance"
-        Me.LBLMoveChance.Size = New System.Drawing.Size(309, 13)
+        Me.LBLMoveChance.Size = New System.Drawing.Size(363, 13)
         Me.LBLMoveChance.TabIndex = 17
         Me.LBLMoveChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
         '
@@ -308,9 +324,10 @@ Partial Class MainMenu
         Me.LBLHJChance.AutoSize = True
         Me.LBLHJChance.BackColor = System.Drawing.Color.Transparent
         Me.LBLHJChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.LBLHJChance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLHJChance.Location = New System.Drawing.Point(3, 65)
         Me.LBLHJChance.Name = "LBLHJChance"
-        Me.LBLHJChance.Size = New System.Drawing.Size(309, 13)
+        Me.LBLHJChance.Size = New System.Drawing.Size(363, 13)
         Me.LBLHJChance.TabIndex = 15
         Me.LBLHJChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
         '
@@ -332,6 +349,7 @@ Partial Class MainMenu
         Me.ChkPhenomSupport.AutoSize = True
         Me.ChkPhenomSupport.BackColor = System.Drawing.Color.Transparent
         Me.ChkPhenomSupport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPhenomSupport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White
         Me.ChkPhenomSupport.ImageAlign = System.Drawing.ContentAlignment.TopLeft
         Me.ChkPhenomSupport.Location = New System.Drawing.Point(3, 3)
@@ -346,6 +364,12 @@ Partial Class MainMenu
         Me.TabPageCardSets.BackColor = System.Drawing.Color.Black
         Me.TabPageCardSets.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageCardSets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiversePhenom)
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiverseExtras)
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiverseTheros)
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiverseTarkir)
+        Me.TabPageCardSets.Controls.Add(Me.ChkbxMultiverseKaladesh)
+        Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiverseIxalan)
         Me.TabPageCardSets.Controls.Add(Me.ChkFiora)
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
         Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiverse)
@@ -362,12 +386,57 @@ Partial Class MainMenu
         Me.TabPageCardSets.TabIndex = 3
         Me.TabPageCardSets.Text = "Card Sets"
         '
+        'ChkFiora
+        '
+        Me.ChkFiora.AutoSize = True
+        Me.ChkFiora.BackColor = System.Drawing.Color.Transparent
+        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkFiora.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkFiora.ForeColor = System.Drawing.Color.White
+        Me.ChkFiora.Location = New System.Drawing.Point(0, 136)
+        Me.ChkFiora.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.ChkFiora.Name = "ChkFiora"
+        Me.ChkFiora.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
+        Me.ChkFiora.TabIndex = 33
+        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
+        Me.ChkFiora.UseVisualStyleBackColor = False
+        '
+        'ChkAmon
+        '
+        Me.ChkAmon.AutoSize = True
+        Me.ChkAmon.BackColor = System.Drawing.Color.Transparent
+        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAmon.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkAmon.ForeColor = System.Drawing.Color.White
+        Me.ChkAmon.Location = New System.Drawing.Point(0, 119)
+        Me.ChkAmon.Name = "ChkAmon"
+        Me.ChkAmon.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
+        Me.ChkAmon.TabIndex = 32
+        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
+        Me.ChkAmon.UseVisualStyleBackColor = False
+        '
+        'ChkBxMultiverse
+        '
+        Me.ChkBxMultiverse.AutoSize = True
+        Me.ChkBxMultiverse.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBxMultiverse.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverse.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBxMultiverse.Location = New System.Drawing.Point(0, 102)
+        Me.ChkBxMultiverse.Name = "ChkBxMultiverse"
+        Me.ChkBxMultiverse.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverse.TabIndex = 31
+        Me.ChkBxMultiverse.Text = "Multiverse Expansion (Default Off)"
+        Me.ChkBxMultiverse.UseVisualStyleBackColor = False
+        '
         'ChkIxalan
         '
         Me.ChkIxalan.AutoSize = True
         Me.ChkIxalan.BackColor = System.Drawing.Color.Transparent
         Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkIxalan.Enabled = False
+        Me.ChkIxalan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkIxalan.Location = New System.Drawing.Point(0, 85)
         Me.ChkIxalan.Name = "ChkIxalan"
         Me.ChkIxalan.Size = New System.Drawing.Size(774, 17)
@@ -381,6 +450,7 @@ Partial Class MainMenu
         Me.ChkGeekscape.BackColor = System.Drawing.Color.Transparent
         Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkGeekscape.Enabled = False
+        Me.ChkGeekscape.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
         Me.ChkGeekscape.Name = "ChkGeekscape"
         Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
@@ -393,12 +463,12 @@ Partial Class MainMenu
         Me.ChkBxPC2017.AutoSize = True
         Me.ChkBxPC2017.BackColor = System.Drawing.Color.Transparent
         Me.ChkBxPC2017.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBxPC2017.Enabled = False
+        Me.ChkBxPC2017.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkBxPC2017.Location = New System.Drawing.Point(0, 51)
         Me.ChkBxPC2017.Name = "ChkBxPC2017"
         Me.ChkBxPC2017.Size = New System.Drawing.Size(774, 17)
         Me.ChkBxPC2017.TabIndex = 25
-        Me.ChkBxPC2017.Text = "Planechase 2017"
+        Me.ChkBxPC2017.Text = "Planechase 2017 (Default Off)"
         Me.ChkBxPC2017.UseVisualStyleBackColor = False
         '
         'ChkBxPC2019CommanderCards
@@ -407,12 +477,13 @@ Partial Class MainMenu
         Me.ChkBxPC2019CommanderCards.AutoSize = True
         Me.ChkBxPC2019CommanderCards.BackColor = System.Drawing.Color.Transparent
         Me.ChkBxPC2019CommanderCards.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxPC2019CommanderCards.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkBxPC2019CommanderCards.Location = New System.Drawing.Point(0, 34)
         Me.ChkBxPC2019CommanderCards.Name = "ChkBxPC2019CommanderCards"
         Me.ChkBxPC2019CommanderCards.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.ChkBxPC2019CommanderCards.Size = New System.Drawing.Size(774, 17)
         Me.ChkBxPC2019CommanderCards.TabIndex = 17
-        Me.ChkBxPC2019CommanderCards.Text = "Planechase 2019 Commander Cards"
+        Me.ChkBxPC2019CommanderCards.Text = "Planechase 2019 Commander Cards (Default Off)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.ChkBxPC2019CommanderCards.UseVisualStyleBackColor = False
         '
         'ChkPC2019
@@ -420,11 +491,12 @@ Partial Class MainMenu
         Me.ChkPC2019.AutoSize = True
         Me.ChkPC2019.BackColor = System.Drawing.Color.Transparent
         Me.ChkPC2019.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPC2019.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkPC2019.Location = New System.Drawing.Point(0, 17)
         Me.ChkPC2019.Name = "ChkPC2019"
         Me.ChkPC2019.Size = New System.Drawing.Size(774, 17)
         Me.ChkPC2019.TabIndex = 5
-        Me.ChkPC2019.Text = "Planechase 2019 (Themed Set,Default Off)"
+        Me.ChkPC2019.Text = "Planechase 2019 (Themed Set, Default Off)"
         Me.ChkPC2019.UseVisualStyleBackColor = False
         '
         'ChkPCAnthology
@@ -432,6 +504,7 @@ Partial Class MainMenu
         Me.ChkPCAnthology.AutoSize = True
         Me.ChkPCAnthology.BackColor = System.Drawing.Color.Transparent
         Me.ChkPCAnthology.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkPCAnthology.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkPCAnthology.Location = New System.Drawing.Point(0, 0)
         Me.ChkPCAnthology.Name = "ChkPCAnthology"
         Me.ChkPCAnthology.Size = New System.Drawing.Size(774, 17)
@@ -494,47 +567,105 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'ChkFiora
+        'ChkBxMultiverseIxalan
         '
-        Me.ChkFiora.AutoSize = True
-        Me.ChkFiora.BackColor = System.Drawing.Color.Transparent
-        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkFiora.Enabled = False
-        Me.ChkFiora.Location = New System.Drawing.Point(0, 136)
-        Me.ChkFiora.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
-        Me.ChkFiora.Name = "ChkFiora"
-        Me.ChkFiora.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
-        Me.ChkFiora.TabIndex = 33
-        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
-        Me.ChkFiora.UseVisualStyleBackColor = False
+        Me.ChkBxMultiverseIxalan.AutoSize = True
+        Me.ChkBxMultiverseIxalan.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBxMultiverseIxalan.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverseIxalan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBxMultiverseIxalan.ForeColor = System.Drawing.Color.White
+        Me.ChkBxMultiverseIxalan.Location = New System.Drawing.Point(0, 153)
+        Me.ChkBxMultiverseIxalan.Name = "ChkBxMultiverseIxalan"
+        Me.ChkBxMultiverseIxalan.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkBxMultiverseIxalan.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverseIxalan.TabIndex = 34
+        Me.ChkBxMultiverseIxalan.Text = "Ixalan Set (Default Off)"
+        Me.ChkBxMultiverseIxalan.UseVisualStyleBackColor = False
         '
-        'ChkAmon
+        'ChkbxMultiverseKaladesh
         '
-        Me.ChkAmon.AutoSize = True
-        Me.ChkAmon.BackColor = System.Drawing.Color.Transparent
-        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkAmon.Enabled = False
-        Me.ChkAmon.Location = New System.Drawing.Point(0, 119)
-        Me.ChkAmon.Name = "ChkAmon"
-        Me.ChkAmon.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
-        Me.ChkAmon.TabIndex = 32
-        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
-        Me.ChkAmon.UseVisualStyleBackColor = False
+        Me.ChkbxMultiverseKaladesh.AutoSize = True
+        Me.ChkbxMultiverseKaladesh.BackColor = System.Drawing.Color.Transparent
+        Me.ChkbxMultiverseKaladesh.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkbxMultiverseKaladesh.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkbxMultiverseKaladesh.ForeColor = System.Drawing.Color.White
+        Me.ChkbxMultiverseKaladesh.Location = New System.Drawing.Point(0, 170)
+        Me.ChkbxMultiverseKaladesh.Name = "ChkbxMultiverseKaladesh"
+        Me.ChkbxMultiverseKaladesh.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkbxMultiverseKaladesh.Size = New System.Drawing.Size(774, 17)
+        Me.ChkbxMultiverseKaladesh.TabIndex = 35
+        Me.ChkbxMultiverseKaladesh.Text = "Kaladesh Set (Default Off)"
+        Me.ChkbxMultiverseKaladesh.UseVisualStyleBackColor = False
         '
-        'ChkBxMultiverse
+        'ChkBxMultiverseTarkir
         '
-        Me.ChkBxMultiverse.AutoSize = True
-        Me.ChkBxMultiverse.BackColor = System.Drawing.Color.Transparent
-        Me.ChkBxMultiverse.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBxMultiverse.Enabled = False
-        Me.ChkBxMultiverse.Location = New System.Drawing.Point(0, 102)
-        Me.ChkBxMultiverse.Name = "ChkBxMultiverse"
-        Me.ChkBxMultiverse.Size = New System.Drawing.Size(774, 17)
-        Me.ChkBxMultiverse.TabIndex = 31
-        Me.ChkBxMultiverse.Text = "Multiverse Expansion"
-        Me.ChkBxMultiverse.UseVisualStyleBackColor = False
+        Me.ChkBxMultiverseTarkir.AutoSize = True
+        Me.ChkBxMultiverseTarkir.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBxMultiverseTarkir.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverseTarkir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBxMultiverseTarkir.ForeColor = System.Drawing.Color.White
+        Me.ChkBxMultiverseTarkir.Location = New System.Drawing.Point(0, 187)
+        Me.ChkBxMultiverseTarkir.Name = "ChkBxMultiverseTarkir"
+        Me.ChkBxMultiverseTarkir.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkBxMultiverseTarkir.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverseTarkir.TabIndex = 36
+        Me.ChkBxMultiverseTarkir.Text = "Tarkir Set (Default Off)"
+        Me.ChkBxMultiverseTarkir.UseVisualStyleBackColor = False
+        '
+        'ChkBxMultiverseTheros
+        '
+        Me.ChkBxMultiverseTheros.AutoSize = True
+        Me.ChkBxMultiverseTheros.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBxMultiverseTheros.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverseTheros.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBxMultiverseTheros.ForeColor = System.Drawing.Color.White
+        Me.ChkBxMultiverseTheros.Location = New System.Drawing.Point(0, 204)
+        Me.ChkBxMultiverseTheros.Name = "ChkBxMultiverseTheros"
+        Me.ChkBxMultiverseTheros.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkBxMultiverseTheros.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverseTheros.TabIndex = 37
+        Me.ChkBxMultiverseTheros.Text = "Theros Set (Default Off)"
+        Me.ChkBxMultiverseTheros.UseVisualStyleBackColor = False
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BackColor = System.Drawing.Color.Black
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.ForeColor = System.Drawing.Color.White
+        Me.RichTextBox1.Location = New System.Drawing.Point(353, 531)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(72, 29)
+        Me.RichTextBox1.TabIndex = 16
+        Me.RichTextBox1.Text = "Version 1.0"
+        '
+        'ChkBxMultiverseExtras
+        '
+        Me.ChkBxMultiverseExtras.AutoSize = True
+        Me.ChkBxMultiverseExtras.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBxMultiverseExtras.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverseExtras.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBxMultiverseExtras.Location = New System.Drawing.Point(0, 221)
+        Me.ChkBxMultiverseExtras.Name = "ChkBxMultiverseExtras"
+        Me.ChkBxMultiverseExtras.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkBxMultiverseExtras.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverseExtras.TabIndex = 17
+        Me.ChkBxMultiverseExtras.Text = "Extra Planes Set (Default Off)"
+        Me.ChkBxMultiverseExtras.UseVisualStyleBackColor = False
+        '
+        'ChkBxMultiversePhenom
+        '
+        Me.ChkBxMultiversePhenom.AutoSize = True
+        Me.ChkBxMultiversePhenom.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBxMultiversePhenom.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiversePhenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBxMultiversePhenom.Location = New System.Drawing.Point(0, 238)
+        Me.ChkBxMultiversePhenom.Name = "ChkBxMultiversePhenom"
+        Me.ChkBxMultiversePhenom.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkBxMultiversePhenom.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiversePhenom.TabIndex = 38
+        Me.ChkBxMultiversePhenom.Text = "Phenomenon Set (Default Off)"
+        Me.ChkBxMultiversePhenom.UseVisualStyleBackColor = False
         '
         'MainMenu
         '
@@ -542,6 +673,7 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.TabSettingMenu)
         Me.Controls.Add(Me.BExit)
         Me.Controls.Add(Me.BNewGame)
@@ -605,4 +737,11 @@ Partial Class MainMenu
     Friend WithEvents ChkFiora As CheckBox
     Friend WithEvents ChkAmon As CheckBox
     Friend WithEvents ChkBxMultiverse As CheckBox
+    Friend WithEvents ChkBxMultiverseTheros As CheckBox
+    Friend WithEvents ChkBxMultiverseTarkir As CheckBox
+    Friend WithEvents ChkbxMultiverseKaladesh As CheckBox
+    Friend WithEvents ChkBxMultiverseIxalan As CheckBox
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents ChkBxMultiversePhenom As CheckBox
+    Friend WithEvents ChkBxMultiverseExtras As CheckBox
 End Class
