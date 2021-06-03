@@ -156,7 +156,11 @@
             PhenomDeckSize += 8
             ReDim Preserve PhenomDeck(PhenomDeckSize)
             Dim WorkCounter As Integer
+            Dim InjectionArray() As Integer = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
+            Dim InjectionCounter As Integer = 8
             For WorkCounter = (PhenomDeckSize - 8) To PhenomDeck.GetUpperBound(0) Step 1
+                PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
+                InjectionCounter -= 1
             Next
         ElseIf PhenomSupport = False Then
             CardStack(0, 9, 3) = -1 ''Chaotic Aether
@@ -180,7 +184,12 @@
             CardStack(0, 108, 3) = 37
             PhenomDeckSize += 9
             ReDim Preserve PhenomDeck(PhenomDeckSize)
+            Dim WorkCounter As Integer
+            Dim InjectionArray() As Integer = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
+            Dim InjectionCounter As Integer = 9
             For WorkCounter = (PhenomDeckSize - 9) To PhenomDeck.GetUpperBound(0) Step 1
+                PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
+                InjectionCounter -= 1
             Next
         ElseIf ExpIxalan = False Then
             CardStack(0, 97, 3) = -1
