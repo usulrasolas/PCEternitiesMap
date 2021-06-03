@@ -46,9 +46,6 @@ Partial Class MainMenu
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
         Me.TabPageCardSets = New System.Windows.Forms.TabPage()
         Me.ChkIxalan = New System.Windows.Forms.CheckBox()
-        Me.ChkFiora = New System.Windows.Forms.CheckBox()
-        Me.ChkAmon = New System.Windows.Forms.CheckBox()
-        Me.ChkBxMultiverse = New System.Windows.Forms.CheckBox()
         Me.ChkGeekscape = New System.Windows.Forms.CheckBox()
         Me.ChkBxPC2017 = New System.Windows.Forms.CheckBox()
         Me.ChkBxPC2019CommanderCards = New System.Windows.Forms.CheckBox()
@@ -59,6 +56,9 @@ Partial Class MainMenu
         Me.TabPageResources = New System.Windows.Forms.TabPage()
         Me.RTBResources = New System.Windows.Forms.RichTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ChkFiora = New System.Windows.Forms.CheckBox()
+        Me.ChkAmon = New System.Windows.Forms.CheckBox()
+        Me.ChkBxMultiverse = New System.Windows.Forms.CheckBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -136,6 +136,7 @@ Partial Class MainMenu
         'CHKInfinite
         '
         Me.CHKInfinite.AutoSize = True
+        Me.CHKInfinite.BackColor = System.Drawing.Color.Transparent
         Me.CHKInfinite.Dock = System.Windows.Forms.DockStyle.Top
         Me.CHKInfinite.ForeColor = System.Drawing.Color.Transparent
         Me.CHKInfinite.Location = New System.Drawing.Point(3, 3)
@@ -144,7 +145,7 @@ Partial Class MainMenu
         Me.CHKInfinite.TabIndex = 6
         Me.CHKInfinite.Text = "Finite Mode"
         Me.ToolTip1.SetToolTip(Me.CHKInfinite, resources.GetString("CHKInfinite.ToolTip"))
-        Me.CHKInfinite.UseVisualStyleBackColor = True
+        Me.CHKInfinite.UseVisualStyleBackColor = False
         '
         'TabPageSettings
         '
@@ -181,7 +182,7 @@ Partial Class MainMenu
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Black
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label4.ForeColor = System.Drawing.Color.Transparent
         Me.Label4.Location = New System.Drawing.Point(3, 88)
@@ -193,7 +194,7 @@ Partial Class MainMenu
         'ChkAertReset
         '
         Me.ChkAertReset.AutoSize = True
-        Me.ChkAertReset.BackColor = System.Drawing.Color.Black
+        Me.ChkAertReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkAertReset.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkAertReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkAertReset.Location = New System.Drawing.Point(3, 71)
@@ -207,7 +208,7 @@ Partial Class MainMenu
         'ChkNaarReset
         '
         Me.ChkNaarReset.AutoSize = True
-        Me.ChkNaarReset.BackColor = System.Drawing.Color.Black
+        Me.ChkNaarReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkNaarReset.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkNaarReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkNaarReset.Location = New System.Drawing.Point(3, 54)
@@ -221,7 +222,7 @@ Partial Class MainMenu
         'ChkDistanceReset
         '
         Me.ChkDistanceReset.AutoSize = True
-        Me.ChkDistanceReset.BackColor = System.Drawing.Color.Black
+        Me.ChkDistanceReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkDistanceReset.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkDistanceReset.ForeColor = System.Drawing.Color.Transparent
         Me.ChkDistanceReset.Location = New System.Drawing.Point(3, 37)
@@ -235,7 +236,7 @@ Partial Class MainMenu
         'ChkResetReturn
         '
         Me.ChkResetReturn.AutoSize = True
-        Me.ChkResetReturn.BackColor = System.Drawing.Color.Black
+        Me.ChkResetReturn.BackColor = System.Drawing.Color.Transparent
         Me.ChkResetReturn.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkResetReturn.ForeColor = System.Drawing.Color.Transparent
         Me.ChkResetReturn.Location = New System.Drawing.Point(3, 20)
@@ -249,7 +250,7 @@ Partial Class MainMenu
         'ChkPreTransReset
         '
         Me.ChkPreTransReset.AutoSize = True
-        Me.ChkPreTransReset.BackColor = System.Drawing.Color.Black
+        Me.ChkPreTransReset.BackColor = System.Drawing.Color.Transparent
         Me.ChkPreTransReset.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPreTransReset.ForeColor = System.Drawing.Color.White
         Me.ChkPreTransReset.ImageAlign = System.Drawing.ContentAlignment.TopLeft
@@ -281,7 +282,7 @@ Partial Class MainMenu
         'LBLMoveChance
         '
         Me.LBLMoveChance.AutoSize = True
-        Me.LBLMoveChance.BackColor = System.Drawing.Color.Black
+        Me.LBLMoveChance.BackColor = System.Drawing.Color.Transparent
         Me.LBLMoveChance.Dock = System.Windows.Forms.DockStyle.Top
         Me.LBLMoveChance.Location = New System.Drawing.Point(3, 123)
         Me.LBLMoveChance.Name = "LBLMoveChance"
@@ -305,7 +306,7 @@ Partial Class MainMenu
         'LBLHJChance
         '
         Me.LBLHJChance.AutoSize = True
-        Me.LBLHJChance.BackColor = System.Drawing.Color.Black
+        Me.LBLHJChance.BackColor = System.Drawing.Color.Transparent
         Me.LBLHJChance.Dock = System.Windows.Forms.DockStyle.Top
         Me.LBLHJChance.Location = New System.Drawing.Point(3, 65)
         Me.LBLHJChance.Name = "LBLHJChance"
@@ -329,7 +330,7 @@ Partial Class MainMenu
         'ChkPhenomSupport
         '
         Me.ChkPhenomSupport.AutoSize = True
-        Me.ChkPhenomSupport.BackColor = System.Drawing.Color.Black
+        Me.ChkPhenomSupport.BackColor = System.Drawing.Color.Transparent
         Me.ChkPhenomSupport.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White
         Me.ChkPhenomSupport.ImageAlign = System.Drawing.ContentAlignment.TopLeft
@@ -345,10 +346,10 @@ Partial Class MainMenu
         Me.TabPageCardSets.BackColor = System.Drawing.Color.Black
         Me.TabPageCardSets.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
         Me.TabPageCardSets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
         Me.TabPageCardSets.Controls.Add(Me.ChkFiora)
         Me.TabPageCardSets.Controls.Add(Me.ChkAmon)
         Me.TabPageCardSets.Controls.Add(Me.ChkBxMultiverse)
+        Me.TabPageCardSets.Controls.Add(Me.ChkIxalan)
         Me.TabPageCardSets.Controls.Add(Me.ChkGeekscape)
         Me.TabPageCardSets.Controls.Add(Me.ChkBxPC2017)
         Me.TabPageCardSets.Controls.Add(Me.ChkBxPC2019CommanderCards)
@@ -364,54 +365,20 @@ Partial Class MainMenu
         'ChkIxalan
         '
         Me.ChkIxalan.AutoSize = True
+        Me.ChkIxalan.BackColor = System.Drawing.Color.Transparent
         Me.ChkIxalan.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkIxalan.Enabled = False
-        Me.ChkIxalan.Location = New System.Drawing.Point(0, 136)
+        Me.ChkIxalan.Location = New System.Drawing.Point(0, 85)
         Me.ChkIxalan.Name = "ChkIxalan"
         Me.ChkIxalan.Size = New System.Drawing.Size(774, 17)
         Me.ChkIxalan.TabIndex = 30
         Me.ChkIxalan.Text = "Ixalan Set (Themed Set, Mostly Phenomenon, Default Off)"
-        Me.ChkIxalan.UseVisualStyleBackColor = True
-        '
-        'ChkFiora
-        '
-        Me.ChkFiora.AutoSize = True
-        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkFiora.Enabled = False
-        Me.ChkFiora.Location = New System.Drawing.Point(0, 119)
-        Me.ChkFiora.Name = "ChkFiora"
-        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
-        Me.ChkFiora.TabIndex = 29
-        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
-        Me.ChkFiora.UseVisualStyleBackColor = True
-        '
-        'ChkAmon
-        '
-        Me.ChkAmon.AutoSize = True
-        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkAmon.Enabled = False
-        Me.ChkAmon.Location = New System.Drawing.Point(0, 102)
-        Me.ChkAmon.Name = "ChkAmon"
-        Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
-        Me.ChkAmon.TabIndex = 28
-        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
-        Me.ChkAmon.UseVisualStyleBackColor = True
-        '
-        'ChkBxMultiverse
-        '
-        Me.ChkBxMultiverse.AutoSize = True
-        Me.ChkBxMultiverse.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBxMultiverse.Enabled = False
-        Me.ChkBxMultiverse.Location = New System.Drawing.Point(0, 85)
-        Me.ChkBxMultiverse.Name = "ChkBxMultiverse"
-        Me.ChkBxMultiverse.Size = New System.Drawing.Size(774, 17)
-        Me.ChkBxMultiverse.TabIndex = 27
-        Me.ChkBxMultiverse.Text = "Multiverse Expansion"
-        Me.ChkBxMultiverse.UseVisualStyleBackColor = True
+        Me.ChkIxalan.UseVisualStyleBackColor = False
         '
         'ChkGeekscape
         '
         Me.ChkGeekscape.AutoSize = True
+        Me.ChkGeekscape.BackColor = System.Drawing.Color.Transparent
         Me.ChkGeekscape.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkGeekscape.Enabled = False
         Me.ChkGeekscape.Location = New System.Drawing.Point(0, 68)
@@ -419,52 +386,58 @@ Partial Class MainMenu
         Me.ChkGeekscape.Size = New System.Drawing.Size(774, 17)
         Me.ChkGeekscape.TabIndex = 26
         Me.ChkGeekscape.Text = "Geekchase (Non MTG Multiverse Set, Default Off)"
-        Me.ChkGeekscape.UseVisualStyleBackColor = True
+        Me.ChkGeekscape.UseVisualStyleBackColor = False
         '
         'ChkBxPC2017
         '
         Me.ChkBxPC2017.AutoSize = True
+        Me.ChkBxPC2017.BackColor = System.Drawing.Color.Transparent
         Me.ChkBxPC2017.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxPC2017.Enabled = False
         Me.ChkBxPC2017.Location = New System.Drawing.Point(0, 51)
         Me.ChkBxPC2017.Name = "ChkBxPC2017"
         Me.ChkBxPC2017.Size = New System.Drawing.Size(774, 17)
         Me.ChkBxPC2017.TabIndex = 25
         Me.ChkBxPC2017.Text = "Planechase 2017"
-        Me.ChkBxPC2017.UseVisualStyleBackColor = True
+        Me.ChkBxPC2017.UseVisualStyleBackColor = False
         '
         'ChkBxPC2019CommanderCards
         '
         Me.ChkBxPC2019CommanderCards.AccessibleName = "Planechase 2019 Commander Cards"
         Me.ChkBxPC2019CommanderCards.AutoSize = True
+        Me.ChkBxPC2019CommanderCards.BackColor = System.Drawing.Color.Transparent
         Me.ChkBxPC2019CommanderCards.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkBxPC2019CommanderCards.Location = New System.Drawing.Point(0, 34)
         Me.ChkBxPC2019CommanderCards.Name = "ChkBxPC2019CommanderCards"
+        Me.ChkBxPC2019CommanderCards.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.ChkBxPC2019CommanderCards.Size = New System.Drawing.Size(774, 17)
         Me.ChkBxPC2019CommanderCards.TabIndex = 17
         Me.ChkBxPC2019CommanderCards.Text = "Planechase 2019 Commander Cards"
-        Me.ChkBxPC2019CommanderCards.UseVisualStyleBackColor = True
+        Me.ChkBxPC2019CommanderCards.UseVisualStyleBackColor = False
         '
         'ChkPC2019
         '
         Me.ChkPC2019.AutoSize = True
+        Me.ChkPC2019.BackColor = System.Drawing.Color.Transparent
         Me.ChkPC2019.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPC2019.Location = New System.Drawing.Point(0, 17)
         Me.ChkPC2019.Name = "ChkPC2019"
         Me.ChkPC2019.Size = New System.Drawing.Size(774, 17)
         Me.ChkPC2019.TabIndex = 5
         Me.ChkPC2019.Text = "Planechase 2019 (Themed Set,Default Off)"
-        Me.ChkPC2019.UseVisualStyleBackColor = True
+        Me.ChkPC2019.UseVisualStyleBackColor = False
         '
         'ChkPCAnthology
         '
         Me.ChkPCAnthology.AutoSize = True
+        Me.ChkPCAnthology.BackColor = System.Drawing.Color.Transparent
         Me.ChkPCAnthology.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPCAnthology.Location = New System.Drawing.Point(0, 0)
         Me.ChkPCAnthology.Name = "ChkPCAnthology"
         Me.ChkPCAnthology.Size = New System.Drawing.Size(774, 17)
         Me.ChkPCAnthology.TabIndex = 0
         Me.ChkPCAnthology.Text = "Planechase Anthology (Official Set, Default On)"
-        Me.ChkPCAnthology.UseVisualStyleBackColor = True
+        Me.ChkPCAnthology.UseVisualStyleBackColor = False
         '
         'TabPageCredits
         '
@@ -520,6 +493,48 @@ Partial Class MainMenu
         Me.ToolTip1.IsBalloon = True
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
+        'ChkFiora
+        '
+        Me.ChkFiora.AutoSize = True
+        Me.ChkFiora.BackColor = System.Drawing.Color.Transparent
+        Me.ChkFiora.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkFiora.Enabled = False
+        Me.ChkFiora.Location = New System.Drawing.Point(0, 136)
+        Me.ChkFiora.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.ChkFiora.Name = "ChkFiora"
+        Me.ChkFiora.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkFiora.Size = New System.Drawing.Size(774, 17)
+        Me.ChkFiora.TabIndex = 33
+        Me.ChkFiora.Text = "Fiora Set (Monarch Centric, Default Off)"
+        Me.ChkFiora.UseVisualStyleBackColor = False
+        '
+        'ChkAmon
+        '
+        Me.ChkAmon.AutoSize = True
+        Me.ChkAmon.BackColor = System.Drawing.Color.Transparent
+        Me.ChkAmon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkAmon.Enabled = False
+        Me.ChkAmon.Location = New System.Drawing.Point(0, 119)
+        Me.ChkAmon.Name = "ChkAmon"
+        Me.ChkAmon.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkAmon.Size = New System.Drawing.Size(774, 17)
+        Me.ChkAmon.TabIndex = 32
+        Me.ChkAmon.Text = "Amonkhet Set (Themed Set, Default Off)"
+        Me.ChkAmon.UseVisualStyleBackColor = False
+        '
+        'ChkBxMultiverse
+        '
+        Me.ChkBxMultiverse.AutoSize = True
+        Me.ChkBxMultiverse.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBxMultiverse.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxMultiverse.Enabled = False
+        Me.ChkBxMultiverse.Location = New System.Drawing.Point(0, 102)
+        Me.ChkBxMultiverse.Name = "ChkBxMultiverse"
+        Me.ChkBxMultiverse.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBxMultiverse.TabIndex = 31
+        Me.ChkBxMultiverse.Text = "Multiverse Expansion"
+        Me.ChkBxMultiverse.UseVisualStyleBackColor = False
         '
         'MainMenu
         '
@@ -584,10 +599,10 @@ Partial Class MainMenu
     Friend WithEvents TabPageResources As TabPage
     Friend WithEvents RTBResources As RichTextBox
     Friend WithEvents ChkIxalan As CheckBox
-    Friend WithEvents ChkFiora As CheckBox
-    Friend WithEvents ChkAmon As CheckBox
-    Friend WithEvents ChkBxMultiverse As CheckBox
     Friend WithEvents ChkGeekscape As CheckBox
     Friend WithEvents ChkBxPC2017 As CheckBox
     Friend WithEvents ChkBxPC2019CommanderCards As CheckBox
+    Friend WithEvents ChkFiora As CheckBox
+    Friend WithEvents ChkAmon As CheckBox
+    Friend WithEvents ChkBxMultiverse As CheckBox
 End Class
