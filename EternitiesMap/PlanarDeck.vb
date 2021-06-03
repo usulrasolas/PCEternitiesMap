@@ -140,9 +140,9 @@
         CardStack(0, 164, 5) = -1
         CardStack(0, 172, 5) = -1
         CardStack(0, 183, 5) = -1
+        PhenomDeckSize = 0
+        ReDim PhenomDeck(-1)
         If PhenomSupport = True Then
-            ReDim PhenomDeck(-1)
-            PhenomDeckSize = 0
             ReDim PhenomDeck(0)
             PhenomDeck(0) = -1
             If PCAnthologies = True Then
@@ -221,15 +221,19 @@
     End Function
 
     Function PickRandomPhenom() As Integer
+        If PhenomDeckSize > 0 Then
 555:
-        Randomize()
-        Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
-        PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
-        If DeckCounter < 5 Then
-            If RandomPhenomRoll = 26 Then GoTo 555
-        ElseIf DeckCounter < 2 Then
-            If RandomPhenomRoll = 26 Then GoTo 555
-            If RandomPhenomRoll = 64 Then GoTo 555
+            Randomize()
+            Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
+            PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
+            If DeckCounter < 5 Then
+                If RandomPhenomRoll = 26 Then GoTo 555
+            ElseIf DeckCounter < 2 Then
+                If RandomPhenomRoll = 26 Then GoTo 555
+                If RandomPhenomRoll = 64 Then GoTo 555
+            End If
+        Else
+            PickRandomPhenom = -1
         End If
     End Function
 
