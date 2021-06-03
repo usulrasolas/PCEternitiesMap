@@ -1,6 +1,6 @@
 ﻿Public Class GameBoard
-    Private CardArray(25) As PictureBox
-    Private DispArray(25) As Label
+    Private ReadOnly CardArray(25) As PictureBox
+    Private ReadOnly DispArray(25) As Label
     Private EventCardInPlay As Integer
     Private EventXloc As Integer = Nothing
     Private EventYloc As Integer = Nothing
@@ -1976,12 +1976,6 @@
             HidePickDisplay()
             ResolvePhenom(EventCardInPlay)
         End If
-    End Sub
-
-    Private Sub PBDoubleZoom1_click(sender As Object, e As EventArgs) Handles PBDoubleZoom1.Click
-    End Sub
-
-    Private Sub PBDoubleZoom2_Click(sender As Object, e As EventArgs) Handles PBDoubleZoom2.Click
     End Sub
 
     Private Sub NDoubleZoom1_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom1.ValueChanged

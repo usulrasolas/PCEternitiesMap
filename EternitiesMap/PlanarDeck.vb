@@ -1,7 +1,7 @@
 ﻿Module PlanarDeck
     Public DeckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public DeckCounter As Integer = 0
-    Public MasterDeckCount As Integer = 183
+    Public Const MasterDeckCount As Integer = 183
     Public CardLookup(MasterDeckCount) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public CardStack(1, MasterDeckCount, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
