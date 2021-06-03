@@ -583,7 +583,7 @@ Partial Class MainMenu
         Me.ChkBx2019Bosses.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.ChkBx2019Bosses.Size = New System.Drawing.Size(774, 17)
         Me.ChkBx2019Bosses.TabIndex = 41
-        Me.ChkBx2019Bosses.Text = "Bosses (Marit Lage and Nicol Bolas)(Default Off)"
+        Me.ChkBx2019Bosses.Text = "Bosses (Marit Lage and Nicol Bolas)(Default Off)(WIP)"
         Me.ChkBx2019Bosses.UseVisualStyleBackColor = False
         '
         'ChkBx2019Contraption
@@ -599,6 +599,8 @@ Partial Class MainMenu
         Me.ChkBx2019Contraption.Size = New System.Drawing.Size(774, 17)
         Me.ChkBx2019Contraption.TabIndex = 40
         Me.ChkBx2019Contraption.Text = "Steamflogger Workshop (Contraption Mechanic)(Default Off)"
+        Me.ToolTip1.SetToolTip(Me.ChkBx2019Contraption, "This Plane begins the Contraption Mechanic," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "which was released in the Unstable s" &
+        "et." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please only enable this plane if you own a " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Contraption deck." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         Me.ChkBx2019Contraption.UseVisualStyleBackColor = False
         '
         'ChkBox2019Ixalan
@@ -614,6 +616,9 @@ Partial Class MainMenu
         Me.ChkBox2019Ixalan.Size = New System.Drawing.Size(774, 17)
         Me.ChkBox2019Ixalan.TabIndex = 39
         Me.ChkBox2019Ixalan.Text = "Ixalan, The Binding Isle (Explorers of Ixalan Plane)(Default Off)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.ToolTip1.SetToolTip(Me.ChkBox2019Ixalan, "This Plane begins a game of Explorers of Ixalan," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the board game supplement relea" &
+        "sed with the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ixalan sets. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please only enable this plane if you own a copy" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+        "of Explorers of Ixalan." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         Me.ChkBox2019Ixalan.UseVisualStyleBackColor = False
         '
         'ChkBxPC2019CommanderCards
@@ -671,8 +676,9 @@ Partial Class MainMenu
         '
         'RTBCredits
         '
-        Me.RTBCredits.BackColor = System.Drawing.SystemColors.WindowText
+        Me.RTBCredits.BackColor = System.Drawing.Color.Black
         Me.RTBCredits.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RTBCredits.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RTBCredits.ForeColor = System.Drawing.Color.White
         Me.RTBCredits.Location = New System.Drawing.Point(3, 3)
         Me.RTBCredits.Name = "RTBCredits"
@@ -695,6 +701,7 @@ Partial Class MainMenu
         'RTBResources
         '
         Me.RTBResources.BackColor = System.Drawing.SystemColors.WindowText
+        Me.RTBResources.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RTBResources.ForeColor = System.Drawing.SystemColors.Window
         Me.RTBResources.Location = New System.Drawing.Point(0, 3)
         Me.RTBResources.Name = "RTBResources"
