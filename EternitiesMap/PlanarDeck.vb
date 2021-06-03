@@ -1,7 +1,7 @@
 ﻿Module PlanarDeck
     Public DeckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public DeckCounter As Integer = 0
-    Public MasterDeckCount As Integer = 183
+    Public Const MasterDeckCount As Integer = 183
     Public CardLookup(MasterDeckCount) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public CardStack(1, MasterDeckCount, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
@@ -140,6 +140,10 @@
         CardStack(0, 164, 5) = -1
         CardStack(0, 172, 5) = -1
         CardStack(0, 183, 5) = -1
+        ReDim PhenomDeck(-1)
+        PhenomDeckSize = 0
+        ReDim PhenomDeck(0)
+        PhenomDeck(0) = -1
         If PhenomSupport = True Then
             CardStack(0, 9, 3) = 21 ''Chaotic Aether
             CardStack(0, 26, 3) = 22 ''Interplanar Tunnel
@@ -149,6 +153,15 @@
             CardStack(0, 57, 3) = 26 ''Reality Shaping
             CardStack(0, 64, 3) = 27 ''Spatial Merging
             CardStack(0, 80, 3) = 28 ''Time Distortion
+            PhenomDeckSize += 8
+            ReDim Preserve PhenomDeck(PhenomDeckSize)
+            Dim WorkCounter As Integer
+            Dim InjectionArray() As Integer = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
+            Dim InjectionCounter As Integer = 8
+            For WorkCounter = (PhenomDeckSize - 8) To PhenomDeck.GetUpperBound(0) Step 1
+                PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
+                InjectionCounter -= 1
+            Next
         ElseIf PhenomSupport = False Then
             CardStack(0, 9, 3) = -1 ''Chaotic Aether
             CardStack(0, 26, 3) = -1 ''Interplanar Tunnel
@@ -169,6 +182,15 @@
             CardStack(0, 104, 3) = 35
             CardStack(0, 107, 3) = 36
             CardStack(0, 108, 3) = 37
+            PhenomDeckSize += 9
+            ReDim Preserve PhenomDeck(PhenomDeckSize)
+            Dim WorkCounter As Integer
+            Dim InjectionArray() As Integer = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
+            Dim InjectionCounter As Integer = 9
+            For WorkCounter = (PhenomDeckSize - 9) To PhenomDeck.GetUpperBound(0) Step 1
+                PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
+                InjectionCounter -= 1
+            Next
         ElseIf ExpIxalan = False Then
             CardStack(0, 97, 3) = -1
             CardStack(0, 98, 3) = -1
@@ -180,19 +202,19 @@
             CardStack(0, 107, 3) = -1
             CardStack(0, 108, 3) = -1
         End If
-        If PhenomSupport = True And PCAnthologies = True And ExpIxalan = False Then
-            ReDim PhenomDeck(8)
-            PhenomDeckSize = 8
-            PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
-        ElseIf PhenomSupport = True And PCAnthologies = True And ExpIxalan = True Then
-            ReDim PhenomDeck(17)
-            PhenomDeckSize = 17
-            PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9, 97, 98, 99, 101, 102, 103, 104, 107, 108}
-        Else PhenomSupport = True And PCAnthologies = False And ExpIxalan = True
-            ReDim PhenomDeck(9)
-            PhenomDeckSize = 9
-            PhenomDeck = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
-        End If
+        'If PhenomSupport = True And PCAnthologies = True And ExpIxalan = False Then
+        'ReDim PhenomDeck(8)
+        'PhenomDeckSize = 8
+        'PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
+        'ElseIf PhenomSupport = True And PCAnthologies = True And ExpIxalan = True Then
+        'ReDim PhenomDeck(17)
+        'PhenomDeckSize = 17
+        'PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9, 97, 98, 99, 101, 102, 103, 104, 107, 108}
+        'Else PhenomSupport = True And PCAnthologies = False And ExpIxalan = True
+        'ReDim PhenomDeck(9)
+        'PhenomDeckSize = 9
+        'PhenomDeck = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
+        'End If
         Return 0
     End Function
 

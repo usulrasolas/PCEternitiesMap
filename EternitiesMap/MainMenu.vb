@@ -6,7 +6,9 @@
 
     Private Sub BNewGame_Click(sender As Object, e As EventArgs) Handles BNewGame.Click
         Dim oForm As Form
+#Disable Warning CA2000 ' Dispose objects before losing scope
         oForm = New GameBoard
+#Enable Warning CA2000 ' Dispose objects before losing scope
         oForm.Show()
         Close()
     End Sub
@@ -99,10 +101,6 @@
         ChkBxPC2019CommanderCards.Enabled = ChkPC2019.Checked
         ChkBox2019Ixalan.Enabled = ChkPC2019.Checked
         ChkBx2019Contraption.Enabled = ChkPC2019.Checked
-
-    End Sub
-
-    Private Sub TabPageCardSets_Click(sender As Object, e As EventArgs) Handles TabPageCardSets.Click
 
     End Sub
 
