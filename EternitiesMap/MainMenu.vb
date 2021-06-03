@@ -96,6 +96,10 @@
 
     Private Sub ChkPC2019_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPC2019.CheckedChanged
         ExpPC2019 = ChkPC2019.Checked
+        ChkBxPC2019CommanderCards.Enabled = ChkPC2019.Checked
+        ChkBox2019Ixalan.Enabled = ChkPC2019.Checked
+        ChkBx2019Contraption.Enabled = ChkPC2019.Checked
+
     End Sub
 
     Private Sub TabPageCardSets_Click(sender As Object, e As EventArgs) Handles TabPageCardSets.Click
