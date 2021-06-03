@@ -1345,7 +1345,7 @@
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         If DeckState = 2 Then
-            If PhenomMoveChanceCheck() = False Then
+            If PhenomMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 TranslateBoard(0, -1)
                 UpdateArrays()
                 PBWalk_Click(PictureBox7, Nothing)
@@ -1390,7 +1390,7 @@
 
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         If DeckState = 2 Then
-            If PhenomHellMoveChanceCheck() = False Then
+            If PhenomHellMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 PlayCard(DrawCard, 3, -1, 1)
                 MoveEventCheck()
                 TranslateBoard(1, -1)
@@ -1426,7 +1426,7 @@
 
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
         If DeckState = 2 Then
-            If PhenomHellMoveChanceCheck() = False Then
+            If PhenomHellMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 PlayCard(DrawCard, 3, 1, 1)
                 MoveEventCheck()
                 TranslateBoard(-1, -1)
@@ -1486,7 +1486,7 @@
 
     Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
         If DeckState = 2 Then
-            If PhenomMoveChanceCheck() = False Then
+            If PhenomMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 MoveEventCheck()
                 TranslateBoard(-1, 0)
                 UpdateArrays()
@@ -1518,7 +1518,7 @@
 
     Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
         If DeckState = 2 Then
-            If PhenomMoveChanceCheck() = False Then
+            If PhenomMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 MoveEventCheck()
                 TranslateBoard(1, 0)
                 UpdateArrays()
@@ -1576,7 +1576,7 @@
 
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
         If DeckState = 2 Then
-            If PhenomHellMoveChanceCheck() = False Then
+            If PhenomHellMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 PlayCard(DrawCard, 3, -1, -1)
                 MoveEventCheck()
                 TranslateBoard(1, 1)
@@ -1599,7 +1599,7 @@
 
     Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
         If DeckState = 2 Then
-            If PhenomMoveChanceCheck() = False Then
+            If PhenomMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 MoveEventCheck()
                 TranslateBoard(0, 1)
                 UpdateArrays()
@@ -1621,7 +1621,7 @@
 
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
         If DeckState = 2 Then
-            If PhenomHellMoveChanceCheck() = False Then
+            If PhenomHellMoveChanceCheck() = False Or PhenomDeckSize < 1 Then
                 MoveEventCheck()
                 PlayCard(DrawCard, 3, 1, -1)
                 TranslateBoard(-1, 1)
