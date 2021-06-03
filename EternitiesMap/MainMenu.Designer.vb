@@ -294,7 +294,7 @@ Partial Class MainMenu
         Me.TabPagePhenom.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPagePhenom.Size = New System.Drawing.Size(774, 443)
         Me.TabPagePhenom.TabIndex = 2
-        Me.TabPagePhenom.Text = "Phenomemon"
+        Me.TabPagePhenom.Text = "Phenomenon"
         Me.TabPagePhenom.UseVisualStyleBackColor = True
         '
         'LBLMoveChance
@@ -351,6 +351,8 @@ Partial Class MainMenu
         '
         Me.ChkPhenomSupport.AutoSize = True
         Me.ChkPhenomSupport.BackColor = System.Drawing.Color.Transparent
+        Me.ChkPhenomSupport.Checked = True
+        Me.ChkPhenomSupport.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChkPhenomSupport.Dock = System.Windows.Forms.DockStyle.Top
         Me.ChkPhenomSupport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkPhenomSupport.ForeColor = System.Drawing.Color.White

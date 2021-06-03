@@ -115,4 +115,7 @@
         ChkBxMultiversePhenom.Enabled = ChkBxMultiverse.Checked
     End Sub
 
+    Private Sub TabPagePhenom_Click(sender As Object, e As EventArgs) Handles TabPagePhenom.Click
+
+    End Sub
 End Class
