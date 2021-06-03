@@ -726,11 +726,11 @@ Partial Class MainMenu
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.ForeColor = System.Drawing.Color.White
-        Me.RichTextBox1.Location = New System.Drawing.Point(353, 531)
+        Me.RichTextBox1.Location = New System.Drawing.Point(351, 531)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(72, 29)
+        Me.RichTextBox1.Size = New System.Drawing.Size(75, 29)
         Me.RichTextBox1.TabIndex = 16
-        Me.RichTextBox1.Text = "Version 1.0"
+        Me.RichTextBox1.Text = "Version 1rcX"
         '
         'MainMenu
         '
