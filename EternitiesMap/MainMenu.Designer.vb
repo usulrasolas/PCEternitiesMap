@@ -398,6 +398,7 @@ Partial Class MainMenu
         Me.ChkBxPC2019CommanderCards.AutoSize = True
         Me.ChkBxPC2019CommanderCards.BackColor = System.Drawing.Color.Transparent
         Me.ChkBxPC2019CommanderCards.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBxPC2019CommanderCards.Enabled = False
         Me.ChkBxPC2019CommanderCards.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkBxPC2019CommanderCards.Location = New System.Drawing.Point(0, 34)
         Me.ChkBxPC2019CommanderCards.Name = "ChkBxPC2019CommanderCards"
@@ -505,6 +506,7 @@ Partial Class MainMenu
         Me.ChkBox2019Ixalan.AutoSize = True
         Me.ChkBox2019Ixalan.BackColor = System.Drawing.Color.Transparent
         Me.ChkBox2019Ixalan.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBox2019Ixalan.Enabled = False
         Me.ChkBox2019Ixalan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkBox2019Ixalan.Location = New System.Drawing.Point(0, 51)
         Me.ChkBox2019Ixalan.Name = "ChkBox2019Ixalan"
@@ -519,6 +521,7 @@ Partial Class MainMenu
         Me.ChkBx2019Contraption.AutoSize = True
         Me.ChkBx2019Contraption.BackColor = System.Drawing.Color.Transparent
         Me.ChkBx2019Contraption.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBx2019Contraption.Enabled = False
         Me.ChkBx2019Contraption.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkBx2019Contraption.Location = New System.Drawing.Point(0, 68)
         Me.ChkBx2019Contraption.Name = "ChkBx2019Contraption"
@@ -533,6 +536,7 @@ Partial Class MainMenu
         Me.ChkBx2019Bosses.AutoSize = True
         Me.ChkBx2019Bosses.BackColor = System.Drawing.Color.Transparent
         Me.ChkBx2019Bosses.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBx2019Bosses.Enabled = False
         Me.ChkBx2019Bosses.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChkBx2019Bosses.Location = New System.Drawing.Point(0, 85)
         Me.ChkBx2019Bosses.Name = "ChkBx2019Bosses"

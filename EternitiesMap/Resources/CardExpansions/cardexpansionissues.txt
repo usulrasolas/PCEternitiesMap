@@ -12,12 +12,24 @@ Planechase 2019:
 176 - Throne Room of Paliano - (toggable) Monarch play feature (no coding needed)
 183 - Your God-Pharoh has Returned - (toggable) Phenomenon that spawns player run boss?
 
+
 Multiverse Expansion:
 (Amonkhet and Fiora already integrated)
+Amonkhet 87-91
+Fiora 92-96
+Ixalan 224-227
+Kaladesh 228-232
+Extra Planes Set 233-239
+Phenom Pack 240-243
+Tarkir 244-248
+Theros 249-253
+
 240 - Phenom
 241 - Phenom
 242 - Phenom
 243 - Phenom
+
+
 
 Planechase 2017:
 
