@@ -125,15 +125,15 @@
 to play Standard Blind Eternities Map.
 
 In the standard version of the Blind Eternities Map,
-as planes no longer become visable on the board,
+as planes become no longer visable on the board,
 they are reshuffled back into the deck, and new planes
 are dealt out when new planes are discovered.
 
 In Finite Mode, Planes are not reshuffled back into the
 deck when they are no longer visable on the board,
 remaining on the grid to be visited again. Once the Deck
-is out of cards, Helljumping is disabled. You won't be able
-Planeswalk to unknown Planes.
+is out of cards, Helljumping is disabled. After that, you 
+won't be able to Planeswalk to "unknown" Planes.
   
 Finite mode allows for unique maps of the Multiverse
 every playthrough.</value>
@@ -177,7 +177,7 @@ Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.
-</value>
+This affects all card sets.</value>
   </data>
   <data name="ChkResetReturn.ToolTip" xml:space="preserve">
     <value>Uncheck this box to skip reset of the counters on any card
@@ -195,7 +195,7 @@ Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.
-</value>
+This affects all card sets.</value>
   </data>
   <data name="ChkPreTransReset.ToolTip" xml:space="preserve">
     <value>Check this box to force reset the counters on the active plane
@@ -208,7 +208,9 @@ Kilnspire District (Charge Counters)
 Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
-but will also affect any Plane that gets a counter of any kind.</value>
+but will also affect any Plane that gets a counter of any kind.
+This affects all card sets.
+</value>
   </data>
   <data name="RTBCredits.Text" xml:space="preserve">
     <value>Magic: The Gathering, MTG, and Planechase are Copyright Wizard of The Coast LLC

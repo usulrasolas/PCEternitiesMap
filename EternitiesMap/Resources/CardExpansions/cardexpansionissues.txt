@@ -1,5 +1,5 @@
+Planechase 2019:
 
-2019 Planes
 145 - Direct Order - Commander only Phenomenon
 147 - Fragile Image Cliffs - Quote "It was originally "target target creature," but with the Dominaria wording changes, we decided to make it "target target" instead.  I know that this is technically incorrect wording ("target any target" would be right), but we think it's worth it in this instance."
 149 - Glacial Prison - (toggable) very special tied to boss Marit Lage
@@ -12,23 +12,46 @@
 176 - Throne Room of Paliano - (toggable) Monarch play feature (no coding needed)
 183 - Your God-Pharoh has Returned - (toggable) Phenomenon that spawns player run boss?
 
-Defeat a God
-Xenagos Ascended - Players do not win when xenagos leaves the battlefield. xenagos and all cards associated must leave at same time.
 
-Hero Cards
-The Slayer - Would need to clarify that you gain 7 additional life aqquire as well
-The Vanquisher - Would need to clarify you draw one card and increase hand size by one
+Multiverse Expansion:
+(Amonkhet and Fiora already integrated)
+Amonkhet 87-91
+Fiora 92-96
+Ixalan 224-227
+Kaladesh 228-232
+Extra Planes Set 233-239
+Phenom Pack 240-243
+Tarkir 244-248
+Theros 249-253
+
+240 - Phenom
+241 - Phenom
+242 - Phenom
+243 - Phenom
+
+
+
+Planechase 2017:
+
+190 - Collective Assault -Phenom
+191 - Dark Bargain -Phenom
+197 - Infinite Possibilities -Phenom
+208 - Planar Flooding -Phenom, part lasts for rest of game?
+209 - Planeswalkers Duel -Pheom
+211 - Portal to the Blind Eternities - Phenom
+219 - Through the Nexus - Phenom
+220 - Titans Landing - Phenom, effects last for rest of game
 
 Ixalan -done
-97Blessing of Shapers - Phenomenon (display until planeswalk away)
-98Bloodfast - Phenomenon (display until planeswalk away)
-99Bloodstained Massacre - Phenomenon
-101Dramatic Entrance - Phenomenon
-102Gates of Orazca - Phenomenon
-103Gold Laden Shipwreck - Phenomenon
-104Mass Mutiny - Phenomenon
-107Rivers Rebuke - Phenomenon
-108Savage Instinct - Phenomenon (display until planeswalk away)
+97 - Blessing of Shapers - Phenomenon (display until planeswalk away)
+98 - Bloodfast - Phenomenon (display until planeswalk away)
+99 - Bloodstained Massacre - Phenomenon
+101 - Dramatic Entrance - Phenomenon
+102 - Gates of Orazca - Phenomenon
+103 - Gold Laden Shipwreck - Phenomenon
+104 - Mass Mutiny - Phenomenon
+107 - Rivers Rebuke - Phenomenon
+108 - Savage Instinct - Phenomenon (display until planeswalk away)
 
 MorePlanes
 Aether Tide - Phenomenon
@@ -39,18 +62,21 @@ Overgrowth - Phenomenon
 Splintercaves - just another double display?
 Storm of Hellions - Phenomenon
 
+
+Geekchase - done
+118Holodeck - On chaos triggers
+
+Version 2.0
+ 
 Vanguard
 IN GENERAL: Starting life/handsize take in effect when this goes into effect
  
-2017
-190 - Collective Assault -Phenom
-191 - Dark Bargain -Phenom
-197 - Infinite Possibilities -Phenom
-208 - Planar Flooding -Phenom, part lasts for rest of game?
-209 - Planeswalkers Duel -Pheom
-211 - Portal to the Blind Eternities - Phenom
-219 - Through the Nexus - Phenom
-220 - Titans Landing - Phenom, effects last for rest of game
+Defeat a God
+Xenagos Ascended - Players do not win when xenagos leaves the battlefield. xenagos and all cards associated must leave at same time.
 
-Geekscape - done
-118Holodeck - On chaos triggers
+Hero Cards
+The Slayer - Would need to clarify that you gain 7 additional life aqquire as well
+The Vanquisher - Would need to clarify you draw one card and increase hand size by one
+
+
+
