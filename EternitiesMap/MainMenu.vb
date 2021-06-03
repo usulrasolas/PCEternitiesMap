@@ -102,4 +102,15 @@
 
     End Sub
 
+    Private Sub ChkBxMultiverse_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverse.CheckedChanged
+        ChkAmon.Enabled = ChkBxMultiverse.Checked
+        ChkFiora.Enabled = ChkBxMultiverse.Checked
+        ChkbxMultiverseKaladesh.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseIxalan.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseTarkir.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseTheros.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseExtras.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiversePhenom.Enabled = ChkBxMultiverse.Checked
+    End Sub
+
 End Class
