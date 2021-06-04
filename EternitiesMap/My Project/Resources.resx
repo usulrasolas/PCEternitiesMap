@@ -538,14 +538,104 @@
   <data name="c223" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cardexpansions\2017\c223.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c224" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\ixalan\c224.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c225" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\ixalan\c225.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c226" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\ixalan\c226.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c227" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\ixalan\c227.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c228" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\kaladesh\c228.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c229" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\kaladesh\c229.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\kaladesh\c230.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c231" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\kaladesh\c231.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c232" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\kaladesh\c232.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c233" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\extras\c233.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c234" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\extras\c234.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c235" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\extras\c235.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c236" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\extras\c236.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c237" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\extras\c237.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c238" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\extras\c238.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c239" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\extras\c239.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c24.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\phenomenon pack\c240.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\phenomenon pack\c241.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c242" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\phenomenon pack\c242.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c243" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\phenomenon pack\c243.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c244" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\tarkir\c244.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c245" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\tarkir\c245.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c246" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\tarkir\c246.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c247" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\tarkir\c247.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c248" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\tarkir\c248.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c249" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\theros\c249.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c25.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\theros\c250.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c251" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\theros\c251.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c252" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\theros\c252.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c253" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\multiverse expansion\theros\c253.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c26.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
