@@ -213,9 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -345,11 +345,6 @@
     <Content Include="Resources\CardExpansions\2019\Planeschase 2019 - tokens\006 - Fatigue Counter.png" />
     <Content Include="Resources\CardExpansions\2019\Planeschase 2019 - tokens\007 - Eternalize.png" />
     <Content Include="Resources\CardExpansions\2019\Planeschase 2019 - tokens\Nicol Bolas, Archenemy.png" />
-    <Content Include="Resources\CardExpansions\Amon\c87.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\c88.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\c89.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\c90.jpg" />
-    <Content Include="Resources\CardExpansions\Amon\c91.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\BattleTheHorde\bth1.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\BattleTheHorde\bth10.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\BattleTheHorde\bth11.jpg" />
@@ -416,11 +411,6 @@
     <Content Include="Resources\CardExpansions\Challenge\Heros\thp3-7e-bow-of-the-hunter.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\Heros\thp3-8-the-destined.jpg" />
     <Content Include="Resources\CardExpansions\Challenge\Heros\thp3-9-the-champion.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\c92.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\c93.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\c94.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\c95.jpg" />
-    <Content Include="Resources\CardExpansions\Fiora\c96.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\c111.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\c112.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\c113.jpg" />
@@ -451,9 +441,6 @@
     <Content Include="Resources\CardExpansions\Geekchase\c139.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\c140.jpg" />
     <Content Include="Resources\CardExpansions\Geekchase\c133.jpg" />
-    <Content Include="Resources\CardExpansions\Ixalan\c97.jpg" />
-    <Content Include="Resources\CardExpansions\Ixalan\c98.jpg" />
-    <Content Include="Resources\CardExpansions\Ixalan\c99.jpg" />
     <Content Include="Resources\CardExpansions\Ixalan\c100.jpg" />
     <Content Include="Resources\CardExpansions\Ixalan\c101.jpg" />
     <Content Include="Resources\CardExpansions\Ixalan\c102.jpg" />
@@ -465,36 +452,49 @@
     <Content Include="Resources\CardExpansions\Ixalan\c108.jpg" />
     <Content Include="Resources\CardExpansions\Ixalan\c109.jpg" />
     <Content Include="Resources\CardExpansions\Ixalan\c110.jpg" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Akros.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Cloudspire Great.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Death of a Young God.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Depths of the Void.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Discovery of Lands.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Dragonsreach.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Edge of Sands.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Eternitys Gate.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Forest of Giant Trees.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Frosthusk.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Gedtz the Forge City.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Grand Line.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Guild Hall.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Langlush Mines.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Mirrorverse.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Noltari Bog.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Osis the Desert Palace.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Overgrowth.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Paradise Falls.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Port District.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Rapture.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Skygod Temple.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Soul Society.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Splintercaves.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Storm of Hellions.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Summoners Rift.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Treasure Halls of Pavala.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Upper Skies.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Yixlid Atonement Halls.png" />
-    <Content Include="Resources\CardExpansions\MorePlanes\Æther Tide.png" />
+    <Content Include="Resources\CardExpansions\Ixalan\c97.jpg" />
+    <Content Include="Resources\CardExpansions\Ixalan\c98.jpg" />
+    <Content Include="Resources\CardExpansions\Ixalan\c99.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Amonkhet\c87.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Amonkhet\c88.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Amonkhet\c89.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Amonkhet\c90.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Amonkhet\c91.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Fiora\c92.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Fiora\c93.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Fiora\c94.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Fiora\c95.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Fiora\c96.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Ixalan\c224.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Ixalan\c225.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Ixalan\c226.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Ixalan\c227.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Kaladesh\c228.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Kaladesh\c229.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Kaladesh\c230.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Kaladesh\c231.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Kaladesh\c232.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Extras\c233.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Extras\c234.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Extras\c235.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Extras\c236.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Extras\c237.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Extras\c238.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Extras\c239.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Phenomenon Pack\c240.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Phenomenon Pack\c241.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Phenomenon Pack\c242.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Phenomenon Pack\c243.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Tarkir\c244.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Tarkir\c245.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Tarkir\c246.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Tarkir\c247.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Tarkir\c248.jpeg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Theros\c249.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Theros\c250.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Theros\c251.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Theros\c252.jpg" />
+    <Content Include="Resources\CardExpansions\Multiverse Expansion\Theros\c253.jpg" />
     <Content Include="Resources\CardExpansions\Schemes\oarc-10★-every-hope-shall-vanish.jpg" />
     <Content Include="Resources\CardExpansions\Schemes\oarc-11★-every-last-vestige-shall-rot.jpg" />
     <Content Include="Resources\CardExpansions\Schemes\oarc-12★-evil-comes-to-fruition.jpg" />
@@ -686,6 +686,7 @@
     <Content Include="Resources\cards\c9.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Resources\cards\SHGR.png" />
+    <Content Include="Resources\icons\BlankPlaneCardFrame.png" />
     <Content Include="Resources\icons\chaos.png" />
     <Content Include="Resources\icons\chase.png" />
     <Content Include="Resources\icons\info.png" />

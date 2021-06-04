@@ -6,7 +6,9 @@
 
     Private Sub BNewGame_Click(sender As Object, e As EventArgs) Handles BNewGame.Click
         Dim oForm As Form
+#Disable Warning CA2000 ' Dispose objects before losing scope
         oForm = New GameBoard
+#Enable Warning CA2000 ' Dispose objects before losing scope
         oForm.Show()
         Close()
     End Sub
@@ -38,6 +40,7 @@
         ChkFiora.Checked = ExpFiora
         ChkGeekscape.Checked = ExpGeek
         ChkPC2019.Checked = ExpPC2019
+        ChkBox2019Ixalan.Checked = ExpPC2019IxGame
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -78,27 +81,38 @@
         PCAnthologies = ChkPCAnthology.Checked
     End Sub
 
-    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs) Handles ChkFiora.CheckedChanged
         ExpFiora = ChkFiora.Checked
     End Sub
 
-    Private Sub ChkIxalan_CheckedChanged(sender As Object, e As EventArgs)
-        ExpIxalan = ChkIxalan.Checked
-    End Sub
-
-    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs)
-        ExpAmon = ChkAmon.Checked
-    End Sub
-
-    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
         ExpGeek = ChkGeekscape.Checked
     End Sub
 
     Private Sub ChkPC2019_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPC2019.CheckedChanged
         ExpPC2019 = ChkPC2019.Checked
+        ChkBxPC2019CommanderCards.Enabled = ChkPC2019.Checked
+        ChkBox2019Ixalan.Enabled = ChkPC2019.Checked
+        ChkBx2019Contraption.Enabled = ChkPC2019.Checked
+
     End Sub
 
-    Private Sub TabPageCardSets_Click(sender As Object, e As EventArgs) Handles TabPageCardSets.Click
+    Private Sub ChkBxMultiverse_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverse.CheckedChanged
+        ChkAmon.Enabled = ChkBxMultiverse.Checked
+        ChkFiora.Enabled = ChkBxMultiverse.Checked
+        ChkbxMultiverseKaladesh.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseIxalan.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseTarkir.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseTheros.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiverseExtras.Enabled = ChkBxMultiverse.Checked
+        ChkBxMultiversePhenom.Enabled = ChkBxMultiverse.Checked
+    End Sub
 
+    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAmon.CheckedChanged
+        ExpAmon = ChkAmon.Checked
+    End Sub
+
+    Private Sub ChkBox2019Ixalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBox2019Ixalan.CheckedChanged
+        ExpPC2019IxGame = ChkBox2019Ixalan.Checked
     End Sub
 End Class

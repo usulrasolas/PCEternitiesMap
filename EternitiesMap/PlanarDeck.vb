@@ -1,7 +1,7 @@
 ﻿Module PlanarDeck
     Public DeckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public DeckCounter As Integer = 0
-    Public MasterDeckCount As Integer = 183
+    Public Const MasterDeckCount As Integer = 183
     Public CardLookup(MasterDeckCount) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public CardStack(1, MasterDeckCount, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
@@ -27,6 +27,7 @@
     Public ExpIxalan As Boolean = False
     Public ExpGeek As Boolean = False
     Public ExpPC2019 As Boolean = False
+    Public ExpPC2019IxGame As Boolean = False
 
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
@@ -89,10 +90,14 @@
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
-                CardStack(0, 142, 5) = -1 'blind eternities plane, special chaos trigger?
                 CardStack(0, 145, 5) = -1
                 CardStack(0, 149, 5) = -1
-                CardStack(0, 156, 5) = -1
+
+                If ExpPC2019IxGame = True Then 'Trigger for c156 makes you play a game of Explorers of Ixalan
+                    CardStack(0, 156, 3) = 156
+                Else
+                    CardStack(0, 156, 5) = -1
+                End If
                 CardStack(0, 164, 5) = -1
                 CardStack(0, 166, 5) = -1
                 CardStack(0, 167, 5) = -1
@@ -140,72 +145,87 @@
         CardStack(0, 164, 5) = -1
         CardStack(0, 172, 5) = -1
         CardStack(0, 183, 5) = -1
+        PhenomDeckSize = 0
+        ReDim PhenomDeck(-1)
         If PhenomSupport = True Then
-            CardStack(0, 9, 3) = 21 ''Chaotic Aether
-            CardStack(0, 26, 3) = 22 ''Interplanar Tunnel
-            CardStack(0, 39, 3) = 23 ''Morphic Tide
-            CardStack(0, 42, 3) = 24 ''Mutual Epiphany
-            CardStack(0, 52, 3) = 25 ''Planewide Disaster
-            CardStack(0, 57, 3) = 26 ''Reality Shaping
-            CardStack(0, 64, 3) = 27 ''Spatial Merging
-            CardStack(0, 80, 3) = 28 ''Time Distortion
-        ElseIf PhenomSupport = False Then
-            CardStack(0, 9, 3) = -1 ''Chaotic Aether
-            CardStack(0, 26, 3) = -1 ''Interplanar Tunnel
-            CardStack(0, 39, 3) = -1 ''Morphic Tide
-            CardStack(0, 42, 3) = -1 ''Mutual Epiphany
-            CardStack(0, 52, 3) = -1 ''Planewide Disaster
-            CardStack(0, 57, 3) = -1 ''Reality Shaping
-            CardStack(0, 64, 3) = -1 ''Spatial Merging
-            CardStack(0, 80, 3) = -1 ''Time Distortion
-        End If
-        If ExpIxalan = True Then
-            CardStack(0, 97, 3) = 29
-            CardStack(0, 98, 3) = 30
-            CardStack(0, 99, 3) = 31
-            CardStack(0, 101, 3) = 32
-            CardStack(0, 102, 3) = 33
-            CardStack(0, 103, 3) = 34
-            CardStack(0, 104, 3) = 35
-            CardStack(0, 107, 3) = 36
-            CardStack(0, 108, 3) = 37
-        ElseIf ExpIxalan = False Then
-            CardStack(0, 97, 3) = -1
-            CardStack(0, 98, 3) = -1
-            CardStack(0, 99, 3) = -1
-            CardStack(0, 101, 3) = -1
-            CardStack(0, 102, 3) = -1
-            CardStack(0, 103, 3) = -1
-            CardStack(0, 104, 3) = -1
-            CardStack(0, 107, 3) = -1
-            CardStack(0, 108, 3) = -1
-        End If
-        If PhenomSupport = True And PCAnthologies = True And ExpIxalan = False Then
-            ReDim PhenomDeck(8)
-            PhenomDeckSize = 8
-            PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
-        ElseIf PhenomSupport = True And PCAnthologies = True And ExpIxalan = True Then
-            ReDim PhenomDeck(17)
-            PhenomDeckSize = 17
-            PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9, 97, 98, 99, 101, 102, 103, 104, 107, 108}
-        Else PhenomSupport = True And PCAnthologies = False And ExpIxalan = True
-            ReDim PhenomDeck(9)
-            PhenomDeckSize = 9
-            PhenomDeck = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
+            ReDim PhenomDeck(0)
+            PhenomDeck(0) = -1
+            If PCAnthologies = True Then
+                CardStack(0, 9, 3) = 21 ''Chaotic Aether
+                CardStack(0, 26, 3) = 22 ''Interplanar Tunnel
+                CardStack(0, 39, 3) = 23 ''Morphic Tide
+                CardStack(0, 42, 3) = 24 ''Mutual Epiphany
+                CardStack(0, 52, 3) = 25 ''Planewide Disaster
+                CardStack(0, 57, 3) = 26 ''Reality Shaping
+                CardStack(0, 64, 3) = 27 ''Spatial Merging
+                CardStack(0, 80, 3) = 28 ''Time Distortion
+                PhenomDeckSize += 8
+                ReDim Preserve PhenomDeck(PhenomDeckSize)
+                Dim WorkCounter As Integer
+                Dim InjectionArray() As Integer = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
+                Dim InjectionCounter As Integer = 8
+                For WorkCounter = (PhenomDeckSize - 8) To PhenomDeck.GetUpperBound(0) Step 1
+                    PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
+                    InjectionCounter -= 1
+                Next
+            ElseIf PCAnthologies = False Then
+                CardStack(0, 9, 3) = -1
+                CardStack(0, 26, 3) = -1
+                CardStack(0, 39, 3) = -1
+                CardStack(0, 42, 3) = -1
+                CardStack(0, 52, 3) = -1
+                CardStack(0, 57, 3) = -1
+                CardStack(0, 64, 3) = -1
+                CardStack(0, 80, 3) = -1
+            End If
+            If ExpIxalan = True Then
+                CardStack(0, 97, 3) = 29 ''Blessing of the Shapers
+                CardStack(0, 98, 3) = 30 ''Bloodfast
+                CardStack(0, 99, 3) = 31 ''Bloodstained Massacre
+                CardStack(0, 101, 3) = 32 ''Dramatic Entrance
+                CardStack(0, 102, 3) = 33 ''Gates of Orazca
+                CardStack(0, 103, 3) = 34 ''Gold-Laden Shipwreck
+                CardStack(0, 104, 3) = 35 ''Mass Mutiny
+                CardStack(0, 107, 3) = 36 ''River's Rebuke
+                CardStack(0, 108, 3) = 37 ''Savage Instinct
+                PhenomDeckSize += 9
+                ReDim Preserve PhenomDeck(PhenomDeckSize)
+                Dim WorkCounter As Integer
+                Dim InjectionArray() As Integer = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
+                Dim InjectionCounter As Integer = 9
+                For WorkCounter = (PhenomDeckSize - 9) To PhenomDeck.GetUpperBound(0) Step 1
+                    PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
+                    InjectionCounter -= 1
+                Next
+            ElseIf ExpIxalan = False Then
+                CardStack(0, 97, 3) = -1
+                CardStack(0, 98, 3) = -1
+                CardStack(0, 99, 3) = -1
+                CardStack(0, 101, 3) = -1
+                CardStack(0, 102, 3) = -1
+                CardStack(0, 103, 3) = -1
+                CardStack(0, 104, 3) = -1
+                CardStack(0, 107, 3) = -1
+                CardStack(0, 108, 3) = -1
+            End If
         End If
         Return 0
     End Function
 
     Function PickRandomPhenom() As Integer
+        If PhenomDeckSize > 0 Then
 555:
-        Randomize()
-        Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
-        PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
-        If DeckCounter < 5 Then
-            If RandomPhenomRoll = 26 Then GoTo 555
-        ElseIf DeckCounter < 2 Then
-            If RandomPhenomRoll = 26 Then GoTo 555
-            If RandomPhenomRoll = 64 Then GoTo 555
+            Randomize()
+            Dim RandomPhenomRoll As Integer = Int((PhenomDeckSize * Rnd()) + 1)
+            PickRandomPhenom = PhenomDeck(RandomPhenomRoll)
+            If DeckCounter < 5 Then
+                If RandomPhenomRoll = 26 Then GoTo 555
+            ElseIf DeckCounter < 2 Then
+                If RandomPhenomRoll = 26 Then GoTo 555
+                If RandomPhenomRoll = 64 Then GoTo 555
+            End If
+        Else
+            PickRandomPhenom = -1
         End If
     End Function
 
