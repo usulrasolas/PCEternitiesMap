@@ -1,7 +1,7 @@
 ﻿Module PlanarDeck
     Public DeckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public DeckCounter As Integer = 0
-    Public Const MasterDeckCount As Integer = 183
+    Public Const MasterDeckCount As Integer = 223
     Public CardLookup(MasterDeckCount) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public CardStack(1, MasterDeckCount, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
@@ -28,6 +28,7 @@
     Public ExpGeek As Boolean = False
     Public ExpPC2019 As Boolean = False
     Public ExpPC2019IxGame As Boolean = False
+    Public ExpPC2017 As Boolean = False
 
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
@@ -105,6 +106,20 @@
                 CardStack(0, 170, 5) = -1
                 CardStack(0, 173, 5) = -1
                 CardStack(0, 176, 5) = -1
+            End If
+            If ExpPC2017 = True Then
+                For WorkCounter = 184 To 223 Step 1
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
+                Next
+                CardStack(0, 190, 5) = -1
+                CardStack(0, 191, 5) = -1
+                CardStack(0, 197, 5) = -1
+                CardStack(0, 208, 5) = -1
+                CardStack(0, 209, 5) = -1
+                CardStack(0, 211, 5) = -1
+                CardStack(0, 219, 5) = -1
+                CardStack(0, 220, 5) = -1
             End If
             PhenomInitalize()
             For WorkCounter = 1 To MasterDeckCount Step 1

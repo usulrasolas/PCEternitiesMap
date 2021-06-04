@@ -41,6 +41,7 @@
         ChkGeekscape.Checked = ExpGeek
         ChkPC2019.Checked = ExpPC2019
         ChkBox2019Ixalan.Checked = ExpPC2019IxGame
+        ChkBxPC2017.Checked = ExpPC2017
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -116,4 +117,7 @@
         ExpPC2019IxGame = ChkBox2019Ixalan.Checked
     End Sub
 
+    Private Sub ChkBxPC2017_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxPC2017.CheckedChanged
+        ExpPC2017 = ChkBxPC2017.Checked
+    End Sub
 End Class

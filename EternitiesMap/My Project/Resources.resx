@@ -403,8 +403,56 @@
   <data name="c183" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cardexpansions\2019\planeschase 2019 - planes\c183.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c184" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c184.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c185" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c185.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c186" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c186.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c187" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c187.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c188" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c189" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c189.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c19" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c19.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c190" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c190.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c191" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c191.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c192" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c192.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c193" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c193.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c194" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c194.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c195" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c195.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c196" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c196.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c197" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c197.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c198" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c198.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c199" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c199.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -412,11 +460,83 @@
   <data name="c20" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c20.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c201" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c202" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c202.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c203" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c203.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c204" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c204.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c205" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c205.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c206" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c206.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c207" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c207.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c208" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c208.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c209" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c209.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="c210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c212" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c212.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c213" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c213.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c214" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c214.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c215" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c215.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c216" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c216.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c217" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c217.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c218" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c218.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c219" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c219.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="c22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c22.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c220" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c222" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c222.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="c223" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cardexpansions\2017\c223.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cards\c23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
