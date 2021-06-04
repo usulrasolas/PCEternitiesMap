@@ -1168,6 +1168,26 @@
             Return My.Resources.c109
         ElseIf CardNumber = 110 Then
             Return My.Resources.c110
+        ElseIf CardNumber = 111 Then
+            Return My.Resources.c111
+        ElseIf CardNumber = 112 Then
+            Return My.Resources.c112
+        ElseIf CardNumber = 113 Then
+            Return My.Resources.c113
+        ElseIf CardNumber = 114 Then
+            Return My.Resources.c114
+        ElseIf CardNumber = 115 Then
+            Return My.Resources.c115
+        ElseIf CardNumber = 116 Then
+            Return My.Resources.c116
+        ElseIf CardNumber = 117 Then
+            Return My.Resources.c117
+        ElseIf CardNumber = 118 Then
+            Return My.Resources.c118
+        ElseIf CardNumber = 119 Then
+            Return My.Resources.c119
+        ElseIf CardNumber = 120 Then
+            Return My.Resources.c120
         ElseIf CardNumber = 121 Then
             Return My.Resources.c121
         ElseIf CardNumber = 122 Then
