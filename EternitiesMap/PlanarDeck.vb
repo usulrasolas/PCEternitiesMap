@@ -164,25 +164,25 @@
                     InjectionCounter -= 1
                 Next
             ElseIf PCAnthologies = False Then
-                CardStack(0, 9, 3) = -1 ''Chaotic Aether
-                CardStack(0, 26, 3) = -1 ''Interplanar Tunnel
-                CardStack(0, 39, 3) = -1 ''Morphic Tide
-                CardStack(0, 42, 3) = -1 ''Mutual Epiphany
-                CardStack(0, 52, 3) = -1 ''Planewide Disaster
-                CardStack(0, 57, 3) = -1 ''Reality Shaping
-                CardStack(0, 64, 3) = -1 ''Spatial Merging
-                CardStack(0, 80, 3) = -1 ''Time Distortion
+                CardStack(0, 9, 3) = -1
+                CardStack(0, 26, 3) = -1
+                CardStack(0, 39, 3) = -1
+                CardStack(0, 42, 3) = -1
+                CardStack(0, 52, 3) = -1
+                CardStack(0, 57, 3) = -1
+                CardStack(0, 64, 3) = -1
+                CardStack(0, 80, 3) = -1
             End If
             If ExpIxalan = True Then
-                CardStack(0, 97, 3) = 29
-                CardStack(0, 98, 3) = 30
-                CardStack(0, 99, 3) = 31
-                CardStack(0, 101, 3) = 32
-                CardStack(0, 102, 3) = 33
-                CardStack(0, 103, 3) = 34
-                CardStack(0, 104, 3) = 35
-                CardStack(0, 107, 3) = 36
-                CardStack(0, 108, 3) = 37
+                CardStack(0, 97, 3) = 29 ''Blessing of the Shapers
+                CardStack(0, 98, 3) = 30 ''Bloodfast
+                CardStack(0, 99, 3) = 31 ''Bloodstained Massacre
+                CardStack(0, 101, 3) = 32 ''Dramatic Entrance
+                CardStack(0, 102, 3) = 33 ''Gates of Orazca
+                CardStack(0, 103, 3) = 34 ''Gold-Laden Shipwreck
+                CardStack(0, 104, 3) = 35 ''Mass Mutiny
+                CardStack(0, 107, 3) = 36 ''River's Rebuke
+                CardStack(0, 108, 3) = 37 ''Savage Instinct
                 PhenomDeckSize += 9
                 ReDim Preserve PhenomDeck(PhenomDeckSize)
                 Dim WorkCounter As Integer
@@ -204,19 +204,6 @@
                 CardStack(0, 108, 3) = -1
             End If
         End If
-        'If PhenomSupport = True And PCAnthologies = True And ExpIxalan = False Then
-        'ReDim PhenomDeck(8)
-        'PhenomDeckSize = 8
-        'PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
-        'ElseIf PhenomSupport = True And PCAnthologies = True And ExpIxalan = True Then
-        'ReDim PhenomDeck(17)
-        'PhenomDeckSize = 17
-        'PhenomDeck = {-1, 80, 64, 57, 52, 42, 39, 26, 9, 97, 98, 99, 101, 102, 103, 104, 107, 108}
-        'Else PhenomSupport = True And PCAnthologies = False And ExpIxalan = True
-        'ReDim PhenomDeck(9)
-        'PhenomDeckSize = 9
-        'PhenomDeck = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
-        'End If
         Return 0
     End Function
 
