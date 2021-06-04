@@ -89,7 +89,6 @@
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
-                CardStack(0, 142, 5) = -1 'blind eternities plane, special chaos trigger?
                 CardStack(0, 145, 5) = -1
                 CardStack(0, 149, 5) = -1
                 CardStack(0, 156, 5) = -1
