@@ -34,6 +34,8 @@
     Public ExpGeek As Boolean = False
     Public ExpPC2019 As Boolean = False
     Public ExpPC2019IxGame As Boolean = False
+    Public ExpPc2019Throne As Boolean = False
+    Public ExpPC2019Workshop As Boolean = False
     Public ExpPC2017 As Boolean = False
 
     Public Function ReadyDeck() As Boolean
@@ -146,8 +148,8 @@
                 CardStack(0, 167, 5) = -1
                 CardStack(0, 168, 5) = -1
                 CardStack(0, 170, 5) = -1
-                CardStack(0, 173, 5) = -1
-                CardStack(0, 176, 5) = -1
+                If ExpPc2019Throne = False Then CardStack(0, 176, 5) = -1
+                If ExpPC2019Workshop = False Then CardStack(0, 173, 5) = -1
             End If
             If ExpPC2017 = True Then
                 For WorkCounter = 184 To 223 Step 1

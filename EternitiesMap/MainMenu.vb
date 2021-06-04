@@ -48,6 +48,8 @@
         ChkBxMultiversePhenom.Checked = ExpMEPhenoms
         ChkBxMultiverseTarkir.Checked = ExpMeTarkir
         ChkBxMultiverseTheros.Checked = ExpMeTheros
+        ChkBx2019Monarch.Checked = ExpPc2019Throne
+        ChkBx2019Contraption.Checked = ExpPC2019Workshop
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -149,5 +151,13 @@
 
     Private Sub ChkBxMultiversePhenom_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiversePhenom.CheckedChanged
         ExpMEPhenoms = ChkBxMultiversePhenom.Checked
+    End Sub
+
+    Private Sub ChkBx2019Monarch_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBx2019Monarch.CheckedChanged
+        ExpPc2019Throne = ChkBx2019Monarch.Checked
+    End Sub
+
+    Private Sub ChkBx2019Contraption_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBx2019Contraption.CheckedChanged
+        ExpPC2019Workshop = ChkBx2019Contraption.Checked
     End Sub
 End Class
