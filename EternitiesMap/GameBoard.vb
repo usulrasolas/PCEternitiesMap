@@ -1394,6 +1394,66 @@
             Return My.Resources.c222
         ElseIf CardNumber = 223 Then
             Return My.Resources.c223
+        ElseIf CardNumber = 224 Then
+            Return My.Resources.c224
+        ElseIf CardNumber = 225 Then
+            Return My.Resources.c225
+        ElseIf CardNumber = 226 Then
+            Return My.Resources.c226
+        ElseIf CardNumber = 227 Then
+            Return My.Resources.c227
+        ElseIf CardNumber = 228 Then
+            Return My.Resources.c228
+        ElseIf CardNumber = 229 Then
+            Return My.Resources.c229
+        ElseIf CardNumber = 230 Then
+            Return My.Resources.c230
+        ElseIf CardNumber = 231 Then
+            Return My.Resources.c231
+        ElseIf CardNumber = 232 Then
+            Return My.Resources.c232
+        ElseIf CardNumber = 233 Then
+            Return My.Resources.c233
+        ElseIf CardNumber = 234 Then
+            Return My.Resources.c234
+        ElseIf CardNumber = 235 Then
+            Return My.Resources.c235
+        ElseIf CardNumber = 236 Then
+            Return My.Resources.c236
+        ElseIf CardNumber = 237 Then
+            Return My.Resources.c237
+        ElseIf CardNumber = 238 Then
+            Return My.Resources.c238
+        ElseIf CardNumber = 239 Then
+            Return My.Resources.c239
+        ElseIf CardNumber = 240 Then
+            Return My.Resources.c240
+        ElseIf CardNumber = 241 Then
+            Return My.Resources.c241
+        ElseIf CardNumber = 242 Then
+            Return My.Resources.c242
+        ElseIf CardNumber = 243 Then
+            Return My.Resources.c243
+        ElseIf CardNumber = 244 Then
+            Return My.Resources.c244
+        ElseIf CardNumber = 245 Then
+            Return My.Resources.c245
+        ElseIf CardNumber = 246 Then
+            Return My.Resources.c246
+        ElseIf CardNumber = 247 Then
+            Return My.Resources.c247
+        ElseIf CardNumber = 248 Then
+            Return My.Resources.c248
+        ElseIf CardNumber = 249 Then
+            Return My.Resources.c249
+        ElseIf CardNumber = 250 Then
+            Return My.Resources.c250
+        ElseIf CardNumber = 251 Then
+            Return My.Resources.c251
+        ElseIf CardNumber = 252 Then
+            Return My.Resources.c252
+        ElseIf CardNumber = 253 Then
+            Return My.Resources.c253
         ElseIf CardNumber = -1 Then
             Return My.Resources.SHGR
         Else

@@ -42,6 +42,12 @@
         ChkPC2019.Checked = ExpPC2019
         ChkBox2019Ixalan.Checked = ExpPC2019IxGame
         ChkBxPC2017.Checked = ExpPC2017
+        ChkBxMultiverseIxalan.Checked = ExpMEIxalan
+        ChkbxMultiverseKaladesh.Checked = ExpMEKaladesh
+        ChkBxMultiverseExtras.Checked = ExpMEExtra
+        ChkBxMultiversePhenom.Checked = ExpMEPhenoms
+        ChkBxMultiverseTarkir.Checked = ExpMeTarkir
+        ChkBxMultiverseTheros.Checked = ExpMeTheros
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -119,5 +125,29 @@
 
     Private Sub ChkBxPC2017_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxPC2017.CheckedChanged
         ExpPC2017 = ChkBxPC2017.Checked
+    End Sub
+
+    Private Sub ChkBxMultiverseIxalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseIxalan.CheckedChanged
+        ExpMEIxalan = ChkBxMultiverseIxalan.Checked
+    End Sub
+
+    Private Sub ChkbxMultiverseKaladesh_CheckedChanged(sender As Object, e As EventArgs) Handles ChkbxMultiverseKaladesh.CheckedChanged
+        ExpMEKaladesh = ChkbxMultiverseKaladesh.Checked
+    End Sub
+
+    Private Sub ChkBxMultiverseTarkir_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseTarkir.CheckedChanged
+        ExpMeTarkir = ChkBxMultiverseTarkir.Checked
+    End Sub
+
+    Private Sub ChkBxMultiverseTheros_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseTheros.CheckedChanged
+        ExpMeTheros = ChkBxMultiverseTheros.Checked
+    End Sub
+
+    Private Sub ChkBxMultiverseExtras_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseExtras.CheckedChanged
+        ExpMEExtra = ChkBxMultiverseExtras.Checked
+    End Sub
+
+    Private Sub ChkBxMultiversePhenom_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiversePhenom.CheckedChanged
+        ExpMEPhenoms = ChkBxMultiversePhenom.Checked
     End Sub
 End Class

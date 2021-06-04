@@ -1,7 +1,7 @@
 ﻿Module PlanarDeck
     Public DeckState As Integer = 0 ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public DeckCounter As Integer = 0
-    Public Const MasterDeckCount As Integer = 223
+    Public Const MasterDeckCount As Integer = 253
     Public CardLookup(MasterDeckCount) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public CardStack(1, MasterDeckCount, 5) As Integer '' 0,deck,1virtual;cardnumber;see readydeck for slot descriptions
@@ -24,6 +24,12 @@
     Public PCAnthologies As Boolean = True
     Public ExpAmon As Boolean = False
     Public ExpFiora As Boolean = False
+    Public ExpMEIxalan As Boolean = False
+    Public ExpMEKaladesh As Boolean = False
+    Public ExpMEExtra As Boolean = False
+    Public ExpMEPhenoms As Boolean = False
+    Public ExpMeTarkir As Boolean = False
+    Public ExpMeTheros As Boolean = False
     Public ExpIxalan As Boolean = False
     Public ExpGeek As Boolean = False
     Public ExpPC2019 As Boolean = False
@@ -69,6 +75,42 @@
             End If
             If ExpFiora = True Then
                 For WorkCounter = 92 To 96 Step 1
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
+                Next
+            End If
+            If ExpMEIxalan = True Then
+                For WorkCounter = 224 To 227 Step 1
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
+                Next
+            End If
+            If ExpMEKaladesh = True Then
+                For WorkCounter = 228 To 232 Step 1
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
+                Next
+            End If
+            If ExpMEExtra = True Then
+                For WorkCounter = 233 To 239 Step 1
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
+                Next
+            End If
+            If ExpMEPhenoms = True Then
+                For WorkCounter = 240 To 243 Step 1
+                    CardStack(0, WorkCounter, 5) = -1 ''Needs change when enable ME Phenoms
+                    CardStack(0, WorkCounter, 3) = -1 ''Needs expansion for phenoms probably? currently we're flagging -1 to disable
+                Next
+            End If
+            If ExpMeTarkir = True Then
+                For WorkCounter = 244 To 248 Step 1
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
+                Next
+            End If
+            If ExpMeTheros = True Then
+                For WorkCounter = 249 To 253 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
