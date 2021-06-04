@@ -81,11 +81,11 @@
         PCAnthologies = ChkPCAnthology.Checked
     End Sub
 
-    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs) Handles ChkFiora.CheckedChanged
+    Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs)
         ExpFiora = ChkFiora.Checked
     End Sub
 
-    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
+    Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs)
         ExpGeek = ChkGeekscape.Checked
     End Sub
 
@@ -94,10 +94,10 @@
         ChkBxPC2019CommanderCards.Enabled = ChkPC2019.Checked
         ChkBox2019Ixalan.Enabled = ChkPC2019.Checked
         ChkBx2019Contraption.Enabled = ChkPC2019.Checked
-
+        ChkBx2019Monarch.Enabled = ChkPC2019.Checked
     End Sub
 
-    Private Sub ChkBxMultiverse_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverse.CheckedChanged
+    Private Sub ChkBxMultiverse_CheckedChanged(sender As Object, e As EventArgs)
         ChkAmon.Enabled = ChkBxMultiverse.Checked
         ChkFiora.Enabled = ChkBxMultiverse.Checked
         ChkbxMultiverseKaladesh.Enabled = ChkBxMultiverse.Checked
@@ -108,7 +108,7 @@
         ChkBxMultiversePhenom.Enabled = ChkBxMultiverse.Checked
     End Sub
 
-    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAmon.CheckedChanged
+    Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs)
         ExpAmon = ChkAmon.Checked
     End Sub
 
