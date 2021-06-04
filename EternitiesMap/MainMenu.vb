@@ -40,6 +40,7 @@
         ChkFiora.Checked = ExpFiora
         ChkGeekscape.Checked = ExpGeek
         ChkPC2019.Checked = ExpPC2019
+        ChkBox2019Ixalan.Checked = ExpPC2019IxGame
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -111,4 +112,7 @@
         ExpAmon = ChkAmon.Checked
     End Sub
 
+    Private Sub ChkBox2019Ixalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBox2019Ixalan.CheckedChanged
+        ExpPC2019IxGame = ChkBox2019Ixalan.Checked
+    End Sub
 End Class

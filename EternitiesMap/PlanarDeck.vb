@@ -27,6 +27,7 @@
     Public ExpIxalan As Boolean = False
     Public ExpGeek As Boolean = False
     Public ExpPC2019 As Boolean = False
+    Public ExpPC2019IxGame As Boolean = False
 
     Public Function ReadyDeck() As Boolean
         Dim DeckRndCounter As Integer = Int(Rnd() * 10)
@@ -91,7 +92,12 @@
                 Next
                 CardStack(0, 145, 5) = -1
                 CardStack(0, 149, 5) = -1
-                CardStack(0, 156, 5) = -1
+
+                If ExpPC2019IxGame = True Then 'Trigger for c156 makes you play a game of Explorers of Ixalan
+                    CardStack(0, 156, 3) = 156
+                Else
+                    CardStack(0, 156, 5) = -1
+                End If
                 CardStack(0, 164, 5) = -1
                 CardStack(0, 166, 5) = -1
                 CardStack(0, 167, 5) = -1
