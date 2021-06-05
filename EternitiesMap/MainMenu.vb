@@ -14,86 +14,88 @@
     End Sub
 
     Private Sub CHKInfinite_CheckedChanged(sender As Object, e As EventArgs) Handles CHKInfinite.CheckedChanged
-        InfinitePlane = CHKInfinite.Checked
+        Infiniteplane = CHKInfinite.Checked
     End Sub
 
     Private Sub ChkNaarReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkNaarReset.CheckedChanged
-        NaarReset = ChkNaarReset.Checked
+        Naarreset = ChkNaarReset.Checked
     End Sub
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CHKInfinite.Checked = InfinitePlane
-        ChkNaarReset.Checked = NaarReset
-        ChkPreTransReset.Checked = PretranslateReset
-        ChkResetReturn.Checked = ResetOnReturn
-        ChkDistanceReset.Checked = DistanceReset
-        ChkAertReset.Checked = AretResetMove
-        NumAretMax.Value = AretCounter
-        ChkPhenomSupport.Checked = PhenomSupport
-        TBPhenomHJChance.Value = PhenomHellJChance
-        TBPhenomMoveChance.Value = PhenomMoveChance
-        LBLHJChance.Text = PhenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
-        LBLMoveChance.Text = PhenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
-        ChkPCAnthology.Checked = PCAnthologies
-        ChkAmon.Checked = ExpAmon
-        ChkIxalan.Checked = ExpIxalan
-        ChkFiora.Checked = ExpFiora
-        ChkGeekscape.Checked = ExpGeek
+        CHKInfinite.Checked = Infiniteplane
+        ChkNaarReset.Checked = Naarreset
+        ChkPreTransReset.Checked = Pretranslatereset
+        ChkResetReturn.Checked = Resetonreturn
+        ChkDistanceReset.Checked = Distancereset
+        ChkAertReset.Checked = Aretresetmove
+        NumAretMax.Value = Aretcounter
+        ChkPhenomSupport.Checked = Phenomsupport
+        TBPhenomHJChance.Value = Phenomhelljchance
+        TBPhenomMoveChance.Value = Phenommovechance
+        LBLHJChance.Text = Phenomhelljchance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
+        LBLMoveChance.Text = Phenommovechance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
+        ChkPCAnthology.Checked = Pcanthologies
+        ChkAmon.Checked = Expmeamon
+        ChkIxalan.Checked = Expixalan
+        ChkFiora.Checked = Expmefiora
+        ChkGeekscape.Checked = Expgeekscape1
         ChkPC2019.Checked = ExpPC2019
-        ChkBox2019Ixalan.Checked = ExpPC2019IxGame
+        ChkBox2019Ixalan.Checked = ExpPC2019ixgame
         ChkBxPC2017.Checked = ExpPC2017
-        ChkBxMultiverseIxalan.Checked = ExpMEIxalan
-        ChkbxMultiverseKaladesh.Checked = ExpMEKaladesh
-        ChkBxMultiverseExtras.Checked = ExpMEExtra
-        ChkBxMultiversePhenom.Checked = ExpMEPhenoms
-        ChkBxMultiverseTarkir.Checked = ExpMeTarkir
-        ChkBxMultiverseTheros.Checked = ExpMeTheros
+        ChkBxMultiverseIxalan.Checked = Expmeixalan
+        ChkbxMultiverseKaladesh.Checked = Expmekaladesh
+        ChkBxMultiverseExtras.Checked = Expmeextra
+        ChkBxMultiversePhenom.Checked = Expmephenoms
+        ChkBxMultiverseTarkir.Checked = Expmetarkir
+        ChkBxMultiverseTheros.Checked = Expmetheros
+        ChkBx2019Monarch.Checked = ExpPC2019throne
+        ChkBx2019Contraption.Checked = ExpPC2019workshop
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
-        PretranslateReset = ChkPreTransReset.Checked
+        Pretranslatereset = ChkPreTransReset.Checked
     End Sub
 
     Private Sub ChkResetReturn_CheckedChanged(sender As Object, e As EventArgs) Handles ChkResetReturn.CheckedChanged
-        ResetOnReturn = ChkResetReturn.Checked
+        Resetonreturn = ChkResetReturn.Checked
     End Sub
 
     Private Sub ChkDistanceReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkDistanceReset.CheckedChanged
-        DistanceReset = ChkDistanceReset.Checked
+        Distancereset = ChkDistanceReset.Checked
     End Sub
 
     Private Sub ChkAertReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAertReset.CheckedChanged
-        AretResetMove = ChkAertReset.Checked
+        Aretresetmove = ChkAertReset.Checked
     End Sub
 
     Private Sub NumAretMax_ValueChanged(sender As Object, e As EventArgs) Handles NumAretMax.ValueChanged
-        AretCounter = NumAretMax.Value
+        Aretcounter = NumAretMax.Value
     End Sub
 
     Private Sub ChkPhenomSupport_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPhenomSupport.CheckedChanged
-        PhenomSupport = ChkPhenomSupport.Checked
+        Phenomsupport = ChkPhenomSupport.Checked
     End Sub
 
     Private Sub TBPhenomHJChance_Scroll(sender As Object, e As EventArgs) Handles TBPhenomHJChance.Scroll
-        PhenomHellJChance = TBPhenomHJChance.Value
-        LBLHJChance.Text = PhenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
+        Phenomhelljchance = TBPhenomHJChance.Value
+        LBLHJChance.Text = Phenomhelljchance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
     End Sub
 
     Private Sub TBPhenomMoveChance_Scroll(sender As Object, e As EventArgs) Handles TBPhenomMoveChance.Scroll
-        PhenomMoveChance = TBPhenomMoveChance.Value
-        LBLMoveChance.Text = PhenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
+        Phenommovechance = TBPhenomMoveChance.Value
+        LBLMoveChance.Text = Phenommovechance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
     End Sub
 
     Private Sub ChkPCAnthology_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPCAnthology.CheckedChanged
-        PCAnthologies = ChkPCAnthology.Checked
+        Pcanthologies = ChkPCAnthology.Checked
     End Sub
 
     Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs) Handles ChkFiora.CheckedChanged
-        ExpFiora = ChkFiora.Checked
+        Expmefiora = ChkFiora.Checked
     End Sub
 
     Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
-        ExpGeek = ChkGeekscape.Checked
+        Expgeekscape1 = ChkGeekscape.Checked
     End Sub
 
     Private Sub ChkPC2019_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPC2019.CheckedChanged
@@ -116,11 +118,11 @@
     End Sub
 
     Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAmon.CheckedChanged
-        ExpAmon = ChkAmon.Checked
+        Expmeamon = ChkAmon.Checked
     End Sub
 
     Private Sub ChkBox2019Ixalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBox2019Ixalan.CheckedChanged
-        ExpPC2019IxGame = ChkBox2019Ixalan.Checked
+        ExpPC2019ixgame = ChkBox2019Ixalan.Checked
     End Sub
 
     Private Sub ChkBxPC2017_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxPC2017.CheckedChanged
@@ -128,26 +130,34 @@
     End Sub
 
     Private Sub ChkBxMultiverseIxalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseIxalan.CheckedChanged
-        ExpMEIxalan = ChkBxMultiverseIxalan.Checked
+        Expmeixalan = ChkBxMultiverseIxalan.Checked
     End Sub
 
     Private Sub ChkbxMultiverseKaladesh_CheckedChanged(sender As Object, e As EventArgs) Handles ChkbxMultiverseKaladesh.CheckedChanged
-        ExpMEKaladesh = ChkbxMultiverseKaladesh.Checked
+        Expmekaladesh = ChkbxMultiverseKaladesh.Checked
     End Sub
 
     Private Sub ChkBxMultiverseTarkir_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseTarkir.CheckedChanged
-        ExpMeTarkir = ChkBxMultiverseTarkir.Checked
+        Expmetarkir = ChkBxMultiverseTarkir.Checked
     End Sub
 
     Private Sub ChkBxMultiverseTheros_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseTheros.CheckedChanged
-        ExpMeTheros = ChkBxMultiverseTheros.Checked
+        Expmetheros = ChkBxMultiverseTheros.Checked
     End Sub
 
     Private Sub ChkBxMultiverseExtras_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseExtras.CheckedChanged
-        ExpMEExtra = ChkBxMultiverseExtras.Checked
+        Expmeextra = ChkBxMultiverseExtras.Checked
     End Sub
 
     Private Sub ChkBxMultiversePhenom_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiversePhenom.CheckedChanged
-        ExpMEPhenoms = ChkBxMultiversePhenom.Checked
+        Expmephenoms = ChkBxMultiversePhenom.Checked
+    End Sub
+
+    Private Sub ChkBx2019Monarch_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBx2019Monarch.CheckedChanged
+        ExpPC2019throne = ChkBx2019Monarch.Checked
+    End Sub
+
+    Private Sub ChkBx2019Contraption_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBx2019Contraption.CheckedChanged
+        ExpPC2019workshop = ChkBx2019Contraption.Checked
     End Sub
 End Class

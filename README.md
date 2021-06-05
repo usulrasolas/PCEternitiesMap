@@ -23,3 +23,5 @@ So far features include:
 * disable/enable normal planeschase. (after 1.0)
 
 Development and Expansion Resumed 6/2021 after hiatus
+ Now implementing Codacy code review and rating system! Feel free to fork and pull request. If we like you're work you probably will be invited to work with us! This is a community labor of love, we want to make sure anyone who wants to be involved is and there's complete transparency!
+ [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2065305fcbd4b94a353ed1bc20c76c0)](https://www.codacy.com/gh/usulrasolas/PCEternitiesMap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=usulrasolas/PCEternitiesMap&amp;utm_campaign=Badge_Grade)
