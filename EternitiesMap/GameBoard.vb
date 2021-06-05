@@ -285,12 +285,10 @@
 
     Function ResolvePhenom(phenomnumber As Integer)
         ResolvePhenom = True
-        If phenomnumber = 9 Then '' Chaotic Aether
-            DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
-        ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
+        Dim PersistPhenomDisplay As Boolean = False
+        If phenomnumber = 9 Or 97 Or 98 Or 108 Or 208 Or 220 Then PersistPhenomDisplay = True ''this is where you set the phenom to persist on screen
+        ''only need special handlers with additon of generic handler with persistdisplayoptionstuff
+        If phenomnumber = 26 Then ''Interplanar Tunnel
             Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
             If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
             MoveEventCheck()
@@ -315,15 +313,6 @@
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
-
-        ElseIf phenomnumber = 39 Then ''Morphic Tide
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 42 Then ''Mutual Epiphany
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 52 Then ''Planewide Disaster
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 57 Then ''Reality Shaping
-            DeckState = 1 ''done
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
             CardStack(1, DrawBuffer(0), 0) = 1
@@ -358,43 +347,13 @@
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
-        ElseIf phenomnumber = 80 Then ''Time Distortion
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 97 Then
+        Else ''generic handler
             DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
-        ElseIf phenomnumber = 98 Then
-            DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
-        ElseIf phenomnumber = 99 Then
-            DeckState = 1
-        ElseIf phenomnumber = 101 Then
-            DeckState = 1
-        ElseIf phenomnumber = 102 Then
-            DeckState = 1
-        ElseIf phenomnumber = 103 Then
-            DeckState = 1
-        ElseIf phenomnumber = 104 Then
-            DeckState = 1
-        ElseIf phenomnumber = 240 Then
-            DeckState = 1
-        ElseIf phenomnumber = 241 Then
-            DeckState = 1
-        ElseIf phenomnumber = 242 Then
-            DeckState = 1
-        ElseIf phenomnumber = 243 Then
-            DeckState = 1
-        ElseIf phenomnumber = 107 Then
-            DeckState = 1
-        ElseIf phenomnumber = 108 Then
-            DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
+            If PersistPhenomDisplay = True Then
+                PCardSelect6.BringToFront()
+                PCardSelect6.Visible = True
+                PCardSelect6.Image = CardImage(phenomnumber)
+            End If
         End If
     End Function
 
