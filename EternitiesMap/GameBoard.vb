@@ -1,61 +1,61 @@
 ﻿Public Class GameBoard
-    Private ReadOnly CardArray(25) As PictureBox
-    Private ReadOnly DispArray(25) As Label
+    Private ReadOnly Cardarray(25) As PictureBox
+    Private ReadOnly Disparray(25) As Label
     Private eventCardInPlay As Integer
     Private eventXloc As Integer = Nothing
     Private eventYloc As Integer = Nothing
 
     Private Sub GameBoard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CardArray(1) = PictureBox1
-        DispArray(1) = Label1
-        CardArray(2) = PictureBox2
-        DispArray(2) = Label2
-        CardArray(3) = PictureBox3
-        DispArray(3) = Label3
-        CardArray(4) = PictureBox4
-        DispArray(4) = Label4
-        CardArray(5) = PictureBox5
-        DispArray(5) = Label5
-        CardArray(6) = PictureBox6
-        DispArray(6) = Label6
-        CardArray(7) = PictureBox7
-        DispArray(7) = Label7
-        CardArray(8) = PictureBox8
-        DispArray(8) = Label8
-        CardArray(9) = PictureBox9
-        DispArray(9) = Label9
-        CardArray(10) = PictureBox10
-        DispArray(10) = Label10
-        CardArray(11) = PictureBox11
-        DispArray(11) = Label11
-        CardArray(12) = PictureBox12
-        DispArray(12) = Label12
-        CardArray(13) = PictureBox13
-        DispArray(13) = Label13
-        CardArray(14) = PictureBox14
-        DispArray(14) = Label14
-        CardArray(15) = PictureBox15
-        DispArray(15) = Label15
-        CardArray(16) = PictureBox16
-        DispArray(16) = Label16
-        CardArray(17) = PictureBox17
-        DispArray(17) = Label17
-        CardArray(18) = PictureBox18
-        DispArray(18) = Label18
-        CardArray(19) = PictureBox19
-        DispArray(19) = Label19
-        CardArray(20) = PictureBox20
-        DispArray(20) = Label20
-        CardArray(21) = PictureBox21
-        DispArray(21) = Label21
-        CardArray(22) = PictureBox22
-        DispArray(22) = Label22
-        CardArray(23) = PictureBox23
-        DispArray(23) = Label23
-        CardArray(24) = PictureBox24
-        DispArray(24) = Label24
-        CardArray(25) = PictureBox25
-        DispArray(25) = Label25
+        Cardarray(1) = PictureBox1
+        Disparray(1) = Label1
+        Cardarray(2) = PictureBox2
+        Disparray(2) = Label2
+        Cardarray(3) = PictureBox3
+        Disparray(3) = Label3
+        Cardarray(4) = PictureBox4
+        Disparray(4) = Label4
+        Cardarray(5) = PictureBox5
+        Disparray(5) = Label5
+        Cardarray(6) = PictureBox6
+        Disparray(6) = Label6
+        Cardarray(7) = PictureBox7
+        Disparray(7) = Label7
+        Cardarray(8) = PictureBox8
+        Disparray(8) = Label8
+        Cardarray(9) = PictureBox9
+        Disparray(9) = Label9
+        Cardarray(10) = PictureBox10
+        Disparray(10) = Label10
+        Cardarray(11) = PictureBox11
+        Disparray(11) = Label11
+        Cardarray(12) = PictureBox12
+        Disparray(12) = Label12
+        Cardarray(13) = PictureBox13
+        Disparray(13) = Label13
+        Cardarray(14) = PictureBox14
+        Disparray(14) = Label14
+        Cardarray(15) = PictureBox15
+        Disparray(15) = Label15
+        Cardarray(16) = PictureBox16
+        Disparray(16) = Label16
+        Cardarray(17) = PictureBox17
+        Disparray(17) = Label17
+        Cardarray(18) = PictureBox18
+        Disparray(18) = Label18
+        Cardarray(19) = PictureBox19
+        Disparray(19) = Label19
+        Cardarray(20) = PictureBox20
+        Disparray(20) = Label20
+        Cardarray(21) = PictureBox21
+        Disparray(21) = Label21
+        Cardarray(22) = PictureBox22
+        Disparray(22) = Label22
+        Cardarray(23) = PictureBox23
+        Disparray(23) = Label23
+        Cardarray(24) = PictureBox24
+        Disparray(24) = Label24
+        Cardarray(25) = PictureBox25
+        Disparray(25) = Label25
         PBZoom.SendToBack()
         LBLZoom.SendToBack()
         PBDoubleZoom1.Enabled = False
@@ -80,8 +80,8 @@
 
     Function DoubleZoom(center As Integer, slot1 As Integer, slot2 As Integer)
         For workcounter = 1 To 25 Step 1
-            CardArray(workcounter).Enabled = False
-            CardArray(workcounter).Visible = False
+            Cardarray(workcounter).Enabled = False
+            Cardarray(workcounter).Visible = False
         Next
         Doublezoombuffer(0) = slot1
         Doublezoombuffer(1) = slot2
@@ -110,8 +110,8 @@
 
     Function HideDoubleZoom()
         For workcounter = 1 To 25 Step 1
-            CardArray(workcounter).Enabled = True
-            CardArray(workcounter).Visible = True
+            Cardarray(workcounter).Enabled = True
+            Cardarray(workcounter).Visible = True
         Next
         PBDoubleZoom1.Enabled = False
         PBDoubleZoom1.Visible = False
@@ -403,7 +403,7 @@
         PBZoom.Image = Nothing
         Dim workcounter As Integer
         For workcounter = 1 To 25 Step 1
-            CardArray(workcounter).Enabled = False
+            Cardarray(workcounter).Enabled = False
         Next
         If slot1 > 0 Then PCardSelect1.BringToFront()
         If trigPlane > 0 Then PCardSelect2.BringToFront()
@@ -469,7 +469,7 @@
         PCardSelect5.Visible = False
         PCardSelect6.Visible = False
         For workcounter = 1 To 25 Step 1
-            CardArray(workcounter).Enabled = True
+            Cardarray(workcounter).Enabled = True
         Next
         PBChaos.Enabled = True
         NCounter.Enabled = True
@@ -482,16 +482,16 @@
         Dim DisplayBuffer(25) As Integer
         For workcounter = 1 To 25 Step 1
             DisplayBuffer(workcounter) = 0
-            CardArray(workcounter).Image = Nothing
-            CardArray(workcounter).Enabled = True
-            CardArray(workcounter).Invalidate()
-            DispArray(workcounter).Visible = False
-            DispArray(workcounter).BackColor = Color.Transparent
+            Cardarray(workcounter).Image = Nothing
+            Cardarray(workcounter).Enabled = True
+            Cardarray(workcounter).Invalidate()
+            Disparray(workcounter).Visible = False
+            Disparray(workcounter).BackColor = Color.Transparent
 #Disable Warning CA1303 ' Do not pass literals as localized parameters
-            DispArray(workcounter).Text = " "
+            Disparray(workcounter).Text = " "
 #Enable Warning CA1303 ' Do not pass literals as localized parameters
-            DispArray(workcounter).ForeColor = Color.Gray
-            DispArray(workcounter).Invalidate()
+            Disparray(workcounter).ForeColor = Color.Gray
+            Disparray(workcounter).Invalidate()
         Next
         For workcounter = 1 To Masterdeckcount Step 1
             If CardStack(0, workcounter, 5) = 3 Then
@@ -563,14 +563,14 @@
 
     Function UpdateArrayElement(DispNumber As Integer, Cardnumber As Integer)
         If CheckPosition(Cardnumber) = True Then
-            CardArray(DispNumber).Image = CardImage(Cardnumber)
-            If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Enabled = True
-            If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Visible = True
-            If CardStack(0, Cardnumber, 4) > 0 Then DispArray(DispNumber).BackColor = Color.DarkBlue
-            If CardStack(0, Cardnumber, 4) > 0 Then DispArray(DispNumber).ForeColor = Color.LightYellow
-            If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).ForeColor = Color.White
-            If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).BackColor = Color.Black
-            If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Text = CardStack(0, Cardnumber, 4)
+            Cardarray(DispNumber).Image = CardImage(Cardnumber)
+            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Enabled = True
+            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Visible = True
+            If CardStack(0, Cardnumber, 4) > 0 Then Disparray(DispNumber).BackColor = Color.DarkBlue
+            If CardStack(0, Cardnumber, 4) > 0 Then Disparray(DispNumber).ForeColor = Color.LightYellow
+            If CardStack(0, Cardnumber, 4) < 0 Then Disparray(DispNumber).ForeColor = Color.White
+            If CardStack(0, Cardnumber, 4) < 0 Then Disparray(DispNumber).BackColor = Color.Black
+            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Text = CardStack(0, Cardnumber, 4)
         Else
             ''assumed multiple occupancy
             If CardStack(1, Cardnumber, 0) >= 1 Then
@@ -583,14 +583,14 @@
                 Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
                 If UpdateDisplay1 = UpdateDisplay2 AndAlso UpdateCard1 = UpdatePartner2 AndAlso UpdatePartner1 = UpdateCard2 Then
                     ''check linked metadata for match
-                    CardArray(DispNumber).Image = CardImage(UpdateDisplay1)
+                    Cardarray(DispNumber).Image = CardImage(UpdateDisplay1)
                     ''display metadata card instead
                 Else
                     GoTo 850
                 End If
             Else
 850:
-                CardArray(DispNumber).Image = CardImage(-1)
+                Cardarray(DispNumber).Image = CardImage(-1)
             End If
         End If
         Return 0
@@ -1528,12 +1528,12 @@
             NCounter.Enabled = False
             Dim workcounter As Integer
             For workcounter = 1 To 25 Step 1
-                CardArray(workcounter).Visible = False
-                DispArray(workcounter).Visible = False
+                Cardarray(workcounter).Visible = False
+                Disparray(workcounter).Visible = False
             Next
-            CardArray(13).Enabled = True
-            CardArray(13).Visible = True
-            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Visible = True
+            Cardarray(13).Enabled = True
+            Cardarray(13).Visible = True
+            If CardStack(0, Currentplane, 4) <> 0 Then Disparray(13).Visible = True
             Dim NEHellride As Boolean = True
             Dim SEHellride As Boolean = True
             Dim NWHellride As Boolean = True
@@ -1544,21 +1544,21 @@
                     ''that is active
                     If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 0 Then
                         ''if it occupies valid movement coodinates show and enable it.
-                        CardArray(12).Visible = True
-                        CardArray(12).Enabled = True
-                        If CardStack(0, workcounter, 4) <> 0 Then DispArray(12).Visible = True
+                        Cardarray(12).Visible = True
+                        Cardarray(12).Enabled = True
+                        If CardStack(0, workcounter, 4) <> 0 Then Disparray(12).Visible = True
                     ElseIf CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = 0 Then
-                        CardArray(14).Visible = True
-                        CardArray(14).Enabled = True
-                        If CardStack(0, workcounter, 4) <> 0 Then DispArray(14).Visible = True
+                        Cardarray(14).Visible = True
+                        Cardarray(14).Enabled = True
+                        If CardStack(0, workcounter, 4) <> 0 Then Disparray(14).Visible = True
                     ElseIf CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 1 Then
-                        CardArray(7).Visible = True
-                        CardArray(7).Enabled = True
-                        If CardStack(0, workcounter, 4) <> 0 Then DispArray(7).Visible = True
+                        Cardarray(7).Visible = True
+                        Cardarray(7).Enabled = True
+                        If CardStack(0, workcounter, 4) <> 0 Then Disparray(7).Visible = True
                     ElseIf CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = -1 Then
-                        CardArray(19).Visible = True
-                        CardArray(19).Enabled = True
-                        If CardStack(0, workcounter, 4) <> 0 Then DispArray(19).Visible = True
+                        Cardarray(19).Visible = True
+                        Cardarray(19).Enabled = True
+                        If CardStack(0, workcounter, 4) <> 0 Then Disparray(19).Visible = True
                     ElseIf CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = -1 Then
                         ''if there's already a card in diagonal, don't allow hellriding
                         SEHellride = False
@@ -1580,27 +1580,27 @@
             Next
             If SWHellride = True Then
                 ''make visible and enable hellride slots
-                CardArray(18).Visible = True
-                CardArray(18).Enabled = True
+                Cardarray(18).Visible = True
+                Cardarray(18).Enabled = True
             End If
             If SEHellride = True Then
-                CardArray(20).Visible = True
-                CardArray(20).Enabled = True
+                Cardarray(20).Visible = True
+                Cardarray(20).Enabled = True
             End If
             If NWHellride = True Then
-                CardArray(6).Visible = True
-                CardArray(6).Enabled = True
+                Cardarray(6).Visible = True
+                Cardarray(6).Enabled = True
             End If
             If NEHellride = True Then
-                CardArray(8).Visible = True
-                CardArray(8).Enabled = True
+                Cardarray(8).Visible = True
+                Cardarray(8).Enabled = True
             End If
         ElseIf Deckstate = 2 Then
             Deckstate = 1
             NCounter.Enabled = True
             For workcounter = 1 To 25 Step 1
-                CardArray(workcounter).Enabled = True
-                CardArray(workcounter).Visible = True
+                Cardarray(workcounter).Enabled = True
+                Cardarray(workcounter).Visible = True
             Next
         End If
     End Sub
@@ -1682,19 +1682,19 @@
     Private Sub NCounter_ValueChanged(sender As Object, e As EventArgs) Handles NCounter.ValueChanged
         If Deckstate = 1 Then
             CardStack(0, Currentplane, 4) = NCounter.Value
-            DispArray(13).Visible = False
-            DispArray(13).BackColor = Color.Transparent
+            Disparray(13).Visible = False
+            Disparray(13).BackColor = Color.Transparent
 #Disable Warning CA1303 ' Do not pass literals as localized parameters
-            DispArray(13).Text = " "
+            Disparray(13).Text = " "
 #Enable Warning CA1303 ' Do not pass literals as localized parameters
-            DispArray(13).ForeColor = Color.Gray
-            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Enabled = True
-            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Visible = True
-            If CardStack(0, Currentplane, 4) > 0 Then DispArray(13).BackColor = Color.DarkBlue
-            If CardStack(0, Currentplane, 4) > 0 Then DispArray(13).ForeColor = Color.LightYellow
-            If CardStack(0, Currentplane, 4) < 0 Then DispArray(13).ForeColor = Color.White
-            If CardStack(0, Currentplane, 4) < 0 Then DispArray(13).BackColor = Color.Black
-            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Text = CardStack(0, Currentplane, 4)
+            Disparray(13).ForeColor = Color.Gray
+            If CardStack(0, Currentplane, 4) <> 0 Then Disparray(13).Enabled = True
+            If CardStack(0, Currentplane, 4) <> 0 Then Disparray(13).Visible = True
+            If CardStack(0, Currentplane, 4) > 0 Then Disparray(13).BackColor = Color.DarkBlue
+            If CardStack(0, Currentplane, 4) > 0 Then Disparray(13).ForeColor = Color.LightYellow
+            If CardStack(0, Currentplane, 4) < 0 Then Disparray(13).ForeColor = Color.White
+            If CardStack(0, Currentplane, 4) < 0 Then Disparray(13).BackColor = Color.Black
+            If CardStack(0, Currentplane, 4) <> 0 Then Disparray(13).Text = CardStack(0, Currentplane, 4)
         End If
         If (CardStack(0, Currentplane, 3) = 5 And CardStack(0, Currentplane, 4) > 9) Then
             MsgBox(Aretcounter & " or More Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, Aretcounter & "+ on Aretopolis")
