@@ -37,6 +37,7 @@
     Public ExpPC2019ixgame As Boolean = False
     Public ExpPC2019throne As Boolean = False
     Public ExpPC2019workshop As Boolean = False
+    Public ExpPC2019commander As Boolean = False
     Public ExpPC2017 As Boolean = False
 
     Public Function ReadyDeck() As Boolean
@@ -266,6 +267,12 @@
                 CardStack(0, 98, 3) = -1
                 CardStack(0, 99, 3) = -1
                 CardStack(0, 101, 3) = -1
+            End If
+            If ExpPC2019commander = True Then
+                CardStack(0, 145, 3) = 0
+                AddPhenomToActive(1, {-1, 145})
+            Else
+                CardStack(0, 145, 3) = -1
             End If
         End If
         Return 0

@@ -50,6 +50,7 @@
         ChkBxMultiverseTheros.Checked = Expmetheros
         ChkBx2019Monarch.Checked = ExpPC2019throne
         ChkBx2019Contraption.Checked = ExpPC2019workshop
+        ChkBxPC2019CommanderCards.Checked = ExpPC2019commander
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -159,5 +160,9 @@
 
     Private Sub ChkBx2019Contraption_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBx2019Contraption.CheckedChanged
         ExpPC2019workshop = ChkBx2019Contraption.Checked
+    End Sub
+
+    Private Sub ChkBxPC2019CommanderCards_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxPC2019CommanderCards.CheckedChanged
+        ExpPC2019commander = ChkBxPC2019CommanderCards.Checked
     End Sub
 End Class
