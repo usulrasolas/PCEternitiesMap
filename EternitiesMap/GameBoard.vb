@@ -83,8 +83,8 @@
             CardArray(workcounter).Enabled = False
             CardArray(workcounter).Visible = False
         Next
-        doubleZoomBuffer(0) = slot1
-        doubleZoomBuffer(1) = slot2
+        Doublezoombuffer(0) = slot1
+        Doublezoombuffer(1) = slot2
         PBDoubleZoom1.Enabled = True
         PBDoubleZoom1.Visible = True
         PBDoubleZoom1.BringToFront()
@@ -219,33 +219,33 @@
         If phenomnumber = 26 Then ''Interplanar Tunnel
             eventCardInPlay = phenomnumber
             Deckstate = 4
-            DrawBuffer(0) = DrawCard()
-            DrawBuffer(1) = DrawCard()
-            DrawBuffer(2) = DrawCard()
-            DrawBuffer(3) = DrawCard()
-            DrawBuffer(4) = DrawCard()
-            PickDisplay(26, DrawBuffer(0), DrawBuffer(1), DrawBuffer(2), DrawBuffer(3), DrawBuffer(4))
+            Drawbuffer(0) = DrawCard()
+            Drawbuffer(1) = DrawCard()
+            Drawbuffer(2) = DrawCard()
+            Drawbuffer(3) = DrawCard()
+            Drawbuffer(4) = DrawCard()
+            PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
             MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             eventCardInPlay = phenomnumber
             Deckstate = 6
-            DrawBuffer(0) = DrawCard()
-            DrawBuffer(1) = DrawCard()
+            Drawbuffer(0) = DrawCard()
+            Drawbuffer(1) = DrawCard()
             Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
             If eventdistance = 2 Then
-                DoubleZoom(phenomnumber, DrawBuffer(0), DrawBuffer(1))
-                PlayCard(DrawBuffer(0), 3, xloc, yloc)
-                PlayCard(DrawBuffer(1), 3, xloc, yloc)
+                DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+                PlayCard(Drawbuffer(0), 3, xloc, yloc)
+                PlayCard(Drawbuffer(1), 3, xloc, yloc)
             ElseIf eventdistance = 1 Then
                 Dim ExistingPlane As Integer
-                For workcounter = 1 To masterDeckCount Step 1
+                For workcounter = 1 To Masterdeckcount Step 1
                     If CardStack(0, workcounter, 1) = xloc And CardStack(0, workcounter, 2) = yloc Then
                         ExistingPlane = workcounter
                         ReturnCard(ExistingPlane)
                     End If
-                    DoubleZoom(phenomnumber, DrawBuffer(0), DrawBuffer(1))
-                    PlayCard(DrawBuffer(0), 3, xloc, yloc)
-                    PlayCard(DrawBuffer(1), 3, xloc, yloc)
+                    DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+                    PlayCard(Drawbuffer(0), 3, xloc, yloc)
+                    PlayCard(Drawbuffer(1), 3, xloc, yloc)
                 Next
             Else
                 DisplayZoom(-1)
@@ -314,14 +314,14 @@
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
         ElseIf phenomnumber = 64 Then ''Spatial Merging
-            CardStack(1, DrawBuffer(0), 0) = 1
-            CardStack(1, DrawBuffer(1), 0) = 1
-            CardStack(1, DrawBuffer(0), 1) = 64
-            CardStack(1, DrawBuffer(1), 1) = 64
-            CardStack(1, DrawBuffer(1), 2) = 0
-            CardStack(1, DrawBuffer(0), 2) = 0
-            CardStack(1, DrawBuffer(1), 3) = DrawBuffer(0)
-            CardStack(1, DrawBuffer(0), 3) = DrawBuffer(1)
+            CardStack(1, Drawbuffer(0), 0) = 1
+            CardStack(1, Drawbuffer(1), 0) = 1
+            CardStack(1, Drawbuffer(0), 1) = 64
+            CardStack(1, Drawbuffer(1), 1) = 64
+            CardStack(1, Drawbuffer(1), 2) = 0
+            CardStack(1, Drawbuffer(0), 2) = 0
+            CardStack(1, Drawbuffer(1), 3) = Drawbuffer(0)
+            CardStack(1, Drawbuffer(0), 3) = Drawbuffer(1)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
@@ -341,8 +341,8 @@
             End If
             TranslateBoard(invxloc, invyloc)
             Deckstate = 1
-            PlayCard(DrawBuffer(0), 3, 0, 0)
-            PlayCard(DrawBuffer(1), 3, 0, 0)
+            PlayCard(Drawbuffer(0), 3, 0, 0)
+            PlayCard(Drawbuffer(1), 3, 0, 0)
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
@@ -360,18 +360,18 @@
         GameEvent = -1
         If EventType = 9 Then ''Pools of Becoming Triple Draw
             Deckstate = 3
-            DrawBuffer(0) = DrawCard()
-            DrawBuffer(1) = DrawCard()
-            DrawBuffer(2) = DrawCard()
-            PickDisplay(currentPlane, Nothing, Nothing, DrawBuffer(0), DrawBuffer(1), DrawBuffer(2))
-            ReturnCard(DrawBuffer(0))
-            ReturnCard(DrawBuffer(1))
-            ReturnCard(DrawBuffer(2))
+            Drawbuffer(0) = DrawCard()
+            Drawbuffer(1) = DrawCard()
+            Drawbuffer(2) = DrawCard()
+            PickDisplay(Currentplane, Nothing, Nothing, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2))
+            ReturnCard(Drawbuffer(0))
+            ReturnCard(Drawbuffer(1))
+            ReturnCard(Drawbuffer(2))
             MsgBox("All 3 Revealed Chaos Effects Resolve." & vbCrLf & "Player who rolled chaos chooses resolve order." & vbCrLf & "Click Pools of Becoming to Return to Play when All Resolved", MsgBoxStyle.Information, "Pools of Becoming")
             GameEvent = EventType
         ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
             Deckstate = 3
-            PickDisplay(currentPlane, Nothing, Nothing, Nothing, CardLookup(Deckcounter), Nothing)
+            PickDisplay(Currentplane, Nothing, Nothing, Nothing, CardLookup(Deckcounter), Nothing)
             MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
             GameEvent = EventType
         ElseIf EventType = 118 Then
@@ -428,7 +428,7 @@
         PBZoom.Enabled = True
         PBZoom.Visible = True
         PBZoom.BringToFront()
-        PBZoom.Image = CardImage(DrawBuffer(0))
+        PBZoom.Image = CardImage(Drawbuffer(0))
         Deckstate = 1
         HidePickDisplay()
         PopulateBoard()
@@ -480,7 +480,7 @@
             DispArray(workcounter).ForeColor = Color.Gray
             DispArray(workcounter).Invalidate()
         Next
-        For workcounter = 1 To masterDeckCount Step 1
+        For workcounter = 1 To Masterdeckcount Step 1
             If CardStack(0, workcounter, 5) = 3 Then
                 If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 3 Then
                     UpdateArrayElement(1, workcounter)
@@ -513,7 +513,7 @@
                     ElseIf CheckPosition(workcounter) = False Then
                         NCounter.Enabled = False
                     End If
-                    currentPlane = workcounter
+                    Currentplane = workcounter
                     NCounter.Value = CardStack(0, workcounter, 4)
                 ElseIf CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = 0 Then
                     UpdateArrayElement(14, workcounter)
@@ -581,13 +581,13 @@
         PCardSelect6.SendToBack()
         PCardSelect6.Visible = False
         PCardSelect6.Image = Nothing
-        If CardStack(0, currentPlane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
-            If CardStack(0, currentPlane, 4) >= aretCounter And aretResetMove = True Then CardStack(0, currentPlane, 4) = 0
-        ElseIf CardStack(0, currentPlane, 3) = 6 Then ''Naar Isle Counter Reset on Exit if reset is true
-            If naarReset = True Then CardStack(0, currentPlane, 4) = 0
-        ElseIf (CardStack(0, currentPlane, 3) = 7 And CardStack(0, currentPlane, 4) > 0) Then ''Mount Keralia Damage on Exit Reminder/Reset
-            MsgBox("Mount Keralia Deals " & CardStack(0, currentPlane, 4) & " Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
-            CardStack(0, currentPlane, 4) = 0
+        If CardStack(0, Currentplane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
+            If CardStack(0, Currentplane, 4) >= Aretcounter And Aretresetmove = True Then CardStack(0, Currentplane, 4) = 0
+        ElseIf CardStack(0, Currentplane, 3) = 6 Then ''Naar Isle Counter Reset on Exit if reset is true
+            If Naarreset = True Then CardStack(0, Currentplane, 4) = 0
+        ElseIf (CardStack(0, Currentplane, 3) = 7 And CardStack(0, Currentplane, 4) > 0) Then ''Mount Keralia Damage on Exit Reminder/Reset
+            MsgBox("Mount Keralia Deals " & CardStack(0, Currentplane, 4) & " Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
+            CardStack(0, Currentplane, 4) = 0
         End If
         Return 0
     End Function
@@ -1107,20 +1107,20 @@
     End Function
 
     Shared Function PhenomMoveChanceCheck() As Boolean
-        If phenomMoveChance > 0 And phenomSupport = True Then
+        If Phenommovechance > 0 And Phenomsupport = True Then
             PhenomMoveChanceCheck = False
             Dim randomroll As Integer = Int((100 * Rnd()) + 1)
-            If randomroll <= phenomMoveChance Then PhenomMoveChanceCheck = True
+            If randomroll <= Phenommovechance Then PhenomMoveChanceCheck = True
         Else
             PhenomMoveChanceCheck = False
         End If
     End Function
 
     Shared Function PhenomHellMoveChanceCheck() As Boolean
-        If phenomHellJChance > 0 And phenomSupport = True Then
+        If Phenomhelljchance > 0 And Phenomsupport = True Then
             PhenomHellMoveChanceCheck = False
             Dim randomroll As Integer = Int((100 * Rnd()) + 1)
-            If randomroll <= phenomHellJChance Then PhenomHellMoveChanceCheck = True
+            If randomroll <= Phenomhelljchance Then PhenomHellMoveChanceCheck = True
         Else
             PhenomHellMoveChanceCheck = False
         End If
@@ -1138,7 +1138,7 @@
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 2 Then
                         DisplayZoom(workcounter)
@@ -1150,7 +1150,7 @@
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         If Deckstate = 2 Then
-            If PhenomMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 TranslateBoard(0, -1)
                 UpdateArrays()
                 PBWalk_Click(PictureBox7, Nothing)
@@ -1159,7 +1159,7 @@
                 PhenomEvent(PickRandomPhenom, 0, 1)
             End If
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 1 Then
                         DisplayZoom(workcounter)
@@ -1171,7 +1171,7 @@
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = 2 Then
                         DisplayZoom(workcounter)
@@ -1183,7 +1183,7 @@
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -2 And CardStack(0, workcounter, 2) = 1 Then
                         DisplayZoom(workcounter)
@@ -1195,7 +1195,7 @@
 
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         If Deckstate = 2 Then
-            If PhenomHellMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomHellMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 PlayCard(DrawCard, 3, -1, 1)
                 MoveEventCheck()
                 TranslateBoard(1, -1)
@@ -1206,7 +1206,7 @@
                 PhenomEvent(PickRandomPhenom, -1, 1)
             End If
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 1 Then
                         DisplayZoom(workcounter)
@@ -1219,7 +1219,7 @@
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 2 Then
                         DisplayZoom(workcounter)
@@ -1231,7 +1231,7 @@
 
     Private Sub PictureBox8_Click(sender As Object, e As EventArgs) Handles PictureBox8.Click
         If Deckstate = 2 Then
-            If PhenomHellMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomHellMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 PlayCard(DrawCard, 3, 1, 1)
                 MoveEventCheck()
                 TranslateBoard(-1, -1)
@@ -1243,7 +1243,7 @@
             End If
 
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = 1 Then
                         DisplayZoom(workcounter)
@@ -1255,7 +1255,7 @@
 
     Private Sub PictureBox9_Click(sender As Object, e As EventArgs) Handles PictureBox9.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 2 And CardStack(0, workcounter, 2) = 1 Then
                         DisplayZoom(workcounter)
@@ -1267,7 +1267,7 @@
 
     Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 3 And CardStack(0, workcounter, 2) = 0 Then
                         DisplayZoom(workcounter)
@@ -1279,7 +1279,7 @@
 
     Private Sub PictureBox15_Click(sender As Object, e As EventArgs) Handles PictureBox15.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 2 And CardStack(0, workcounter, 2) = 0 Then
                         DisplayZoom(workcounter)
@@ -1291,7 +1291,7 @@
 
     Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
         If Deckstate = 2 Then
-            If PhenomMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 MoveEventCheck()
                 TranslateBoard(-1, 0)
                 UpdateArrays()
@@ -1301,7 +1301,7 @@
                 PhenomEvent(PickRandomPhenom, 1, 0)
             End If
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = 0 Then
                         DisplayZoom(workcounter)
@@ -1312,7 +1312,7 @@
     End Sub
 
     Private Sub PictureBox13_Click(sender As Object, e As EventArgs) Handles PictureBox13.Click
-        For workcounter = 1 To masterDeckCount Step 1
+        For workcounter = 1 To Masterdeckcount Step 1
             If CardStack(0, workcounter, 5) = 3 Then
                 If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 0 Then
                     DisplayZoom(workcounter)
@@ -1323,7 +1323,7 @@
 
     Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
         If Deckstate = 2 Then
-            If PhenomMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 MoveEventCheck()
                 TranslateBoard(1, 0)
                 UpdateArrays()
@@ -1333,7 +1333,7 @@
                 PhenomEvent(PickRandomPhenom, -1, 0)
             End If
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 0 Then
                         DisplayZoom(workcounter)
@@ -1345,7 +1345,7 @@
 
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs) Handles PictureBox11.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -2 And CardStack(0, workcounter, 2) = 0 Then
                         DisplayZoom(workcounter)
@@ -1357,7 +1357,7 @@
 
     Private Sub PictureBox10_Click(sender As Object, e As EventArgs) Handles PictureBox10.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -3 And CardStack(0, workcounter, 2) = 0 Then
                         DisplayZoom(workcounter)
@@ -1369,7 +1369,7 @@
 
     Private Sub PictureBox17_Click(sender As Object, e As EventArgs) Handles PictureBox17.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -2 And CardStack(0, workcounter, 2) = -1 Then
                         DisplayZoom(workcounter)
@@ -1381,7 +1381,7 @@
 
     Private Sub PictureBox18_Click(sender As Object, e As EventArgs) Handles PictureBox18.Click
         If Deckstate = 2 Then
-            If PhenomHellMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomHellMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 PlayCard(DrawCard, 3, -1, -1)
                 MoveEventCheck()
                 TranslateBoard(1, 1)
@@ -1392,7 +1392,7 @@
                 PhenomEvent(PickRandomPhenom, -1, -1)
             End If
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = -1 Then
                         DisplayZoom(workcounter)
@@ -1404,7 +1404,7 @@
 
     Private Sub PictureBox19_Click(sender As Object, e As EventArgs) Handles PictureBox19.Click
         If Deckstate = 2 Then
-            If PhenomMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 MoveEventCheck()
                 TranslateBoard(0, 1)
                 UpdateArrays()
@@ -1414,7 +1414,7 @@
                 PhenomEvent(PickRandomPhenom, 0, -1)
             End If
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = -1 Then
                         DisplayZoom(workcounter)
@@ -1426,7 +1426,7 @@
 
     Private Sub PictureBox20_Click(sender As Object, e As EventArgs) Handles PictureBox20.Click
         If Deckstate = 2 Then
-            If PhenomHellMoveChanceCheck() = False Or phenomDeckSize < 1 Then
+            If PhenomHellMoveChanceCheck() = False Or Phenomdecksize < 1 Then
                 MoveEventCheck()
                 PlayCard(DrawCard, 3, 1, -1)
                 TranslateBoard(-1, 1)
@@ -1437,7 +1437,7 @@
                 PhenomEvent(PickRandomPhenom, 1, -1)
             End If
         ElseIf Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = -1 Then
                         DisplayZoom(workcounter)
@@ -1449,7 +1449,7 @@
 
     Private Sub PictureBox21_Click(sender As Object, e As EventArgs) Handles PictureBox21.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 2 And CardStack(0, workcounter, 2) = -1 Then
                         DisplayZoom(workcounter)
@@ -1461,7 +1461,7 @@
 
     Private Sub PictureBox24_Click(sender As Object, e As EventArgs) Handles PictureBox24.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = -2 Then
                         DisplayZoom(workcounter)
@@ -1473,7 +1473,7 @@
 
     Private Sub PictureBox23_Click(sender As Object, e As EventArgs) Handles PictureBox23.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = -2 Then
                         DisplayZoom(workcounter)
@@ -1485,7 +1485,7 @@
 
     Private Sub PictureBox22_Click(sender As Object, e As EventArgs) Handles PictureBox22.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = -2 Then
                         DisplayZoom(workcounter)
@@ -1507,12 +1507,12 @@
             Next
             CardArray(13).Enabled = True
             CardArray(13).Visible = True
-            If CardStack(0, currentPlane, 4) <> 0 Then DispArray(13).Visible = True
+            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Visible = True
             Dim NEHellride As Boolean = True
             Dim SEHellride As Boolean = True
             Dim NWHellride As Boolean = True
             Dim SWHellride As Boolean = True
-            For workcounter = 1 To masterDeckCount Step 1 'for every card
+            For workcounter = 1 To Masterdeckcount Step 1 'for every card
                 If CardStack(0, workcounter, 5) = 3 Then 'that is active
                     If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 0 Then 'if it occupies valid movement coodinates show and enable it.
                         CardArray(12).Visible = True
@@ -1574,26 +1574,26 @@
     End Sub
 
     Private Sub PBChaos_Click(sender As Object, e As EventArgs) Handles PBChaos.Click
-        If CardStack(0, currentPlane, 3) = 0 Then
-            DisplayZoom(currentPlane)
-        ElseIf CardStack(0, currentPlane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
-            MsgBox("Please draw " & CardStack(0, currentPlane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
-        ElseIf CardStack(0, currentPlane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
+        If CardStack(0, Currentplane, 3) = 0 Then
+            DisplayZoom(Currentplane)
+        ElseIf CardStack(0, Currentplane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
+            MsgBox("Please draw " & CardStack(0, Currentplane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
+        ElseIf CardStack(0, Currentplane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
             If Deckcounter >= 3 Then
                 GameEvent(9)
             Else
                 MsgBox("Less Than 3 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Pools of Becoming Failure")
             End If
-        ElseIf CardStack(0, currentPlane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
+        ElseIf CardStack(0, Currentplane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
             If Deckcounter >= 2 Then
                 GameEvent(11)
             Else
                 MsgBox("Less than 2 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Stairs to Infinity Scry")
             End If
-        ElseIf CardStack(0, currentPlane, 3) = 101 Then 'holodeck
+        ElseIf CardStack(0, Currentplane, 3) = 101 Then 'holodeck
             GameEvent(118)
-        ElseIf CardStack(0, currentPlane, 3) > -1 Then
-            DisplayZoom(currentPlane)
+        ElseIf CardStack(0, Currentplane, 3) > -1 Then
+            DisplayZoom(Currentplane)
         End If
     End Sub
 
@@ -1622,7 +1622,7 @@
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 3 Then
                         DisplayZoom(workcounter)
@@ -1634,7 +1634,7 @@
 
     Private Sub PictureBox25_Click(sender As Object, e As EventArgs) Handles PictureBox25.Click
         If Deckstate = 1 Then
-            For workcounter = 1 To masterDeckCount Step 1
+            For workcounter = 1 To Masterdeckcount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = -3 Then
                         DisplayZoom(workcounter)
@@ -1646,23 +1646,23 @@
 
     Private Sub NCounter_ValueChanged(sender As Object, e As EventArgs) Handles NCounter.ValueChanged
         If Deckstate = 1 Then
-            CardStack(0, currentPlane, 4) = NCounter.Value
+            CardStack(0, Currentplane, 4) = NCounter.Value
             DispArray(13).Visible = False
             DispArray(13).BackColor = Color.Transparent
 #Disable Warning CA1303 ' Do not pass literals as localized parameters
             DispArray(13).Text = " "
 #Enable Warning CA1303 ' Do not pass literals as localized parameters
             DispArray(13).ForeColor = Color.Gray
-            If CardStack(0, currentPlane, 4) <> 0 Then DispArray(13).Enabled = True
-            If CardStack(0, currentPlane, 4) <> 0 Then DispArray(13).Visible = True
-            If CardStack(0, currentPlane, 4) > 0 Then DispArray(13).BackColor = Color.DarkBlue
-            If CardStack(0, currentPlane, 4) > 0 Then DispArray(13).ForeColor = Color.LightYellow
-            If CardStack(0, currentPlane, 4) < 0 Then DispArray(13).ForeColor = Color.White
-            If CardStack(0, currentPlane, 4) < 0 Then DispArray(13).BackColor = Color.Black
-            If CardStack(0, currentPlane, 4) <> 0 Then DispArray(13).Text = CardStack(0, currentPlane, 4)
+            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Enabled = True
+            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Visible = True
+            If CardStack(0, Currentplane, 4) > 0 Then DispArray(13).BackColor = Color.DarkBlue
+            If CardStack(0, Currentplane, 4) > 0 Then DispArray(13).ForeColor = Color.LightYellow
+            If CardStack(0, Currentplane, 4) < 0 Then DispArray(13).ForeColor = Color.White
+            If CardStack(0, Currentplane, 4) < 0 Then DispArray(13).BackColor = Color.Black
+            If CardStack(0, Currentplane, 4) <> 0 Then DispArray(13).Text = CardStack(0, Currentplane, 4)
         End If
-        If (CardStack(0, currentPlane, 3) = 5 And CardStack(0, currentPlane, 4) > 9) Then
-            MsgBox(aretCounter & " or More Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, aretCounter & "+ on Aretopolis")
+        If (CardStack(0, Currentplane, 3) = 5 And CardStack(0, Currentplane, 4) > 9) Then
+            MsgBox(Aretcounter & " or More Counters!" & vbCrLf & "Please Planeswalk Now", MsgBoxStyle.Exclamation, Aretcounter & "+ on Aretopolis")
             PBWalk_Click(NCounter, Nothing)
             PictureBox13_Click(NCounter, Nothing)
         End If
@@ -1670,12 +1670,12 @@
 
     Private Sub PCardSelect2_Click(sender As Object, e As EventArgs) Handles PCardSelect2.Click
         If Deckstate = 3 Then
-            If currentPlane = 53 Then 'triple draw just needs to stay until clicked
+            If Currentplane = 53 Then 'triple draw just needs to stay until clicked
                 If MsgBox("Are you done applying all 3 chaos effects?", MsgBoxStyle.YesNo, "Pools of Becoming Exit") = vbYes Then
                     HidePickDisplay()
                     Deckstate = 1
                 End If
-            ElseIf currentPlane = 65 Then
+            ElseIf Currentplane = 65 Then
                 If MsgBox("Are you sure you want to put the revealed card on the bottom?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
                     HidePickDisplay()
                     ReturnCard(DrawCard)
@@ -1699,7 +1699,7 @@
 
     Private Sub PCardSelect5_Click(sender As Object, e As EventArgs) Handles PCardSelect5.Click
         If Deckstate = 3 Then
-            If currentPlane = 65 Then
+            If Currentplane = 65 Then
                 If MsgBox("Are you sure you want to leave the revealed card on the top?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
                     HidePickDisplay()
                     Deckstate = 1
@@ -1707,13 +1707,13 @@
             End If
         ElseIf Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(3), 0) = Deckcounter + 1
+            CardStack(0, Drawbuffer(3), 0) = Deckcounter + 1
             Deckcounter += 1
-            CardLookup(Deckcounter) = DrawBuffer(3)
-            ReturnCard(DrawBuffer(1))
-            ReturnCard(DrawBuffer(2))
-            ReturnCard(DrawBuffer(0))
-            ReturnCard(DrawBuffer(4))
+            CardLookup(Deckcounter) = Drawbuffer(3)
+            ReturnCard(Drawbuffer(1))
+            ReturnCard(Drawbuffer(2))
+            ReturnCard(Drawbuffer(0))
+            ReturnCard(Drawbuffer(4))
             HidePickDisplay()
             ResolvePhenom(eventCardInPlay)
         End If
@@ -1722,13 +1722,13 @@
     Private Sub PCardSelect1_Click(sender As Object, e As EventArgs) Handles PCardSelect1.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(0), 0) = Deckcounter + 1
+            CardStack(0, Drawbuffer(0), 0) = Deckcounter + 1
             Deckcounter += 1
-            CardLookup(Deckcounter) = DrawBuffer(0)
-            ReturnCard(DrawBuffer(1))
-            ReturnCard(DrawBuffer(2))
-            ReturnCard(DrawBuffer(3))
-            ReturnCard(DrawBuffer(4))
+            CardLookup(Deckcounter) = Drawbuffer(0)
+            ReturnCard(Drawbuffer(1))
+            ReturnCard(Drawbuffer(2))
+            ReturnCard(Drawbuffer(3))
+            ReturnCard(Drawbuffer(4))
             HidePickDisplay()
             ResolvePhenom(eventCardInPlay)
         End If
@@ -1737,58 +1737,58 @@
     Private Sub PCardSelect6_Click(sender As Object, e As EventArgs) Handles PCardSelect6.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(4), 0) = Deckcounter + 1
+            CardStack(0, Drawbuffer(4), 0) = Deckcounter + 1
             Deckcounter += 1
-            CardLookup(Deckcounter) = DrawBuffer(4)
-            ReturnCard(DrawBuffer(1))
-            ReturnCard(DrawBuffer(2))
-            ReturnCard(DrawBuffer(0))
-            ReturnCard(DrawBuffer(3))
+            CardLookup(Deckcounter) = Drawbuffer(4)
+            ReturnCard(Drawbuffer(1))
+            ReturnCard(Drawbuffer(2))
+            ReturnCard(Drawbuffer(0))
+            ReturnCard(Drawbuffer(3))
             HidePickDisplay()
             ResolvePhenom(eventCardInPlay)
         ElseIf Deckstate = 6 Then
-            DisplayZoom(DrawBuffer(1))
+            DisplayZoom(Drawbuffer(1))
         End If
     End Sub
 
     Private Sub PCardSelect4_Click(sender As Object, e As EventArgs) Handles PCardSelect4.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(2), 0) = Deckcounter + 1
+            CardStack(0, Drawbuffer(2), 0) = Deckcounter + 1
             Deckcounter += 1
-            CardLookup(Deckcounter) = DrawBuffer(2)
-            ReturnCard(DrawBuffer(1))
-            ReturnCard(DrawBuffer(3))
-            ReturnCard(DrawBuffer(0))
-            ReturnCard(DrawBuffer(4))
+            CardLookup(Deckcounter) = Drawbuffer(2)
+            ReturnCard(Drawbuffer(1))
+            ReturnCard(Drawbuffer(3))
+            ReturnCard(Drawbuffer(0))
+            ReturnCard(Drawbuffer(4))
             HidePickDisplay()
             ResolvePhenom(eventCardInPlay)
         ElseIf Deckstate = 6 Then
-            DisplayZoom(DrawBuffer(0))
+            DisplayZoom(Drawbuffer(0))
         End If
     End Sub
 
     Private Sub PCardSelect3_Click(sender As Object, e As EventArgs) Handles PCardSelect3.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(1), 0) = Deckcounter + 1
+            CardStack(0, Drawbuffer(1), 0) = Deckcounter + 1
             Deckcounter += 1
-            CardLookup(Deckcounter) = DrawBuffer(1)
-            ReturnCard(DrawBuffer(3))
-            ReturnCard(DrawBuffer(2))
-            ReturnCard(DrawBuffer(0))
-            ReturnCard(DrawBuffer(4))
+            CardLookup(Deckcounter) = Drawbuffer(1)
+            ReturnCard(Drawbuffer(3))
+            ReturnCard(Drawbuffer(2))
+            ReturnCard(Drawbuffer(0))
+            ReturnCard(Drawbuffer(4))
             HidePickDisplay()
             ResolvePhenom(eventCardInPlay)
         End If
     End Sub
 
     Private Sub NDoubleZoom1_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom1.ValueChanged
-        CardStack(0, doubleZoomBuffer(0), 4) = NDoubleZoom1.Value
+        CardStack(0, Doublezoombuffer(0), 4) = NDoubleZoom1.Value
     End Sub
 
     Private Sub NDoubleZoom2_ValueChanged(sender As Object, e As EventArgs) Handles NDoubleZoom2.ValueChanged
-        CardStack(0, doubleZoomBuffer(1), 4) = NDoubleZoom2.Value
+        CardStack(0, Doublezoombuffer(1), 4) = NDoubleZoom2.Value
     End Sub
 
 End Class
