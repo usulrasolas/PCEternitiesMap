@@ -1,6 +1,6 @@
 ﻿Module PlanarDeck
     ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
-    Public deckstate As Integer = 0
+    Public Deckstate As Integer = 0
     Public deckCounter As Integer = 0
     Public Const masterDeckCount As Integer = 253
     Public CardLookup(masterDeckCount) As Integer
@@ -42,7 +42,7 @@
     Public Function ReadyDeck() As Boolean
         Dim WorkCounter As Integer
         ReadyDeck = False
-        If deckstate = 0 Then
+        If Deckstate = 0 Then
             For WorkCounter = 0 To masterDeckCount Step 1
                 CardStack(0, WorkCounter, 5) = -1 'Set All State -1disable 0ready 1indeck 2inhand 3onboard
                 CardStack(0, WorkCounter, 4) = 0 'Counters
@@ -179,7 +179,7 @@
                 End If
             Next
 
-            deckstate = 1
+            Deckstate = 1
             Shuffle()
             ReadyDeck = True
         End If
@@ -321,7 +321,7 @@
             CardStack(1, WorkCounter, 0) = 0 'DeckPos
         Next
         deckCounter = 0
-        deckstate = 0
+        Deckstate = 0
         Return 0
     End Function
 
@@ -332,7 +332,7 @@
         Dim ShufflePosCounter As Integer = deckCounter
         Dim WorkCounter As Integer
         Randomize()
-        If deckstate = 1 Or 2 Then
+        If Deckstate = 1 Or 2 Then
             For WorkCounter = 1 To deckCounter Step 1
 500:
                 Dim ShuffleRandomVal As Integer = Rnd() * deckCounter
@@ -357,7 +357,7 @@
     End Function
 
     Public Function DrawCard() As Integer
-        If deckstate = 1 OrElse deckstate = 2 OrElse deckstate = 5 Then
+        If Deckstate = 1 OrElse Deckstate = 2 OrElse Deckstate = 5 Then
             DrawBuffer(0) = CardLookup(deckCounter)
             CardStack(0, CardLookup(deckCounter), 5) = 2
             CardStack(0, CardLookup(deckCounter), 0) = 0
@@ -366,7 +366,7 @@
             CardLookup(deckCounter) = 0
             deckCounter -= 1
             Return DrawBuffer(0)
-        ElseIf deckstate = 4 OrElse deckstate = 6 OrElse deckstate = 3 Then ''dont update draw buffer
+        ElseIf Deckstate = 4 OrElse Deckstate = 6 OrElse Deckstate = 3 Then ''dont update draw buffer
             DrawCard = CardLookup(deckCounter)
             CardStack(0, CardLookup(deckCounter), 5) = 2
             CardStack(0, CardLookup(deckCounter), 0) = 0
@@ -481,7 +481,7 @@
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
         If pretranslateReset = True Then CardStack(0, currentPlane, 4) = 0 ''need to be refactored after phenoms
-        If deckstate = 2 OrElse deckstate = 4 OrElse deckstate = 5 Then
+        If Deckstate = 2 OrElse Deckstate = 4 OrElse Deckstate = 5 Then
             For workcounter = 1 To masterDeckCount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     CardStack(0, workcounter, 1) += XChange
@@ -517,7 +517,7 @@
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
         CullBoard = False
-        If InfinitePlane = False AndAlso deckstate = 2 Then
+        If InfinitePlane = False AndAlso Deckstate = 2 Then
             For workcounter = 1 To masterDeckCount Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
@@ -546,7 +546,7 @@
         Dim EPopulateCheck As Boolean = True
         Dim WPopulateCheck As Boolean = True
         PopulateBoard = False
-        If deckstate = 2 Or 1 Then
+        If Deckstate = 2 Or 1 Then
             For workcounter = 1 To masterDeckCount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     If CardStack(0, workcounter, 1) = 0 AndAlso CardStack(0, workcounter, 2) = 1 Then
