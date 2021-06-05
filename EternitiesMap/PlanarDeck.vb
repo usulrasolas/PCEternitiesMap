@@ -148,7 +148,7 @@
                 CardStack(0, 166, 5) = -1
                 CardStack(0, 167, 5) = -1
                 CardStack(0, 168, 5) = -1
-                CardStack(0, 170, 5) = -1
+                If ExpPC2019commander = False Then CardStack(0, 170, 5) = -1
                 If ExpPC2019throne = False Then CardStack(0, 176, 5) = -1
                 If ExpPC2019workshop = False Then CardStack(0, 173, 5) = -1
             End If
