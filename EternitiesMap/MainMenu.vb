@@ -30,14 +30,14 @@
         ChkAertReset.Checked = aretResetMove
         NumAretMax.Value = aretCounter
         ChkPhenomSupport.Checked = phenomSupport
-        TBPhenomHJChance.Value = PhenomHellJChance
-        TBPhenomMoveChance.Value = PhenomMoveChance
-        LBLHJChance.Text = PhenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
-        LBLMoveChance.Text = PhenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
-        ChkPCAnthology.Checked = PCAnthologies
-        ChkAmon.Checked = ExpAmon
+        TBPhenomHJChance.Value = phenomHellJChance
+        TBPhenomMoveChance.Value = phenomMoveChance
+        LBLHJChance.Text = phenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
+        LBLMoveChance.Text = phenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
+        ChkPCAnthology.Checked = pCAnthologies
+        ChkAmon.Checked = expMEAmon
         ChkIxalan.Checked = ExpIxalan
-        ChkFiora.Checked = ExpFiora
+        ChkFiora.Checked = expMEFiora
         ChkGeekscape.Checked = ExpGeek
         ChkPC2019.Checked = ExpPC2019
         ChkBox2019Ixalan.Checked = ExpPC2019IxGame
@@ -77,21 +77,21 @@
     End Sub
 
     Private Sub TBPhenomHJChance_Scroll(sender As Object, e As EventArgs) Handles TBPhenomHJChance.Scroll
-        PhenomHellJChance = TBPhenomHJChance.Value
-        LBLHJChance.Text = PhenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
+        phenomHellJChance = TBPhenomHJChance.Value
+        LBLHJChance.Text = phenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
     End Sub
 
     Private Sub TBPhenomMoveChance_Scroll(sender As Object, e As EventArgs) Handles TBPhenomMoveChance.Scroll
-        PhenomMoveChance = TBPhenomMoveChance.Value
-        LBLMoveChance.Text = PhenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
+        phenomMoveChance = TBPhenomMoveChance.Value
+        LBLMoveChance.Text = phenomMoveChance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
     End Sub
 
     Private Sub ChkPCAnthology_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPCAnthology.CheckedChanged
-        PCAnthologies = ChkPCAnthology.Checked
+        pCAnthologies = ChkPCAnthology.Checked
     End Sub
 
     Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs) Handles ChkFiora.CheckedChanged
-        ExpFiora = ChkFiora.Checked
+        expMEFiora = ChkFiora.Checked
     End Sub
 
     Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
@@ -118,7 +118,7 @@
     End Sub
 
     Private Sub ChkAmon_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAmon.CheckedChanged
-        ExpAmon = ChkAmon.Checked
+        expMEAmon = ChkAmon.Checked
     End Sub
 
     Private Sub ChkBox2019Ixalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBox2019Ixalan.CheckedChanged
