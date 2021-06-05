@@ -133,21 +133,7 @@
     End Function
 
     Function DisplayZoom(CardNumber As Integer) As Boolean
-        If CheckPosition(CardNumber) = True AndAlso Deckstate < 9 Or CheckPosition(CardNumber) = False AndAlso Deckstate = 6 Then
-            PBZoom.Image = CardImage(CardNumber)
-            PBZoom.BringToFront()
-            PBZoom.Visible = True
-            PBZoom.Enabled = True
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Visible = True
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
-            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
-            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
-            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
-            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
-            NCounter.Enabled = False
-            DisplayZoom = True
-        ElseIf CheckPosition(CardNumber) = False And Deckstate = 9 Then
+        If CheckPosition(CardNumber) = True AndAlso Deckstate < 9 Or CheckPosition(CardNumber) = False AndAlso Deckstate = 6 Or CheckPosition(CardNumber) = False AndAlso Deckstate = 9 Then
             PBZoom.Image = CardImage(CardNumber)
             PBZoom.BringToFront()
             PBZoom.Visible = True
