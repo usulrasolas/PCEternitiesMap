@@ -18,18 +18,18 @@
     End Sub
 
     Private Sub ChkNaarReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkNaarReset.CheckedChanged
-        NaarReset = ChkNaarReset.Checked
+        naarReset = ChkNaarReset.Checked
     End Sub
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CHKInfinite.Checked = InfinitePlane
-        ChkNaarReset.Checked = NaarReset
-        ChkPreTransReset.Checked = PretranslateReset
-        ChkResetReturn.Checked = ResetOnReturn
-        ChkDistanceReset.Checked = DistanceReset
-        ChkAertReset.Checked = AretResetMove
-        NumAretMax.Value = AretCounter
-        ChkPhenomSupport.Checked = PhenomSupport
+        ChkNaarReset.Checked = naarReset
+        ChkPreTransReset.Checked = pretranslateReset
+        ChkResetReturn.Checked = resetOnReturn
+        ChkDistanceReset.Checked = distanceReset
+        ChkAertReset.Checked = aretResetMove
+        NumAretMax.Value = aretCounter
+        ChkPhenomSupport.Checked = phenomSupport
         TBPhenomHJChance.Value = PhenomHellJChance
         TBPhenomMoveChance.Value = PhenomMoveChance
         LBLHJChance.Text = PhenomHellJChance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
@@ -53,27 +53,27 @@
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
-        PretranslateReset = ChkPreTransReset.Checked
+        pretranslateReset = ChkPreTransReset.Checked
     End Sub
 
     Private Sub ChkResetReturn_CheckedChanged(sender As Object, e As EventArgs) Handles ChkResetReturn.CheckedChanged
-        ResetOnReturn = ChkResetReturn.Checked
+        resetOnReturn = ChkResetReturn.Checked
     End Sub
 
     Private Sub ChkDistanceReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkDistanceReset.CheckedChanged
-        DistanceReset = ChkDistanceReset.Checked
+        distanceReset = ChkDistanceReset.Checked
     End Sub
 
     Private Sub ChkAertReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkAertReset.CheckedChanged
-        AretResetMove = ChkAertReset.Checked
+        aretResetMove = ChkAertReset.Checked
     End Sub
 
     Private Sub NumAretMax_ValueChanged(sender As Object, e As EventArgs) Handles NumAretMax.ValueChanged
-        AretCounter = NumAretMax.Value
+        aretCounter = NumAretMax.Value
     End Sub
 
     Private Sub ChkPhenomSupport_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPhenomSupport.CheckedChanged
-        PhenomSupport = ChkPhenomSupport.Checked
+        phenomSupport = ChkPhenomSupport.Checked
     End Sub
 
     Private Sub TBPhenomHJChance_Scroll(sender As Object, e As EventArgs) Handles TBPhenomHJChance.Scroll
