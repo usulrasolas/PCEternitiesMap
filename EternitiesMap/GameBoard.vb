@@ -213,6 +213,8 @@
                 NCounter.Enabled = False
                 DisplayZoom = True
             End If
+        Else
+            MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
         End If
         Return DisplayZoom
     End Function
@@ -521,7 +523,7 @@
                     UpdateArrayElement(13, workcounter)
                     If CheckPosition(workcounter) = True Then
                         NCounter.Enabled = True
-                    ElseIf CheckPosition(workcounter) = False Then
+                    Else
                         NCounter.Enabled = False
                     End If
                     Currentplane = workcounter
@@ -550,6 +552,8 @@
                     UpdateArrayElement(24, workcounter)
                 ElseIf CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = -3 Then
                     UpdateArrayElement(25, workcounter)
+                Else
+                    ''Nothing happens
                 End If
             End If
         Next
@@ -567,8 +571,8 @@
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).ForeColor = Color.White
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).BackColor = Color.Black
             If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Text = CardStack(0, Cardnumber, 4)
-        ElseIf CheckPosition(Cardnumber) = False Then
-            ''if multiple occupancy
+        Else
+            ''assumed multiple occupancy
             If CardStack(1, Cardnumber, 0) >= 1 Then
                 ''if HASMETADATA is set to any >0 value
                 Dim UpdateCard1 As Integer = Cardnumber
@@ -606,6 +610,8 @@
             ''Mount Keralia Damage on Exit Reminder/Reset
             MsgBox("Mount Keralia Deals " & CardStack(0, Currentplane, 4) & " Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
             CardStack(0, Currentplane, 4) = 0
+        Else
+            ''nothing happens no event
         End If
         Return 0
     End Function
@@ -1184,6 +1190,8 @@
                     End If
                 End If
             Next
+        Else
+            ''other state shouldn't trigger?
         End If
     End Sub
 
