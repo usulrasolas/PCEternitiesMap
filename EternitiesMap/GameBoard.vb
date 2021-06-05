@@ -371,7 +371,7 @@
             GameEvent = EventType
         ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
             Deckstate = 3
-            PickDisplay(currentPlane, Nothing, Nothing, Nothing, CardLookup(deckCounter), Nothing)
+            PickDisplay(currentPlane, Nothing, Nothing, Nothing, CardLookup(Deckcounter), Nothing)
             MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
             GameEvent = EventType
         ElseIf EventType = 118 Then
@@ -1539,7 +1539,7 @@
                     ElseIf CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 1 Then
                         NWHellride = False
                     End If
-                    If deckCounter < 1 Then 'disable hellride if no cards to draw
+                    If Deckcounter < 1 Then 'disable hellride if no cards to draw
                         SEHellride = False
                         SWHellride = False
                         NEHellride = False
@@ -1579,13 +1579,13 @@
         ElseIf CardStack(0, currentPlane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
             MsgBox("Please draw " & CardStack(0, currentPlane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
         ElseIf CardStack(0, currentPlane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
-            If deckCounter >= 3 Then
+            If Deckcounter >= 3 Then
                 GameEvent(9)
             Else
                 MsgBox("Less Than 3 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Pools of Becoming Failure")
             End If
         ElseIf CardStack(0, currentPlane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
-            If deckCounter >= 2 Then
+            If Deckcounter >= 2 Then
                 GameEvent(11)
             Else
                 MsgBox("Less than 2 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Stairs to Infinity Scry")
@@ -1707,9 +1707,9 @@
             End If
         ElseIf Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(3), 0) = deckCounter + 1
-            deckCounter += 1
-            CardLookup(deckCounter) = DrawBuffer(3)
+            CardStack(0, DrawBuffer(3), 0) = Deckcounter + 1
+            Deckcounter += 1
+            CardLookup(Deckcounter) = DrawBuffer(3)
             ReturnCard(DrawBuffer(1))
             ReturnCard(DrawBuffer(2))
             ReturnCard(DrawBuffer(0))
@@ -1722,9 +1722,9 @@
     Private Sub PCardSelect1_Click(sender As Object, e As EventArgs) Handles PCardSelect1.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(0), 0) = deckCounter + 1
-            deckCounter += 1
-            CardLookup(deckCounter) = DrawBuffer(0)
+            CardStack(0, DrawBuffer(0), 0) = Deckcounter + 1
+            Deckcounter += 1
+            CardLookup(Deckcounter) = DrawBuffer(0)
             ReturnCard(DrawBuffer(1))
             ReturnCard(DrawBuffer(2))
             ReturnCard(DrawBuffer(3))
@@ -1737,9 +1737,9 @@
     Private Sub PCardSelect6_Click(sender As Object, e As EventArgs) Handles PCardSelect6.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(4), 0) = deckCounter + 1
-            deckCounter += 1
-            CardLookup(deckCounter) = DrawBuffer(4)
+            CardStack(0, DrawBuffer(4), 0) = Deckcounter + 1
+            Deckcounter += 1
+            CardLookup(Deckcounter) = DrawBuffer(4)
             ReturnCard(DrawBuffer(1))
             ReturnCard(DrawBuffer(2))
             ReturnCard(DrawBuffer(0))
@@ -1754,9 +1754,9 @@
     Private Sub PCardSelect4_Click(sender As Object, e As EventArgs) Handles PCardSelect4.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(2), 0) = deckCounter + 1
-            deckCounter += 1
-            CardLookup(deckCounter) = DrawBuffer(2)
+            CardStack(0, DrawBuffer(2), 0) = Deckcounter + 1
+            Deckcounter += 1
+            CardLookup(Deckcounter) = DrawBuffer(2)
             ReturnCard(DrawBuffer(1))
             ReturnCard(DrawBuffer(3))
             ReturnCard(DrawBuffer(0))
@@ -1771,9 +1771,9 @@
     Private Sub PCardSelect3_Click(sender As Object, e As EventArgs) Handles PCardSelect3.Click
         If Deckstate = 4 Then
             Deckstate = 5
-            CardStack(0, DrawBuffer(1), 0) = deckCounter + 1
-            deckCounter += 1
-            CardLookup(deckCounter) = DrawBuffer(1)
+            CardStack(0, DrawBuffer(1), 0) = Deckcounter + 1
+            Deckcounter += 1
+            CardLookup(Deckcounter) = DrawBuffer(1)
             ReturnCard(DrawBuffer(3))
             ReturnCard(DrawBuffer(2))
             ReturnCard(DrawBuffer(0))
