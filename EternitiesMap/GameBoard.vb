@@ -1,9 +1,9 @@
 ﻿Public Class GameBoard
     Private ReadOnly Cardarray(25) As PictureBox
     Private ReadOnly Disparray(25) As Label
-    Private eventCardInPlay As Integer
-    Private eventXloc As Integer = Nothing
-    Private eventYloc As Integer = Nothing
+    Private EventCardInPlay As Integer
+    Private EventXloc As Integer = Nothing
+    Private EventYloc As Integer = Nothing
 
     Private Sub GameBoard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cardarray(1) = PictureBox1
@@ -220,11 +220,11 @@
     End Function
 
     Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
-        eventXloc = xloc
-        eventYloc = yloc
+        EventXloc = xloc
+        EventYloc = yloc
         If phenomnumber = 26 Then
             ''Interplanar Tunnel
-            eventCardInPlay = phenomnumber
+            EventCardInPlay = phenomnumber
             Deckstate = 4
             Drawbuffer(0) = DrawCard()
             Drawbuffer(1) = DrawCard()
@@ -235,7 +235,7 @@
             MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         ElseIf phenomnumber = 64 Then
             ''Spatial Merging
-            eventCardInPlay = phenomnumber
+            EventCardInPlay = phenomnumber
             Deckstate = 6
             Drawbuffer(0) = DrawCard()
             Drawbuffer(1) = DrawCard()
@@ -265,7 +265,7 @@
     End Function
 
     Function StdPhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
-        eventCardInPlay = phenomnumber
+        EventCardInPlay = phenomnumber
         Deckstate = 4
         DisplayZoom(phenomnumber)
         Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
@@ -298,21 +298,21 @@
         ''only need special handlers with additon of generic handler with persistdisplayoptionstuff
         If phenomnumber = 26 Then
             ''Interplanar Tunnel
-            Dim eventdistance = Math.Abs(eventXloc) + Math.Abs(eventYloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, eventXloc, eventYloc)
+            Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
+            If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
-            If eventXloc = 1 Then
+            If EventXloc = 1 Then
                 invxloc = -1
-            ElseIf eventXloc = -1 Then
+            ElseIf EventXloc = -1 Then
                 invxloc = 1
             Else
                 invxloc = 0
             End If
-            If eventYloc = 1 Then
+            If EventYloc = 1 Then
                 invyloc = -1
-            ElseIf eventYloc = -1 Then
+            ElseIf EventYloc = -1 Then
                 invyloc = 1
             Else
                 invyloc = 0
@@ -335,16 +335,16 @@
             MoveEventCheck()
             Dim invxloc As Integer
             Dim invyloc As Integer
-            If eventXloc = 1 Then
+            If EventXloc = 1 Then
                 invxloc = -1
-            ElseIf eventXloc = -1 Then
+            ElseIf EventXloc = -1 Then
                 invxloc = 1
             Else
                 invxloc = 0
             End If
-            If eventYloc = 1 Then
+            If EventYloc = 1 Then
                 invyloc = -1
-            ElseIf eventYloc = -1 Then
+            ElseIf EventYloc = -1 Then
                 invyloc = 1
             Else
                 invyloc = 0
@@ -1641,7 +1641,7 @@
             LBLZoom.Visible = False
             LBLZoom.SendToBack()
             NCounter.Enabled = True
-            ResolvePhenom(eventCardInPlay)
+            ResolvePhenom(EventCardInPlay)
             PBWalk_Click(PBZoom, Nothing)
             PBWalk_Click(PBZoom, Nothing)
             UpdateArrays()
@@ -1722,7 +1722,7 @@
             If MsgBox("Spatial Merging Resolves with Both Displayed Planes. Continue?", MsgBoxStyle.YesNo, "Spatial Merging Resolves") = MsgBoxResult.Yes Then
                 HideDoubleZoom()
                 Deckstate = 5
-                ResolvePhenom(eventCardInPlay)
+                ResolvePhenom(EventCardInPlay)
             End If
         ElseIf Deckstate = 9 Then
             HideDoubleZoom()
@@ -1751,7 +1751,7 @@
             ReturnCard(Drawbuffer(0))
             ReturnCard(Drawbuffer(4))
             HidePickDisplay()
-            ResolvePhenom(eventCardInPlay)
+            ResolvePhenom(EventCardInPlay)
         End If
     End Sub
 
@@ -1766,7 +1766,7 @@
             ReturnCard(Drawbuffer(3))
             ReturnCard(Drawbuffer(4))
             HidePickDisplay()
-            ResolvePhenom(eventCardInPlay)
+            ResolvePhenom(EventCardInPlay)
         End If
     End Sub
 
@@ -1781,7 +1781,7 @@
             ReturnCard(Drawbuffer(0))
             ReturnCard(Drawbuffer(3))
             HidePickDisplay()
-            ResolvePhenom(eventCardInPlay)
+            ResolvePhenom(EventCardInPlay)
         ElseIf Deckstate = 6 Then
             DisplayZoom(Drawbuffer(1))
         End If
@@ -1798,7 +1798,7 @@
             ReturnCard(Drawbuffer(0))
             ReturnCard(Drawbuffer(4))
             HidePickDisplay()
-            ResolvePhenom(eventCardInPlay)
+            ResolvePhenom(EventCardInPlay)
         ElseIf Deckstate = 6 Then
             DisplayZoom(Drawbuffer(0))
         End If
@@ -1815,7 +1815,7 @@
             ReturnCard(Drawbuffer(0))
             ReturnCard(Drawbuffer(4))
             HidePickDisplay()
-            ResolvePhenom(eventCardInPlay)
+            ResolvePhenom(EventCardInPlay)
         End If
     End Sub
 
