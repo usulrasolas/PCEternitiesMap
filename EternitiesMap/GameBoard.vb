@@ -601,99 +601,36 @@
                 invyloc = 0
             End If
             TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 240 Then ''accelerated potentiality
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(240)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 241 Then ''fracturing echo
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(241)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 242 Then ''maelstrom perfusion
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(242)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 243 Then ''temporal interruption
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(243)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
+        Else
+            StdPhenomEvent(phenomnumber, xloc, yloc)
         End If
+        Return 0
+    End Function
+
+    Function StdPhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+        EventCardInPlay = phenomnumber
+        DeckState = 4
+        DisplayZoom(phenomnumber)
+        Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+        If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
+        MoveEventCheck()
+        Dim invxloc As Integer
+        Dim invyloc As Integer
+        If xloc = 1 Then
+            invxloc = -1
+        ElseIf xloc = -1 Then
+            invxloc = 1
+        Else
+            invxloc = 0
+        End If
+        If yloc = 1 Then
+            invyloc = -1
+        ElseIf yloc = -1 Then
+            invyloc = 1
+        Else
+            invyloc = 0
+        End If
+        TranslateBoard(invxloc, invyloc)
         Return 0
     End Function
 

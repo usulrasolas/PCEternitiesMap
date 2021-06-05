@@ -276,7 +276,7 @@
         ReDim Preserve PhenomDeck(PhenomDeckSize)
         Dim WorkCounter As Integer
         Dim InjectionCounter As Integer = APTAamount
-        For WorkCounter = (PhenomDeckSize - APTAamount) To PhenomDeck.GetUpperBound(0) Step 1
+        For WorkCounter = ((PhenomDeckSize - APTAamount) + 1) To PhenomDeck.GetUpperBound(0) Step 1
             PhenomDeck(WorkCounter) = APTAarray(InjectionCounter)
             InjectionCounter -= 1
         Next
