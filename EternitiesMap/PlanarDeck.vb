@@ -431,7 +431,7 @@
     Public Function ReturnCard(CardNumber As Integer) As Boolean
         ReturnCard = False
         Dim workcounter As Integer
-        If CardStack(0, CardNumber, 5) = 3 Then 'if card being returned is on board then
+        If CardStack(0, CardNumber, 5) = 3 Or 2 Then 'if card being returned is on board then
             For workcounter = Deckcounter To 1 Step -1 'for every card in deck counting down
                 Dim currentcard As Integer = CardLookup(workcounter) 'current card is card in deckcounter position
                 CardStack(0, currentcard, 0) += 1 'increase currentcard, deckpostion + 1
@@ -451,26 +451,8 @@
             CardLookup(1) = CardNumber
             Deckcounter += 1
             ReturnCard = True
-        ElseIf CardStack(0, CardNumber, 5) = 2 Then ''return card from hand copy for cardbreaking
-            For workcounter = Deckcounter To 1 Step -1 'for every card in deck counting down
-                Dim currentcard As Integer = CardLookup(workcounter) 'current card is card in deckcounter position
-                CardStack(0, currentcard, 0) += 1 'increase currentcard, deckpostion + 1
-                CardLookup(workcounter + 1) = currentcard 'reverse lookup of new postion and current card
-            Next
-            CardStack(0, CardNumber, 0) = 1
-            CardStack(0, CardNumber, 5) = 1
-            CardStack(0, CardNumber, 1) = vbNull
-            CardStack(0, CardNumber, 2) = vbNull
-            CardStack(1, CardNumber, 0) = -1
-            CardStack(1, CardNumber, 1) = -1
-            CardStack(1, CardNumber, 2) = -1
-            CardStack(1, CardNumber, 3) = -1
-            CardStack(1, CardNumber, 4) = -1
-            CardStack(1, CardNumber, 5) = -1
-            If Resetonreturn = True Then CardStack(0, CardNumber, 4) = 0
-            CardLookup(1) = CardNumber
-            Deckcounter += 1
-            ReturnCard = True
+        Else
+            MsgBox("Error Returning Card", MsgBoxStyle.Critical, "ReturnCard Failure")
         End If
     End Function
 
