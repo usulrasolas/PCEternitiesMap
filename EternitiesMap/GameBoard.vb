@@ -183,7 +183,7 @@
                 Dim UpdateCard2 As Integer = CardStack(1, UpdateCard1, 3)
                 Dim UpdatePartner2 As Integer = CardStack(1, UpdateCard2, 3)
                 Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
-                If UpdateDisplay1 = UpdateDisplay2 And UpdateCard1 = UpdatePartner2 And UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
+                If UpdateDisplay1 = UpdateDisplay2 AndAlso UpdateCard1 = UpdatePartner2 AndAlso UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
                     DoubleZoom(UpdateDisplay1, UpdateCard1, UpdatePartner1)
                     DisplayZoom = True
                 Else ''mismatched metadata
@@ -314,7 +314,6 @@
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
         ElseIf phenomnumber = 64 Then ''Spatial Merging
-            Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
             CardStack(1, DrawBuffer(0), 0) = 1
             CardStack(1, DrawBuffer(1), 0) = 1
             CardStack(1, DrawBuffer(0), 1) = 64

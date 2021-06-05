@@ -352,7 +352,7 @@
     End Function
 
     Public Function DrawCard() As Integer
-        If DeckState = 1 OrElse DeckState = 2 Or DeckState = 5 Then
+        If DeckState = 1 OrElse DeckState = 2 OrElse DeckState = 5 Then
             DrawBuffer(0) = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
@@ -361,7 +361,7 @@
             CardLookup(DeckCounter) = 0
             DeckCounter -= 1
             Return DrawBuffer(0)
-        ElseIf DeckState = 4 OrElse DeckState = 6 Or DeckState = 3 Then ''dont update draw buffer
+        ElseIf DeckState = 4 OrElse DeckState = 6 OrElse DeckState = 3 Then ''dont update draw buffer
             DrawCard = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
@@ -413,7 +413,7 @@
                 DeckCheck += 1
                 CheckPosition = False
             ElseIf CardDeckPos <= 0 AndAlso CardStack(0, workcounter, 5) = 3 Then
-                If CardStack(0, workcounter, 1) = CardxPos And CardStack(0, workcounter, 2) = CardyPos Then
+                If CardStack(0, workcounter, 1) = CardxPos AndAlso CardStack(0, workcounter, 2) = CardyPos Then
                     XyCheck += 1
                     CheckPosition = False
                 End If
@@ -477,7 +477,7 @@
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
         If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0 ''need to be refactored after phenoms
-        If DeckState = 2 OrElse DeckState = 4 Or DeckState = 5 Then
+        If DeckState = 2 OrElse DeckState = 4 OrElse DeckState = 5 Then
             For workcounter = 1 To MasterDeckCount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     CardStack(0, workcounter, 1) += XChange
@@ -517,7 +517,7 @@
             For workcounter = 1 To MasterDeckCount Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
-                If distancecounter > 3 And CardStack(0, workcounter, 5) = 3 Then
+                If distancecounter > 3 AndAlso CardStack(0, workcounter, 5) = 3 Then
                     ReturnCard(workcounter)
                 End If
             Next
