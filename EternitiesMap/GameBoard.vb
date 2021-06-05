@@ -378,6 +378,7 @@
             PBWalk_Click(Nothing, Nothing)
             MsgBox("Planeswalk then Roll the Planar die and treat ANY result as Chaos. Resolve Chaos of New Plane Immediately after Walk.", MsgBoxStyle.Information, "Holodeck Chaos Walk")
         Else
+            MsgBox("GameEvent Called But Not Configured", MsgBoxStyle.Critical, "GameEvent Call Failure")
         End If
         Return GameEvent
     End Function
