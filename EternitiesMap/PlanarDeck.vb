@@ -57,10 +57,6 @@
                 CardStack(1, WorkCounter, 2) = -1 'CounterOverride
                 CardStack(1, WorkCounter, 1) = -1 'DisplayOverride
                 CardStack(1, WorkCounter, 0) = -1 'HasMetadata
-                '' cardstack variable matrix information
-                ''
-                ''
-                ''
             Next
             If Pcanthologies = True Then
                 For WorkCounter = 1 To 86 Step 1
