@@ -101,8 +101,8 @@
             End If
             If ExpMEPhenoms = True Then
                 For WorkCounter = 240 To 243 Step 1
-                    CardStack(0, WorkCounter, 5) = -1 ''Needs change when enable ME Phenoms
-                    CardStack(0, WorkCounter, 3) = -1 ''Needs expansion for phenoms probably? currently we're flagging -1 to disable
+                    CardStack(0, WorkCounter, 5) = 0
+                    CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
             If ExpMeTarkir = True Then
@@ -204,6 +204,10 @@
         CardStack(0, 164, 5) = -1
         CardStack(0, 172, 5) = -1
         CardStack(0, 183, 5) = -1
+        CardStack(0, 240, 5) = -1
+        CardStack(0, 241, 5) = -1
+        CardStack(0, 242, 5) = -1
+        CardStack(0, 243, 5) = -1
         PhenomDeckSize = 0
         ReDim PhenomDeck(-1)
         If PhenomSupport = True Then
@@ -266,6 +270,26 @@
                 CardStack(0, 104, 3) = -1
                 CardStack(0, 107, 3) = -1
                 CardStack(0, 108, 3) = -1
+            End If
+            If ExpMEPhenoms = True Then
+                CardStack(0, 240, 3) = 0
+                CardStack(0, 241, 3) = 0
+                CardStack(0, 242, 3) = 0
+                CardStack(0, 243, 3) = 0
+                PhenomDeckSize += 4
+                ReDim Preserve PhenomDeck(PhenomDeckSize)
+                Dim WorkCounter As Integer
+                Dim InjectionArray() As Integer = {-1, 240, 241, 242, 243}
+                Dim InjectionCounter As Integer = 4
+                For WorkCounter = (PhenomDeckSize - 4) To PhenomDeck.GetUpperBound(0) Step 1
+                    PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
+                    InjectionCounter -= 1
+                Next
+            ElseIf ExpMEPhenoms = False Then
+                CardStack(0, 97, 3) = -1
+                CardStack(0, 98, 3) = -1
+                CardStack(0, 99, 3) = -1
+                CardStack(0, 101, 3) = -1
             End If
         End If
         Return 0
