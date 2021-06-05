@@ -1,8 +1,5 @@
 # PCEternitiesMap
  A Planechase Eternities Map Program (Currently for Windows PC or other .NET compatible systems)
- 
- Now implementing Codacy code review and rating system!
- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2065305fcbd4b94a353ed1bc20c76c0)](https://www.codacy.com/gh/usulrasolas/PCEternitiesMap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=usulrasolas/PCEternitiesMap&amp;utm_campaign=Badge_Grade)
 
 This is a program to emulate the Blind Eternities Map variant of planechase (https://magic.wizards.com/en/articles/archive/feature/eternities-map-2010-07-19-0) for Magic the Gathering. This is a fan project, 100% free and open source and monitization free. Created to be simple to use, allow players to play in a more convenient way than using a secondary or oversized table, as well as making this format more accessible to a variety of players old and new.
 
@@ -26,3 +23,5 @@ So far features include:
 * disable/enable normal planeschase. (after 1.0)
 
 Development and Expansion Resumed 6/2021 after hiatus
+ Now implementing Codacy code review and rating system! Feel free to fork and pull request. If we like you're work you probably will be invited to work with us! This is a community labor of love, we want to make sure anyone who wants to be involved is and there's complete transparency!
+ [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f2065305fcbd4b94a353ed1bc20c76c0)](https://www.codacy.com/gh/usulrasolas/PCEternitiesMap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=usulrasolas/PCEternitiesMap&amp;utm_campaign=Badge_Grade)
