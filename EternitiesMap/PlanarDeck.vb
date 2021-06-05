@@ -429,8 +429,8 @@
 
     Public Function ReturnCard(CardNumber As Integer) As Boolean
         ReturnCard = False
+        Dim workcounter As Integer
         If CardStack(0, CardNumber, 5) = 3 Then 'if card being returned is on board then
-            Dim workcounter As Integer
             For workcounter = DeckCounter To 1 Step -1 'for every card in deck counting down
                 Dim currentcard As Integer = CardLookup(workcounter) 'current card is card in deckcounter position
                 CardStack(0, currentcard, 0) += 1 'increase currentcard, deckpostion + 1
@@ -451,7 +451,6 @@
             DeckCounter += 1
             ReturnCard = True
         ElseIf CardStack(0, CardNumber, 5) = 2 Then ''return card from hand copy for cardbreaking
-            Dim workcounter As Integer
             For workcounter = DeckCounter To 1 Step -1 'for every card in deck counting down
                 Dim currentcard As Integer = CardLookup(workcounter) 'current card is card in deckcounter position
                 CardStack(0, currentcard, 0) += 1 'increase currentcard, deckpostion + 1
@@ -524,7 +523,7 @@
             For workcounter = 1 To MasterDeckCount Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
-                If distancecounter > 3 And CardStack(0, workcounter, 5) = 3 Then
+                If distancecounter > 3 AndAlso CardStack(0, workcounter, 5) = 3 Then
                     Return False
                 End If
                 Shuffle()
