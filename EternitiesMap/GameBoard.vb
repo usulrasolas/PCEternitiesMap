@@ -564,7 +564,7 @@
                 Dim UpdateCard2 As Integer = CardStack(1, UpdateCard1, 3)
                 Dim UpdatePartner2 As Integer = CardStack(1, UpdateCard2, 3)
                 Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
-                If UpdateDisplay1 = UpdateDisplay2 And UpdateCard1 = UpdatePartner2 And UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
+                If UpdateDisplay1 = UpdateDisplay2 AndAlso UpdateCard1 = UpdatePartner2 AndAlso UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
                     CardArray(DispNumber).Image = CardImage(UpdateDisplay1) ''display metadata card instead
                 Else
                     GoTo 850

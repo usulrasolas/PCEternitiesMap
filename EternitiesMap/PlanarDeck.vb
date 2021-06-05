@@ -39,7 +39,6 @@
     Public ExpPC2017 As Boolean = False
 
     Public Function ReadyDeck() As Boolean
-        Dim DeckRndCounter As Integer = Int(Rnd() * 10)
         Dim WorkCounter As Integer
         ReadyDeck = False
         If DeckState = 0 Then
@@ -167,7 +166,7 @@
             End If
             PhenomInitalize()
             For WorkCounter = 1 To MasterDeckCount Step 1
-                If CardStack(0, WorkCounter, 3) > -1 And CardStack(0, WorkCounter, 5) >= 0 Then
+                If CardStack(0, WorkCounter, 3) > -1 AndAlso CardStack(0, WorkCounter, 5) >= 0 Then
                     CardStack(0, WorkCounter, 0) = DeckCounter + 1
                     DeckCounter += 1
                     CardLookup(DeckCounter) = WorkCounter
@@ -282,6 +281,7 @@
         Next
         Return 0
     End Function
+
     Function PickRandomPhenom() As Integer
         If PhenomDeckSize > 0 Then
 555:
@@ -352,7 +352,7 @@
     End Function
 
     Public Function DrawCard() As Integer
-        If DeckState = 1 Or DeckState = 2 Or DeckState = 5 Then
+        If DeckState = 1 OrElse DeckState = 2 Or DeckState = 5 Then
             DrawBuffer(0) = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
@@ -361,7 +361,7 @@
             CardLookup(DeckCounter) = 0
             DeckCounter -= 1
             Return DrawBuffer(0)
-        ElseIf DeckState = 4 Or DeckState = 6 Or DeckState = 3 Then ''dont update draw buffer
+        ElseIf DeckState = 4 OrElse DeckState = 6 Or DeckState = 3 Then ''dont update draw buffer
             DrawCard = CardLookup(DeckCounter)
             CardStack(0, CardLookup(DeckCounter), 5) = 2
             CardStack(0, CardLookup(DeckCounter), 0) = 0
@@ -375,7 +375,7 @@
     End Function
 
     Public Function PlayCard(CardNumber As Integer, ToState As Integer, XPos As Integer, YPos As Integer) As Boolean
-        If ToState = 1 And CardStack(0, CardNumber, 5) = 2 Then 'to deck
+        If ToState = 1 AndAlso CardStack(0, CardNumber, 5) = 2 Then 'to deck
             Dim workcounter As Integer
             For workcounter = DeckCounter To 1 Step -1
                 Dim currentcard As Integer = CardLookup(workcounter)
@@ -389,7 +389,7 @@
             DeckCounter += 1
             CardLookup(1) = CardNumber
             PlayCard = True
-        ElseIf ToState = 3 And CardStack(0, CardNumber, 5) = 2 Then 'to play
+        ElseIf ToState = 3 AndAlso CardStack(0, CardNumber, 5) = 2 Then 'to play
             CardStack(0, CardNumber, 1) = XPos
             CardStack(0, CardNumber, 2) = YPos
             CardStack(0, CardNumber, 0) = 0
@@ -409,18 +409,18 @@
         Dim XyCheck As Integer = 0
         CheckPosition = False
         For workcounter = 1 To MasterDeckCount Step 1
-            If CardDeckPos = CardStack(0, workcounter, 0) And CardDeckPos > 0 Then
+            If CardDeckPos = CardStack(0, workcounter, 0) AndAlso CardDeckPos > 0 Then
                 DeckCheck += 1
                 CheckPosition = False
-            ElseIf CardDeckPos <= 0 And CardStack(0, workcounter, 5) = 3 Then
+            ElseIf CardDeckPos <= 0 AndAlso CardStack(0, workcounter, 5) = 3 Then
                 If CardStack(0, workcounter, 1) = CardxPos And CardStack(0, workcounter, 2) = CardyPos Then
                     XyCheck += 1
                     CheckPosition = False
                 End If
             End If
-            If DeckCheck = 0 And XyCheck = 1 Then
+            If DeckCheck = 0 AndAlso XyCheck = 1 Then
                 CheckPosition = True
-            ElseIf DeckCheck = 1 And XyCheck = 0 Then
+            ElseIf DeckCheck = 1 AndAlso XyCheck = 0 Then
                 CheckPosition = True
             End If
         Next
@@ -477,7 +477,7 @@
     Public Function TranslateBoard(XChange As Integer, YChange As Integer) As Boolean
         Dim workcounter As Integer
         If PretranslateReset = True Then CardStack(0, CurrentPlane, 4) = 0 ''need to be refactored after phenoms
-        If DeckState = 2 Or DeckState = 4 Or DeckState = 5 Then
+        If DeckState = 2 OrElse DeckState = 4 Or DeckState = 5 Then
             For workcounter = 1 To MasterDeckCount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
                     CardStack(0, workcounter, 1) += XChange
@@ -489,13 +489,13 @@
                 For workcounter = 1 To MasterDeckCount Step 1
                     Dim distancecounter As Integer
                     distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
-                    If distancecounter > 3 And CardStack(0, workcounter, 5) = 3 Then
+                    If distancecounter > 3 AndAlso CardStack(0, workcounter, 5) = 3 Then
                         CardStack(0, workcounter, 4) = 0
                     End If
                 Next
             End If
             For workcounter = 1 To MasterDeckCount Step 1
-                If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 0 Then
+                If CardStack(0, workcounter, 1) = 0 AndAlso CardStack(0, workcounter, 2) = 0 Then
                     If CheckPosition(workcounter) = True Then ''set currentplane if single
                         CurrentPlane = workcounter
                     ElseIf CheckPosition(workcounter) = False Then
@@ -513,7 +513,7 @@
     Public Function CullBoard() As Boolean
         Dim workcounter As Integer
         CullBoard = False
-        If InfinitePlane = False And DeckState = 2 Then
+        If InfinitePlane = False AndAlso DeckState = 2 Then
             For workcounter = 1 To MasterDeckCount Step 1
                 Dim distancecounter As Integer
                 distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
@@ -545,30 +545,27 @@
         If DeckState = 2 Or 1 Then
             For workcounter = 1 To MasterDeckCount Step 1
                 If CardStack(0, workcounter, 5) = 3 Then
-                    If CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = 1 Then
+                    If CardStack(0, workcounter, 1) = 0 AndAlso CardStack(0, workcounter, 2) = 1 Then
                         NPopulateCheck = False
-
-                    ElseIf CardStack(0, workcounter, 1) = 0 And CardStack(0, workcounter, 2) = -1 Then
+                    ElseIf CardStack(0, workcounter, 1) = 0 AndAlso CardStack(0, workcounter, 2) = -1 Then
                         SPopulateCheck = False
-
-                    ElseIf CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = 0 Then
+                    ElseIf CardStack(0, workcounter, 1) = 1 AndAlso CardStack(0, workcounter, 2) = 0 Then
                         EPopulateCheck = False
-
-                    ElseIf CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 0 Then
+                    ElseIf CardStack(0, workcounter, 1) = -1 AndAlso CardStack(0, workcounter, 2) = 0 Then
                         WPopulateCheck = False
                     End If
                 End If
             Next
-            If NPopulateCheck = True And DeckCounter > 0 Then
+            If NPopulateCheck = True AndAlso DeckCounter > 0 Then
                 If PlayCard(DrawCard, 3, 0, 1) = True Then PopulateBoard = True
             End If
-            If SPopulateCheck = True And DeckCounter > 0 Then
+            If SPopulateCheck = True AndAlso DeckCounter > 0 Then
                 If PlayCard(DrawCard, 3, 0, -1) = True Then PopulateBoard = True
             End If
-            If EPopulateCheck = True And DeckCounter > 0 Then
+            If EPopulateCheck = True AndAlso DeckCounter > 0 Then
                 If PlayCard(DrawCard, 3, 1, 0) = True Then PopulateBoard = True
             End If
-            If WPopulateCheck = True And DeckCounter > 0 Then
+            If WPopulateCheck = True AndAlso DeckCounter > 0 Then
                 If PlayCard(DrawCard, 3, -1, 0) = True Then PopulateBoard = True
             End If
         End If
