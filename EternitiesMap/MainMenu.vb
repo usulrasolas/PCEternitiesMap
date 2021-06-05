@@ -36,20 +36,20 @@
         LBLMoveChance.Text = Phenommovechance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
         ChkPCAnthology.Checked = Pcanthologies
         ChkAmon.Checked = Expmeamon
-        ChkIxalan.Checked = ExpIxalan
+        ChkIxalan.Checked = Expixalan
         ChkFiora.Checked = Expmefiora
-        ChkGeekscape.Checked = ExpGeek
+        ChkGeekscape.Checked = Expgeekscape1
         ChkPC2019.Checked = ExpPC2019
-        ChkBox2019Ixalan.Checked = ExpPC2019IxGame
+        ChkBox2019Ixalan.Checked = ExpPC2019ixgame
         ChkBxPC2017.Checked = ExpPC2017
-        ChkBxMultiverseIxalan.Checked = ExpMEIxalan
-        ChkbxMultiverseKaladesh.Checked = ExpMEKaladesh
-        ChkBxMultiverseExtras.Checked = ExpMEExtra
-        ChkBxMultiversePhenom.Checked = ExpMEPhenoms
-        ChkBxMultiverseTarkir.Checked = ExpMeTarkir
-        ChkBxMultiverseTheros.Checked = ExpMeTheros
-        ChkBx2019Monarch.Checked = ExpPc2019Throne
-        ChkBx2019Contraption.Checked = ExpPC2019Workshop
+        ChkBxMultiverseIxalan.Checked = Expmeixalan
+        ChkbxMultiverseKaladesh.Checked = Expmekaladesh
+        ChkBxMultiverseExtras.Checked = Expmeextra
+        ChkBxMultiversePhenom.Checked = Expmephenoms
+        ChkBxMultiverseTarkir.Checked = Expmetarkir
+        ChkBxMultiverseTheros.Checked = Expmetheros
+        ChkBx2019Monarch.Checked = ExpPC2019throne
+        ChkBx2019Contraption.Checked = ExpPC2019workshop
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
@@ -95,7 +95,7 @@
     End Sub
 
     Private Sub ChkGeekscape_CheckedChanged(sender As Object, e As EventArgs) Handles ChkGeekscape.CheckedChanged
-        ExpGeek = ChkGeekscape.Checked
+        Expgeekscape1 = ChkGeekscape.Checked
     End Sub
 
     Private Sub ChkPC2019_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPC2019.CheckedChanged
@@ -122,7 +122,7 @@
     End Sub
 
     Private Sub ChkBox2019Ixalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBox2019Ixalan.CheckedChanged
-        ExpPC2019IxGame = ChkBox2019Ixalan.Checked
+        ExpPC2019ixgame = ChkBox2019Ixalan.Checked
     End Sub
 
     Private Sub ChkBxPC2017_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxPC2017.CheckedChanged
@@ -130,34 +130,34 @@
     End Sub
 
     Private Sub ChkBxMultiverseIxalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseIxalan.CheckedChanged
-        ExpMEIxalan = ChkBxMultiverseIxalan.Checked
+        Expmeixalan = ChkBxMultiverseIxalan.Checked
     End Sub
 
     Private Sub ChkbxMultiverseKaladesh_CheckedChanged(sender As Object, e As EventArgs) Handles ChkbxMultiverseKaladesh.CheckedChanged
-        ExpMEKaladesh = ChkbxMultiverseKaladesh.Checked
+        Expmekaladesh = ChkbxMultiverseKaladesh.Checked
     End Sub
 
     Private Sub ChkBxMultiverseTarkir_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseTarkir.CheckedChanged
-        ExpMeTarkir = ChkBxMultiverseTarkir.Checked
+        Expmetarkir = ChkBxMultiverseTarkir.Checked
     End Sub
 
     Private Sub ChkBxMultiverseTheros_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseTheros.CheckedChanged
-        ExpMeTheros = ChkBxMultiverseTheros.Checked
+        Expmetheros = ChkBxMultiverseTheros.Checked
     End Sub
 
     Private Sub ChkBxMultiverseExtras_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiverseExtras.CheckedChanged
-        ExpMEExtra = ChkBxMultiverseExtras.Checked
+        Expmeextra = ChkBxMultiverseExtras.Checked
     End Sub
 
     Private Sub ChkBxMultiversePhenom_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxMultiversePhenom.CheckedChanged
-        ExpMEPhenoms = ChkBxMultiversePhenom.Checked
+        Expmephenoms = ChkBxMultiversePhenom.Checked
     End Sub
 
     Private Sub ChkBx2019Monarch_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBx2019Monarch.CheckedChanged
-        ExpPc2019Throne = ChkBx2019Monarch.Checked
+        ExpPC2019throne = ChkBx2019Monarch.Checked
     End Sub
 
     Private Sub ChkBx2019Contraption_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBx2019Contraption.CheckedChanged
-        ExpPC2019Workshop = ChkBx2019Contraption.Checked
+        ExpPC2019workshop = ChkBx2019Contraption.Checked
     End Sub
 End Class

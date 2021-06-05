@@ -25,18 +25,18 @@
     Public Pcanthologies As Boolean = True
     Public Expmeamon As Boolean = False
     Public Expmefiora As Boolean = False
-    Public ExpMEIxalan As Boolean = False
-    Public ExpMEKaladesh As Boolean = False
-    Public ExpMEExtra As Boolean = False
-    Public ExpMEPhenoms As Boolean = False
-    Public ExpMeTarkir As Boolean = False
-    Public ExpMeTheros As Boolean = False
-    Public ExpIxalan As Boolean = False
-    Public ExpGeek As Boolean = False
+    Public Expmeixalan As Boolean = False
+    Public Expmekaladesh As Boolean = False
+    Public Expmeextra As Boolean = False
+    Public Expmephenoms As Boolean = False
+    Public Expmetarkir As Boolean = False
+    Public Expmetheros As Boolean = False
+    Public Expixalan As Boolean = False
+    Public Expgeekscape1 As Boolean = False
     Public ExpPC2019 As Boolean = False
-    Public ExpPC2019IxGame As Boolean = False
-    Public ExpPc2019Throne As Boolean = False
-    Public ExpPC2019Workshop As Boolean = False
+    Public ExpPC2019ixgame As Boolean = False
+    Public ExpPC2019throne As Boolean = False
+    Public ExpPC2019workshop As Boolean = False
     Public ExpPC2017 As Boolean = False
 
     Public Function ReadyDeck() As Boolean
@@ -85,49 +85,49 @@
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpMEIxalan = True Then
+            If Expmeixalan = True Then
                 For WorkCounter = 224 To 227 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpMEKaladesh = True Then
+            If Expmekaladesh = True Then
                 For WorkCounter = 228 To 232 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpMEExtra = True Then
+            If Expmeextra = True Then
                 For WorkCounter = 233 To 239 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpMEPhenoms = True Then
+            If Expmephenoms = True Then
                 For WorkCounter = 240 To 243 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpMeTarkir = True Then
+            If Expmetarkir = True Then
                 For WorkCounter = 244 To 248 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpMeTheros = True Then
+            If Expmetheros = True Then
                 For WorkCounter = 249 To 253 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpIxalan = True Then
+            If Expixalan = True Then
                 For WorkCounter = 97 To 110 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
                 Next
             End If
-            If ExpGeek = True Then
+            If Expgeekscape1 = True Then
                 For WorkCounter = 111 To 140 Step 1
                     CardStack(0, WorkCounter, 5) = 0
                     CardStack(0, WorkCounter, 3) = 0
@@ -142,7 +142,7 @@
                 CardStack(0, 145, 5) = -1
                 CardStack(0, 149, 5) = -1
 
-                If ExpPC2019IxGame = True Then 'Trigger for c156 makes you play a game of Explorers of Ixalan
+                If ExpPC2019ixgame = True Then 'Trigger for c156 makes you play a game of Explorers of Ixalan
                     CardStack(0, 156, 3) = 156
                 Else
                     CardStack(0, 156, 5) = -1
@@ -152,8 +152,8 @@
                 CardStack(0, 167, 5) = -1
                 CardStack(0, 168, 5) = -1
                 CardStack(0, 170, 5) = -1
-                If ExpPc2019Throne = False Then CardStack(0, 176, 5) = -1
-                If ExpPC2019Workshop = False Then CardStack(0, 173, 5) = -1
+                If ExpPC2019throne = False Then CardStack(0, 176, 5) = -1
+                If ExpPC2019workshop = False Then CardStack(0, 173, 5) = -1
             End If
             If ExpPC2017 = True Then
                 For WorkCounter = 184 To 223 Step 1
@@ -237,7 +237,7 @@
                 CardStack(0, 64, 3) = -1
                 CardStack(0, 80, 3) = -1
             End If
-            If ExpIxalan = True Then
+            If Expixalan = True Then
                 CardStack(0, 97, 3) = 29 ''Blessing of the Shapers
                 CardStack(0, 98, 3) = 30 ''Bloodfast
                 CardStack(0, 99, 3) = 31 ''Bloodstained Massacre
@@ -248,7 +248,7 @@
                 CardStack(0, 107, 3) = 36 ''River's Rebuke
                 CardStack(0, 108, 3) = 37 ''Savage Instinct
                 AddPhenomToActive(9, {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108})
-            ElseIf ExpIxalan = False Then
+            ElseIf Expixalan = False Then
                 CardStack(0, 97, 3) = -1
                 CardStack(0, 98, 3) = -1
                 CardStack(0, 99, 3) = -1
@@ -259,13 +259,13 @@
                 CardStack(0, 107, 3) = -1
                 CardStack(0, 108, 3) = -1
             End If
-            If ExpMEPhenoms = True Then
+            If Expmephenoms = True Then
                 CardStack(0, 240, 3) = 0
                 CardStack(0, 241, 3) = 0
                 CardStack(0, 242, 3) = 0
                 CardStack(0, 243, 3) = 0
                 AddPhenomToActive(4, {-1, 240, 241, 242, 243})
-            ElseIf ExpMEPhenoms = False Then
+            ElseIf Expmephenoms = False Then
                 CardStack(0, 97, 3) = -1
                 CardStack(0, 98, 3) = -1
                 CardStack(0, 99, 3) = -1
