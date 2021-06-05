@@ -179,14 +179,14 @@
             ''if multiple occupancy
             If CardStack(1, CardNumber, 0) >= 1 Then
                 ''if HASMETADATA is set to any >0 value
-                Dim Updatecard1 As Integer = CardNumber
-                Dim Updatepartner1 As Integer = CardStack(1, Updatecard1, 3)
-                Dim Updatedisplay1 As Integer = CardStack(1, Updatecard1, 1)
-                Dim Updatecard2 As Integer = CardStack(1, Updatecard1, 3)
-                Dim Updatepartner2 As Integer = CardStack(1, Updatecard2, 3)
-                Dim Updatedisplay2 As Integer = CardStack(1, Updatecard2, 1)
-                If Updatedisplay1 = Updatedisplay2 AndAlso Updatecard1 = Updatepartner2 AndAlso Updatepartner1 = Updatecard2 Then ''check linked metadata for match
-                    DoubleZoom(Updatedisplay1, Updatecard1, Updatepartner1)
+                Dim Updatecardone As Integer = CardNumber
+                Dim Updatepartnerone As Integer = CardStack(1, Updatecardone, 3)
+                Dim Updatedisplayone As Integer = CardStack(1, Updatecardone, 1)
+                Dim Updatecardtwo As Integer = CardStack(1, Updatecardone, 3)
+                Dim Updatepartnertwo As Integer = CardStack(1, Updatecardtwo, 3)
+                Dim Updatedisplaytwo As Integer = CardStack(1, Updatecardtwo, 1)
+                If Updatedisplayone = Updatedisplaytwo AndAlso Updatecardone = Updatepartnertwo AndAlso Updatepartnerone = Updatecardtwo Then ''check linked metadata for match
+                    DoubleZoom(Updatedisplayone, Updatecardone, Updatepartnerone)
                     DisplayZoom = True
                 Else
                     ''mismatched metadata
