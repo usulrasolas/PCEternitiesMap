@@ -223,7 +223,7 @@
                 CardStack(0, 64, 3) = 27 ''Spatial Merging
                 CardStack(0, 80, 3) = 28 ''Time Distortion
                 AddPhenomToActive(8, {-1, 80, 64, 57, 52, 42, 39, 26, 9})
-            ElseIf Pcanthologies = False Then
+            Else
                 CardStack(0, 9, 3) = -1
                 CardStack(0, 26, 3) = -1
                 CardStack(0, 39, 3) = -1
@@ -244,7 +244,7 @@
                 CardStack(0, 107, 3) = 36 ''River's Rebuke
                 CardStack(0, 108, 3) = 37 ''Savage Instinct
                 AddPhenomToActive(9, {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108})
-            ElseIf Expixalan = False Then
+            Else
                 CardStack(0, 97, 3) = -1
                 CardStack(0, 98, 3) = -1
                 CardStack(0, 99, 3) = -1
@@ -261,7 +261,7 @@
                 CardStack(0, 242, 3) = 0
                 CardStack(0, 243, 3) = 0
                 AddPhenomToActive(4, {-1, 240, 241, 242, 243})
-            ElseIf Expmephenoms = False Then
+            Else
                 CardStack(0, 97, 3) = -1
                 CardStack(0, 98, 3) = -1
                 CardStack(0, 99, 3) = -1
@@ -294,6 +294,8 @@
             ElseIf Deckcounter < 2 Then
                 If RandomPhenomRoll = 26 Then GoTo 555
                 If RandomPhenomRoll = 64 Then GoTo 555
+            Else
+                ''Nothing Needed
             End If
         Else
             PickRandomPhenom = -1
@@ -418,11 +420,15 @@
                     XyCheck += 1
                     CheckPosition = False
                 End If
+            Else
+                ''Nothing Needed
             End If
             If DeckCheck = 0 AndAlso XyCheck = 1 Then
                 CheckPosition = True
             ElseIf DeckCheck = 1 AndAlso XyCheck = 0 Then
                 CheckPosition = True
+            Else
+                ''Nothing Needed
             End If
         Next
         Return CheckPosition
@@ -480,7 +486,7 @@
                 If CardStack(0, workcounter, 1) = 0 AndAlso CardStack(0, workcounter, 2) = 0 Then
                     If CheckPosition(workcounter) = True Then ''set currentplane if single
                         Currentplane = workcounter
-                    ElseIf CheckPosition(workcounter) = False Then
+                    Else
                         ''insert logic here
                     End If
                 End If
@@ -535,6 +541,8 @@
                         EPopulateCheck = False
                     ElseIf CardStack(0, workcounter, 1) = -1 AndAlso CardStack(0, workcounter, 2) = 0 Then
                         WPopulateCheck = False
+                    Else
+                        ''Nothing Needed
                     End If
                 End If
             Next
