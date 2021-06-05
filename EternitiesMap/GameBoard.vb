@@ -216,31 +216,7 @@
     Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventXloc = xloc
         EventYloc = yloc
-        If phenomnumber = 9 Then '' Chaotic Aether
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(9)
-            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
+        If phenomnumber = 26 Then ''Interplanar Tunnel
             EventCardInPlay = phenomnumber
             DeckState = 4
             DrawBuffer(0) = DrawCard()
@@ -250,102 +226,6 @@
             DrawBuffer(4) = DrawCard()
             PickDisplay(26, DrawBuffer(0), DrawBuffer(1), DrawBuffer(2), DrawBuffer(3), DrawBuffer(4))
             MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
-        ElseIf phenomnumber = 39 Then ''Morphic Tide
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(39)
-            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 42 Then ''Mutual Epiphany
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(42)
-            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 52 Then ''Planewide Disaster
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(52)
-            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 57 Then ''Reality Shaping
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(57)
-            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             EventCardInPlay = phenomnumber
             DeckState = 6
@@ -370,341 +250,45 @@
             Else
                 DisplayZoom(-1)
             End If
-        ElseIf phenomnumber = 80 Then ''Time Distortion
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(80)
-            Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 97 Then ''Blessing of Shapers
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(97)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 98 Then ''Bloodfast
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(98)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 99 Then ''Bloodstained Massacre
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(99)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 101 Then ''Dramatic Entrance
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(101)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 102 Then ''Gates of Orazca
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(102)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 103 Then ''Gold Laden Shipwreck
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(103)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 104 Then ''Mass Mutiny
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(104)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 107 Then ''Rivers Rebuke
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(107)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 108 Then ''Savage Instinct
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(108)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 240 Then ''accelerated potentiality
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(240)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 241 Then ''fracturing echo
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(241)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 242 Then ''maelstrom perfusion
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(242)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
-        ElseIf phenomnumber = 243 Then ''temporal interruption
-            EventCardInPlay = phenomnumber
-            DeckState = 4
-            DisplayZoom(243)
-            PlayCard(DrawCard, 3, xloc, yloc)
-            MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If xloc = 1 Then
-                invxloc = -1
-            ElseIf xloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If yloc = 1 Then
-                invyloc = -1
-            ElseIf yloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
+        Else
+            StdPhenomEvent(phenomnumber, xloc, yloc)
         End If
+        Return 0
+    End Function
+
+    Function StdPhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+        EventCardInPlay = phenomnumber
+        DeckState = 4
+        DisplayZoom(phenomnumber)
+        Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
+        If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
+        MoveEventCheck()
+        Dim invxloc As Integer
+        Dim invyloc As Integer
+        If xloc = 1 Then
+            invxloc = -1
+        ElseIf xloc = -1 Then
+            invxloc = 1
+        Else
+            invxloc = 0
+        End If
+        If yloc = 1 Then
+            invyloc = -1
+        ElseIf yloc = -1 Then
+            invyloc = 1
+        Else
+            invyloc = 0
+        End If
+        TranslateBoard(invxloc, invyloc)
         Return 0
     End Function
 
     Function ResolvePhenom(phenomnumber As Integer)
         ResolvePhenom = True
-        If phenomnumber = 9 Then '' Chaotic Aether
-            DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
-        ElseIf phenomnumber = 26 Then ''Interplanar Tunnel
+        Dim PersistPhenomDisplay As Boolean = False
+        If phenomnumber = 9 Or 97 Or 98 Or 108 Or 208 Or 220 Then PersistPhenomDisplay = True ''this is where you set the phenom to persist on screen
+        ''only need special handlers with additon of generic handler with persistdisplayoptionstuff
+        If phenomnumber = 26 Then ''Interplanar Tunnel
             Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
             If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
             MoveEventCheck()
@@ -729,15 +313,6 @@
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
-
-        ElseIf phenomnumber = 39 Then ''Morphic Tide
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 42 Then ''Mutual Epiphany
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 52 Then ''Planewide Disaster
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 57 Then ''Reality Shaping
-            DeckState = 1 ''done
         ElseIf phenomnumber = 64 Then ''Spatial Merging
             Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
             CardStack(1, DrawBuffer(0), 0) = 1
@@ -772,43 +347,13 @@
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
-        ElseIf phenomnumber = 80 Then ''Time Distortion
-            DeckState = 1 ''done
-        ElseIf phenomnumber = 97 Then
+        Else ''generic handler
             DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
-        ElseIf phenomnumber = 98 Then
-            DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
-        ElseIf phenomnumber = 99 Then
-            DeckState = 1
-        ElseIf phenomnumber = 101 Then
-            DeckState = 1
-        ElseIf phenomnumber = 102 Then
-            DeckState = 1
-        ElseIf phenomnumber = 103 Then
-            DeckState = 1
-        ElseIf phenomnumber = 104 Then
-            DeckState = 1
-        ElseIf phenomnumber = 240 Then
-            DeckState = 1
-        ElseIf phenomnumber = 241 Then
-            DeckState = 1
-        ElseIf phenomnumber = 242 Then
-            DeckState = 1
-        ElseIf phenomnumber = 243 Then
-            DeckState = 1
-        ElseIf phenomnumber = 107 Then
-            DeckState = 1
-        ElseIf phenomnumber = 108 Then
-            DeckState = 1
-            PCardSelect6.BringToFront()
-            PCardSelect6.Visible = True
-            PCardSelect6.Image = CardImage(phenomnumber)
+            If PersistPhenomDisplay = True Then
+                PCardSelect6.BringToFront()
+                PCardSelect6.Visible = True
+                PCardSelect6.Image = CardImage(phenomnumber)
+            End If
         End If
     End Function
 

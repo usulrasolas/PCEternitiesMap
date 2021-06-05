@@ -222,15 +222,7 @@
                 CardStack(0, 57, 3) = 26 ''Reality Shaping
                 CardStack(0, 64, 3) = 27 ''Spatial Merging
                 CardStack(0, 80, 3) = 28 ''Time Distortion
-                PhenomDeckSize += 8
-                ReDim Preserve PhenomDeck(PhenomDeckSize)
-                Dim WorkCounter As Integer
-                Dim InjectionArray() As Integer = {-1, 80, 64, 57, 52, 42, 39, 26, 9}
-                Dim InjectionCounter As Integer = 8
-                For WorkCounter = (PhenomDeckSize - 8) To PhenomDeck.GetUpperBound(0) Step 1
-                    PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
-                    InjectionCounter -= 1
-                Next
+                AddPhenomToActive(8, {-1, 80, 64, 57, 52, 42, 39, 26, 9})
             ElseIf PCAnthologies = False Then
                 CardStack(0, 9, 3) = -1
                 CardStack(0, 26, 3) = -1
@@ -251,15 +243,7 @@
                 CardStack(0, 104, 3) = 35 ''Mass Mutiny
                 CardStack(0, 107, 3) = 36 ''River's Rebuke
                 CardStack(0, 108, 3) = 37 ''Savage Instinct
-                PhenomDeckSize += 9
-                ReDim Preserve PhenomDeck(PhenomDeckSize)
-                Dim WorkCounter As Integer
-                Dim InjectionArray() As Integer = {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108}
-                Dim InjectionCounter As Integer = 9
-                For WorkCounter = (PhenomDeckSize - 9) To PhenomDeck.GetUpperBound(0) Step 1
-                    PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
-                    InjectionCounter -= 1
-                Next
+                AddPhenomToActive(9, {-1, 97, 98, 99, 101, 102, 103, 104, 107, 108})
             ElseIf ExpIxalan = False Then
                 CardStack(0, 97, 3) = -1
                 CardStack(0, 98, 3) = -1
@@ -276,15 +260,7 @@
                 CardStack(0, 241, 3) = 0
                 CardStack(0, 242, 3) = 0
                 CardStack(0, 243, 3) = 0
-                PhenomDeckSize += 4
-                ReDim Preserve PhenomDeck(PhenomDeckSize)
-                Dim WorkCounter As Integer
-                Dim InjectionArray() As Integer = {-1, 240, 241, 242, 243}
-                Dim InjectionCounter As Integer = 4
-                For WorkCounter = (PhenomDeckSize - 4) To PhenomDeck.GetUpperBound(0) Step 1
-                    PhenomDeck(WorkCounter) = InjectionArray(InjectionCounter)
-                    InjectionCounter -= 1
-                Next
+                AddPhenomToActive(4, {-1, 240, 241, 242, 243})
             ElseIf ExpMEPhenoms = False Then
                 CardStack(0, 97, 3) = -1
                 CardStack(0, 98, 3) = -1
@@ -295,6 +271,17 @@
         Return 0
     End Function
 
+    Function AddPhenomToActive(APTAamount As Integer, APTAarray() As Integer)
+        PhenomDeckSize += APTAamount
+        ReDim Preserve PhenomDeck(PhenomDeckSize)
+        Dim WorkCounter As Integer
+        Dim InjectionCounter As Integer = APTAamount
+        For WorkCounter = ((PhenomDeckSize - APTAamount) + 1) To PhenomDeck.GetUpperBound(0) Step 1
+            PhenomDeck(WorkCounter) = APTAarray(InjectionCounter)
+            InjectionCounter -= 1
+        Next
+        Return 0
+    End Function
     Function PickRandomPhenom() As Integer
         If PhenomDeckSize > 0 Then
 555:
