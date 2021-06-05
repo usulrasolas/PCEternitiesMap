@@ -1211,7 +1211,8 @@
                     End If
                 End If
             Next
-
+        Else
+            ''Nothing Needed
         End If
     End Sub
 
@@ -1540,6 +1541,8 @@
                         NEHellride = False
                     ElseIf CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 1 Then
                         NWHellride = False
+                    Else
+                        ''Nothing Needed
                     End If
                     If Deckcounter < 1 Then
                         ''disable hellride if no cards to draw
@@ -1574,6 +1577,8 @@
                 Cardarray(workcounter).Enabled = True
                 Cardarray(workcounter).Visible = True
             Next
+        Else
+            ''Nothing Needed
         End If
     End Sub
 
@@ -1601,6 +1606,8 @@
             GameEvent(118)
         ElseIf CardStack(0, Currentplane, 3) > -1 Then
             DisplayZoom(Currentplane)
+        Else
+            ''Nothing Needed
         End If
     End Sub
 
@@ -1689,6 +1696,8 @@
                     ReturnCard(DrawCard)
                     Deckstate = 1
                 End If
+            Else
+                ''Nothing Needed
             End If
         ElseIf Deckstate = 6 Then
             If MsgBox("Spatial Merging Resolves with Both Displayed Planes. Continue?", MsgBoxStyle.YesNo, "Spatial Merging Resolves") = MsgBoxResult.Yes Then
@@ -1724,6 +1733,8 @@
             ReturnCard(Drawbuffer(4))
             HidePickDisplay()
             ResolvePhenom(EventCardInPlay)
+        Else
+            ''Nothing Needed
         End If
     End Sub
 
@@ -1756,6 +1767,8 @@
             ResolvePhenom(EventCardInPlay)
         ElseIf Deckstate = 6 Then
             DisplayZoom(Drawbuffer(1))
+        Else
+            ''Nothing Needed
         End If
     End Sub
 
@@ -1773,6 +1786,8 @@
             ResolvePhenom(EventCardInPlay)
         ElseIf Deckstate = 6 Then
             DisplayZoom(Drawbuffer(0))
+        Else
+            ''Nothing Needed
         End If
     End Sub
 
