@@ -266,7 +266,13 @@
     Function ResolvePhenom(phenomnumber As Integer)
         ResolvePhenom = True
         Dim PersistPhenomDisplay As Boolean = False
-        If phenomnumber = 9 Or 97 Or 98 Or 108 Or 208 Or 220 Then PersistPhenomDisplay = True ''this is where you set the phenom to persist on screen
+        If phenomnumber = 9 Then PersistPhenomDisplay = True
+        If phenomnumber = 97 Then PersistPhenomDisplay = True
+        If phenomnumber = 98 Then PersistPhenomDisplay = True
+        If phenomnumber = 108 Then PersistPhenomDisplay = True
+        If phenomnumber = 208 Then PersistPhenomDisplay = True
+        If phenomnumber = 220 Then PersistPhenomDisplay = True
+        ''this is where you set the phenom to persist on screen
         ''only need special handlers with additon of generic handler with persistdisplayoptionstuff
         If phenomnumber = 26 Then
             ''Interplanar Tunnel
