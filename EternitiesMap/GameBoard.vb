@@ -175,18 +175,21 @@
             If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
             NCounter.Enabled = False
             DisplayZoom = True
-        ElseIf CheckPosition(CardNumber) = False Then ''if multiple occupancy
-            If CardStack(1, CardNumber, 0) >= 1 Then ''if HASMETADATA is set to any >0 value
-                Dim UpdateCard1 As Integer = CardNumber
-                Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)
-                Dim UpdateDisplay1 As Integer = CardStack(1, UpdateCard1, 1)
-                Dim UpdateCard2 As Integer = CardStack(1, UpdateCard1, 3)
-                Dim UpdatePartner2 As Integer = CardStack(1, UpdateCard2, 3)
-                Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
-                If UpdateDisplay1 = UpdateDisplay2 AndAlso UpdateCard1 = UpdatePartner2 AndAlso UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
-                    DoubleZoom(UpdateDisplay1, UpdateCard1, UpdatePartner1)
+        ElseIf CheckPosition(CardNumber) = False Then
+            ''if multiple occupancy
+            If CardStack(1, CardNumber, 0) >= 1 Then
+                ''if HASMETADATA is set to any >0 value
+                Dim Updatecard1 As Integer = CardNumber
+                Dim Updatepartner1 As Integer = CardStack(1, Updatecard1, 3)
+                Dim Updatedisplay1 As Integer = CardStack(1, Updatecard1, 1)
+                Dim Updatecard2 As Integer = CardStack(1, Updatecard1, 3)
+                Dim Updatepartner2 As Integer = CardStack(1, Updatecard2, 3)
+                Dim Updatedisplay2 As Integer = CardStack(1, Updatecard2, 1)
+                If Updatedisplay1 = Updatedisplay2 AndAlso Updatecard1 = Updatepartner2 AndAlso Updatepartner1 = Updatecard2 Then ''check linked metadata for match
+                    DoubleZoom(Updatedisplay1, Updatecard1, Updatepartner1)
                     DisplayZoom = True
-                Else ''mismatched metadata
+                Else
+                    ''mismatched metadata
                     DisplayZoom = False
                     PBZoom.Image = CardImage(-1)
                     PBZoom.BringToFront()
@@ -201,7 +204,8 @@
                 PBZoom.Visible = True
                 PBZoom.Enabled = True
                 NCounter.Enabled = False
-            Else ''double occupancy without metadata
+            Else
+                ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
                 PBZoom.BringToFront()
                 PBZoom.Visible = True
@@ -216,7 +220,8 @@
     Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         eventXloc = xloc
         eventYloc = yloc
-        If phenomnumber = 26 Then ''Interplanar Tunnel
+        If phenomnumber = 26 Then
+            ''Interplanar Tunnel
             eventCardInPlay = phenomnumber
             Deckstate = 4
             Drawbuffer(0) = DrawCard()
@@ -226,7 +231,8 @@
             Drawbuffer(4) = DrawCard()
             PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
             MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
-        ElseIf phenomnumber = 64 Then ''Spatial Merging
+        ElseIf phenomnumber = 64 Then
+            ''Spatial Merging
             eventCardInPlay = phenomnumber
             Deckstate = 6
             Drawbuffer(0) = DrawCard()
@@ -288,7 +294,8 @@
         Dim PersistPhenomDisplay As Boolean = False
         If phenomnumber = 9 Or 97 Or 98 Or 108 Or 208 Or 220 Then PersistPhenomDisplay = True ''this is where you set the phenom to persist on screen
         ''only need special handlers with additon of generic handler with persistdisplayoptionstuff
-        If phenomnumber = 26 Then ''Interplanar Tunnel
+        If phenomnumber = 26 Then
+            ''Interplanar Tunnel
             Dim eventdistance = Math.Abs(eventXloc) + Math.Abs(eventYloc)
             If eventdistance = 2 Then PlayCard(DrawCard, 3, eventXloc, eventYloc)
             MoveEventCheck()
@@ -313,7 +320,8 @@
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
-        ElseIf phenomnumber = 64 Then ''Spatial Merging
+        ElseIf phenomnumber = 64 Then
+            ''Spatial Merging
             CardStack(1, Drawbuffer(0), 0) = 1
             CardStack(1, Drawbuffer(1), 0) = 1
             CardStack(1, Drawbuffer(0), 1) = 64
@@ -346,7 +354,8 @@
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
             UpdateArrays()
-        Else ''generic handler
+        Else
+            ''generic handler
             Deckstate = 1
             If PersistPhenomDisplay = True Then
                 PCardSelect6.BringToFront()
@@ -358,7 +367,8 @@
 
     Function GameEvent(EventType As Integer) As Integer
         GameEvent = -1
-        If EventType = 9 Then ''Pools of Becoming Triple Draw
+        If EventType = 9 Then
+            ''Pools of Becoming Triple Draw
             Deckstate = 3
             Drawbuffer(0) = DrawCard()
             Drawbuffer(1) = DrawCard()
@@ -369,7 +379,8 @@
             ReturnCard(Drawbuffer(2))
             MsgBox("All 3 Revealed Chaos Effects Resolve." & vbCrLf & "Player who rolled chaos chooses resolve order." & vbCrLf & "Click Pools of Becoming to Return to Play when All Resolved", MsgBoxStyle.Information, "Pools of Becoming")
             GameEvent = EventType
-        ElseIf EventType = 11 Then ''Stairs to Infinity Scry Planar Deck on Chaos
+        ElseIf EventType = 11 Then
+            ''Stairs to Infinity Scry Planar Deck on Chaos
             Deckstate = 3
             PickDisplay(Currentplane, Nothing, Nothing, Nothing, CardLookup(Deckcounter), Nothing)
             MsgBox("Click on Revealed Card to Keep On Top of Planar Deck" & vbCrLf & "Click on Stairs to Infinity to Put Revealed Card on Bottom of Planar Deck", MsgBoxStyle.Information, "Stairs to Infinity")
@@ -556,16 +567,20 @@
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).ForeColor = Color.White
             If CardStack(0, Cardnumber, 4) < 0 Then DispArray(DispNumber).BackColor = Color.Black
             If CardStack(0, Cardnumber, 4) <> 0 Then DispArray(DispNumber).Text = CardStack(0, Cardnumber, 4)
-        ElseIf CheckPosition(Cardnumber) = False Then ''if multiple occupancy
-            If CardStack(1, Cardnumber, 0) >= 1 Then ''if HASMETADATA is set to any >0 value
+        ElseIf CheckPosition(Cardnumber) = False Then
+            ''if multiple occupancy
+            If CardStack(1, Cardnumber, 0) >= 1 Then
+                ''if HASMETADATA is set to any >0 value
                 Dim UpdateCard1 As Integer = Cardnumber
                 Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)
                 Dim UpdateDisplay1 As Integer = CardStack(1, UpdateCard1, 1)
                 Dim UpdateCard2 As Integer = CardStack(1, UpdateCard1, 3)
                 Dim UpdatePartner2 As Integer = CardStack(1, UpdateCard2, 3)
                 Dim UpdateDisplay2 As Integer = CardStack(1, UpdateCard2, 1)
-                If UpdateDisplay1 = UpdateDisplay2 AndAlso UpdateCard1 = UpdatePartner2 AndAlso UpdatePartner1 = UpdateCard2 Then ''check linked metadata for match
-                    CardArray(DispNumber).Image = CardImage(UpdateDisplay1) ''display metadata card instead
+                If UpdateDisplay1 = UpdateDisplay2 AndAlso UpdateCard1 = UpdatePartner2 AndAlso UpdatePartner1 = UpdateCard2 Then
+                    ''check linked metadata for match
+                    CardArray(DispNumber).Image = CardImage(UpdateDisplay1)
+                    ''display metadata card instead
                 Else
                     GoTo 850
                 End If
@@ -581,11 +596,14 @@
         PCardSelect6.SendToBack()
         PCardSelect6.Visible = False
         PCardSelect6.Image = Nothing
-        If CardStack(0, Currentplane, 3) = 5 Then ''Aeropolis Flag for 10 Counters Walks Away
+        If CardStack(0, Currentplane, 3) = 5 Then
+            ''Aeropolis Flag for 10 Counters Walks Away
             If CardStack(0, Currentplane, 4) >= Aretcounter And Aretresetmove = True Then CardStack(0, Currentplane, 4) = 0
-        ElseIf CardStack(0, Currentplane, 3) = 6 Then ''Naar Isle Counter Reset on Exit if reset is true
+        ElseIf CardStack(0, Currentplane, 3) = 6 Then
+            ''Naar Isle Counter Reset on Exit if reset is true
             If Naarreset = True Then CardStack(0, Currentplane, 4) = 0
-        ElseIf (CardStack(0, Currentplane, 3) = 7 And CardStack(0, Currentplane, 4) > 0) Then ''Mount Keralia Damage on Exit Reminder/Reset
+        ElseIf (CardStack(0, Currentplane, 3) = 7 And CardStack(0, Currentplane, 4) > 0) Then
+            ''Mount Keralia Damage on Exit Reminder/Reset
             MsgBox("Mount Keralia Deals " & CardStack(0, Currentplane, 4) & " Damage to Each Creature and Each Planeswalker", MsgBoxStyle.Exclamation, "Mount Keralia Erupts!")
             CardStack(0, Currentplane, 4) = 0
         End If
@@ -1512,9 +1530,12 @@
             Dim SEHellride As Boolean = True
             Dim NWHellride As Boolean = True
             Dim SWHellride As Boolean = True
-            For workcounter = 1 To Masterdeckcount Step 1 'for every card
-                If CardStack(0, workcounter, 5) = 3 Then 'that is active
-                    If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 0 Then 'if it occupies valid movement coodinates show and enable it.
+            For workcounter = 1 To Masterdeckcount Step 1
+                ''for every card
+                If CardStack(0, workcounter, 5) = 3 Then
+                    ''that is active
+                    If CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 0 Then
+                        ''if it occupies valid movement coodinates show and enable it.
                         CardArray(12).Visible = True
                         CardArray(12).Enabled = True
                         If CardStack(0, workcounter, 4) <> 0 Then DispArray(12).Visible = True
@@ -1530,7 +1551,8 @@
                         CardArray(19).Visible = True
                         CardArray(19).Enabled = True
                         If CardStack(0, workcounter, 4) <> 0 Then DispArray(19).Visible = True
-                    ElseIf CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = -1 Then 'if there's already a card in diagonal, don't allow hellriding
+                    ElseIf CardStack(0, workcounter, 1) = 1 And CardStack(0, workcounter, 2) = -1 Then
+                        ''if there's already a card in diagonal, don't allow hellriding
                         SEHellride = False
                     ElseIf CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = -1 Then
                         SWHellride = False
@@ -1539,7 +1561,8 @@
                     ElseIf CardStack(0, workcounter, 1) = -1 And CardStack(0, workcounter, 2) = 1 Then
                         NWHellride = False
                     End If
-                    If Deckcounter < 1 Then 'disable hellride if no cards to draw
+                    If Deckcounter < 1 Then
+                        ''disable hellride if no cards to draw
                         SEHellride = False
                         SWHellride = False
                         NEHellride = False
@@ -1547,7 +1570,8 @@
                     End If
                 End If
             Next
-            If SWHellride = True Then 'make visible and enable hellride slots
+            If SWHellride = True Then
+                ''make visible and enable hellride slots
                 CardArray(18).Visible = True
                 CardArray(18).Enabled = True
             End If
@@ -1576,15 +1600,18 @@
     Private Sub PBChaos_Click(sender As Object, e As EventArgs) Handles PBChaos.Click
         If CardStack(0, Currentplane, 3) = 0 Then
             DisplayZoom(Currentplane)
-        ElseIf CardStack(0, Currentplane, 3) = 5 Then ''Aretopolis Flag reminder to draw cards equal to counters
+        ElseIf CardStack(0, Currentplane, 3) = 5 Then
+            ''Aretopolis Flag reminder to draw cards equal to counters
             MsgBox("Please draw " & CardStack(0, Currentplane, 4) & " cards.", MsgBoxStyle.Information, "Draw Cards: Aretopolis")
-        ElseIf CardStack(0, Currentplane, 3) = 9 Then ''Pools of Becoming Triple Draw Chaos
+        ElseIf CardStack(0, Currentplane, 3) = 9 Then
+            ''Pools of Becoming Triple Draw Chaos
             If Deckcounter >= 3 Then
                 GameEvent(9)
             Else
                 MsgBox("Less Than 3 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Pools of Becoming Failure")
             End If
-        ElseIf CardStack(0, Currentplane, 3) = 11 Then ''Stairs to Infinity Scry Planar Deck
+        ElseIf CardStack(0, Currentplane, 3) = 11 Then
+            ''Stairs to Infinity Scry Planar Deck
             If Deckcounter >= 2 Then
                 GameEvent(11)
             Else
@@ -1670,7 +1697,8 @@
 
     Private Sub PCardSelect2_Click(sender As Object, e As EventArgs) Handles PCardSelect2.Click
         If Deckstate = 3 Then
-            If Currentplane = 53 Then 'triple draw just needs to stay until clicked
+            If Currentplane = 53 Then
+                ''triple draw just needs to stay until clicked
                 If MsgBox("Are you done applying all 3 chaos effects?", MsgBoxStyle.YesNo, "Pools of Becoming Exit") = vbYes Then
                     HidePickDisplay()
                     Deckstate = 1
