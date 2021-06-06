@@ -220,10 +220,10 @@
                 CardStack(0, 108, 3) = -1
             End If
             If Expmephenoms = True Then
-                CardStack(0, 240, 3) = 0
-                CardStack(0, 241, 3) = 0
-                CardStack(0, 242, 3) = 0
-                CardStack(0, 243, 3) = 0
+                CardStack(0, 240, 3) = 240
+                CardStack(0, 241, 3) = 241
+                CardStack(0, 242, 3) = 242
+                CardStack(0, 243, 3) = 243
                 AddPhenomToActive(4, {-1, 240, 241, 242, 243})
             Else
                 CardStack(0, 97, 3) = -1
@@ -232,10 +232,30 @@
                 CardStack(0, 101, 3) = -1
             End If
             If ExpPC2019commander = True Then
-                CardStack(0, 145, 3) = 0
+                CardStack(0, 145, 3) = 145
                 AddPhenomToActive(1, {-1, 145})
             Else
                 CardStack(0, 145, 3) = -1
+            End If
+            If ExpPC2017 = True Then
+                CardStack(0, 190, 3) = 190
+                CardStack(0, 191, 3) = 191
+                CardStack(0, 197, 3) = 197
+                CardStack(0, 208, 3) = 208
+                CardStack(0, 209, 3) = 209
+                CardStack(0, 211, 3) = 211
+                CardStack(0, 219, 3) = 219
+                CardStack(0, 220, 3) = 220
+                AddPhenomToActive(8, {-1, 190, 191, 197, 208, 209, 211, 219, 220})
+            Else
+                CardStack(0, 190, 3) = -1
+                CardStack(0, 191, 3) = -1
+                CardStack(0, 197, 3) = -1
+                CardStack(0, 208, 3) = -1
+                CardStack(0, 209, 3) = -1
+                CardStack(0, 211, 3) = -1
+                CardStack(0, 219, 3) = -1
+                CardStack(0, 220, 3) = -1
             End If
         End If
         Return 0
