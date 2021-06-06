@@ -40,105 +40,66 @@
     Public ExpPC2019commander As Boolean = False
     Public ExpPC2017 As Boolean = False
 
-    Public Function ReadyDeck() As Boolean
+    Public Function ReadyCards(start As Integer, finish As Integer)
         Dim WorkCounter As Integer
+        For WorkCounter = start To finish Step 1
+            ReadyCard(WorkCounter)
+        Next
+        Return 0
+    End Function
+
+    Public Function ReadyCard(value As Integer)
+        CardStack(0, value, 5) = 0
+        CardStack(0, value, 3) = 0
+        Return 0
+    End Function
+
+    Public Function ResetDeck()
+        Dim WorkCounter As Integer
+        For WorkCounter = 0 To Masterdeckcount Step 1
+            CardStack(0, WorkCounter, 5) = -1 'Set All State -1disable 0ready 1indeck 2inhand 3onboard
+            CardStack(0, WorkCounter, 4) = 0 'Counters
+            CardStack(0, WorkCounter, 3) = -1 'Flags
+            CardStack(0, WorkCounter, 2) = Nothing 'ypos
+            CardStack(0, WorkCounter, 1) = Nothing 'xPos
+            CardStack(0, WorkCounter, 0) = 0 'DeckPos
+            CardLookup(WorkCounter) = 0
+            CardStack(1, WorkCounter, 5) = -1 'Unpopulated
+            CardStack(1, WorkCounter, 4) = -1 'Unpopulated
+            CardStack(1, WorkCounter, 3) = -1 'PartnerCard
+            CardStack(1, WorkCounter, 2) = -1 'CounterOverride
+            CardStack(1, WorkCounter, 1) = -1 'DisplayOverride
+            CardStack(1, WorkCounter, 0) = -1 'HasMetadata
+        Next
+        Return 0
+    End Function
+
+    Public Function ReadyDeck() As Boolean
         ReadyDeck = False
         If Deckstate = 0 Then
-            For WorkCounter = 0 To Masterdeckcount Step 1
-                CardStack(0, WorkCounter, 5) = -1 'Set All State -1disable 0ready 1indeck 2inhand 3onboard
-                CardStack(0, WorkCounter, 4) = 0 'Counters
-                CardStack(0, WorkCounter, 3) = -1 'Flags
-                CardStack(0, WorkCounter, 2) = Nothing 'ypos
-                CardStack(0, WorkCounter, 1) = Nothing 'xPos
-                CardStack(0, WorkCounter, 0) = 0 'DeckPos
-                CardLookup(WorkCounter) = 0
-                CardStack(1, WorkCounter, 5) = -1 'Unpopulated
-                CardStack(1, WorkCounter, 4) = -1 'Unpopulated
-                CardStack(1, WorkCounter, 3) = -1 'PartnerCard
-                CardStack(1, WorkCounter, 2) = -1 'CounterOverride
-                CardStack(1, WorkCounter, 1) = -1 'DisplayOverride
-                CardStack(1, WorkCounter, 0) = -1 'HasMetadata
-            Next
+            ResetDeck()
             If Pcanthologies = True Then
-                For WorkCounter = 1 To 86 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0 'Flags
-                Next
+                ReadyCards(1, 86)
                 CardStack(0, 4, 3) = 5 ''Aeropolis Flag for 10 Counters Walks Away
                 CardStack(0, 0, 3) = 7 ''Mount Keralia Damage on Exit Reminder/Reset
                 CardStack(0, 43, 3) = 6 ''Naar Isle Counter Reset on Exit
                 CardStack(0, 53, 3) = 9 ''Pools of Becoming Triple Draw Chaos
                 CardStack(0, 65, 3) = 11 ''Stairs to Infinity Scry Planar Deck Chaos
             End If
-            If Expmeamon = True Then
-                For WorkCounter = 87 To 91 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expmefiora = True Then
-                For WorkCounter = 92 To 96 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expmeixalan = True Then
-                For WorkCounter = 224 To 227 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expmekaladesh = True Then
-                For WorkCounter = 228 To 232 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expmeextra = True Then
-                For WorkCounter = 233 To 239 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expmephenoms = True Then
-                For WorkCounter = 240 To 243 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expmetarkir = True Then
-                For WorkCounter = 244 To 248 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expmetheros = True Then
-                For WorkCounter = 249 To 253 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expixalan = True Then
-                For WorkCounter = 97 To 110 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-            End If
-            If Expgeekscape1 = True Then
-                For WorkCounter = 111 To 140 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
-                CardStack(0, 118, 3) = 101
-            End If
+            If Expmeamon = True Then ReadyCards(87, 91)
+            If Expmefiora = True Then ReadyCards(92, 96)
+            If Expmeixalan = True Then ReadyCards(224, 227)
+            If Expmekaladesh = True Then ReadyCards(228, 232)
+            If Expmeextra = True Then ReadyCards(233, 239)
+            If Expmephenoms = True Then ReadyCards(240, 243)
+            If Expmetarkir = True Then ReadyCards(244, 248)
+            If Expmetheros = True Then ReadyCards(249, 253)
+            If Expixalan = True Then ReadyCards(97, 110)
+            If Expgeekscape1 = True Then ReadyCards(111, 140)
             If ExpPC2019 = True Then
-                For WorkCounter = 141 To 183 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
+                ReadyCards(141, 183)
                 CardStack(0, 145, 5) = -1
                 CardStack(0, 149, 5) = -1
-
                 If ExpPC2019ixgame = True Then 'Trigger for c156 makes you play a game of Explorers of Ixalan
                     CardStack(0, 156, 3) = 156
                 Else
@@ -153,10 +114,7 @@
                 If ExpPC2019workshop = False Then CardStack(0, 173, 5) = -1
             End If
             If ExpPC2017 = True Then
-                For WorkCounter = 184 To 223 Step 1
-                    CardStack(0, WorkCounter, 5) = 0
-                    CardStack(0, WorkCounter, 3) = 0
-                Next
+                ReadyCards(184, 223)
                 CardStack(0, 190, 5) = -1
                 CardStack(0, 191, 5) = -1
                 CardStack(0, 197, 5) = -1
@@ -167,20 +125,25 @@
                 CardStack(0, 220, 5) = -1
             End If
             PhenomInitalize()
-            For WorkCounter = 1 To Masterdeckcount Step 1
-                If CardStack(0, WorkCounter, 3) > -1 AndAlso CardStack(0, WorkCounter, 5) >= 0 Then
-                    CardStack(0, WorkCounter, 0) = Deckcounter + 1
-                    Deckcounter += 1
-                    CardLookup(Deckcounter) = WorkCounter
-                    CardStack(0, WorkCounter, 5) = 1
-                End If
-            Next
-
+            StackDeck()
             Deckstate = 1
             Shuffle()
             ReadyDeck = True
         End If
         Return ReadyDeck
+    End Function
+
+    Public Function StackDeck()
+        Dim WorkCounter As Integer
+        For WorkCounter = 1 To Masterdeckcount Step 1
+            If CardStack(0, WorkCounter, 3) > -1 AndAlso CardStack(0, WorkCounter, 5) >= 0 Then
+                CardStack(0, WorkCounter, 0) = Deckcounter + 1
+                Deckcounter += 1
+                CardLookup(Deckcounter) = WorkCounter
+                CardStack(0, WorkCounter, 5) = 1
+            End If
+        Next
+        Return 0
     End Function
 
     Function PhenomInitalize()
