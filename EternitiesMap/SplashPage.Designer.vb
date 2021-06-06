@@ -24,7 +24,7 @@ Partial Class SplashPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashPage))
         Me.BCloseSplash = New System.Windows.Forms.Button()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.RTBSplashIntro = New System.Windows.Forms.RichTextBox()
         Me.lblSplashgreeting = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -39,17 +39,17 @@ Partial Class SplashPage
         Me.BCloseSplash.Text = "OK"
         Me.BCloseSplash.UseVisualStyleBackColor = False
         '
-        'RichTextBox1
+        'RTBSplashIntro
         '
-        Me.RichTextBox1.BackColor = System.Drawing.Color.Black
-        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.White
-        Me.RichTextBox1.Location = New System.Drawing.Point(100, 185)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.RichTextBox1.Size = New System.Drawing.Size(600, 200)
-        Me.RichTextBox1.TabIndex = 1
-        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        Me.RTBSplashIntro.BackColor = System.Drawing.Color.Black
+        Me.RTBSplashIntro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RTBSplashIntro.ForeColor = System.Drawing.Color.White
+        Me.RTBSplashIntro.Location = New System.Drawing.Point(100, 185)
+        Me.RTBSplashIntro.Name = "RTBSplashIntro"
+        Me.RTBSplashIntro.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
+        Me.RTBSplashIntro.Size = New System.Drawing.Size(600, 200)
+        Me.RTBSplashIntro.TabIndex = 1
+        Me.RTBSplashIntro.Text = resources.GetString("RTBSplashIntro.Text")
         '
         'lblSplashgreeting
         '
@@ -71,7 +71,7 @@ Partial Class SplashPage
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lblSplashgreeting)
-        Me.Controls.Add(Me.RichTextBox1)
+        Me.Controls.Add(Me.RTBSplashIntro)
         Me.Controls.Add(Me.BCloseSplash)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
@@ -84,6 +84,6 @@ Partial Class SplashPage
     End Sub
 
     Friend WithEvents BCloseSplash As Button
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents RTBSplashIntro As RichTextBox
     Friend WithEvents lblSplashgreeting As Label
 End Class
