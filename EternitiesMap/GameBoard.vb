@@ -243,53 +243,27 @@
         Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
         If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
         MoveEventCheck()
-        Dim invxloc As Integer
-        Dim invyloc As Integer
-        If xloc = 1 Then
-            invxloc = -1
-        ElseIf xloc = -1 Then
-            invxloc = 1
-        Else
-            invxloc = 0
-        End If
-        If yloc = 1 Then
-            invyloc = -1
-        ElseIf yloc = -1 Then
-            invyloc = 1
-        Else
-            invyloc = 0
-        End If
-        TranslateBoard(invxloc, invyloc)
+        TranslateBoard(InvertCoord(xloc), InvertCoord(yloc))
         Return 0
     End Function
 
     Function ResolvePhenom(phenomnumber As Integer)
         ResolvePhenom = True
         Dim PersistPhenomDisplay As Boolean = False
-        If phenomnumber = 9 Or 97 Or 98 Or 108 Or 208 Or 220 Then PersistPhenomDisplay = True ''this is where you set the phenom to persist on screen
+        If phenomnumber = 9 Then PersistPhenomDisplay = True
+        If phenomnumber = 97 Then PersistPhenomDisplay = True
+        If phenomnumber = 98 Then PersistPhenomDisplay = True
+        If phenomnumber = 108 Then PersistPhenomDisplay = True
+        If phenomnumber = 208 Then PersistPhenomDisplay = True
+        If phenomnumber = 220 Then PersistPhenomDisplay = True
+        ''this is where you set the phenom to persist on screen
         ''only need special handlers with additon of generic handler with persistdisplayoptionstuff
         If phenomnumber = 26 Then
             ''Interplanar Tunnel
             Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
             If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
             MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If EventXloc = 1 Then
-                invxloc = -1
-            ElseIf EventXloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If EventYloc = 1 Then
-                invyloc = -1
-            ElseIf EventYloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
+            TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
             Deckstate = 1
             PBWalk_Click(Nothing, Nothing)
             PBWalk_Click(Nothing, Nothing)
@@ -305,23 +279,7 @@
             CardStack(1, Drawbuffer(1), 3) = Drawbuffer(0)
             CardStack(1, Drawbuffer(0), 3) = Drawbuffer(1)
             MoveEventCheck()
-            Dim invxloc As Integer
-            Dim invyloc As Integer
-            If EventXloc = 1 Then
-                invxloc = -1
-            ElseIf EventXloc = -1 Then
-                invxloc = 1
-            Else
-                invxloc = 0
-            End If
-            If EventYloc = 1 Then
-                invyloc = -1
-            ElseIf EventYloc = -1 Then
-                invyloc = 1
-            Else
-                invyloc = 0
-            End If
-            TranslateBoard(invxloc, invyloc)
+            TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
             Deckstate = 1
             PlayCard(Drawbuffer(0), 3, 0, 0)
             PlayCard(Drawbuffer(1), 3, 0, 0)
@@ -337,6 +295,17 @@
                 PCardSelect6.Image = CardImage(phenomnumber)
             End If
         End If
+    End Function
+
+    Shared Function InvertCoord(value As Integer) As Integer
+        If value = 1 Then
+            Return -1
+        ElseIf value = -1 Then
+            Return 1
+        Else
+            Return 0
+        End If
+
     End Function
 
     Function GameEvent(EventType As Integer) As Integer
@@ -558,10 +527,9 @@
                     Cardarray(DispNumber).Image = CardImage(UpdateDisplay1)
                     ''display metadata card instead
                 Else
-                    GoTo 850
+                    ''nothing needed
                 End If
             Else
-850:
                 Cardarray(DispNumber).Image = CardImage(-1)
             End If
         End If
