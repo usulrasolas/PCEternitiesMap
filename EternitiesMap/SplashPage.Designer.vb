@@ -42,6 +42,7 @@ Partial Class SplashPage
         'RichTextBox1
         '
         Me.RichTextBox1.BackColor = System.Drawing.Color.Black
+        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.ForeColor = System.Drawing.Color.White
         Me.RichTextBox1.Location = New System.Drawing.Point(100, 185)
         Me.RichTextBox1.Name = "RichTextBox1"
