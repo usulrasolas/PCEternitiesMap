@@ -25,15 +25,16 @@ Partial Class SplashPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashPage))
         Me.BCloseSplash = New System.Windows.Forms.Button()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.lblSplashgreeting = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'BCloseSplash
         '
         Me.BCloseSplash.BackColor = System.Drawing.Color.White
         Me.BCloseSplash.ForeColor = System.Drawing.Color.Black
-        Me.BCloseSplash.Location = New System.Drawing.Point(371, 385)
+        Me.BCloseSplash.Location = New System.Drawing.Point(350, 400)
         Me.BCloseSplash.Name = "BCloseSplash"
-        Me.BCloseSplash.Size = New System.Drawing.Size(75, 23)
+        Me.BCloseSplash.Size = New System.Drawing.Size(100, 25)
         Me.BCloseSplash.TabIndex = 0
         Me.BCloseSplash.Text = "OK"
         Me.BCloseSplash.UseVisualStyleBackColor = False
@@ -42,12 +43,23 @@ Partial Class SplashPage
         '
         Me.RichTextBox1.BackColor = System.Drawing.Color.Black
         Me.RichTextBox1.ForeColor = System.Drawing.Color.White
-        Me.RichTextBox1.Location = New System.Drawing.Point(223, 192)
+        Me.RichTextBox1.Location = New System.Drawing.Point(100, 185)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
-        Me.RichTextBox1.Size = New System.Drawing.Size(375, 172)
+        Me.RichTextBox1.Size = New System.Drawing.Size(600, 200)
         Me.RichTextBox1.TabIndex = 1
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        '
+        'lblSplashgreeting
+        '
+        Me.lblSplashgreeting.AutoSize = True
+        Me.lblSplashgreeting.BackColor = System.Drawing.Color.Transparent
+        Me.lblSplashgreeting.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSplashgreeting.Location = New System.Drawing.Point(27, 9)
+        Me.lblSplashgreeting.Name = "lblSplashgreeting"
+        Me.lblSplashgreeting.Size = New System.Drawing.Size(751, 37)
+        Me.lblSplashgreeting.TabIndex = 2
+        Me.lblSplashgreeting.Text = "Welcome to the Planeschase: Eternities Map for PC"
         '
         'SplashPage
         '
@@ -57,16 +69,20 @@ Partial Class SplashPage
         Me.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.splashart
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblSplashgreeting)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.BCloseSplash)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "SplashPage"
         Me.Text = "Planeschase Eternities Map for PC"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents BCloseSplash As Button
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents lblSplashgreeting As Label
 End Class
