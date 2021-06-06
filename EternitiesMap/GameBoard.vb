@@ -138,13 +138,15 @@
             PBZoom.BringToFront()
             PBZoom.Visible = True
             PBZoom.Enabled = True
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Visible = True
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
-            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
-            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
-            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
-            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
+            If CardStack(0, CardNumber, 4) <> 0 Then
+                LBLZoom.Visible = True
+                LBLZoom.BringToFront()
+                LBLZoom.BackColor = Color.DarkBlue
+                LBLZoom.ForeColor = Color.LightYellow
+                LBLZoom.ForeColor = Color.White
+                LBLZoom.BackColor = Color.Black
+                LBLZoom.Text = CardStack(0, CardNumber, 4)
+            End If
             NCounter.Enabled = False
             DisplayZoom = True
         ElseIf CheckPosition(CardNumber) = False Then
@@ -179,14 +181,14 @@
             Else
                 ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
-                PBZoom.BringToFront()
-                PBZoom.Visible = True
-                PBZoom.Enabled = True
-                NCounter.Enabled = False
-                DisplayZoom = True
-            End If
-        Else
-            MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
+                                        PBZoom.BringToFront()
+                                        PBZoom.Visible = True
+                                        PBZoom.Enabled = True
+                                        NCounter.Enabled = False
+                                        DisplayZoom = True
+                                    End If
+                                Else
+                                    MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
         End If
         Return DisplayZoom
     End Function
