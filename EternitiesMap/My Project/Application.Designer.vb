@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.EternitiesMap.MainMenu
+            Me.MainForm = Global.EternitiesMap.SplashPage
         End Sub
     End Class
 End Namespace
