@@ -118,15 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="RichTextBox1.Text" xml:space="preserve">
-    <value>To begin a standard game of Eternities Map, all you have to
-do is click New Game on the Main Menu.
+    <value>To begin a standard game of Eternities Map, all you have to do is click New Game on the Main Menu.
 
 Default Game Mode:
 Planechase Anthology Only
 Phenomenon enabled 25% on Helljumping
 
-There are plenty of new options to choose from, so please
-explore our app to the fullest. No two games will ever be alike!
+There are plenty of new options to choose from, so please explore our app to the fullest. No two games will ever be alike!
 </value>
   </data>
 </root>
