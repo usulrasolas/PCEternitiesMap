@@ -1,17 +1,66 @@
+Planechase 2019:
 
-2019 Planes
-145 - Direct Order - Commander only Phenomenon
+145 - Direct Order - Commander only Phenomenon DONE
 147 - Fragile Image Cliffs - Quote "It was originally "target target creature," but with the Dominaria wording changes, we decided to make it "target target" instead.  I know that this is technically incorrect wording ("target any target" would be right), but we think it's worth it in this instance."
 149 - Glacial Prison - (toggable) very special tied to boss Marit Lage
-156 - Ixalan, the Binding Isle - (toggable) Does a game of explorers
-164 - Past Blast - Phenomenon that deals with planar graveyard
+156 - Ixalan, the Binding Isle - (toggable) Does a game of explorers DONE
+164 - Past Blast - Phenomenon that deals with planar graveyard CURRENTLY DISABLED DUE TO LACK OF GRAVEYARD IN ETERNITIES MAP
 166, 167, 168 - Salivation Chamber, Digestion Chamber, Eradication Chamber - Triple Card, It Progresses
 170 - Skylight Tower - Commander based mechanic
-172 - Spatial Twining - double display, and functionality to have double special cards (or to exclude them)
+172 - Spatial Twining - double display, and functionality to have double special cards (or to exclude them) 
 173 - Steamflogger Workshop - (toggable) needs common functional contraption deck
-176 - Throne Room of Paliano - (toggable) Monarch play feature (no coding needed)
+176 - Throne Room of Paliano - (toggable) Monarch play feature (no coding needed) DONE TOGGLEABLE
 183 - Your God-Pharoh has Returned - (toggable) Phenomenon that spawns player run boss?
 
+
+Multiverse Expansion:
+(Amonkhet and Fiora already integrated)
+Amonkhet 87-91
+Fiora 92-96
+Ixalan 224-227
+Kaladesh 228-232
+Extra Planes Set 233-239
+Phenom Pack 240-243
+Tarkir 244-248
+Theros 249-253
+
+240 - Phenom
+241 - Phenom
+242 - Phenom
+243 - Phenom
+
+
+
+Planechase 2017:
+
+190 - Collective Assault -Phenom
+191 - Dark Bargain -Phenom
+197 - Infinite Possibilities -Phenom
+208 - Planar Flooding -Phenom, part lasts for rest of game?
+209 - Planeswalkers Duel -Pheom
+211 - Portal to the Blind Eternities - Phenom
+219 - Through the Nexus - Phenom
+220 - Titans Landing - Phenom, effects last for rest of game
+
+Ixalan -done
+97 - Blessing of Shapers - Phenomenon (display until planeswalk away)
+98 - Bloodfast - Phenomenon (display until planeswalk away)
+99 - Bloodstained Massacre - Phenomenon
+101 - Dramatic Entrance - Phenomenon
+102 - Gates of Orazca - Phenomenon
+103 - Gold Laden Shipwreck - Phenomenon
+104 - Mass Mutiny - Phenomenon
+107 - Rivers Rebuke - Phenomenon
+108 - Savage Instinct - Phenomenon (display until planeswalk away)
+
+Geekchase - done
+118Holodeck - On chaos triggers
+
+Version 2.0
+ 
+Vanguard
+IN GENERAL: Starting life/handsize take in effect when this goes into effect
+ 
 Defeat a God
 Xenagos Ascended - Players do not win when xenagos leaves the battlefield. xenagos and all cards associated must leave at same time.
 
@@ -19,38 +68,5 @@ Hero Cards
 The Slayer - Would need to clarify that you gain 7 additional life aqquire as well
 The Vanquisher - Would need to clarify you draw one card and increase hand size by one
 
-Ixalan -done
-97Blessing of Shapers - Phenomenon (display until planeswalk away)
-98Bloodfast - Phenomenon (display until planeswalk away)
-99Bloodstained Massacre - Phenomenon
-101Dramatic Entrance - Phenomenon
-102Gates of Orazca - Phenomenon
-103Gold Laden Shipwreck - Phenomenon
-104Mass Mutiny - Phenomenon
-107Rivers Rebuke - Phenomenon
-108Savage Instinct - Phenomenon (display until planeswalk away)
 
-MorePlanes
-Aether Tide - Phenomenon
-Death of a Young God - Phenomenon
-Discovery of Lands - Phenomenon
-Mirrorverse - Phenomenon
-Overgrowth - Phenomenon
-Splintercaves - just another double display?
-Storm of Hellions - Phenomenon
 
-Vanguard
-IN GENERAL: Starting life/handsize take in effect when this goes into effect
- 
-2017
-Collective Assault -Phenom
-Dark Bargain -Phenom
-Infinite Possibilities -Phenom
-Planar Flooding -Phenom, part lasts for rest of game?
-Planeswalkers Duel -Pheom
-Portal to the Blind Eternities - Phenom
-Through the Nexus - Phenom
-Titans Landing - Phenom, effects last for rest of game
-
-Geekscape - done
-118Holodeck - On chaos triggers

@@ -125,15 +125,15 @@
 to play Standard Blind Eternities Map.
 
 In the standard version of the Blind Eternities Map,
-as planes no longer become visable on the board,
+as planes become no longer visable on the board,
 they are reshuffled back into the deck, and new planes
 are dealt out when new planes are discovered.
 
 In Finite Mode, Planes are not reshuffled back into the
 deck when they are no longer visable on the board,
 remaining on the grid to be visited again. Once the Deck
-is out of cards, Helljumping is disabled. You won't be able
-Planeswalk to unknown Planes.
+is out of cards, Helljumping is disabled. After that, you 
+won't be able to Planeswalk to "unknown" Planes.
   
 Finite mode allows for unique maps of the Multiverse
 every playthrough.</value>
@@ -143,9 +143,9 @@ every playthrough.</value>
 triggers. This Setting will only affect Aretopolis's ability.
 
 When Aretopolis's ability triggers, and it does not reset,
-it will keeping its counters (subject to other settings conditions).
+it will keep its counters (subject to other settings conditions).
 when you travel back to Aretopolis, you will put a Scroll counter on
-Aretopolis, gain life, and then you Planeswalk away again.
+Aretopolis, gain life, and then immediately Planeswalk away again.
 
 The Max No of counters the program allows is currently 99.</value>
   </data>
@@ -177,7 +177,7 @@ Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.
-</value>
+This affects all card sets.</value>
   </data>
   <data name="ChkResetReturn.ToolTip" xml:space="preserve">
     <value>Uncheck this box to skip reset of the counters on any card
@@ -195,7 +195,7 @@ Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
 but will also affect any Plane that gets a counter of any kind.
-</value>
+This affects all card sets.</value>
   </data>
   <data name="ChkPreTransReset.ToolTip" xml:space="preserve">
     <value>Check this box to force reset the counters on the active plane
@@ -208,7 +208,55 @@ Kilnspire District (Charge Counters)
 Mount Keralia (Pressure Counters)
 Naar Isle (Flame Counters)
 
-but will also affect any Plane that gets a counter of any kind.</value>
+but will also affect any Plane that gets a counter of any kind.
+This affects all card sets.
+</value>
+  </data>
+  <data name="RTBCredits.Text" xml:space="preserve">
+    <value>Magic: The Gathering, MTG, and Planechase are Copyright Wizard of The Coast LLC
+All Rights to Cards, Art, and Assets Reserved by Original Owners
+This program is unofficial and is in no way endorsed by Wizards of The Coast LLC
+This software and its code are distributed and licensed GNU GPL v3
+
+
+Geekchase created by u/TGIFman
+Geekchase: https://www.reddit.com/r/magicTCG/comments/1h4yp5/geekchase_a_set_of_30_custom_planechase_cards/
+
+
+Ixalan Expansion created by Mareykan
+Ixalan Expansion: https://www.mtgsalvation.com/forums/magic-fundamentals/custom-card-creation/791117-i-made-planechase-cards-for-ixalan
+
+
+Multiverse - The Custom Planechase Expansion created by u/Magical Hacker
+Multiverse - The Custom Planechase Expansion: https://www.reddit.com/r/custommagic/comments/7sgecl/multiverse_the_custom_planechase_expansion/?utm_medium=android_app&amp;utm_source=share
+
+
+Planechase 2017 created by Wapulatus
+Planechase 2017: http://magicseteditor.sourceforge.net/node/14469
+
+
+Planechase 2019 created by u/ExPointReddit
+Planechase 2019: https://www.reddit.com/r/magicTCG/comments/9127qi/after_over_a_year_of_work_we_give_you_what/?ref=share&amp;ref_source=link
+
+
+</value>
+  </data>
+  <data name="RTBResources.Text" xml:space="preserve">
+    <value>Our Github:
+
+https://github.com/usulrasolas/PCEternitiesMap
+
+Planeschase Rules:
+
+https://magic.wizards.com/en/articles/archive/feature/rules-revealed-2009-08-10
+and
+https://mtg.fandom.com/wiki/Planechase_(format)
+
+Blind Eternites Variant Rules:
+
+https://magic.wizards.com/en/articles/archive/feature/eternities-map-2010-07-19-0
+
+</value>
   </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
