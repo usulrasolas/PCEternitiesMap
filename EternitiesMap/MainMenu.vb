@@ -165,8 +165,4 @@
     Private Sub ChkBxPC2019CommanderCards_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxPC2019CommanderCards.CheckedChanged
         ExpPC2019commander = ChkBxPC2019CommanderCards.Checked
     End Sub
-
-    Private Sub TabPageModes_Click(sender As Object, e As EventArgs) Handles TabPageModes.Click
-
-    End Sub
 End Class
