@@ -27,6 +27,8 @@ Partial Class MainMenu
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BNewGame = New System.Windows.Forms.Button()
         Me.BExit = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.TabSettingMenu = New System.Windows.Forms.TabControl()
         Me.TabPageModes = New System.Windows.Forms.TabPage()
         Me.CHKInfinite = New System.Windows.Forms.CheckBox()
@@ -68,8 +70,6 @@ Partial Class MainMenu
         Me.RTBCredits = New System.Windows.Forms.RichTextBox()
         Me.TabPageResources = New System.Windows.Forms.TabPage()
         Me.RTBResources = New System.Windows.Forms.RichTextBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
@@ -113,6 +113,28 @@ Partial Class MainMenu
         Me.BExit.TabIndex = 2
         Me.BExit.Text = "Exit Game"
         Me.BExit.UseVisualStyleBackColor = False
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.AutomaticDelay = 250
+        Me.ToolTip1.AutoPopDelay = 15000
+        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ToolTip1.InitialDelay = 250
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ReshowDelay = 50
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BackColor = System.Drawing.Color.Black
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.ForeColor = System.Drawing.Color.White
+        Me.RichTextBox1.Location = New System.Drawing.Point(351, 531)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(75, 29)
+        Me.RichTextBox1.TabIndex = 16
+        Me.RichTextBox1.Text = "Version 1rcX"
         '
         'TabSettingMenu
         '
@@ -728,28 +750,6 @@ Partial Class MainMenu
         Me.RTBResources.Size = New System.Drawing.Size(778, 437)
         Me.RTBResources.TabIndex = 0
         Me.RTBResources.Text = resources.GetString("RTBResources.Text")
-        '
-        'ToolTip1
-        '
-        Me.ToolTip1.AutomaticDelay = 250
-        Me.ToolTip1.AutoPopDelay = 15000
-        Me.ToolTip1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ToolTip1.InitialDelay = 250
-        Me.ToolTip1.IsBalloon = True
-        Me.ToolTip1.ReshowDelay = 50
-        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.BackColor = System.Drawing.Color.Black
-        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.White
-        Me.RichTextBox1.Location = New System.Drawing.Point(351, 531)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(75, 29)
-        Me.RichTextBox1.TabIndex = 16
-        Me.RichTextBox1.Text = "Version 1rcX"
         '
         'MainMenu
         '
