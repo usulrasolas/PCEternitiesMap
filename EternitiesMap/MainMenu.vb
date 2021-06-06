@@ -51,6 +51,11 @@
         ChkBx2019Monarch.Checked = ExpPC2019throne
         ChkBx2019Contraption.Checked = ExpPC2019workshop
         ChkBxPC2019CommanderCards.Checked = ExpPC2019commander
+        Dim oForm As Form
+#Disable Warning CA2000 ' Dispose objects before losing scope
+        oForm = New SplashPage
+#Enable Warning CA2000 ' Dispose objects before losing scope
+        oForm.Show()
     End Sub
 
     Private Sub ChkPreTransReset_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPreTransReset.CheckedChanged
