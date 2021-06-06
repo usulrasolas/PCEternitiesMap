@@ -527,10 +527,9 @@
                     Cardarray(DispNumber).Image = CardImage(UpdateDisplay1)
                     ''display metadata card instead
                 Else
-                    GoTo 850
+                    ''nothing needed
                 End If
             Else
-850:
                 Cardarray(DispNumber).Image = CardImage(-1)
             End If
         End If
