@@ -165,4 +165,8 @@
     Private Sub ChkBxPC2019CommanderCards_CheckedChanged(sender As Object, e As EventArgs) Handles ChkBxPC2019CommanderCards.CheckedChanged
         ExpPC2019commander = ChkBxPC2019CommanderCards.Checked
     End Sub
+
+    Private Sub ChkIxalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkIxalan.CheckedChanged
+        Expixalan = ChkIxalan.Checked
+    End Sub
 End Class
