@@ -507,16 +507,23 @@
     Function UpdateArrayElement(DispNumber As Integer, Cardnumber As Integer)
         If CheckPosition(Cardnumber) = True Then
             Cardarray(DispNumber).Image = CardImage(Cardnumber)
-            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Enabled = True
-            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Visible = True
-            If CardStack(0, Cardnumber, 4) > 0 Then Disparray(DispNumber).BackColor = Color.DarkBlue
-            If CardStack(0, Cardnumber, 4) > 0 Then Disparray(DispNumber).ForeColor = Color.LightYellow
-            If CardStack(0, Cardnumber, 4) < 0 Then Disparray(DispNumber).ForeColor = Color.White
-            If CardStack(0, Cardnumber, 4) < 0 Then Disparray(DispNumber).BackColor = Color.Black
-            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Text = CardStack(0, Cardnumber, 4)
+            If CardStack(0, Cardnumber, 4) <> 0 Then
+                Disparray(DispNumber).Enabled = True
+                Disparray(DispNumber).Visible = True
+                Disparray(DispNumber).Text = CardStack(0, Cardnumber, 4)
+            End If
+            If CardStack(0, Cardnumber, 4) > 0 Then
+                Disparray(DispNumber).BackColor = Color.DarkBlue
+                Disparray(DispNumber).ForeColor = Color.LightYellow
+
+            End If
+            If CardStack(0, Cardnumber, 4) < 0 Then
+                Disparray(DispNumber).ForeColor = Color.White
+                Disparray(DispNumber).BackColor = Color.Black
+            End If
         Else
-            ''assumed multiple occupancy
-            If CardStack(1, Cardnumber, 0) >= 1 Then
+                ''assumed multiple occupancy
+                If CardStack(1, Cardnumber, 0) >= 1 Then
                 ''if HASMETADATA is set to any >0 value
                 Dim UpdateCard1 As Integer = Cardnumber
                 Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)
