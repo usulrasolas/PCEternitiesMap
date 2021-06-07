@@ -237,6 +237,12 @@
             Else
                 CardStack(0, 145, 3) = -1
             End If
+            If ExpPC2019 = True Then
+                CardStack(0, 172, 3) = 172
+                AddPhenomToActive(1, {-1, 172})
+            Else
+                CardStack(0, 172, 3) = -1
+            End If
             If ExpPC2017 = True Then
                 CardStack(0, 190, 3) = 190
                 CardStack(0, 191, 3) = 191

@@ -232,10 +232,9 @@
         MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         Return 0
     End Function
-    Function Phenom172Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
-
-        Return 0
-    End Function
+    ''Function Phenom172Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+    ''Return 0
+    ''End Function
     Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventXloc = xloc
         EventYloc = yloc
@@ -243,8 +242,9 @@
             Phenom26Resolve(phenomnumber, xloc, yloc)
         ElseIf phenomnumber = 64 Then
             Phenom64Resolve(phenomnumber, xloc, yloc)
-        ElseIf phenomnumber = 172 Then
-            Phenom172Resolve(phenomnumber, xloc, yloc)
+            ''TODO REWORK OF PHENOM EVENT AND DISPLAY SYSTEM
+            ''ElseIf phenomnumber = 172 Then
+            ''Phenom172Resolve(phenomnumber, xloc, yloc)
         Else
             StdPhenomEvent(phenomnumber, xloc, yloc)
         End If
@@ -269,6 +269,7 @@
         If phenomnumber = 97 Then PersistPhenomDisplay = True
         If phenomnumber = 98 Then PersistPhenomDisplay = True
         If phenomnumber = 108 Then PersistPhenomDisplay = True
+        If phenomnumber = 172 Then PersistPhenomDisplay = True ''Will need to be removed with rework of phenom/event system
         If phenomnumber = 208 Then PersistPhenomDisplay = True
         If phenomnumber = 220 Then PersistPhenomDisplay = True
         ''this is where you set the phenom to persist on screen
