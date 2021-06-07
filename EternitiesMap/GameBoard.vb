@@ -193,45 +193,58 @@
         Return DisplayZoom
     End Function
 
+    Function Phenom64Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+        EventCardInPlay = phenomnumber
+        Deckstate = 6
+        Drawbuffer(0) = DrawCard()
+        Drawbuffer(1) = DrawCard()
+        Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
+        If eventdistance = 2 Then
+            DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+            PlayCard(Drawbuffer(0), 3, xloc, yloc)
+            PlayCard(Drawbuffer(1), 3, xloc, yloc)
+        ElseIf eventdistance = 1 Then
+            Dim ExistingPlane As Integer
+            For workcounter = 1 To Masterdeckcount Step 1
+                If CardStack(0, workcounter, 1) = xloc And CardStack(0, workcounter, 2) = yloc Then
+                    ExistingPlane = workcounter
+                    ReturnCard(ExistingPlane)
+                End If
+                DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+                PlayCard(Drawbuffer(0), 3, xloc, yloc)
+                PlayCard(Drawbuffer(1), 3, xloc, yloc)
+            Next
+        Else
+            DisplayZoom(-1)
+        End If
+        Return 0
+    End Function
+
+    Function Phenom26Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+        EventCardInPlay = phenomnumber
+        Deckstate = 4
+        Drawbuffer(0) = DrawCard()
+        Drawbuffer(1) = DrawCard()
+        Drawbuffer(2) = DrawCard()
+        Drawbuffer(3) = DrawCard()
+        Drawbuffer(4) = DrawCard()
+        PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
+        MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
+        Return 0
+    End Function
+    Function Phenom172Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+
+        Return 0
+    End Function
     Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventXloc = xloc
         EventYloc = yloc
         If phenomnumber = 26 Then
-            ''Interplanar Tunnel
-            EventCardInPlay = phenomnumber
-            Deckstate = 4
-            Drawbuffer(0) = DrawCard()
-            Drawbuffer(1) = DrawCard()
-            Drawbuffer(2) = DrawCard()
-            Drawbuffer(3) = DrawCard()
-            Drawbuffer(4) = DrawCard()
-            PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
-            MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
+            Phenom26Resolve(phenomnumber, xloc, yloc)
         ElseIf phenomnumber = 64 Then
-            ''Spatial Merging
-            EventCardInPlay = phenomnumber
-            Deckstate = 6
-            Drawbuffer(0) = DrawCard()
-            Drawbuffer(1) = DrawCard()
-            Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then
-                DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
-                PlayCard(Drawbuffer(0), 3, xloc, yloc)
-                PlayCard(Drawbuffer(1), 3, xloc, yloc)
-            ElseIf eventdistance = 1 Then
-                Dim ExistingPlane As Integer
-                For workcounter = 1 To Masterdeckcount Step 1
-                    If CardStack(0, workcounter, 1) = xloc And CardStack(0, workcounter, 2) = yloc Then
-                        ExistingPlane = workcounter
-                        ReturnCard(ExistingPlane)
-                    End If
-                    DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
-                    PlayCard(Drawbuffer(0), 3, xloc, yloc)
-                    PlayCard(Drawbuffer(1), 3, xloc, yloc)
-                Next
-            Else
-                DisplayZoom(-1)
-            End If
+            Phenom64Resolve(phenomnumber, xloc, yloc)
+        ElseIf phenomnumber = 172 Then
+            Phenom172Resolve(phenomnumber, xloc, yloc)
         Else
             StdPhenomEvent(phenomnumber, xloc, yloc)
         End If
