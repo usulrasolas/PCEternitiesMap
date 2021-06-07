@@ -1,6 +1,8 @@
 ﻿Module PlanarDeck
+
     ''0 Not Ready, 1 Ready, 2 Moving , 3 InEvent
     Public Deckstate As Integer = 0
+
     Public Deckcounter As Integer = 0
     Public Const Masterdeckcount As Integer = 253
     Public CardLookup(Masterdeckcount) As Integer

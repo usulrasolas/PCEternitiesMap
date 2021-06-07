@@ -46,6 +46,7 @@ Partial Class SplashPage
         Me.RTBSplashIntro.ForeColor = System.Drawing.Color.White
         Me.RTBSplashIntro.Location = New System.Drawing.Point(100, 185)
         Me.RTBSplashIntro.Name = "RTBSplashIntro"
+        Me.RTBSplashIntro.ReadOnly = True
         Me.RTBSplashIntro.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None
         Me.RTBSplashIntro.Size = New System.Drawing.Size(600, 200)
         Me.RTBSplashIntro.TabIndex = 1
