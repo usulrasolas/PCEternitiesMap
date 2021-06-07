@@ -138,13 +138,15 @@
             PBZoom.BringToFront()
             PBZoom.Visible = True
             PBZoom.Enabled = True
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Visible = True
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.BringToFront()
-            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.BackColor = Color.DarkBlue
-            If CardStack(0, CardNumber, 4) > 0 Then LBLZoom.ForeColor = Color.LightYellow
-            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.ForeColor = Color.White
-            If CardStack(0, CardNumber, 4) < 0 Then LBLZoom.BackColor = Color.Black
-            If CardStack(0, CardNumber, 4) <> 0 Then LBLZoom.Text = CardStack(0, CardNumber, 4)
+            If CardStack(0, CardNumber, 4) <> 0 Then
+                LBLZoom.Visible = True
+                LBLZoom.BringToFront()
+                LBLZoom.BackColor = Color.DarkBlue
+                LBLZoom.ForeColor = Color.LightYellow
+                LBLZoom.ForeColor = Color.White
+                LBLZoom.BackColor = Color.Black
+                LBLZoom.Text = CardStack(0, CardNumber, 4)
+            End If
             NCounter.Enabled = False
             DisplayZoom = True
         ElseIf CheckPosition(CardNumber) = False Then
@@ -179,57 +181,70 @@
             Else
                 ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
-                PBZoom.BringToFront()
-                PBZoom.Visible = True
-                PBZoom.Enabled = True
-                NCounter.Enabled = False
-                DisplayZoom = True
-            End If
-        Else
-            MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
+                                        PBZoom.BringToFront()
+                                        PBZoom.Visible = True
+                                        PBZoom.Enabled = True
+                                        NCounter.Enabled = False
+                                        DisplayZoom = True
+                                    End If
+                                Else
+                                    MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
         End If
         Return DisplayZoom
     End Function
 
+    Function Phenom64Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+        EventCardInPlay = phenomnumber
+        Deckstate = 6
+        Drawbuffer(0) = DrawCard()
+        Drawbuffer(1) = DrawCard()
+        Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
+        If eventdistance = 2 Then
+            DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+            PlayCard(Drawbuffer(0), 3, xloc, yloc)
+            PlayCard(Drawbuffer(1), 3, xloc, yloc)
+        ElseIf eventdistance = 1 Then
+            Dim ExistingPlane As Integer
+            For workcounter = 1 To Masterdeckcount Step 1
+                If CardStack(0, workcounter, 1) = xloc And CardStack(0, workcounter, 2) = yloc Then
+                    ExistingPlane = workcounter
+                    ReturnCard(ExistingPlane)
+                End If
+                DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+                PlayCard(Drawbuffer(0), 3, xloc, yloc)
+                PlayCard(Drawbuffer(1), 3, xloc, yloc)
+            Next
+        Else
+            DisplayZoom(-1)
+        End If
+        Return 0
+    End Function
+
+    Function Phenom26Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+        EventCardInPlay = phenomnumber
+        Deckstate = 4
+        Drawbuffer(0) = DrawCard()
+        Drawbuffer(1) = DrawCard()
+        Drawbuffer(2) = DrawCard()
+        Drawbuffer(3) = DrawCard()
+        Drawbuffer(4) = DrawCard()
+        PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
+        MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
+        Return 0
+    End Function
+    ''Function Phenom172Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+    ''Return 0
+    ''End Function
     Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventXloc = xloc
         EventYloc = yloc
         If phenomnumber = 26 Then
-            ''Interplanar Tunnel
-            EventCardInPlay = phenomnumber
-            Deckstate = 4
-            Drawbuffer(0) = DrawCard()
-            Drawbuffer(1) = DrawCard()
-            Drawbuffer(2) = DrawCard()
-            Drawbuffer(3) = DrawCard()
-            Drawbuffer(4) = DrawCard()
-            PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
-            MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
+            Phenom26Resolve(phenomnumber, xloc, yloc)
         ElseIf phenomnumber = 64 Then
-            ''Spatial Merging
-            EventCardInPlay = phenomnumber
-            Deckstate = 6
-            Drawbuffer(0) = DrawCard()
-            Drawbuffer(1) = DrawCard()
-            Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
-            If eventdistance = 2 Then
-                DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
-                PlayCard(Drawbuffer(0), 3, xloc, yloc)
-                PlayCard(Drawbuffer(1), 3, xloc, yloc)
-            ElseIf eventdistance = 1 Then
-                Dim ExistingPlane As Integer
-                For workcounter = 1 To Masterdeckcount Step 1
-                    If CardStack(0, workcounter, 1) = xloc And CardStack(0, workcounter, 2) = yloc Then
-                        ExistingPlane = workcounter
-                        ReturnCard(ExistingPlane)
-                    End If
-                    DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
-                    PlayCard(Drawbuffer(0), 3, xloc, yloc)
-                    PlayCard(Drawbuffer(1), 3, xloc, yloc)
-                Next
-            Else
-                DisplayZoom(-1)
-            End If
+            Phenom64Resolve(phenomnumber, xloc, yloc)
+            ''REWORK 1.x OF PHENOM EVENT AND DISPLAY SYSTEM
+            ''ElseIf phenomnumber = 172 Then
+            ''Phenom172Resolve(phenomnumber, xloc, yloc)
         Else
             StdPhenomEvent(phenomnumber, xloc, yloc)
         End If
@@ -254,6 +269,7 @@
         If phenomnumber = 97 Then PersistPhenomDisplay = True
         If phenomnumber = 98 Then PersistPhenomDisplay = True
         If phenomnumber = 108 Then PersistPhenomDisplay = True
+        If phenomnumber = 172 Then PersistPhenomDisplay = True ''Will need to be removed with rework of phenom/event system
         If phenomnumber = 208 Then PersistPhenomDisplay = True
         If phenomnumber = 220 Then PersistPhenomDisplay = True
         ''this is where you set the phenom to persist on screen
@@ -505,16 +521,23 @@
     Function UpdateArrayElement(DispNumber As Integer, Cardnumber As Integer)
         If CheckPosition(Cardnumber) = True Then
             Cardarray(DispNumber).Image = CardImage(Cardnumber)
-            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Enabled = True
-            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Visible = True
-            If CardStack(0, Cardnumber, 4) > 0 Then Disparray(DispNumber).BackColor = Color.DarkBlue
-            If CardStack(0, Cardnumber, 4) > 0 Then Disparray(DispNumber).ForeColor = Color.LightYellow
-            If CardStack(0, Cardnumber, 4) < 0 Then Disparray(DispNumber).ForeColor = Color.White
-            If CardStack(0, Cardnumber, 4) < 0 Then Disparray(DispNumber).BackColor = Color.Black
-            If CardStack(0, Cardnumber, 4) <> 0 Then Disparray(DispNumber).Text = CardStack(0, Cardnumber, 4)
+            If CardStack(0, Cardnumber, 4) <> 0 Then
+                Disparray(DispNumber).Enabled = True
+                Disparray(DispNumber).Visible = True
+                Disparray(DispNumber).Text = CardStack(0, Cardnumber, 4)
+            End If
+            If CardStack(0, Cardnumber, 4) > 0 Then
+                Disparray(DispNumber).BackColor = Color.DarkBlue
+                Disparray(DispNumber).ForeColor = Color.LightYellow
+
+            End If
+            If CardStack(0, Cardnumber, 4) < 0 Then
+                Disparray(DispNumber).ForeColor = Color.White
+                Disparray(DispNumber).BackColor = Color.Black
+            End If
         Else
-            ''assumed multiple occupancy
-            If CardStack(1, Cardnumber, 0) >= 1 Then
+                ''assumed multiple occupancy
+                If CardStack(1, Cardnumber, 0) >= 1 Then
                 ''if HASMETADATA is set to any >0 value
                 Dim UpdateCard1 As Integer = Cardnumber
                 Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)
