@@ -181,19 +181,39 @@
             Else
                 ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
-                                        PBZoom.BringToFront()
-                                        PBZoom.Visible = True
-                                        PBZoom.Enabled = True
-                                        NCounter.Enabled = False
-                                        DisplayZoom = True
-                                    End If
-                                Else
-                                    MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
+                PBZoom.BringToFront()
+                PBZoom.Visible = True
+                PBZoom.Enabled = True
+                NCounter.Enabled = False
+                DisplayZoom = True
+            End If
+        Else
+            MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
         End If
         Return DisplayZoom
     End Function
 
-    Function Phenom64Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+    Function Phenom64Resolve()
+        ''Spatial Merging
+        CardStack(1, Drawbuffer(0), 0) = 1
+        CardStack(1, Drawbuffer(1), 0) = 1
+        CardStack(1, Drawbuffer(0), 1) = 64
+        CardStack(1, Drawbuffer(1), 1) = 64
+        CardStack(1, Drawbuffer(1), 2) = 0
+        CardStack(1, Drawbuffer(0), 2) = 0
+        CardStack(1, Drawbuffer(1), 3) = Drawbuffer(0)
+        CardStack(1, Drawbuffer(0), 3) = Drawbuffer(1)
+        MoveEventCheck()
+        TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
+        Deckstate = 1
+        PlayCard(Drawbuffer(0), 3, 0, 0)
+        PlayCard(Drawbuffer(1), 3, 0, 0)
+        PBWalk_Click(Nothing, Nothing)
+        PBWalk_Click(Nothing, Nothing)
+        Return 0
+    End Function
+
+    Function Phenom64Event(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventCardInPlay = phenomnumber
         Deckstate = 6
         Drawbuffer(0) = DrawCard()
@@ -220,7 +240,19 @@
         Return 0
     End Function
 
-    Function Phenom26Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+    Function Phenom26Resolve()
+        ''Interplanar Tunnel
+        Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
+        If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
+        MoveEventCheck()
+        TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
+        Deckstate = 1
+        PBWalk_Click(Nothing, Nothing)
+        PBWalk_Click(Nothing, Nothing)
+        Return 0
+    End Function
+
+    Function Phenom26Event(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventCardInPlay = phenomnumber
         Deckstate = 4
         Drawbuffer(0) = DrawCard()
@@ -232,16 +264,16 @@
         MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         Return 0
     End Function
-    ''Function Phenom172Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+    ''Function Phenom172Event(phenomnumber As Integer, xloc As Integer, yloc As Integer)
     ''Return 0
     ''End Function
     Function PhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventXloc = xloc
         EventYloc = yloc
         If phenomnumber = 26 Then
-            Phenom26Resolve(phenomnumber, xloc, yloc)
+            Phenom26Event(phenomnumber, xloc, yloc)
         ElseIf phenomnumber = 64 Then
-            Phenom64Resolve(phenomnumber, xloc, yloc)
+            Phenom64Event(phenomnumber, xloc, yloc)
             ''REWORK 1.x OF PHENOM EVENT AND DISPLAY SYSTEM
             ''ElseIf phenomnumber = 172 Then
             ''Phenom172Resolve(phenomnumber, xloc, yloc)
@@ -275,33 +307,9 @@
         ''this is where you set the phenom to persist on screen
         ''only need special handlers with additon of generic handler with persistdisplayoptionstuff
         If phenomnumber = 26 Then
-            ''Interplanar Tunnel
-            Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
-            If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
-            MoveEventCheck()
-            TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
-            Deckstate = 1
-            PBWalk_Click(Nothing, Nothing)
-            PBWalk_Click(Nothing, Nothing)
-            UpdateArrays()
+            Phenom26Resolve()
         ElseIf phenomnumber = 64 Then
-            ''Spatial Merging
-            CardStack(1, Drawbuffer(0), 0) = 1
-            CardStack(1, Drawbuffer(1), 0) = 1
-            CardStack(1, Drawbuffer(0), 1) = 64
-            CardStack(1, Drawbuffer(1), 1) = 64
-            CardStack(1, Drawbuffer(1), 2) = 0
-            CardStack(1, Drawbuffer(0), 2) = 0
-            CardStack(1, Drawbuffer(1), 3) = Drawbuffer(0)
-            CardStack(1, Drawbuffer(0), 3) = Drawbuffer(1)
-            MoveEventCheck()
-            TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
-            Deckstate = 1
-            PlayCard(Drawbuffer(0), 3, 0, 0)
-            PlayCard(Drawbuffer(1), 3, 0, 0)
-            PBWalk_Click(Nothing, Nothing)
-            PBWalk_Click(Nothing, Nothing)
-            UpdateArrays()
+            Phenom64Resolve()
         Else
             ''generic handler
             Deckstate = 1
@@ -311,6 +319,7 @@
                 PCardSelect6.Image = CardImage(phenomnumber)
             End If
         End If
+        UpdateArrays()
     End Function
 
     Shared Function InvertCoord(value As Integer) As Integer
