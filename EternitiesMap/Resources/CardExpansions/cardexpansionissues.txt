@@ -5,9 +5,9 @@ Planechase 2019:
 149 - Glacial Prison - (toggable) very special tied to boss Marit Lage
 156 - Ixalan, the Binding Isle - (toggable) Does a game of explorers DONE
 164 - Past Blast - Phenomenon that deals with planar graveyard CURRENTLY DISABLED DUE TO LACK OF GRAVEYARD IN ETERNITIES MAP
-166, 167, 168 - Salivation Chamber, Digestion Chamber, Eradication Chamber - Triple Card, It Progresses
+166, 167, 168 - Salivation Chamber, Digestion Chamber, Eradication Chamber - Triple Card, It Progresses Phase 2
 170 - Skylight Tower - Commander based mechanic
-172 - Spatial Twining - double display, and functionality to have double special cards (or to exclude them) 
+172 - Spatial Twining - double display, and functionality to have double special cards (or to exclude them) REQUIRES 1.x Rework for full implement, lasts until walk away currently
 173 - Steamflogger Workshop - (toggable) needs common functional contraption deck
 176 - Throne Room of Paliano - (toggable) Monarch play feature (no coding needed) DONE TOGGLEABLE
 183 - Your God-Pharoh has Returned - (toggable) Phenomenon that spawns player run boss?
