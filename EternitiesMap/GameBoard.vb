@@ -181,14 +181,14 @@
             Else
                 ''double occupancy without metadata
                 PBZoom.Image = CardImage(-1)
-                                        PBZoom.BringToFront()
-                                        PBZoom.Visible = True
-                                        PBZoom.Enabled = True
-                                        NCounter.Enabled = False
-                                        DisplayZoom = True
-                                    End If
-                                Else
-                                    MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
+                PBZoom.BringToFront()
+                PBZoom.Visible = True
+                PBZoom.Enabled = True
+                NCounter.Enabled = False
+                DisplayZoom = True
+            End If
+        Else
+            MsgBox("DisplayZoom Called Incorrectly", MsgBoxStyle.Critical, "DisplayZoom Call Failure")
         End If
         Return DisplayZoom
     End Function
@@ -220,7 +220,7 @@
         Return 0
     End Function
 
-    Function Phenom26Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
+    Function Phenom26Resolve(phenomnumber As Integer)
         EventCardInPlay = phenomnumber
         Deckstate = 4
         Drawbuffer(0) = DrawCard()
@@ -232,6 +232,7 @@
         MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         Return 0
     End Function
+
     ''Function Phenom172Resolve(phenomnumber As Integer, xloc As Integer, yloc As Integer)
     ''Return 0
     ''End Function
@@ -239,7 +240,7 @@
         EventXloc = xloc
         EventYloc = yloc
         If phenomnumber = 26 Then
-            Phenom26Resolve(phenomnumber, xloc, yloc)
+            Phenom26Resolve(phenomnumber)
         ElseIf phenomnumber = 64 Then
             Phenom64Resolve(phenomnumber, xloc, yloc)
             ''REWORK 1.x OF PHENOM EVENT AND DISPLAY SYSTEM
@@ -536,8 +537,8 @@
                 Disparray(DispNumber).BackColor = Color.Black
             End If
         Else
-                ''assumed multiple occupancy
-                If CardStack(1, Cardnumber, 0) >= 1 Then
+            ''assumed multiple occupancy
+            If CardStack(1, Cardnumber, 0) >= 1 Then
                 ''if HASMETADATA is set to any >0 value
                 Dim UpdateCard1 As Integer = Cardnumber
                 Dim UpdatePartner1 As Integer = CardStack(1, UpdateCard1, 3)

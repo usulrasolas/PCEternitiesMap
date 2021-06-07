@@ -169,4 +169,5 @@
     Private Sub ChkIxalan_CheckedChanged(sender As Object, e As EventArgs) Handles ChkIxalan.CheckedChanged
         Expixalan = ChkIxalan.Checked
     End Sub
+
 End Class
