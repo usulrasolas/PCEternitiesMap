@@ -242,7 +242,7 @@
             Phenom26Resolve(phenomnumber, xloc, yloc)
         ElseIf phenomnumber = 64 Then
             Phenom64Resolve(phenomnumber, xloc, yloc)
-            ''TODO REWORK OF PHENOM EVENT AND DISPLAY SYSTEM
+            ''REWORK 1.x OF PHENOM EVENT AND DISPLAY SYSTEM
             ''ElseIf phenomnumber = 172 Then
             ''Phenom172Resolve(phenomnumber, xloc, yloc)
         Else
