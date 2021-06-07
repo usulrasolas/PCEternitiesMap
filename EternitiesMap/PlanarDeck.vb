@@ -463,29 +463,39 @@
                 End If
             Next
             PopulateBoard()
-            If Distancereset = True Then
-                For workcounter = 1 To Masterdeckcount Step 1
-                    Dim distancecounter As Integer
-                    distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
-                    If distancecounter > 3 AndAlso CardStack(0, workcounter, 5) = 3 Then
-                        CardStack(0, workcounter, 4) = 0
-                    End If
-                Next
-            End If
-            For workcounter = 1 To Masterdeckcount Step 1
-                If CardStack(0, workcounter, 1) = 0 AndAlso CardStack(0, workcounter, 2) = 0 Then
-                    If CheckPosition(workcounter) = True Then ''set currentplane if single
-                        Currentplane = workcounter
-                    Else
-                        ''insert logic here
-                    End If
-                End If
-            Next
+            If Distancereset = True Then CleanDReset()
+            PollAndSetCurrentPlane()
             CullBoard()
             Return True
         Else
             Return False
         End If
+    End Function
+
+    Public Function PollAndSetCurrentPlane()
+        Dim workcounter As Integer
+        For workcounter = 1 To Masterdeckcount Step 1
+            If CardStack(0, workcounter, 1) = 0 AndAlso CardStack(0, workcounter, 2) = 0 Then
+                If CheckPosition(workcounter) = True Then ''set currentplane if single
+                    Currentplane = workcounter
+                Else
+                    ''insert logic here
+                End If
+            End If
+        Next
+        Return 0
+    End Function
+
+    Public Function CleanDReset()
+        Dim workcounter As Integer
+        For workcounter = 1 To Masterdeckcount Step 1
+            Dim distancecounter As Integer
+            distancecounter = Math.Abs(CardStack(0, workcounter, 1)) + Math.Abs(CardStack(0, workcounter, 2))
+            If distancecounter > 3 AndAlso CardStack(0, workcounter, 5) = 3 Then
+                CardStack(0, workcounter, 4) = 0
+            End If
+        Next
+        Return 0
     End Function
 
     Public Function CullBoard() As Boolean
