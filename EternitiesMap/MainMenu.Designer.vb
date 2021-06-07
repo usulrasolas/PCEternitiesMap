@@ -28,23 +28,25 @@ Partial Class MainMenu
         Me.BNewGame = New System.Windows.Forms.Button()
         Me.BExit = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.TabSettingMenu = New System.Windows.Forms.TabControl()
-        Me.TabPageModes = New System.Windows.Forms.TabPage()
         Me.CHKInfinite = New System.Windows.Forms.CheckBox()
-        Me.TabPageSettings = New System.Windows.Forms.TabPage()
-        Me.NumAretMax = New System.Windows.Forms.NumericUpDown()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.ChkAertReset = New System.Windows.Forms.CheckBox()
         Me.ChkNaarReset = New System.Windows.Forms.CheckBox()
         Me.ChkDistanceReset = New System.Windows.Forms.CheckBox()
         Me.ChkResetReturn = New System.Windows.Forms.CheckBox()
         Me.ChkPreTransReset = New System.Windows.Forms.CheckBox()
+        Me.TBPhenomMoveChance = New System.Windows.Forms.TrackBar()
+        Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
+        Me.ChkBx2019Contraption = New System.Windows.Forms.CheckBox()
+        Me.ChkBox2019Ixalan = New System.Windows.Forms.CheckBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.TabSettingMenu = New System.Windows.Forms.TabControl()
+        Me.TabPageModes = New System.Windows.Forms.TabPage()
+        Me.TabPageSettings = New System.Windows.Forms.TabPage()
+        Me.NumAretMax = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TabPagePhenom = New System.Windows.Forms.TabPage()
         Me.LBLMoveChance = New System.Windows.Forms.Label()
-        Me.TBPhenomMoveChance = New System.Windows.Forms.TrackBar()
         Me.LBLHJChance = New System.Windows.Forms.Label()
-        Me.TBPhenomHJChance = New System.Windows.Forms.TrackBar()
         Me.ChkPhenomSupport = New System.Windows.Forms.CheckBox()
         Me.TabPageCardSets = New System.Windows.Forms.TabPage()
         Me.ChkBxMultiversePhenom = New System.Windows.Forms.CheckBox()
@@ -61,8 +63,6 @@ Partial Class MainMenu
         Me.ChkBxPC2017 = New System.Windows.Forms.CheckBox()
         Me.ChkBx2019Bosses = New System.Windows.Forms.CheckBox()
         Me.ChkBx2019Monarch = New System.Windows.Forms.CheckBox()
-        Me.ChkBx2019Contraption = New System.Windows.Forms.CheckBox()
-        Me.ChkBox2019Ixalan = New System.Windows.Forms.CheckBox()
         Me.ChkBxPC2019CommanderCards = New System.Windows.Forms.CheckBox()
         Me.ChkPC2019 = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
@@ -70,13 +70,13 @@ Partial Class MainMenu
         Me.RTBCredits = New System.Windows.Forms.RichTextBox()
         Me.TabPageResources = New System.Windows.Forms.TabPage()
         Me.RTBResources = New System.Windows.Forms.RichTextBox()
+        CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabSettingMenu.SuspendLayout()
         Me.TabPageModes.SuspendLayout()
         Me.TabPageSettings.SuspendLayout()
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPagePhenom.SuspendLayout()
-        CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPageCardSets.SuspendLayout()
         Me.TabPageCredits.SuspendLayout()
         Me.TabPageResources.SuspendLayout()
@@ -124,48 +124,6 @@ Partial Class MainMenu
         Me.ToolTip1.ReshowDelay = 50
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.BackColor = System.Drawing.Color.Black
-        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.ForeColor = System.Drawing.Color.White
-        Me.RichTextBox1.Location = New System.Drawing.Point(351, 531)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(75, 29)
-        Me.RichTextBox1.TabIndex = 16
-        Me.RichTextBox1.Text = "Version 1rcX"
-        '
-        'TabSettingMenu
-        '
-        Me.TabSettingMenu.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
-        Me.TabSettingMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabSettingMenu.Controls.Add(Me.TabPageModes)
-        Me.TabSettingMenu.Controls.Add(Me.TabPageSettings)
-        Me.TabSettingMenu.Controls.Add(Me.TabPagePhenom)
-        Me.TabSettingMenu.Controls.Add(Me.TabPageCardSets)
-        Me.TabSettingMenu.Controls.Add(Me.TabPageCredits)
-        Me.TabSettingMenu.Controls.Add(Me.TabPageResources)
-        Me.TabSettingMenu.Location = New System.Drawing.Point(1, 51)
-        Me.TabSettingMenu.Name = "TabSettingMenu"
-        Me.TabSettingMenu.SelectedIndex = 0
-        Me.TabSettingMenu.ShowToolTips = True
-        Me.TabSettingMenu.Size = New System.Drawing.Size(782, 469)
-        Me.TabSettingMenu.TabIndex = 15
-        '
-        'TabPageModes
-        '
-        Me.TabPageModes.BackColor = System.Drawing.Color.Black
-        Me.TabPageModes.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
-        Me.TabPageModes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPageModes.Controls.Add(Me.CHKInfinite)
-        Me.TabPageModes.Location = New System.Drawing.Point(4, 22)
-        Me.TabPageModes.Name = "TabPageModes"
-        Me.TabPageModes.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageModes.Size = New System.Drawing.Size(774, 443)
-        Me.TabPageModes.TabIndex = 0
-        Me.TabPageModes.Text = "Game Modes"
-        '
         'CHKInfinite
         '
         Me.CHKInfinite.AutoSize = True
@@ -180,52 +138,6 @@ Partial Class MainMenu
         Me.CHKInfinite.Text = "Finite Mode"
         Me.ToolTip1.SetToolTip(Me.CHKInfinite, resources.GetString("CHKInfinite.ToolTip"))
         Me.CHKInfinite.UseVisualStyleBackColor = False
-        '
-        'TabPageSettings
-        '
-        Me.TabPageSettings.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
-        Me.TabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TabPageSettings.Controls.Add(Me.NumAretMax)
-        Me.TabPageSettings.Controls.Add(Me.Label4)
-        Me.TabPageSettings.Controls.Add(Me.ChkAertReset)
-        Me.TabPageSettings.Controls.Add(Me.ChkNaarReset)
-        Me.TabPageSettings.Controls.Add(Me.ChkDistanceReset)
-        Me.TabPageSettings.Controls.Add(Me.ChkResetReturn)
-        Me.TabPageSettings.Controls.Add(Me.ChkPreTransReset)
-        Me.TabPageSettings.Location = New System.Drawing.Point(4, 22)
-        Me.TabPageSettings.Name = "TabPageSettings"
-        Me.TabPageSettings.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageSettings.Size = New System.Drawing.Size(774, 443)
-        Me.TabPageSettings.TabIndex = 1
-        Me.TabPageSettings.Text = "Settings"
-        Me.TabPageSettings.ToolTipText = "This applies to all card sets."
-        Me.TabPageSettings.UseVisualStyleBackColor = True
-        '
-        'NumAretMax
-        '
-        Me.NumAretMax.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumAretMax.ForeColor = System.Drawing.Color.Black
-        Me.NumAretMax.Location = New System.Drawing.Point(235, 86)
-        Me.NumAretMax.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
-        Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumAretMax.Name = "NumAretMax"
-        Me.NumAretMax.Size = New System.Drawing.Size(36, 20)
-        Me.NumAretMax.TabIndex = 13
-        Me.NumAretMax.Value = New Decimal(New Integer() {10, 0, 0, 0})
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(3, 88)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(226, 13)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Maximum Scroll Counters on Aretopolis"
         '
         'ChkAertReset
         '
@@ -303,6 +215,155 @@ Partial Class MainMenu
         Me.ToolTip1.SetToolTip(Me.ChkPreTransReset, resources.GetString("ChkPreTransReset.ToolTip"))
         Me.ChkPreTransReset.UseVisualStyleBackColor = False
         '
+        'TBPhenomMoveChance
+        '
+        Me.TBPhenomMoveChance.BackColor = System.Drawing.Color.Black
+        Me.TBPhenomMoveChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TBPhenomMoveChance.Location = New System.Drawing.Point(3, 78)
+        Me.TBPhenomMoveChance.Maximum = 100
+        Me.TBPhenomMoveChance.Name = "TBPhenomMoveChance"
+        Me.TBPhenomMoveChance.Size = New System.Drawing.Size(768, 45)
+        Me.TBPhenomMoveChance.TabIndex = 16
+        Me.TBPhenomMoveChance.TickFrequency = 5
+        Me.TBPhenomMoveChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.ToolTip1.SetToolTip(Me.TBPhenomMoveChance, "Percent Chance of A Random Phenomenon on Helljump")
+        '
+        'TBPhenomHJChance
+        '
+        Me.TBPhenomHJChance.BackColor = System.Drawing.Color.Black
+        Me.TBPhenomHJChance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TBPhenomHJChance.Location = New System.Drawing.Point(3, 20)
+        Me.TBPhenomHJChance.Maximum = 100
+        Me.TBPhenomHJChance.Name = "TBPhenomHJChance"
+        Me.TBPhenomHJChance.Size = New System.Drawing.Size(768, 45)
+        Me.TBPhenomHJChance.TabIndex = 14
+        Me.TBPhenomHJChance.TickFrequency = 5
+        Me.TBPhenomHJChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.ToolTip1.SetToolTip(Me.TBPhenomHJChance, "Percent Chance of A Random Phenomenon on Helljump")
+        '
+        'ChkBx2019Contraption
+        '
+        Me.ChkBx2019Contraption.AutoSize = True
+        Me.ChkBx2019Contraption.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBx2019Contraption.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBx2019Contraption.Enabled = False
+        Me.ChkBx2019Contraption.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBx2019Contraption.Location = New System.Drawing.Point(0, 68)
+        Me.ChkBx2019Contraption.Name = "ChkBx2019Contraption"
+        Me.ChkBx2019Contraption.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkBx2019Contraption.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBx2019Contraption.TabIndex = 40
+        Me.ChkBx2019Contraption.Text = "Steamflogger Workshop (Contraption Mechanic)(Default Off)"
+        Me.ToolTip1.SetToolTip(Me.ChkBx2019Contraption, "This Plane begins the Contraption Mechanic," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "which was released in the Unstable s" &
+        "et." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please only enable this plane if you own a " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Contraption deck." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        Me.ChkBx2019Contraption.UseVisualStyleBackColor = False
+        '
+        'ChkBox2019Ixalan
+        '
+        Me.ChkBox2019Ixalan.AutoSize = True
+        Me.ChkBox2019Ixalan.BackColor = System.Drawing.Color.Transparent
+        Me.ChkBox2019Ixalan.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkBox2019Ixalan.Enabled = False
+        Me.ChkBox2019Ixalan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkBox2019Ixalan.Location = New System.Drawing.Point(0, 51)
+        Me.ChkBox2019Ixalan.Name = "ChkBox2019Ixalan"
+        Me.ChkBox2019Ixalan.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
+        Me.ChkBox2019Ixalan.Size = New System.Drawing.Size(774, 17)
+        Me.ChkBox2019Ixalan.TabIndex = 39
+        Me.ChkBox2019Ixalan.Text = "Ixalan, The Binding Isle (Explorers of Ixalan Plane)(Default Off)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.ToolTip1.SetToolTip(Me.ChkBox2019Ixalan, "This Plane begins a game of Explorers of Ixalan," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the board game supplement relea" &
+        "sed with the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ixalan sets. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please only enable this plane if you own a copy" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+        "of Explorers of Ixalan." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        Me.ChkBox2019Ixalan.UseVisualStyleBackColor = False
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BackColor = System.Drawing.Color.Black
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.ForeColor = System.Drawing.Color.White
+        Me.RichTextBox1.Location = New System.Drawing.Point(351, 531)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(100, 30)
+        Me.RichTextBox1.TabIndex = 16
+        Me.RichTextBox1.Text = "Version 1.0rcF"
+        '
+        'TabSettingMenu
+        '
+        Me.TabSettingMenu.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
+        Me.TabSettingMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabSettingMenu.Controls.Add(Me.TabPageModes)
+        Me.TabSettingMenu.Controls.Add(Me.TabPageSettings)
+        Me.TabSettingMenu.Controls.Add(Me.TabPagePhenom)
+        Me.TabSettingMenu.Controls.Add(Me.TabPageCardSets)
+        Me.TabSettingMenu.Controls.Add(Me.TabPageCredits)
+        Me.TabSettingMenu.Controls.Add(Me.TabPageResources)
+        Me.TabSettingMenu.Location = New System.Drawing.Point(1, 51)
+        Me.TabSettingMenu.Name = "TabSettingMenu"
+        Me.TabSettingMenu.SelectedIndex = 0
+        Me.TabSettingMenu.ShowToolTips = True
+        Me.TabSettingMenu.Size = New System.Drawing.Size(782, 469)
+        Me.TabSettingMenu.TabIndex = 15
+        '
+        'TabPageModes
+        '
+        Me.TabPageModes.BackColor = System.Drawing.Color.Black
+        Me.TabPageModes.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
+        Me.TabPageModes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageModes.Controls.Add(Me.CHKInfinite)
+        Me.TabPageModes.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageModes.Name = "TabPageModes"
+        Me.TabPageModes.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPageModes.Size = New System.Drawing.Size(774, 443)
+        Me.TabPageModes.TabIndex = 0
+        Me.TabPageModes.Text = "Game Modes"
+        '
+        'TabPageSettings
+        '
+        Me.TabPageSettings.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
+        Me.TabPageSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.TabPageSettings.Controls.Add(Me.NumAretMax)
+        Me.TabPageSettings.Controls.Add(Me.Label4)
+        Me.TabPageSettings.Controls.Add(Me.ChkAertReset)
+        Me.TabPageSettings.Controls.Add(Me.ChkNaarReset)
+        Me.TabPageSettings.Controls.Add(Me.ChkDistanceReset)
+        Me.TabPageSettings.Controls.Add(Me.ChkResetReturn)
+        Me.TabPageSettings.Controls.Add(Me.ChkPreTransReset)
+        Me.TabPageSettings.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageSettings.Name = "TabPageSettings"
+        Me.TabPageSettings.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPageSettings.Size = New System.Drawing.Size(774, 443)
+        Me.TabPageSettings.TabIndex = 1
+        Me.TabPageSettings.Text = "Settings"
+        Me.TabPageSettings.ToolTipText = "This applies to all card sets."
+        Me.TabPageSettings.UseVisualStyleBackColor = True
+        '
+        'NumAretMax
+        '
+        Me.NumAretMax.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumAretMax.ForeColor = System.Drawing.Color.Black
+        Me.NumAretMax.Location = New System.Drawing.Point(235, 86)
+        Me.NumAretMax.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
+        Me.NumAretMax.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumAretMax.Name = "NumAretMax"
+        Me.NumAretMax.Size = New System.Drawing.Size(36, 20)
+        Me.NumAretMax.TabIndex = 13
+        Me.NumAretMax.Value = New Decimal(New Integer() {10, 0, 0, 0})
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Transparent
+        Me.Label4.Location = New System.Drawing.Point(3, 88)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(226, 13)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Maximum Scroll Counters on Aretopolis"
+        '
         'TabPagePhenom
         '
         Me.TabPagePhenom.BackgroundImage = Global.EternitiesMap.My.Resources.Resources.main_menu_art
@@ -332,19 +393,6 @@ Partial Class MainMenu
         Me.LBLMoveChance.TabIndex = 17
         Me.LBLMoveChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
         '
-        'TBPhenomMoveChance
-        '
-        Me.TBPhenomMoveChance.BackColor = System.Drawing.Color.Black
-        Me.TBPhenomMoveChance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TBPhenomMoveChance.Location = New System.Drawing.Point(3, 78)
-        Me.TBPhenomMoveChance.Maximum = 100
-        Me.TBPhenomMoveChance.Name = "TBPhenomMoveChance"
-        Me.TBPhenomMoveChance.Size = New System.Drawing.Size(768, 45)
-        Me.TBPhenomMoveChance.TabIndex = 16
-        Me.TBPhenomMoveChance.TickFrequency = 5
-        Me.TBPhenomMoveChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
-        Me.ToolTip1.SetToolTip(Me.TBPhenomMoveChance, "Percent Chance of A Random Phenomenon on Helljump")
-        '
         'LBLHJChance
         '
         Me.LBLHJChance.AutoSize = True
@@ -356,19 +404,6 @@ Partial Class MainMenu
         Me.LBLHJChance.Size = New System.Drawing.Size(363, 13)
         Me.LBLHJChance.TabIndex = 15
         Me.LBLHJChance.Text = "50% Chance of A Random Phenomenon on Helljump Movement"
-        '
-        'TBPhenomHJChance
-        '
-        Me.TBPhenomHJChance.BackColor = System.Drawing.Color.Black
-        Me.TBPhenomHJChance.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TBPhenomHJChance.Location = New System.Drawing.Point(3, 20)
-        Me.TBPhenomHJChance.Maximum = 100
-        Me.TBPhenomHJChance.Name = "TBPhenomHJChance"
-        Me.TBPhenomHJChance.Size = New System.Drawing.Size(768, 45)
-        Me.TBPhenomHJChance.TabIndex = 14
-        Me.TBPhenomHJChance.TickFrequency = 5
-        Me.TBPhenomHJChance.TickStyle = System.Windows.Forms.TickStyle.TopLeft
-        Me.ToolTip1.SetToolTip(Me.TBPhenomHJChance, "Percent Chance of A Random Phenomenon on Helljump")
         '
         'ChkPhenomSupport
         '
@@ -627,41 +662,6 @@ Partial Class MainMenu
         Me.ChkBx2019Monarch.Text = "Throne Room of Paliano (Monarch Mechanic Plane)(Default Off)"
         Me.ChkBx2019Monarch.UseVisualStyleBackColor = False
         '
-        'ChkBx2019Contraption
-        '
-        Me.ChkBx2019Contraption.AutoSize = True
-        Me.ChkBx2019Contraption.BackColor = System.Drawing.Color.Transparent
-        Me.ChkBx2019Contraption.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBx2019Contraption.Enabled = False
-        Me.ChkBx2019Contraption.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkBx2019Contraption.Location = New System.Drawing.Point(0, 68)
-        Me.ChkBx2019Contraption.Name = "ChkBx2019Contraption"
-        Me.ChkBx2019Contraption.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.ChkBx2019Contraption.Size = New System.Drawing.Size(774, 17)
-        Me.ChkBx2019Contraption.TabIndex = 40
-        Me.ChkBx2019Contraption.Text = "Steamflogger Workshop (Contraption Mechanic)(Default Off)"
-        Me.ToolTip1.SetToolTip(Me.ChkBx2019Contraption, "This Plane begins the Contraption Mechanic," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "which was released in the Unstable s" &
-        "et." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please only enable this plane if you own a " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Contraption deck." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
-        Me.ChkBx2019Contraption.UseVisualStyleBackColor = False
-        '
-        'ChkBox2019Ixalan
-        '
-        Me.ChkBox2019Ixalan.AutoSize = True
-        Me.ChkBox2019Ixalan.BackColor = System.Drawing.Color.Transparent
-        Me.ChkBox2019Ixalan.Dock = System.Windows.Forms.DockStyle.Top
-        Me.ChkBox2019Ixalan.Enabled = False
-        Me.ChkBox2019Ixalan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChkBox2019Ixalan.Location = New System.Drawing.Point(0, 51)
-        Me.ChkBox2019Ixalan.Name = "ChkBox2019Ixalan"
-        Me.ChkBox2019Ixalan.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.ChkBox2019Ixalan.Size = New System.Drawing.Size(774, 17)
-        Me.ChkBox2019Ixalan.TabIndex = 39
-        Me.ChkBox2019Ixalan.Text = "Ixalan, The Binding Isle (Explorers of Ixalan Plane)(Default Off)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.ToolTip1.SetToolTip(Me.ChkBox2019Ixalan, "This Plane begins a game of Explorers of Ixalan," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the board game supplement relea" &
-        "sed with the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ixalan sets. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Please only enable this plane if you own a copy" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
-        "of Explorers of Ixalan." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
-        Me.ChkBox2019Ixalan.UseVisualStyleBackColor = False
-        '
         'ChkBxPC2019CommanderCards
         '
         Me.ChkBxPC2019CommanderCards.AccessibleName = "Planechase 2019 Commander Cards"
@@ -767,6 +767,8 @@ Partial Class MainMenu
         Me.MaximizeBox = False
         Me.Name = "MainMenu"
         Me.Text = "MainMenu"
+        CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabSettingMenu.ResumeLayout(False)
         Me.TabPageModes.ResumeLayout(False)
         Me.TabPageModes.PerformLayout()
@@ -775,8 +777,6 @@ Partial Class MainMenu
         CType(Me.NumAretMax, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPagePhenom.ResumeLayout(False)
         Me.TabPagePhenom.PerformLayout()
-        CType(Me.TBPhenomMoveChance, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TBPhenomHJChance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPageCardSets.ResumeLayout(False)
         Me.TabPageCardSets.PerformLayout()
         Me.TabPageCredits.ResumeLayout(False)
