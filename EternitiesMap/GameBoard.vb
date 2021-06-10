@@ -78,11 +78,38 @@
         NewGame()
     End Sub
 
-    Function DoubleZoom(center As Integer, slot1 As Integer, slot2 As Integer)
+    Function EnableBoardMainGrid()
+        For workcounter = 1 To 25 Step 1
+            Cardarray(workcounter).Enabled = True
+        Next
+        Return 0
+    End Function
+
+    Function DisableBoardMainGrid()
         For workcounter = 1 To 25 Step 1
             Cardarray(workcounter).Enabled = False
-            Cardarray(workcounter).Visible = False
         Next
+        Return 0
+    End Function
+
+    Function ShowBoardMainGrid()
+        For workcounter = 1 To 25 Step 1
+            Cardarray(workcounter).Visible = True
+            Disparray(workcounter).Visible = True
+        Next
+        Return 0
+    End Function
+
+    Function HideBoardMainGrid()
+        For workcounter = 1 To 25 Step 1
+            Cardarray(workcounter).Visible = False
+            Disparray(workcounter).Visible = False
+        Next
+        Return 0
+    End Function
+    Function DoubleZoom(center As Integer, slot1 As Integer, slot2 As Integer)
+        DisableBoardMainGrid()
+        HideBoardMainGrid()
         Doublezoombuffer(0) = slot1
         Doublezoombuffer(1) = slot2
         PBDoubleZoom1.Enabled = True
@@ -109,10 +136,8 @@
     End Function
 
     Function HideDoubleZoom()
-        For workcounter = 1 To 25 Step 1
-            Cardarray(workcounter).Enabled = True
-            Cardarray(workcounter).Visible = True
-        Next
+        EnableBoardMainGrid()
+        ShowBoardMainGrid()
         PBDoubleZoom1.Enabled = False
         PBDoubleZoom1.Visible = False
         PBDoubleZoom1.SendToBack()
@@ -367,10 +392,7 @@
         PBZoom.Visible = False
         PBZoom.SendToBack()
         PBZoom.Image = Nothing
-        Dim workcounter As Integer
-        For workcounter = 1 To 25 Step 1
-            Cardarray(workcounter).Enabled = False
-        Next
+        DisableBoardMainGrid()
         If slot1 > 0 Then PCardSelect1.BringToFront()
         If trigPlane > 0 Then PCardSelect2.BringToFront()
         If slot2 > 0 Then PCardSelect3.BringToFront()
@@ -434,9 +456,7 @@
         PCardSelect4.Visible = False
         PCardSelect5.Visible = False
         PCardSelect6.Visible = False
-        For workcounter = 1 To 25 Step 1
-            Cardarray(workcounter).Enabled = True
-        Next
+        EnableBoardMainGrid()
         PBChaos.Enabled = True
         NCounter.Enabled = True
         PBWalk.Enabled = True
@@ -1512,10 +1532,7 @@
             Deckstate = 2
             NCounter.Enabled = False
             Dim workcounter As Integer
-            For workcounter = 1 To 25 Step 1
-                Cardarray(workcounter).Visible = False
-                Disparray(workcounter).Visible = False
-            Next
+            HideBoardMainGrid()
             Cardarray(13).Enabled = True
             Cardarray(13).Visible = True
             If CardStack(0, Currentplane, 4) <> 0 Then Disparray(13).Visible = True
