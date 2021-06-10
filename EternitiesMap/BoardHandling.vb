@@ -23,16 +23,16 @@
                     End If
                 End If
             Next
-            If NPopulateCheck = True AndAlso Deckcounter > 0 Then
+            If NPopulateCheck = True AndAlso CardStackcounter > 0 Then
                 If PlayCard(DrawCard, 3, 0, 1) = True Then PopulateBoard = True
             End If
-            If SPopulateCheck = True AndAlso Deckcounter > 0 Then
+            If SPopulateCheck = True AndAlso CardStackcounter > 0 Then
                 If PlayCard(DrawCard, 3, 0, -1) = True Then PopulateBoard = True
             End If
-            If EPopulateCheck = True AndAlso Deckcounter > 0 Then
+            If EPopulateCheck = True AndAlso CardStackcounter > 0 Then
                 If PlayCard(DrawCard, 3, 1, 0) = True Then PopulateBoard = True
             End If
-            If WPopulateCheck = True AndAlso Deckcounter > 0 Then
+            If WPopulateCheck = True AndAlso CardStackcounter > 0 Then
                 If PlayCard(DrawCard, 3, -1, 0) = True Then PopulateBoard = True
             End If
         End If
