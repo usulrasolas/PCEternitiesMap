@@ -215,7 +215,7 @@
         Return DisplayZoom
     End Function
 
-    Shared Function InvertCoord(value As Integer) As Integer
+    Public Shared Function InvertCoord(value As Integer) As Integer
         If value = 1 Then
             Return -1
         ElseIf value = -1 Then

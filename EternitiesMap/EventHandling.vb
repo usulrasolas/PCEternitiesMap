@@ -12,15 +12,15 @@
         CardStack(1, Drawbuffer(1), 1) = 64
         CardStack(1, Drawbuffer(1), 2) = 0
         CardStack(1, Drawbuffer(0), 2) = 0
-        CardStack(1, Drawbuffer(1), 3) = Drawbuffer(0)
+        CardStack(1, Drawbuffer(1), 3) = Drawbuffer(0) 
         CardStack(1, Drawbuffer(0), 3) = Drawbuffer(1)
         MoveEventCheck()
-        TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
+        TranslateBoard(GameBoard.InvertCoord(EventXloc), GameBoard.InvertCoord(EventYloc))
         Deckstate = 1
         PlayCard(Drawbuffer(0), 3, 0, 0)
         PlayCard(Drawbuffer(1), 3, 0, 0)
-        PBWalk_Click(Nothing, Nothing)
-        PBWalk_Click(Nothing, Nothing)
+        PBWalk_Click(Nothing, Nothing) 'FIXME NEEDS TO CALL FUNCTION
+        PBWalk_Click(Nothing, Nothing) 'FIXME NEEDS TO CALL FUNCTION
         Return 0
     End Function
 
@@ -31,7 +31,7 @@
         Drawbuffer(1) = DrawCard()
         Dim eventdistance As Integer = Math.Abs(xloc) + Math.Abs(yloc)
         If eventdistance = 2 Then
-            DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+            GameBoard.DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
             PlayCard(Drawbuffer(0), 3, xloc, yloc)
             PlayCard(Drawbuffer(1), 3, xloc, yloc)
         ElseIf eventdistance = 1 Then
@@ -41,12 +41,12 @@
                     ExistingPlane = workcounter
                     ReturnCard(ExistingPlane)
                 End If
-                DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
+                GameBoard.DoubleZoom(phenomnumber, Drawbuffer(0), Drawbuffer(1))
                 PlayCard(Drawbuffer(0), 3, xloc, yloc)
                 PlayCard(Drawbuffer(1), 3, xloc, yloc)
             Next
         Else
-            DisplayZoom(-1)
+            GameBoard.DisplayZoom(-1)
         End If
         Return 0
     End Function
@@ -56,10 +56,10 @@
         Dim eventdistance = Math.Abs(EventXloc) + Math.Abs(EventYloc)
         If eventdistance = 2 Then PlayCard(DrawCard, 3, EventXloc, EventYloc)
         MoveEventCheck()
-        TranslateBoard(InvertCoord(EventXloc), InvertCoord(EventYloc))
+        TranslateBoard(GameBoard.InvertCoord(EventXloc), GameBoard.InvertCoord(EventYloc))
         Deckstate = 1
-        PBWalk_Click(Nothing, Nothing)
-        PBWalk_Click(Nothing, Nothing)
+        PBWalk_Click(Nothing, Nothing) 'FIXME NEEDS TO CALL FUNCTION
+        PBWalk_Click(Nothing, Nothing) 'FIXME NEEDS TO CALL FUNCTION
         Return 0
     End Function
 
@@ -71,7 +71,7 @@
         Drawbuffer(2) = DrawCard()
         Drawbuffer(3) = DrawCard()
         Drawbuffer(4) = DrawCard()
-        PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
+        GameBoard.PickDisplay(26, Drawbuffer(0), Drawbuffer(1), Drawbuffer(2), Drawbuffer(3), Drawbuffer(4))
         MsgBox("Select one Plane to go ontop of Planar Deck" & vbCrLf & "Click on Plane of your Selection to Resolve Interplanar Tunnel", MsgBoxStyle.Information, "Interplanar Tunnel")
         Return 0
     End Function
@@ -97,11 +97,11 @@
     Function StdPhenomEvent(phenomnumber As Integer, xloc As Integer, yloc As Integer)
         EventCardInPlay = phenomnumber
         Deckstate = 4
-        DisplayZoom(phenomnumber)
+        GameBoard.DisplayZoom(phenomnumber)
         Dim eventdistance = Math.Abs(xloc) + Math.Abs(yloc)
         If eventdistance = 2 Then PlayCard(DrawCard, 3, xloc, yloc)
         MoveEventCheck()
-        TranslateBoard(InvertCoord(xloc), InvertCoord(yloc))
+        TranslateBoard(GameBoard.InvertCoord(xloc), GameBoard.InvertCoord(yloc))
         Return 0
     End Function
 
@@ -127,10 +127,10 @@
             If PersistPhenomDisplay = True Then
                 GameBoard.PCardSelect6.BringToFront()
                 GameBoard.PCardSelect6.Visible = True
-                GameBoard.PCardSelect6.Image = CardImage(phenomnumber)
+                GameBoard.PCardSelect6.Image = GameBoard.CardImage(phenomnumber)
             End If
         End If
-        UpdateArrays()
+        GameBoard.UpdateArrays()
     End Function
 
     Public Function PhenomMoveChanceCheck() As Boolean
