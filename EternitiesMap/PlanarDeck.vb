@@ -126,6 +126,9 @@
                 CardStack(0, 219, 5) = -1
                 CardStack(0, 220, 5) = -1
             End If
+			If ExpMoC = True Then
+				ReadyCards(254, 279)
+			End If
             PhenomInitalize()
             StackDeck()
             Deckstate = 1

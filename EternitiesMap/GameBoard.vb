@@ -1087,6 +1087,58 @@
             Return My.Resources.c252
         ElseIf CardNumber = 253 Then
             Return My.Resources.c253
+		ElseIf CardNumber = 254 Then
+            Return My.Resources.c254
+		ElseIf CardNumber = 255 Then
+            Return My.Resources.c255
+        ElseIf CardNumber = 256 Then
+            Return My.Resources.c256
+		ElseIf CardNumber = 257 Then
+            Return My.Resources.c257
+		ElseIf CardNumber = 258 Then
+            Return My.Resources.c258
+		ElseIf CardNumber = 259 Then
+            Return My.Resources.c259
+		ElseIf CardNumber = 260 Then
+            Return My.Resources.c260
+		ElseIf CardNumber = 261 Then
+            Return My.Resources.c261
+		ElseIf CardNumber = 262 Then
+            Return My.Resources.c262
+		ElseIf CardNumber = 263 Then
+            Return My.Resources.c263
+		ElseIf CardNumber = 264 Then
+            Return My.Resources.c264
+		ElseIf CardNumber = 265 Then
+            Return My.Resources.c265
+		ElseIf CardNumber = 266 Then
+            Return My.Resources.c266
+		ElseIf CardNumber = 267 Then
+            Return My.Resources.c267
+		ElseIf CardNumber = 268 Then
+            Return My.Resources.c268
+		ElseIf CardNumber = 269 Then
+            Return My.Resources.c269
+		ElseIf CardNumber = 270 Then
+            Return My.Resources.c270
+		ElseIf CardNumber = 271 Then
+            Return My.Resources.c271
+		ElseIf CardNumber = 272 Then
+            Return My.Resources.c272
+		ElseIf CardNumber = 273 Then
+            Return My.Resources.c273
+		ElseIf CardNumber = 274 Then
+            Return My.Resources.c274
+		ElseIf CardNumber = 275 Then
+            Return My.Resources.c275
+		ElseIf CardNumber = 276 Then
+            Return My.Resources.c276
+		ElseIf CardNumber = 277 Then
+            Return My.Resources.c277
+		ElseIf CardNumber = 278 Then
+            Return My.Resources.c278
+		ElseIf CardNumber = 279 Then
+            Return My.Resources.c279
         ElseIf CardNumber = -1 Then
             Return My.Resources.SHGR
         Else
