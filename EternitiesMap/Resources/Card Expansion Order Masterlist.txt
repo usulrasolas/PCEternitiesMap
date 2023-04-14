@@ -1,0 +1,63 @@
+This is a Masterlist of what card numbers each expansion occupies in the program. Please update this list when adding new expansions.
+
+000 In-App Art and Icons
+
+	SHGR
+	c0 - Planchase Card Back
+	
+001 Planechase Anthology
+
+	c1 - c86
+
+002 Multiverse Expansion - Amonkhet
+
+	c87 - c91
+
+003 Multiverse Expansion - Fiora
+
+	c92 - c96
+
+004 Multiverse Expansion - Ixalan 
+
+	c97 - c110
+
+005 Geekchase 
+
+	c111- c140
+
+006 Planechase 2019
+
+	c141 - c183
+
+007 Planechase 2017
+
+	c184 - c223
+
+008 Ixalan
+
+	c224 - c227
+
+009 Multiverse Expansion - Kaladesh
+
+	c228 - c232
+
+010 Multiverse Expansion - Extras
+
+	c233 - c239
+
+011 Multiverse Expansion - Phenomenon Pack
+
+	c240 - c243 
+
+012 Multiverse Expansion - Tarkir
+
+	c244 - c248
+
+013 Multiverse Expansion - Theros
+
+	c249 - c253
+
+014 March of the Machine 
+
+	c254 - c279
+
