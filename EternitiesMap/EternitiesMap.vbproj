@@ -731,7 +731,6 @@
 	<Content Include="Resources\CardExpansions\MoC\c276.jpg" />
 	<Content Include="Resources\CardExpansions\MoC\c277.jpg" />
 	<Content Include="Resources\CardExpansions\MoC\c278.jpg" />
-	<Content Include="Resources\CardExpansions\MoC\c279.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Resources\cards\SHGR.png" />
     <Content Include="Resources\icons\BlankPlaneCardFrame.png" />

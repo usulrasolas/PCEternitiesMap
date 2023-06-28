@@ -1137,8 +1137,6 @@
             Return My.Resources.c277
 		ElseIf CardNumber = 278 Then
             Return My.Resources.c278
-		ElseIf CardNumber = 279 Then
-            Return My.Resources.c279
         ElseIf CardNumber = -1 Then
             Return My.Resources.SHGR
         Else

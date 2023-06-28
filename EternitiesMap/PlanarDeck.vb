@@ -4,7 +4,7 @@
     Public Deckstate As Integer = 0
 
     Public Deckcounter As Integer = 0
-    Public Const Masterdeckcount As Integer = 253
+    Public Const Masterdeckcount As Integer = 278
     Public CardLookup(Masterdeckcount) As Integer
 #Disable Warning CA1814 ' Prefer jagged arrays over multidimensional
     Public CardStack(1, Masterdeckcount, 5) As Integer
@@ -25,6 +25,7 @@
     Public Currentplane As Integer
     Public Doublezoombuffer(1) As Integer
     Public Pcanthologies As Boolean = True
+    Public ExpMoC As Boolean = True
     Public Expmeamon As Boolean = False
     Public Expmefiora As Boolean = False
     Public Expmeixalan As Boolean = False
@@ -127,7 +128,7 @@
                 CardStack(0, 220, 5) = -1
             End If
 			If ExpMoC = True Then
-				ReadyCards(254, 279)
+				ReadyCards(254, 278)
 			End If
             PhenomInitalize()
             StackDeck()
