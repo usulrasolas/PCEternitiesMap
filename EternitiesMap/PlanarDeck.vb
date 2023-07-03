@@ -129,6 +129,8 @@
             End If
 			If ExpMoC = True Then
 				ReadyCards(254, 278)
+                CardStack(0, 257, 3) = 257 'The Fertile Lands of Saulvinia Reveal Plane Chaos
+                CardStack(0, 267, 3) = 267 'Norn's Seedcore Reveal Plane Chaos
 			End If
             PhenomInitalize()
             StackDeck()
