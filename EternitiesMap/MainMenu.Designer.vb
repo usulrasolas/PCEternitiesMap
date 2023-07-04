@@ -65,6 +65,7 @@ Partial Class MainMenu
         Me.ChkBx2019Monarch = New System.Windows.Forms.CheckBox()
         Me.ChkBxPC2019CommanderCards = New System.Windows.Forms.CheckBox()
         Me.ChkPC2019 = New System.Windows.Forms.CheckBox()
+        Me.ChkMoC = New System.Windows.Forms.CheckBox()
         Me.ChkPCAnthology = New System.Windows.Forms.CheckBox()
         Me.TabPageCredits = New System.Windows.Forms.TabPage()
         Me.RTBCredits = New System.Windows.Forms.RichTextBox()
@@ -445,6 +446,7 @@ Partial Class MainMenu
         Me.TabPageCardSets.Controls.Add(Me.ChkBox2019Ixalan)
         Me.TabPageCardSets.Controls.Add(Me.ChkBxPC2019CommanderCards)
         Me.TabPageCardSets.Controls.Add(Me.ChkPC2019)
+        Me.TabPageCardSets.Controls.Add(Me.ChkMoC)
         Me.TabPageCardSets.Controls.Add(Me.ChkPCAnthology)
         Me.TabPageCardSets.ForeColor = System.Drawing.Color.White
         Me.TabPageCardSets.Location = New System.Drawing.Point(4, 22)
@@ -691,6 +693,19 @@ Partial Class MainMenu
         Me.ChkPC2019.Text = "Planechase 2019 (Themed Set, Default Off)"
         Me.ChkPC2019.UseVisualStyleBackColor = False
         '
+        'ChkMoC
+        '
+        Me.ChkMoC.AutoSize = True
+        Me.ChkMoC.BackColor = System.Drawing.Color.Transparent
+        Me.ChkMoC.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ChkMoC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChkMoC.Location = New System.Drawing.Point(0, 0)
+        Me.ChkMoC.Name = "ChkMoC"
+        Me.ChkMoC.Size = New System.Drawing.Size(774, 17)
+        Me.ChkMoC.TabIndex = 0
+        Me.ChkMoC.Text = "March of the Machine Commander (Official Set, Default On)"
+        Me.ChkMoC.UseVisualStyleBackColor = False
+        '
         'ChkPCAnthology
         '
         Me.ChkPCAnthology.AutoSize = True
@@ -809,6 +824,7 @@ Partial Class MainMenu
     Friend WithEvents TBPhenomHJChance As TrackBar
     Friend WithEvents TabPageCardSets As TabPage
     Friend WithEvents ChkPCAnthology As CheckBox
+    Friend WithEvents ChkMoC As Checkbox
     Friend WithEvents TabPageCredits As TabPage
     Friend WithEvents ChkPC2019 As CheckBox
     Friend WithEvents RTBCredits As RichTextBox

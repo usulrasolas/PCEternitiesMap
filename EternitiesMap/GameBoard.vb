@@ -348,6 +348,13 @@
         ElseIf EventType = 118 Then
             PBWalk_Click(Nothing, Nothing)
             MsgBox("Planeswalk then Roll the Planar die and treat ANY result as Chaos. Resolve Chaos of New Plane Immediately after Walk.", MsgBoxStyle.Information, "Holodeck Chaos Walk")
+        ElseIf EventType = 257 Then
+            Deckstate = 3
+            Drawbuffer(0) = DrawCard()
+            PickDisplay(Currentplane, Nothing, Nothing, Nothing, Drawbuffer(0), Nothing)
+            ReturnCard(Drawbuffer(0))
+            MsgBox("Revealed Chaos Effect Resolves." & vbCrLf & "Click The Fertile Lands of Saulvinia to Return to Play when Resolved", MsgBoxStyle.Information, "The Fertile Lands of Saulvinia")
+            GameEvent = EventType
         Else
             MsgBox("GameEvent Called But Not Configured", MsgBoxStyle.Critical, "GameEvent Call Failure")
         End If
@@ -1137,8 +1144,6 @@
             Return My.Resources.c277
 		ElseIf CardNumber = 278 Then
             Return My.Resources.c278
-		ElseIf CardNumber = 279 Then
-            Return My.Resources.c279
         ElseIf CardNumber = -1 Then
             Return My.Resources.SHGR
         Else
@@ -1660,6 +1665,20 @@
             End If
         ElseIf CardStack(0, Currentplane, 3) = 101 Then 'holodeck
             GameEvent(118)
+        ElseIf CardStack(0, Currentplane, 3) = 257 Then
+            ''The Fertile Lands of Saulvinia Reveal Plane Chaos
+            If Deckcounter >= 1 Then
+                GameEvent(257)
+            Else
+                MsgBox("0 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "The Fertile Lands of Saulvinia Failure")
+            End If
+        ElseIf CardStack(0, Currentplane, 3) = 267 Then
+            ''Norn's Seedcore Reveal Plane Chaos
+            If Deckcounter >= 1 Then
+                GameEvent(267)
+            Else
+                MsgBox("0 Cards on Planar Deck. Unable to Perform Chaos Action", MsgBoxStyle.Exclamation, "Norn's Seedcore Failure")
+            End If
         ElseIf CardStack(0, Currentplane, 3) > -1 Then
             DisplayZoom(Currentplane)
         Else
@@ -1750,6 +1769,12 @@
                 If MsgBox("Are you sure you want to put the revealed card on the bottom?", MsgBoxStyle.YesNo, "Stairs to Infinity Exit") = vbYes Then
                     HidePickDisplay()
                     ReturnCard(DrawCard)
+                    Deckstate = 1
+                End If
+            ElseIf Currentplane = 257 Then
+                ''revealed plane just needs to stay until clicked
+                If MsgBox("Are you done applying the chaos effect?", MsgBoxStyle.YesNo, "The Fertile Lands of Saulvinia Exit") = vbYes Then
+                    HidePickDisplay()
                     Deckstate = 1
                 End If
             Else

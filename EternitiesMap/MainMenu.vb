@@ -35,6 +35,7 @@
         LBLHJChance.Text = Phenomhelljchance & "% Chance of A Random Phenomenon on Helljump Movement (Default 25%)"
         LBLMoveChance.Text = Phenommovechance & "% Chance of A Random Phenomenon on Normal Movement (Default 0%)"
         ChkPCAnthology.Checked = Pcanthologies
+        ChkMoc.Checked = ExpMoC
         ChkAmon.Checked = Expmeamon
         ChkIxalan.Checked = Expixalan
         ChkFiora.Checked = Expmefiora
@@ -89,6 +90,10 @@
 
     Private Sub ChkPCAnthology_CheckedChanged(sender As Object, e As EventArgs) Handles ChkPCAnthology.CheckedChanged
         Pcanthologies = ChkPCAnthology.Checked
+    End Sub
+
+    Private Sub ChkMoC_CheckedChanged(sender As Object, e As EventArgs) Handles ChkMoC.CheckedChanged
+        ExpMoC = ChkMoC.Checked
     End Sub
 
     Private Sub ChkFiora_CheckedChanged(sender As Object, e As EventArgs) Handles ChkFiora.CheckedChanged
